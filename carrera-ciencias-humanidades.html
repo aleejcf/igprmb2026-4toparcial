@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bachillerato en Ciencias y Humanidades — Instituto Roberto Micheletti Bain">
+  <title>BCH Ciencias y Humanidades | Instituto Roberto Micheletti Bain</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    /* ── HERO CARRERA ── */
+    .carrera-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--azul-noche);
+      color: var(--blanco);
+      padding: 96px 0 80px;
+    }
+
+    .carrera-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(20,140,60,.4) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 85% 25%, rgba(40,180,80,.2) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 60% at 75% 90%, rgba(10,110,40,.25) 0%, transparent 50%),
+        linear-gradient(170deg, #011a08 0%, #032010 55%, #011a08 100%);
+    }
+
+    .carrera-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .carrera-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .carrera-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      transition: color .2s;
+    }
+
+    .carrera-back:hover { color: var(--blanco); }
+    .carrera-back svg { transition: transform .2s; }
+    .carrera-back:hover svg { transform: translateX(-3px); }
+
+    .carrera-tag-hero {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 16px;
+      border-radius: 999px;
+      background: rgba(20,140,60,.3);
+      border: 1px solid rgba(40,180,80,.55);
+      color: #8fffc0;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .carrera-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .carrera-hero h1 span { color: #6fffa0; }
+
+    .carrera-hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.75);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .carrera-hero-logo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 60px rgba(20,140,60,.4), var(--sombra-md);
+      flex-shrink: 0;
+    }
+
+    .carrera-hero-logo img { width: 75%; object-fit: contain; }
+    .carrera-hero-logo .logo-dark  { display: block; }
+    .carrera-hero-logo .logo-light { display: none; }
+    [data-theme="light"] .carrera-hero-logo .logo-dark  { display: none; }
+    [data-theme="light"] .carrera-hero-logo .logo-light { display: block; }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: .8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+      backdrop-filter: blur(6px);
+    }
+
+    /* ── STATS BAND ── */
+    .carrera-stats {
+      background: linear-gradient(135deg, #0a6622, #1a9940);
+      padding: 40px 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 20px 28px;
+      border-right: 1px solid rgba(255,255,255,.15);
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-item span {
+      font-size: .8rem;
+      color: rgba(255,255,255,.7);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTENT ── */
+    .carrera-content { padding: 80px 0; }
+
+    .content-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .content-block.reverse { direction: rtl; }
+    .content-block.reverse > * { direction: ltr; }
+
+    .block-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(20,140,60,.1);
+      border: 1px solid rgba(20,140,60,.25);
+      color: #0a7a30;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    [data-theme="dark"] .block-label {
+      background: rgba(20,140,60,.18);
+      border-color: rgba(40,180,80,.35);
+      color: #6fffa0;
+    }
+
+    .block-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .block-text {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: .97rem;
+    }
+
+    [data-theme="dark"] .block-text { color: rgba(255,255,255,.65); }
+
+    /* ── AREAS DE CONOCIMIENTO ── */
+    .areas-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .area-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--r);
+      background: #f0fff4;
+      border: 1px solid rgba(20,140,60,.15);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+    }
+
+    [data-theme="dark"] .area-item {
+      background: rgba(20,140,60,.07);
+      border-color: rgba(40,180,80,.2);
+    }
+
+    .area-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra);
+    }
+
+    .area-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, #0a6622, #1a9940);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(20,140,60,.35);
+    }
+
+    .area-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--texto);
+      line-height: 1.35;
+    }
+
+    [data-theme="dark"] .area-name { color: var(--blanco); }
+
+    .area-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    [data-theme="dark"] .area-desc { color: rgba(255,255,255,.5); }
+
+    /* ── SALIDAS ── */
+    .salidas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .salida-card {
+      padding: 28px 24px;
+      border-radius: var(--r-lg);
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      box-shadow: var(--sombra);
+      text-align: center;
+      transition: transform .3s var(--ease-spring), box-shadow .3s;
+    }
+
+    [data-theme="dark"] .salida-card {
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.08);
+    }
+
+    .salida-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-md);
+    }
+
+    .salida-icon { font-size: 2.4rem; margin-bottom: 14px; display: block; }
+
+    .salida-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -.01em;
+    }
+
+    .salida-card p {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    [data-theme="dark"] .salida-card p { color: rgba(255,255,255,.55); }
+
+    /* ── PERFIL CTA ── */
+    .perfil-band {
+      padding: 72px 0;
+      background: var(--fondo);
+    }
+
+    [data-theme="dark"] .perfil-band {
+      background: rgba(20,140,60,.05);
+    }
+
+    .perfil-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .perfil-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .perfil-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .93rem;
+      font-weight: 600;
+      color: var(--texto);
+    }
+
+    [data-theme="dark"] .perfil-list li { color: rgba(255,255,255,.82); }
+
+    .perfil-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a9940, var(--naranja));
+      flex-shrink: 0;
+    }
+
+    .cta-card {
+      padding: 40px 36px;
+      border-radius: var(--r-xl);
+      background: linear-gradient(150deg, #073d16, #0f6e28);
+      color: var(--blanco);
+      box-shadow: var(--sombra-fuerte);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 90% 10%, rgba(244,123,32,.25) 0%, transparent 50%);
+    }
+
+    .cta-card h3 {
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+
+    .cta-card p {
+      position: relative;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 24px;
+      font-size: .95rem;
+    }
+
+    .btn-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r);
+      background: var(--naranja);
+      color: var(--blanco);
+      font-size: .9rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: background .2s, transform .2s var(--ease-spring), box-shadow .2s;
+      box-shadow: 0 6px 24px rgba(244,123,32,.45);
+    }
+
+    .btn-cta:hover {
+      background: var(--naranja-2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(244,123,32,.55);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r);
+      background: transparent;
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.3);
+      margin-top: 12px;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+      color: var(--blanco);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .carrera-hero-inner { grid-template-columns: 1fr; }
+      .carrera-hero-logo { width: 140px; height: 140px; justify-self: start; }
+      .content-block, .content-block.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .salidas-grid { grid-template-columns: 1fr 1fr; }
+      .perfil-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .salidas-grid { grid-template-columns: 1fr; }
+      .areas-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
+          <img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB">
+        </span>
+        <span class="brand-divider"></span>
+        <span class="brand-text">
+          <span class="brand-name">Instituto Roberto Micheletti Bain</span>
+          <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="carrera-hero">
+      <div class="container carrera-hero-inner">
+        <div>
+          <a class="carrera-back" href="oferta-academica.html">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Oferta academica
+          </a>
+          <div class="carrera-tag-hero">BCH · Bachillerato en Ciencias y Humanidades</div>
+          <h1>Bachillerato en <span>Ciencias y Humanidades</span></h1>
+          <p class="carrera-hero-desc">Formacion academica general que prepara a los estudiantes para continuar estudios superiores en cualquier area del conocimiento: ciencias, humanidades, arte, ingenieria, derecho y mas.</p>
+          <div class="hero-pills">
+            <span class="hero-pill">🔬 Ciencias</span>
+            <span class="hero-pill">📅 10mo – 12mo grado</span>
+            <span class="hero-pill">🎓 Bachillerato academico</span>
+            <span class="hero-pill">🏛️ Base universitaria</span>
+          </div>
+        </div>
+        <div class="carrera-hero-logo">
+          <img class="logo-dark"  src="imagenes/irmb/bch_white.png" alt="Logo BCH Ciencias y Humanidades">
+          <img class="logo-light" src="imagenes/irmb/bch_white.png" alt="Logo BCH Ciencias y Humanidades">
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="carrera-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-item">
+            <strong>3</strong>
+            <span>Anos de duracion</span>
+          </div>
+          <div class="stat-item">
+            <strong>10mo</strong>
+            <span>Grado de inicio</span>
+          </div>
+          <div class="stat-item">
+            <strong>BCH</strong>
+            <span>Titulo obtenido</span>
+          </div>
+          <div class="stat-item">
+            <strong>∞</strong>
+            <span>Carreras universitarias</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPCION + AREAS -->
+    <section class="carrera-content">
+      <div class="container">
+        <div class="content-block">
+          <div>
+            <div class="block-label">Sobre la carrera</div>
+            <h2 class="block-title">Una base solida para cualquier camino</h2>
+            <p class="block-text">El Bachillerato en Ciencias y Humanidades ofrece una formacion academica integral que abarca matematicas, ciencias naturales, idiomas, historia, filosofia y lenguaje. Es la opcion mas amplia del instituto, pensada para estudiantes que aun exploran sus intereses o que desean acceder a cualquier carrera universitaria.</p>
+            <br>
+            <p class="block-text">A diferencia de los bachilleratos tecnicos, este ofrece una ruta academica general que no cierra ninguna puerta. Es ideal para quienes buscan flexibilidad y maxima apertura para sus estudios superiores.</p>
+          </div>
+          <div>
+            <div class="block-label">Areas de estudio</div>
+            <h2 class="block-title">Lo que aprenderas</h2>
+            <div class="areas-grid">
+              <div class="area-item">
+                <div class="area-icon">🔢</div>
+                <div>
+                  <div class="area-name">Matematicas y Calculo</div>
+                  <div class="area-desc">Algebra, geometria, estadistica y funciones</div>
+                </div>
+              </div>
+              <div class="area-item">
+                <div class="area-icon">🧬</div>
+                <div>
+                  <div class="area-name">Ciencias Naturales</div>
+                  <div class="area-desc">Biologia, quimica y fisica aplicada</div>
+                </div>
+              </div>
+              <div class="area-item">
+                <div class="area-icon">📚</div>
+                <div>
+                  <div class="area-name">Lenguaje y Literatura</div>
+                  <div class="area-desc">Comprension lectora, escritura y expresion</div>
+                </div>
+              </div>
+              <div class="area-item">
+                <div class="area-icon">🌍</div>
+                <div>
+                  <div class="area-name">Ciencias Sociales</div>
+                  <div class="area-desc">Historia, geografia y educacion civica</div>
+                </div>
+              </div>
+              <div class="area-item">
+                <div class="area-icon">🗣️</div>
+                <div>
+                  <div class="area-name">Idioma Extranjero</div>
+                  <div class="area-desc">Ingles basico e intermedio</div>
+                </div>
+              </div>
+              <div class="area-item">
+                <div class="area-icon">🧠</div>
+                <div>
+                  <div class="area-name">Filosofia y Etica</div>
+                  <div class="area-desc">Pensamiento critico y valores</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGEN BANNER -->
+    <div class="container" style="padding-bottom: 0; padding-top: 0;">
+      <img
+        src="imagenes/humanidades/bch.jpg"
+        alt="Salon o actividad de Ciencias y Humanidades"
+        style="width:100%; height:320px; object-fit:cover; border-radius:var(--r-lg); display:block;"
+      >
+    </div>
+
+    <!-- SALIDAS -->
+    <section class="section band">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Despues de graduarte</p>
+          <h2>Donde puede llevarte este bachillerato</h2>
+          <p>El BCH en Ciencias y Humanidades habilita el acceso a practicamente todas las carreras universitarias en Honduras y el extranjero.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
+          <img
+            src="imagenes/humanidades/estudiantes.jpg"
+            alt="Foto de estudiantes"
+            style="border-radius:var(--r); height:160px; width:100%; object-fit:cover; display:block;"
+          >
+          <img
+            src="imagenes/humanidades/estudiantes2.jpg"
+            alt="Salon de clases"
+            style="border-radius:var(--r); height:160px; width:100%; object-fit:cover; display:block;"
+          >
+          <img
+            src="imagenes/humanidades/estudiantes3.jpg"
+            alt="Actividad o proyecto"
+            style="border-radius:var(--r); height:160px; width:100%; object-fit:cover; display:block;"
+          >
+        </div>
+        <div class="salidas-grid">
+          <div class="salida-card">
+            <span class="salida-icon">⚕️</span>
+            <h4>Ciencias de la salud</h4>
+            <p>Medicina, enfermeria, quimica farmaceutica y carreras del area medica y biologica.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">⚙️</span>
+            <h4>Ingenieria y tecnologia</h4>
+            <p>Civil, industrial, sistemas, electronica y cualquier ingenieria universitaria.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">⚖️</span>
+            <h4>Derecho y ciencias sociales</h4>
+            <p>Abogacia, sociologia, ciencias politicas, trabajo social y afines.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">🎨</span>
+            <h4>Arte y comunicacion</h4>
+            <p>Periodismo, comunicacion social, diseño grafico y carreras creativas.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">📐</span>
+            <h4>Arquitectura y urbanismo</h4>
+            <p>Diseno arquitectonico, construccion y gestion del espacio urbano.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">🏫</span>
+            <h4>Educacion y pedagogia</h4>
+            <p>Formacion docente, psicologia educativa y desarrollo infantil.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERFIL + CTA -->
+    <section class="perfil-band">
+      <div class="container perfil-inner">
+        <div>
+          <div class="block-label">Perfil del estudiante</div>
+          <h2 class="block-title">Esta carrera es para ti si…</h2>
+          <ul class="perfil-list">
+            <li>Aun no defines que quieres estudiar en la universidad</li>
+            <li>Te interesan varias areas del conocimiento</li>
+            <li>Quieres una base academica solida y amplia</li>
+            <li>Te gustan las ciencias, las letras o ambas</li>
+            <li>Tienes metas universitarias en cualquier carrera</li>
+            <li>Valoras el pensamiento critico y el razonamiento</li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h3>¿Listo para inscribirte?</h3>
+          <p>El proceso de matricula 2026 esta abierto. Conoce los requisitos y pasos para ingresar al BCH en Ciencias y Humanidades.</p>
+          <a href="matricula.html" class="btn-cta">
+            Ver matricula 2026
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <br>
+          <a href="contacto.html" class="btn-outline">Contactar al instituto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
+        <a href="https://www.facebook.com/profile.php?id=100063787262594"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visítanos en Facebook"
+           style="
+             display: inline-block;
+             flex-shrink: 0;
+             width: 42px;
+             height: 42px;
+             border-radius: 50%;
+             overflow: hidden;
+             box-shadow: 0 2px 8px rgba(0,0,0,.35);
+             transition: transform .2s ease, box-shadow .2s ease;
+           "
+           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
+           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
+          <img src="imagenes/facebook.png"
+               alt="Facebook del instituto"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Bain</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

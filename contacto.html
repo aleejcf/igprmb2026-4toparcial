@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contacto del Instituto Roberto Micheletti Bain, Agua Blanca Sur, El Progreso, Yoro.">
+  <title>Contacto | Instituto Roberto Micheletti Bain</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a class="active" href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Estamos aqui para ayudarte</p>
+          <h1>Contacto</h1>
+          <p>Puedes escribirnos con dudas sobre matricula, oferta academica o cualquier consulta sobre el instituto. Tambien puedes visitarnos en Secretaria.</p>
+        </div>
+        <img src="imagenes/acto_civico/contacto.jpg" alt="Ilustracion de contacto institucional" loading="eager">
+      </div>
+    </section>
+
+    <!-- Contact form + info -->
+    <section class="section">
+      <div class="container contact-wrap">
+
+        <!-- Info cards -->
+        <div class="contact-info">
+          <article class="contact-detail">
+            <div class="contact-detail-icon">📍</div>
+            <div class="contact-detail-text">
+              <strong>Direccion</strong>
+              <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
+            </div>
+          </article>
+
+          <article class="contact-detail">
+            <div class="contact-detail-icon">🕗</div>
+            <div class="contact-detail-text">
+              <strong>Horario de atencion</strong>
+              <p>Lunes a viernes, 8:00 AM – 12:00 PM<br>Enero 2026 (periodo de matricula)</p>
+            </div>
+          </article>
+
+          <article class="contact-detail">
+            <div class="contact-detail-icon">🏫</div>
+            <div class="contact-detail-text">
+              <strong>Secretaria</strong>
+              <p>Para consultas presenciales, acercate directamente a Secretaria durante el horario indicado.</p>
+            </div>
+          </article>
+
+          <article class="contact-detail">
+            <div class="contact-detail-icon">📋</div>
+            <div class="contact-detail-text">
+              <strong>Matricula extraordinaria</strong>
+              <p>Febrero 2026. Estudiantes que no completaron su matricula en el periodo ordinario pueden acercarse a Secretaria.</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Form -->
+        <div class="contact-form" id="contact-form-wrap">
+          <h2>Envianos un mensaje</h2>
+          <p>Completa el formulario y te responderemos a traves del medio que indiques.</p>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required autocomplete="family-name">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="correo">Correo electronico</label>
+              <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" autocomplete="email">
+            </div>
+
+            <div class="form-group">
+              <label for="asunto">Asunto</label>
+              <select id="asunto" name="asunto" required>
+                <option value="" disabled selected>Selecciona un tema</option>
+                <option value="matricula">Proceso de matricula</option>
+                <option value="oferta">Oferta academica</option>
+                <option value="reingreso">Reingreso</option>
+                <option value="extracurriculares">Actividades extracurriculares</option>
+                <option value="otro">Otro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu consulta aqui..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Enviar mensaje &rarr;</button>
+          </form>
+
+          <!-- Success message (hidden by default) -->
+          <div class="form-success" id="form-success">
+            <div class="form-success-icon">✅</div>
+            <h3>Mensaje enviado</h3>
+            <p>Gracias por contactarnos. Revisaremos tu mensaje y te responderemos pronto.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Google Maps -->
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">Ubicacion</p>
+        <h2>Encontranos en el mapa</h2>
+        <p>Instituto Gubernamental Polivalente "Roberto Micheletti Bain", Agua Blanca Sur, El Progreso, Yoro.</p>
+      </div>
+      <div class="container">
+        <div class="map-embed-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1841.9119915969716!2d-87.8716637980081!3d15.25578491226647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f666d2084f287cd%3A0x59482eec676a9622!2sInstituto%20Roberto%20Michelleti%20Bain!5e1!3m2!1ses-419!2shn!4v1780979804499!5m2!1ses-419!2shn"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicacion del Instituto Roberto Micheletti Bain en Google Maps"
+          ></iframe>
+        </div>
+        <div style="text-align:center; margin-top: 20px;">
+          <a class="btn primary" href="https://maps.google.com/?q=Instituto+Roberto+Michelleti+Bain+Agua+Blanca+Sur+El+Progreso+Yoro" target="_blank" rel="noopener noreferrer">
+            Abrir en Google Maps
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+   <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
+        <a href="https://www.facebook.com/profile.php?id=100063787262594"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visítanos en Facebook"
+           style="
+             display: inline-block;
+             flex-shrink: 0;
+             width: 42px;
+             height: 42px;
+             border-radius: 50%;
+             overflow: hidden;
+             box-shadow: 0 2px 8px rgba(0,0,0,.35);
+             transition: transform .2s ease, box-shadow .2s ease;
+           "
+           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
+           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
+          <img src="imagenes/facebook.png"
+               alt="Facebook del instituto"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Bain</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    const form = document.getElementById('contact-form');
+    const successMsg = document.getElementById('form-success');
+    const submitBtn = form.querySelector('.form-submit');
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const nombre  = document.getElementById('nombre').value.trim();
+      const asunto  = document.getElementById('asunto').value;
+      const mensaje = document.getElementById('mensaje').value.trim();
+
+      // Validacion
+      if (!nombre || !asunto || !mensaje) {
+        [document.getElementById('nombre'), document.getElementById('asunto'), document.getElementById('mensaje')].forEach(el => {
+          if (!el.value.trim()) {
+            el.style.borderColor = '#e05252';
+            el.addEventListener('input', () => { el.style.borderColor = ''; }, { once: true });
+          }
+        });
+        return;
+      }
+
+      // Estado de carga
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      const apellido = document.getElementById('apellido').value.trim();
+      const correo   = document.getElementById('correo').value.trim();
+
+      try {
+        const res = await fetch('https://formspree.io/f/mbdeyoov', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({
+            nombre:   nombre + ' ' + apellido,
+            correo:   correo || 'No indicado',
+            asunto:   asunto,
+            mensaje:  mensaje,
+            _subject: 'Contacto web Instituto RMB - ' + asunto,
+            _replyto: correo || ''
+          })
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          throw new Error('Error del servidor');
+        }
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar mensaje →';
+        alert('Hubo un problema al enviar el mensaje. Por favor intentalo de nuevo o contáctanos directamente a tareasiiibtpi@gmail.com');
+      }
+    });
+  </script>
+</body>
+</html>

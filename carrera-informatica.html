@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bachillerato Tecnico Profesional en Informatica — Instituto Roberto Micheletti Bain">
+  <title>BTP Informatica | Instituto Roberto Micheletti Bain</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <style>
+    /* ── HERO CARRERA ── */
+    .carrera-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--azul-noche);
+      color: var(--blanco);
+      padding: 96px 0 80px;
+    }
+
+    .carrera-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(200,30,30,.4) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 50% at 90% 20%, rgba(240,80,40,.2) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 60% at 80% 90%, rgba(180,20,20,.25) 0%, transparent 50%),
+        linear-gradient(170deg, #1a0303 0%, #2e0606 55%, #1a0303 100%);
+    }
+
+    .carrera-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+
+    .carrera-hero-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .carrera-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.6);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      transition: color .2s;
+    }
+
+    .carrera-back:hover { color: var(--blanco); }
+    .carrera-back svg { transition: transform .2s; }
+    .carrera-back:hover svg { transform: translateX(-3px); }
+
+    .carrera-tag-hero {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 16px;
+      border-radius: 999px;
+      background: rgba(210,30,30,.35);
+      border: 1px solid rgba(220,50,50,.6);
+      color: #ffb0a8;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      backdrop-filter: blur(8px);
+    }
+
+    .carrera-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 20px;
+    }
+
+    .carrera-hero h1 span { color: #ff8a80; }
+
+    .carrera-hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,.75);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 36px;
+    }
+
+    .carrera-hero-logo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      display: grid;
+      place-items: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 60px rgba(200,30,30,.4), var(--sombra-md);
+      flex-shrink: 0;
+    }
+
+    .carrera-hero-logo img {
+      width: 75%;
+      object-fit: contain;
+    }
+
+    .carrera-hero-logo .logo-dark  { display: block; }
+    .carrera-hero-logo .logo-light { display: none; }
+    [data-theme="light"] .carrera-hero-logo .logo-dark  { display: none; }
+    [data-theme="light"] .carrera-hero-logo .logo-light { display: block; }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      font-size: .8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.85);
+      backdrop-filter: blur(6px);
+    }
+
+    /* ── STATS BAND ── */
+    .carrera-stats {
+      background: linear-gradient(135deg, #b01010, #e03030);
+      padding: 40px 0;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .stat-item {
+      padding: 20px 28px;
+      border-right: 1px solid rgba(255,255,255,.15);
+      color: var(--blanco);
+      text-align: center;
+    }
+
+    .stat-item:last-child { border-right: none; }
+
+    .stat-item strong {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-item span {
+      font-size: .8rem;
+      color: rgba(255,255,255,.7);
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* ── CONTENT SECTIONS ── */
+    .carrera-content { padding: 80px 0; }
+
+    .content-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .content-block.reverse { direction: rtl; }
+    .content-block.reverse > * { direction: ltr; }
+
+    .block-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 14px;
+      border-radius: 999px;
+      background: rgba(200,30,30,.1);
+      border: 1px solid rgba(200,30,30,.22);
+      color: #c01818;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    [data-theme="dark"] .block-label {
+      background: rgba(200,30,30,.18);
+      border-color: rgba(230,60,60,.35);
+      color: #ff9090;
+    }
+
+    .block-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .block-text {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: .97rem;
+    }
+
+    [data-theme="dark"] .block-text { color: rgba(255,255,255,.65); }
+
+    /* ── MATERIAS GRID ── */
+    .materias-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .materia-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: var(--r);
+      background: var(--celeste-2);
+      border: 1px solid var(--linea);
+      transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+    }
+
+    [data-theme="dark"] .materia-item {
+      background: rgba(200,30,30,.08);
+      border-color: rgba(220,50,50,.18);
+    }
+
+    .materia-item:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sombra);
+    }
+
+    .materia-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--r-sm);
+      background: linear-gradient(135deg, #b01010, #e03030);
+      display: grid;
+      place-items: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(200,30,30,.35);
+    }
+
+    .materia-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--texto);
+      line-height: 1.35;
+    }
+
+    [data-theme="dark"] .materia-name { color: var(--blanco); }
+
+    .materia-desc {
+      font-size: .78rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    [data-theme="dark"] .materia-desc { color: rgba(255,255,255,.5); }
+
+    /* ── SALIDAS LABORALES ── */
+    .salidas-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .salida-card {
+      padding: 28px 24px;
+      border-radius: var(--r-lg);
+      background: var(--blanco);
+      border: 1px solid var(--linea);
+      box-shadow: var(--sombra);
+      text-align: center;
+      transition: transform .3s var(--ease-spring), box-shadow .3s;
+    }
+
+    [data-theme="dark"] .salida-card {
+      background: rgba(255,255,255,.04);
+      border-color: rgba(255,255,255,.08);
+    }
+
+    .salida-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra-md);
+    }
+
+    .salida-icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .salida-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      letter-spacing: -.01em;
+    }
+
+    .salida-card p {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    [data-theme="dark"] .salida-card p { color: rgba(255,255,255,.55); }
+
+    /* ── PERFIL CTA ── */
+    .perfil-band {
+      padding: 72px 0;
+      background: var(--fondo);
+    }
+
+    [data-theme="dark"] .perfil-band {
+      background: rgba(200,30,30,.05);
+    }
+
+    .perfil-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .perfil-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .perfil-list li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: .93rem;
+      font-weight: 600;
+      color: var(--texto);
+    }
+
+    [data-theme="dark"] .perfil-list li { color: rgba(255,255,255,.82); }
+
+    .perfil-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e03030, var(--naranja));
+      flex-shrink: 0;
+    }
+
+    .cta-card {
+      padding: 40px 36px;
+      border-radius: var(--r-xl);
+      background: linear-gradient(150deg, #8b0000, #c91a1a);
+      color: var(--blanco);
+      box-shadow: var(--sombra-fuerte);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 90% 10%, rgba(244,123,32,.3) 0%, transparent 50%);
+    }
+
+    .cta-card h3 {
+      position: relative;
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+
+    .cta-card p {
+      position: relative;
+      color: rgba(255,255,255,.75);
+      margin-bottom: 24px;
+      font-size: .95rem;
+    }
+
+    .btn-cta {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r);
+      background: var(--naranja);
+      color: var(--blanco);
+      font-size: .9rem;
+      font-weight: 800;
+      text-decoration: none;
+      letter-spacing: .02em;
+      transition: background .2s, transform .2s var(--ease-spring), box-shadow .2s;
+      box-shadow: 0 6px 24px rgba(244,123,32,.45);
+    }
+
+    .btn-cta:hover {
+      background: var(--naranja-2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(244,123,32,.55);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: var(--r);
+      background: transparent;
+      color: rgba(255,255,255,.85);
+      font-size: .9rem;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,.3);
+      margin-top: 12px;
+      transition: background .2s, color .2s;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,.1);
+      color: var(--blanco);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .carrera-hero-inner { grid-template-columns: 1fr; }
+      .carrera-hero-logo { width: 140px; height: 140px; justify-self: start; }
+      .content-block, .content-block.reverse { grid-template-columns: 1fr; direction: ltr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .salidas-grid { grid-template-columns: 1fr 1fr; }
+      .perfil-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .salidas-grid { grid-template-columns: 1fr; }
+      .materias-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">
+          <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
+          <img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB">
+        </span>
+        <span class="brand-divider"></span>
+        <span class="brand-text">
+          <span class="brand-name">Instituto Roberto Micheletti Bain</span>
+          <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="carrera-hero">
+      <div class="container carrera-hero-inner">
+        <div>
+          <a class="carrera-back" href="oferta-academica.html">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Oferta academica
+          </a>
+          <div class="carrera-tag-hero">BTP · Bachillerato Tecnico Profesional</div>
+          <h1>BTP en <span>Informatica</span></h1>
+          <p class="carrera-hero-desc">Formacion tecnica orientada al uso de la tecnologia, herramientas digitales y fundamentos de informatica aplicada. Prepara a los estudiantes para el mundo laboral y la educacion superior en el area tecnologica.</p>
+          <div class="hero-pills">
+            <span class="hero-pill">💻 Tecnologia</span>
+            <span class="hero-pill">📅 10mo – 12mo grado</span>
+            <span class="hero-pill">🎓 Titulo tecnico</span>
+            <span class="hero-pill">🕐 Jornada matutina</span>
+          </div>
+        </div>
+        <div class="carrera-hero-logo">
+          <img class="logo-dark"  src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informatica">
+          <img class="logo-light" src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informatica">
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="carrera-stats">
+      <div class="container">
+        <div class="stats-row">
+          <div class="stat-item">
+            <strong>3</strong>
+            <span>Anos de duracion</span>
+          </div>
+          <div class="stat-item">
+            <strong>10mo</strong>
+            <span>Grado de inicio</span>
+          </div>
+          <div class="stat-item">
+            <strong>BTP</strong>
+            <span>Titulo obtenido</span>
+          </div>
+          <div class="stat-item">
+            <strong>100%</strong>
+            <span>Practica aplicada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESCRIPCION + MATERIAS -->
+    <section class="carrera-content">
+      <div class="container">
+        <div class="content-block">
+          <div>
+            <div class="block-label">Sobre la carrera</div>
+            <h2 class="block-title">Una formacion tecnica con base solida</h2>
+            <p class="block-text">El Bachillerato Tecnico Profesional en Informatica prepara a los estudiantes con conocimientos practicos y teoricos sobre sistemas informaticos, herramientas de productividad, redes basicas y soporte tecnico. Al finalizar, el estudiante obtiene un titulo reconocido por la Secretaria de Educacion de Honduras.</p>
+            <br>
+            <p class="block-text">Esta carrera es ideal para quienes disfrutan trabajar con computadoras, resolver problemas tecnologicos y quieren una salida laboral inmediata o continuar estudios universitarios en el area de tecnologia.</p>
+          </div>
+          <div>
+            <div class="block-label">Materias tecnicas</div>
+            <h2 class="block-title">Lo que aprenderas</h2>
+            <div class="materias-grid">
+              <div class="materia-item">
+                <div class="materia-icon">💻</div>
+                <div>
+                  <div class="materia-name">Informatica Aplicada</div>
+                  <div class="materia-desc">Uso de software de oficina y herramientas digitales</div>
+                </div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-icon">🌐</div>
+                <div>
+                  <div class="materia-name">Analisis y Diseño de Sistemas</div>
+                  <div class="materia-desc">Técnicas de análisis y diseño para el desarrollo de soluciones informáticas</div>
+                </div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-icon">🛠️</div>
+                <div>
+                  <div class="materia-name">Legislación aplicada a la Informatica</div>
+                  <div class="materia-desc">Conocimientos sobre leyes y regulaciones aplicables al uso de la informacion</div>
+                </div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-icon">🔐</div>
+                <div>
+                  <div class="materia-name">Ofimatica</div>
+                  <div class="materia-desc">Uso de software de oficina y herramientas digitales</div>
+                </div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-icon">📊</div>
+                <div>
+                  <div class="materia-name">Programación</div>
+                  <div class="materia-desc">Fundamentos de programación y resolución de problemas </div>
+                </div>
+              </div>
+              <div class="materia-item">
+                <div class="materia-icon">🖥️</div>
+                <div>
+                  <div class="materia-name">Sistemas Operativos</div>
+                  <div class="materia-desc">Configuracion y administracion basica</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGEN BANNER -->
+    <div class="container" style="padding-bottom: 0; padding-top: 0;">
+      <img src="imagenes/otros/area_info.jpg" alt="Area de Informatica"
+        style="width:100%; height:320px; object-fit:cover; border-radius:var(--r-lg); display:block;">
+    </div>
+
+    <!-- SALIDAS LABORALES -->
+    <section class="section band">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Despues de graduarte</p>
+          <h2>Salidas profesionales</h2>
+          <p>Con este bachillerato puedes insertarte en el mercado laboral directamente o continuar estudios universitarios en el area de tecnologia e informatica.</p>
+        </div>
+        <div class="salidas-img-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
+          <img src="imagenes/otros/laboratorio_1.jpeg" alt="Estudiantes de Informatica"
+            style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
+          <img src="imagenes/otros/laboratorio_2.jpeg" alt="Equipos del laboratorio"
+            style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
+          <img src="imagenes/informatica/taller.jpg" alt="Taller de Informatica"
+            style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
+        </div>
+        <div class="salidas-grid">
+          <div class="salida-card">
+            <span class="salida-icon">🖥️</span>
+            <h4>Tecnico en soporte</h4>
+            <p>Reparacion, mantenimiento y configuracion de computadoras en empresas o de forma independiente.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">📋</span>
+            <h4>Asistente administrativo</h4>
+            <p>Manejo de documentos, bases de datos y herramientas digitales en oficinas y negocios.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">🌐</span>
+            <h4>Operador de sistemas</h4>
+            <p>Administracion basica de equipos, redes y sistemas informaticos en organizaciones.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">🎓</span>
+            <h4>Estudios universitarios</h4>
+            <p>Base solida para continuar en Ingenieria en Sistemas, Informatica o carreras afines.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">💼</span>
+            <h4>Emprendimiento digital</h4>
+            <p>Herramientas para ofrecer servicios tecnologicos de forma independiente.</p>
+          </div>
+          <div class="salida-card">
+            <span class="salida-icon">📡</span>
+            <h4>Instalacion de redes</h4>
+            <p>Configuracion de redes domesticas y empresariales basicas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERFIL + CTA -->
+    <section class="perfil-band">
+      <div class="container perfil-inner">
+        <div>
+          <div class="block-label">Perfil del estudiante</div>
+          <h2 class="block-title">Esta carrera es para ti si…</h2>
+          <ul class="perfil-list">
+            <li>Te gustan las computadoras y la tecnologia</li>
+            <li>Disfrutas resolver problemas y encontrar soluciones</li>
+            <li>Te interesa el soporte tecnico y los sistemas</li>
+            <li>Quieres trabajar con herramientas digitales</li>
+            <li>Buscas un titulo tecnico reconocido</li>
+            <li>Tienes curiosidad por como funcionan los sistemas</li>
+          </ul>
+        </div>
+        <div class="cta-card">
+          <h3>¿Listo para inscribirte?</h3>
+          <p>El proceso de matricula 2026 esta abierto. Conoce los requisitos y pasos para ingresar al BTP en Informatica.</p>
+          <a href="matricula.html" class="btn-cta">
+            Ver matricula 2026
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+          <br>
+          <a href="contacto.html" class="btn-outline">Contactar al instituto</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
+        <a href="https://www.facebook.com/profile.php?id=100063787262594"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visítanos en Facebook"
+           style="
+             display: inline-block;
+             flex-shrink: 0;
+             width: 42px;
+             height: 42px;
+             border-radius: 50%;
+             overflow: hidden;
+             box-shadow: 0 2px 8px rgba(0,0,0,.35);
+             transition: transform .2s ease, box-shadow .2s ease;
+           "
+           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
+           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
+          <img src="imagenes/facebook.png"
+               alt="Facebook del instituto"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Bain</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

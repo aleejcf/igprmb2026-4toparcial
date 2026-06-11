@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividades y eventos del Instituto Roberto Micheletti Bain.">
+  <title>Actividades | Instituto Roberto Micheletti Bain</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a class="active" href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Eventos y actividades</p>
+          <h1>Vida estudiantil del instituto</h1>
+          <p>Esta pagina esta preparada para promocionar actividades reales del instituto: eventos academicos, civicos, deportivos, culturales y tecnicos.</p>
+        </div>
+        <img src="imagenes/otros/vida_estudiantil.jpg" alt="Ilustracion de actividades institucionales" loading="eager">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cards-4">
+        <article class="activity-card" id="academicas" onclick="abrirGaleria('academicas')" style="cursor:pointer;">
+          <span class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </span>
+          <h2>Actividades academicas</h2>
+          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+            <li>· Feria de Inteligencia Artificial</li>
+            <li>· Capacitaciones al alumnado</li>
+            <li>· Graduacion 2025</li>
+          </ul>
+          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+            Ver galería
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </span>
+        </article>
+        <article class="activity-card" id="civicas" onclick="abrirGaleria('civicas')" style="cursor:pointer;">
+          <span class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </span>
+          <h2>Actividades civicas</h2>
+          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+            <li>· Inauguracion de clases</li>
+            <li>· Reunion de Padres de Familia</li>
+            <li>· Dia del Idioma Español</li>
+            <li>· Dia de la Madre y del Padre</li>
+            <li>· El Valor de la Decision</li>
+            <li>· Dia de la Tierra</li>
+            <li>· Dia del Arbol</li>
+            <li>· Dia del Medio Ambiente</li>
+          </ul>
+          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+            Ver galería
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </span>
+        </article>
+        <article class="activity-card" id="deportivas" onclick="abrirGaleria('deportivas')" style="cursor:pointer;">
+          <span class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
+          </span>
+          <h2>Actividades deportivas</h2>
+          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+            <li>· Eleccion del Chico y Chica Verano</li>
+            <li>· Elecciones Estudiantiles</li>
+            <li>· Toma de Posesion del Gobierno Estudiantil</li>
+          </ul>
+          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+            Ver galería
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </span>
+        </article>
+        <article class="activity-card" id="tecnicas" onclick="abrirGaleria('tecnicas')" style="cursor:pointer;">
+          <span class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+          </span>
+          <h2>Actividades tecnicas</h2>
+          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+            <li>· Feria de Inteligencia Artificial</li>
+            <li>· Capacitaciones al alumnado</li>
+          </ul>
+          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+            Ver galería
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          </span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================== MODAL GALERÍA ===================== -->
+    <div id="galeria-modal" style="
+      display:none;
+      position:fixed;
+      inset:0;
+      z-index:9999;
+      background:rgba(0,0,0,.88);
+      backdrop-filter:blur(6px);
+      -webkit-backdrop-filter:blur(6px);
+      align-items:center;
+      justify-content:center;
+      padding:1rem;
+    " role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+
+      <div style="
+        background:var(--surface,#fff);
+        border-radius:20px;
+        width:100%;
+        max-width:900px;
+        max-height:92vh;
+        overflow:hidden;
+        display:flex;
+        flex-direction:column;
+        box-shadow:0 24px 80px rgba(0,0,0,.5);
+        animation: modalEntrada .3s ease;
+      ">
+        <!-- Cabecera -->
+        <div style="display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid rgba(128,128,128,.15);">
+          <div style="display:flex;align-items:center;gap:.75rem;">
+            <span id="modal-icono" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:var(--accent-bg,#eef2ff);color:var(--accent,#3b6cf8);"></span>
+            <div>
+              <p style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.55;margin:0;" id="modal-categoria">Categoría</p>
+              <h3 style="margin:0;font-size:1.1rem;font-weight:700;" id="modal-titulo">Título</h3>
+            </div>
+          </div>
+          <button onclick="cerrarGaleria()" aria-label="Cerrar" style="
+            background:none;border:none;cursor:pointer;padding:.5rem;border-radius:8px;
+            opacity:.6;transition:opacity .2s;display:flex;align-items:center;
+          " onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.6">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+
+        <!-- Visor principal -->
+        <div style="position:relative;background:#000;flex-shrink:0;">
+          <!-- Imagen -->
+          <img id="modal-img" src="" alt="" style="
+            width:100%;height:460px;object-fit:contain;display:block;
+            transition:opacity .25s ease;
+          ">
+          <!-- Video local -->
+          <div id="modal-video-wrap" style="display:none;width:100%;height:460px;background:#000;">
+            <video id="modal-video" controls style="width:100%;height:100%;display:block;outline:none;">
+              Tu navegador no soporta reproducción de video.
+            </video>
+          </div>
+          <!-- Flechas -->
+          <button onclick="navegarMedia(-1)" aria-label="Anterior" style="
+            position:absolute;left:12px;top:50%;transform:translateY(-50%);
+            background:rgba(0,0,0,.55);border:none;border-radius:50%;width:44px;height:44px;
+            cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;
+            transition:background .2s;
+          " onmouseover="this.style.background='rgba(0,0,0,.85)'" onmouseout="this.style.background='rgba(0,0,0,.55)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button onclick="navegarMedia(1)" aria-label="Siguiente" style="
+            position:absolute;right:12px;top:50%;transform:translateY(-50%);
+            background:rgba(0,0,0,.55);border:none;border-radius:50%;width:44px;height:44px;
+            cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;
+            transition:background .2s;
+          " onmouseover="this.style.background='rgba(0,0,0,.85)'" onmouseout="this.style.background='rgba(0,0,0,.55)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+          <!-- Contador -->
+          <span id="modal-contador" style="
+            position:absolute;bottom:12px;right:16px;background:rgba(0,0,0,.6);
+            color:#fff;font-size:.78rem;padding:.25rem .65rem;border-radius:99px;font-weight:600;
+          ">1 / 1</span>
+          <!-- Badge tipo -->
+          <span id="modal-badge-tipo" style="
+            position:absolute;top:12px;left:12px;background:rgba(0,0,0,.6);
+            color:#fff;font-size:.72rem;padding:.22rem .6rem;border-radius:99px;font-weight:700;
+            letter-spacing:.05em;text-transform:uppercase;display:none;
+          ">VIDEO</span>
+        </div>
+
+        <!-- Pie: caption + miniaturas -->
+        <div style="padding:1rem 1.5rem;overflow-y:auto;">
+          <p id="modal-caption" style="font-size:.88rem;opacity:.7;margin:0 0 1rem;min-height:1.2em;"></p>
+          <!-- Tira de miniaturas -->
+          <div id="modal-thumbs" style="display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.25rem;"></div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      @keyframes modalEntrada {
+        from { opacity:0; transform:scale(.96) translateY(12px); }
+        to   { opacity:1; transform:scale(1) translateY(0); }
+      }
+      #modal-thumbs::-webkit-scrollbar { height:4px; }
+      #modal-thumbs::-webkit-scrollbar-thumb { background:rgba(128,128,128,.3); border-radius:4px; }
+      .modal-thumb {
+        flex-shrink:0; width:72px; height:54px; border-radius:8px;
+        object-fit:cover; cursor:pointer; border:2.5px solid transparent;
+        transition:border-color .15s, opacity .15s; opacity:.65;
+      }
+      .modal-thumb.activa { border-color:var(--accent,#3b6cf8); opacity:1; }
+      .modal-thumb-video {
+        flex-shrink:0; width:72px; height:54px; border-radius:8px;
+        cursor:pointer; border:2.5px solid transparent;
+        background:#111; display:flex; align-items:center; justify-content:center;
+        color:#fff; font-size:.65rem; font-weight:700; opacity:.65; transition:opacity .15s,border-color .15s;
+        text-align:center; line-height:1.2; flex-direction:column; gap:2px;
+      }
+      .modal-thumb-video.activa { border-color:var(--accent,#3b6cf8); opacity:1; }
+      .modal-thumb-video svg { flex-shrink:0; }
+    </style>
+
+    <script>
+      // ── Datos de cada categoría ──────────────────────────────────
+      // Para agregar imágenes: { type:'img',   src:'imagenes/carpeta/archivo.jpg',  caption:'Descripción' }
+      // Para agregar videos locales: { type:'video', src:'videos/mi_video.mp4',     caption:'Descripción' }
+      // Formatos de video soportados: .mp4, .webm, .ogg
+      const GALERIAS = {
+        academicas: {
+          titulo: 'Actividades Académicas',
+          categoria: 'Académico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+          media: [
+            { type:'img',   src:'imagenes/acto_civico/marvin.jpg', caption:'Actividad académica institucional' },
+            { type:'img',   src:'imagenes/acto_civico/stand.jpg',  caption:'Stand de exposición estudiantil' },
+            // { type:'video', src:'videos/feria_ia.mp4',             caption:'Video de la Feria de IA' },
+          ]
+        },
+        civicas: {
+          titulo: 'Actividades Cívicas',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+          media: [
+            { type:'img',   src:'imagenes/acto_civico/marvin.jpg',          caption:'Acto cívico institucional' },
+            { type:'img',   src:'imagenes/acto_civico/decision.jpg',         caption:'Acto Cívico — El Valor de la Decisión' },
+            { type:'img',   src:'imagenes/acto_civico/toma_mesa.jpg',        caption:'Toma de posesión del Gobierno Estudiantil' },
+            { type:'img',   src:'imagenes/acto_civico/escenario_idioma.jpg', caption:'Acto Cívico — Día del Idioma Español' },
+            { type:'img',   src:'imagenes/acto_civico/dia_pa_ma.jpg',        caption:'Acto Cívico — Día de la Madre y del Padre' },
+            // { type:'video', src:'videos/acto_civico.mp4',                    caption:'Video del acto cívico' },
+          ]
+        },
+        deportivas: {
+          titulo: 'Actividades Deportivas y Estudiantiles',
+          categoria: 'Deportivo / Gobierno Estudiantil',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>`,
+          media: [
+            { type:'img',   src:'imagenes/acto_civico/toma_mesa.jpg', caption:'Elecciones y Gobierno Estudiantil' },
+            { type:'img',   src:'imagenes/otros/jovenes_e.jpg',        caption:'Participación estudiantil' },
+            // { type:'video', src:'videos/chico_chica_verano.mp4',       caption:'Elección del Chico y Chica Verano' },
+          ]
+        },
+        tecnicas: {
+          titulo: 'Actividades Técnicas',
+          categoria: 'Técnico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>`,
+          media: [
+            { type:'img',   src:'imagenes/acto_civico/stand.jpg',  caption:'Feria de Inteligencia Artificial — stands de proyectos' },
+            { type:'img',   src:'imagenes/acto_civico/marvin.jpg', caption:'Capacitaciones al alumnado' },
+            // { type:'video', src:'videos/capacitacion.mp4',         caption:'Video de capacitación técnica' },
+          ]
+        }
+      };
+
+      let mediaActual = [];
+      let indiceActual = 0;
+
+      function abrirGaleria(categoria) {
+        const datos = GALERIAS[categoria];
+        if (!datos) return;
+        mediaActual = datos.media;
+        indiceActual = 0;
+
+        document.getElementById('modal-titulo').textContent    = datos.titulo;
+        document.getElementById('modal-categoria').textContent = datos.categoria;
+        document.getElementById('modal-icono').innerHTML       = datos.icono;
+
+        construirMiniaturas();
+        mostrarMedia(0);
+
+        const modal = document.getElementById('galeria-modal');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function cerrarGaleria() {
+        const modal = document.getElementById('galeria-modal');
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+        // Pausar video local si estaba reproduciéndose
+        const vid = document.getElementById('modal-video');
+        vid.pause();
+        vid.src = '';
+      }
+
+      function mostrarMedia(idx) {
+        const item = mediaActual[idx];
+        indiceActual = idx;
+
+        const img       = document.getElementById('modal-img');
+        const videoWrap = document.getElementById('modal-video-wrap');
+        const vid       = document.getElementById('modal-video');
+        const badge     = document.getElementById('modal-badge-tipo');
+        const caption   = document.getElementById('modal-caption');
+        const contador  = document.getElementById('modal-contador');
+
+        // Pausar video anterior
+        vid.pause();
+        vid.src = '';
+
+        if (item.type === 'video') {
+          img.style.display       = 'none';
+          videoWrap.style.display = 'block';
+          badge.style.display     = 'block';
+          vid.src = item.src;
+          vid.load();
+        } else {
+          videoWrap.style.display = 'none';
+          badge.style.display     = 'none';
+          img.style.display       = 'block';
+          img.style.opacity = '0';
+          img.src = item.src;
+          img.onload = () => { img.style.opacity = '1'; };
+        }
+
+        caption.textContent  = item.caption || '';
+        contador.textContent = `${idx + 1} / ${mediaActual.length}`;
+
+        // Actualizar miniatura activa
+        document.querySelectorAll('.modal-thumb, .modal-thumb-video').forEach((t, i) => {
+          t.classList.toggle('activa', i === idx);
+        });
+      }
+
+      function navegarMedia(dir) {
+        const nuevo = (indiceActual + dir + mediaActual.length) % mediaActual.length;
+        mostrarMedia(nuevo);
+      }
+
+      function construirMiniaturas() {
+        const cont = document.getElementById('modal-thumbs');
+        cont.innerHTML = '';
+        mediaActual.forEach((item, i) => {
+          if (item.type === 'video') {
+            // Miniatura de video: usamos un <video> para capturar el primer frame
+            const wrap = document.createElement('div');
+            wrap.className = 'modal-thumb-video';
+            wrap.style.position = 'relative';
+            wrap.onclick = () => mostrarMedia(i);
+
+            const prev = document.createElement('video');
+            prev.src = item.src;
+            prev.preload = 'metadata';
+            prev.muted = true;
+            prev.style.cssText = 'width:100%;height:100%;object-fit:cover;border-radius:6px;display:block;';
+            prev.currentTime = 0.5; // Captura el frame en 0.5s
+
+            // Ícono de play encima
+            const play = document.createElement('div');
+            play.style.cssText = `
+              position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+              background:rgba(0,0,0,.35);border-radius:6px;
+            `;
+            play.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+
+            wrap.appendChild(prev);
+            wrap.appendChild(play);
+            cont.appendChild(wrap);
+          } else {
+            const img = document.createElement('img');
+            img.className = 'modal-thumb';
+            img.src = item.src;
+            img.alt = item.caption || '';
+            img.onclick = () => mostrarMedia(i);
+            cont.appendChild(img);
+          }
+        });
+      }
+
+      // Cerrar con Escape o clic en fondo oscuro
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') cerrarGaleria();
+        if (e.key === 'ArrowLeft')  navegarMedia(-1);
+        if (e.key === 'ArrowRight') navegarMedia(1);
+      });
+      document.getElementById('galeria-modal').addEventListener('click', function(e) {
+        if (e.target === this) cerrarGaleria();
+      });
+    </script>
+
+    <section class="section visual-band">
+      <div class="container split align-center">
+        <div class="image-frame">
+          <img src="imagenes/otros/jovenes_e.jpg" alt="Ilustracion institucional para galeria" loading="lazy">
+        </div>
+        <div>
+          <p class="eyebrow">Galeria institucional</p>
+          <h2>Un espacio preparado para imagenes reales</h2>
+          <p>La galeria institucional destaca actividades, talleres, aulas y eventos que reflejan la participacion estudiantil y el trabajo educativo del centro.</p>
+          <div class="mini-list">
+            <span>Eventos</span>
+            <span>Talleres</span>
+            <span>Ferias</span>
+            <span>Actos civicos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" id="plantilla-eventos">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:2.5rem;">
+          <p class="eyebrow">Agenda institucional</p>
+          <h2>Actividades del año escolar</h2>
+          <p style="max-width:600px;margin:0 auto;">Registro de las actividades académicas, cívicas, culturales y técnicas realizadas y programadas en el Instituto Roberto Micheletti Bain.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;">
+
+          <!-- CIVICAS -->
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Inauguración de Clases</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia oficial de apertura del año escolar, con bienvenida a docentes, alumnos y padres de familia.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Reunión de Padres de Familia</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Encuentro institucional con padres y encargados para informar sobre el avance académico y compromisos del período.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Idioma Español</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Celebración del Día del Idioma con presentaciones literarias, declamación y valoración de la lengua castellana.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día de la Madre y del Padre</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Homenaje especial a las madres y padres de familia con participación de estudiantes y docentes del instituto.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — El Valor de la Decisión</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Jornada reflexiva orientada a motivar al estudiantado a tomar decisiones firmes para alcanzar sus metas de vida.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día de la Tierra</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Conmemoración del Día Mundial de la Tierra con actividades de conciencia ambiental y cuidado del entorno.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Árbol</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Actividad de sensibilización y siembra de árboles como parte del compromiso del instituto con el medio ambiente.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Medio Ambiente</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Jornada de reflexión y acción en torno al cuidado del planeta, con participación de toda la comunidad educativa.</p>
+          </article>
+
+          <!-- CULTURALES -->
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #7e3af2;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#7e3af2;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CULTURAL</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Elección del Chico y Chica Verano</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Concurso estudiantil de representación y valores que elige a los embajadores del instituto para la temporada de verano.</p>
+          </article>
+
+          <!-- ACADÉMICAS -->
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #057a55;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#057a55;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">ACADÉMICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Feria de Inteligencia Artificial</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Exposición de proyectos y demostraciones de herramientas de IA desarrollados por los alumnos de las orientaciones técnicas.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #057a55;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#057a55;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">ACADÉMICO</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Capacitaciones al Alumnado</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Talleres y capacitaciones formativas dirigidos al estudiantado en temas de habilidades técnicas, sociales y académicas.</p>
+          </article>
+
+          <!-- GOBIERNO ESTUDIANTIL -->
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #d03801;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#d03801;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GOBIERNO ESTUDIANTIL</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Elecciones Estudiantiles</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Proceso democrático en el que el estudiantado elige a sus representantes para el Gobierno Estudiantil del instituto.</p>
+          </article>
+
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #d03801;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#d03801;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GOBIERNO ESTUDIANTIL</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Toma de Posesión del Nuevo Gobierno Estudiantil</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia oficial de juramentación e investidura de los estudiantes electos como representantes del instituto.</p>
+          </article>
+
+          <!-- GRADUACIÓN -->
+          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #c27803;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
+              <span style="background:#c27803;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GRADUACIÓN</span>
+            </div>
+            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Graduación 2025</h3>
+            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia de graduación de la promoción 2025, celebrando el esfuerzo y logro académico de los nuevos bachilleres del instituto.</p>
+          </article>
+
+        </div>
+
+        <!-- Leyenda de categorías -->
+        <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;justify-content:center;">
+          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#1a56db;display:inline-block;"></span>Actos Cívicos</span>
+          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#057a55;display:inline-block;"></span>Académico</span>
+          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#7e3af2;display:inline-block;"></span>Cultural</span>
+          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#d03801;display:inline-block;"></span>Gobierno Estudiantil</span>
+          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#c27803;display:inline-block;"></span>Graduación</span>
+        </div>
+      </div>
+    </section>
+  
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Galería fotográfica</p>
+          <h2>Recuerdos de nuestras actividades</h2>
+          <p>Espacio destinado para mostrar fotografías de eventos académicos, cívicos, deportivos y culturales del instituto.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem;">
+          <img src="imagenes/acto_civico/marvin.jpg" alt="Fotografía institucional" style="width:100%;border-radius:16px;">
+          <img src="imagenes/acto_civico/decision.jpg" alt="Actividad estudiantil" style="width:100%;border-radius:16px;">
+          <img src="imagenes/acto_civico/stand.jpg" alt="Participación estudiantil" style="width:100%;border-radius:16px;">
+          <img src="imagenes/acto_civico/toma_mesa.jpg" alt="Evento institucional" style="width:100%;border-radius:16px;">
+          <img src="imagenes/acto_civico/escenario_idioma.jpg" alt="Actividad académica" style="width:100%;border-radius:16px;">
+          <img src="imagenes/acto_civico/dia_pa_ma.jpg" alt="Acto institucional" style="width:100%;border-radius:16px;">
+      </div>
+    </section>
+
+  </main>
+
+ <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
+        <a href="https://www.facebook.com/profile.php?id=100063787262594"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visítanos en Facebook"
+           style="
+             display: inline-block;
+             flex-shrink: 0;
+             width: 42px;
+             height: 42px;
+             border-radius: 50%;
+             overflow: hidden;
+             box-shadow: 0 2px 8px rgba(0,0,0,.35);
+             transition: transform .2s ease, box-shadow .2s ease;
+           "
+           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
+           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
+          <img src="imagenes/facebook.png"
+               alt="Facebook del instituto"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Bain</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

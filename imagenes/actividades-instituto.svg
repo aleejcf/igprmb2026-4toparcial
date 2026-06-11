@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustracion de actividades institucionales</title>
+  <desc id="desc">Tarjetas visuales para actividades academicas, civicas, deportivas y tecnicas.</desc>
+  <rect width="900" height="620" rx="38" fill="#e8f0fb"/>
+  <path d="M90 470 C230 360 350 520 482 420 C610 322 716 370 810 274" fill="none" stroke="#f47b20" stroke-width="24" stroke-linecap="round" opacity=".55"/>
+  <g transform="translate(120 110)">
+    <rect width="260" height="180" rx="22" fill="#ffffff"/>
+    <rect x="28" y="30" width="90" height="90" rx="18" fill="#0a2a6e"/>
+    <rect x="142" y="42" width="86" height="16" rx="8" fill="#f47b20"/>
+    <rect x="142" y="80" width="70" height="14" rx="7" fill="#d8e4f7"/>
+    <rect x="142" y="116" width="92" height="14" rx="7" fill="#d8e4f7"/>
+  </g>
+  <g transform="translate(460 110)">
+    <rect width="260" height="180" rx="22" fill="#ffffff"/>
+    <circle cx="83" cy="84" r="48" fill="#f47b20"/>
+    <path d="M58 86 H108 M83 60 V112" stroke="#ffffff" stroke-width="14" stroke-linecap="round"/>
+    <rect x="152" y="46" width="78" height="16" rx="8" fill="#0a2a6e"/>
+    <rect x="152" y="86" width="60" height="14" rx="7" fill="#d8e4f7"/>
+    <rect x="152" y="122" width="86" height="14" rx="7" fill="#d8e4f7"/>
+  </g>
+  <g transform="translate(292 344)">
+    <rect width="316" height="176" rx="22" fill="#0a2a6e"/>
+    <circle cx="88" cy="88" r="44" fill="#ffffff"/>
+    <path d="M88 44 V132 M44 88 H132" stroke="#f47b20" stroke-width="12" stroke-linecap="round"/>
+    <rect x="164" y="58" width="102" height="18" rx="9" fill="#ffffff"/>
+    <rect x="164" y="100" width="78" height="14" rx="7" fill="#ffffff" opacity=".55"/>
+  </g>
+</svg>

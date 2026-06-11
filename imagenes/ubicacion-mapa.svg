@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustracion de ubicacion</title>
+  <desc id="desc">Mapa estilizado de Agua Blanca Sur, El Progreso, Yoro.</desc>
+  <rect width="900" height="620" rx="38" fill="#f6f8fb"/>
+  <path d="M94 136 C226 92 276 186 386 150 C520 106 602 82 790 126" fill="none" stroke="#d8e4f7" stroke-width="34" stroke-linecap="round"/>
+  <path d="M78 420 C230 342 354 462 488 374 C612 294 704 344 826 270" fill="none" stroke="#d8e4f7" stroke-width="34" stroke-linecap="round"/>
+  <path d="M188 86 L266 534 M444 64 L382 552 M678 96 L616 536" stroke="#ffffff" stroke-width="26" stroke-linecap="round"/>
+  <g transform="translate(392 174)">
+    <path d="M58 0 C26 0 0 26 0 58 C0 113 58 178 58 178 C58 178 116 113 116 58 C116 26 90 0 58 0 Z" fill="#f47b20"/>
+    <circle cx="58" cy="58" r="28" fill="#ffffff"/>
+  </g>
+  <rect x="268" y="386" width="366" height="86" rx="18" fill="#0a2a6e"/>
+  <rect x="306" y="416" width="290" height="16" rx="8" fill="#ffffff"/>
+  <rect x="356" y="448" width="190" height="12" rx="6" fill="#ffffff" opacity=".55"/>
+</svg>

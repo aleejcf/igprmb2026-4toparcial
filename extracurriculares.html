@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Actividades extracurriculares del Instituto Roberto Micheletti Bain: danza, banda de guerra, futbol, voleibol y baloncesto.">
+  <title>Extracurriculares | Instituto Roberto Micheletti Bain</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegacion principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a class="active" href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Vida estudiantil</p>
+          <h1>Actividades extracurriculares</h1>
+          <p>Danza, banda de guerra y deportes que forman el caracter, el trabajo en equipo y el orgullo institucional de cada estudiante.</p>
+        </div>
+        <img src="imagenes/capacitaciones/capacitaciones.jpg" alt="Ilustracion de actividades extracurriculares" loading="eager">
+      </div>
+    </section>
+
+    <!-- Arte y cultura -->
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Arte y cultura</p>
+        <h2>Expresion, disciplina y orgullo institucional</h2>
+        <p>La danza y la banda de guerra representan al instituto en eventos civicos, desfiles y celebraciones, desarrollando disciplina y sentido de pertenencia.</p>
+      </div>
+
+      <div class="container extras-grid-2">
+        <article class="extra-card danza">
+          <div class="extra-card-bg"></div>
+          <div class="extra-card-body">
+            <span class="extra-tag">Arte</span>
+            <span class="extra-card-icon">💃</span>
+            <h3>Grupo de Danza</h3>
+            <p>El grupo de danza del instituto participa en actos civicos, festividades culturales y eventos estudiantiles. Una expresion artistica que fortalece la identidad y el trabajo en equipo.</p>
+          </div>
+        </article>
+
+        <article class="extra-card banda">
+          <div class="extra-card-bg"></div>
+          <div class="extra-card-body">
+            <span class="extra-tag">Civico</span>
+            <span class="extra-card-icon">🥁</span>
+            <h3>Banda de Guerra</h3>
+            <p>La banda de guerra del instituto desfila en conmemoraciones patrias y eventos civicos representando a la comunidad educativa con disciplina, precision y orgullo institucional.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ── ESTILOS GALERIAS + LIGHTBOX ── -->
+    <style>
+      .galeria-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+      }
+
+      .galeria-item {
+        position: relative;
+        aspect-ratio: 1/1;
+        border-radius: 10px;
+        overflow: hidden;
+        cursor: zoom-in;
+        background: var(--fondo);
+      }
+
+      .galeria-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform .4s cubic-bezier(.22,.61,.36,1), filter .4s ease;
+        filter: brightness(.95);
+      }
+
+      .galeria-item:hover img {
+        transform: scale(1.08);
+        filter: brightness(1.05);
+      }
+
+      .galeria-item::after {
+        content: "🔍";
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        font-size: 1.5rem;
+        background: rgba(3,9,26,.45);
+        opacity: 0;
+        transition: opacity .3s ease;
+        backdrop-filter: blur(2px);
+      }
+
+      .galeria-item:hover::after { opacity: 1; }
+
+      /* ── LIGHTBOX ── */
+      .lightbox-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(3,9,26,.92);
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity .3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .lightbox-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .lightbox-inner {
+        position: relative;
+        max-width: 900px;
+        width: 100%;
+        transform: scale(.92) translateY(16px);
+        transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+      }
+
+      .lightbox-overlay.active .lightbox-inner {
+        transform: scale(1) translateY(0);
+      }
+
+      .lightbox-inner img {
+        width: 100%;
+        max-height: 82vh;
+        object-fit: contain;
+        border-radius: 14px;
+        display: block;
+        box-shadow: 0 32px 80px rgba(0,0,0,.6);
+      }
+
+      .lightbox-caption {
+        color: rgba(255,255,255,.7);
+        font-size: .82rem;
+        font-weight: 600;
+        text-align: center;
+        margin-top: 12px;
+        letter-spacing: .04em;
+      }
+
+      .lightbox-close {
+        position: absolute;
+        top: -44px;
+        right: 0;
+        background: rgba(255,255,255,.12);
+        border: 1px solid rgba(255,255,255,.2);
+        color: #fff;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        font-size: 1.1rem;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        transition: background .2s;
+      }
+
+      .lightbox-close:hover { background: rgba(255,255,255,.25); }
+
+      .lightbox-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255,255,255,.12);
+        border: 1px solid rgba(255,255,255,.2);
+        color: #fff;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        transition: background .2s, transform .2s;
+      }
+
+      .lightbox-nav:hover {
+        background: rgba(255,255,255,.25);
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .lightbox-prev { left: -56px; }
+      .lightbox-next { right: -56px; }
+
+      @media (max-width: 900px) {
+        .galeria-grid { grid-template-columns: repeat(3, 1fr); }
+        .lightbox-prev { left: 8px; }
+        .lightbox-next { right: 8px; }
+      }
+
+      @media (max-width: 500px) {
+        .galeria-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+
+    <!-- LIGHTBOX (compartido para todas las galerias) -->
+    <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+      <div class="lightbox-inner">
+        <button class="lightbox-close" id="lb-close" aria-label="Cerrar">✕</button>
+        <button class="lightbox-nav lightbox-prev" id="lb-prev" aria-label="Anterior">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lb-next" aria-label="Siguiente">›</button>
+        <img id="lb-img" src="" alt="">
+        <p class="lightbox-caption" id="lb-caption"></p>
+      </div>
+    </div>
+
+    <!-- GALERIA DANZA -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" style="padding-bottom:40px;">
+          <p class="eyebrow">Galeria</p>
+          <h2>Cuadro de Danza del Micheletti</h2>
+          <p>Momentos del grupo de danza en presentaciones, ensayos y eventos institucionales.</p>
+        </div>
+        <div class="galeria-grid" data-galeria="danza">
+          <div class="galeria-item" data-src="imagenes/danza/foto1.jpg"  data-caption="Cuadro de Danza — Foto 1"><img  src="imagenes/danza/foto1.jpg"  alt="Cuadro de danza foto 1"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto2.jpg"  data-caption="Cuadro de Danza — Foto 2"><img  src="imagenes/danza/foto2.jpg"  alt="Cuadro de danza foto 2"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto3.jpg"  data-caption="Cuadro de Danza — Foto 3"><img  src="imagenes/danza/foto3.jpg"  alt="Cuadro de danza foto 3"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto4.jpg"  data-caption="Cuadro de Danza — Foto 4"><img  src="imagenes/danza/foto4.jpg"  alt="Cuadro de danza foto 4"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto5.jpg"  data-caption="Cuadro de Danza — Foto 5"><img  src="imagenes/danza/foto5.jpg"  alt="Cuadro de danza foto 5"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto6.jpg"  data-caption="Cuadro de Danza — Foto 6"><img  src="imagenes/danza/foto6.jpg"  alt="Cuadro de danza foto 6"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto7.jpg"  data-caption="Cuadro de Danza — Foto 7"><img  src="imagenes/danza/foto7.jpg"  alt="Cuadro de danza foto 7"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto8.jpg"  data-caption="Cuadro de Danza — Foto 8"><img  src="imagenes/danza/foto8.jpg"  alt="Cuadro de danza foto 8"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto9.jpg"  data-caption="Cuadro de Danza — Foto 9"><img  src="imagenes/danza/foto9.jpg"  alt="Cuadro de danza foto 9"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto10.jpg" data-caption="Cuadro de Danza — Foto 10"><img src="imagenes/danza/foto10.jpg" alt="Cuadro de danza foto 10" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto11.jpg" data-caption="Cuadro de Danza — Foto 11"><img src="imagenes/danza/foto11.jpg" alt="Cuadro de danza foto 11" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto12.jpg" data-caption="Cuadro de Danza — Foto 12"><img src="imagenes/danza/foto12.jpg" alt="Cuadro de danza foto 12" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto13.jpg" data-caption="Cuadro de Danza — Foto 13"><img src="imagenes/danza/foto13.jpg" alt="Cuadro de danza foto 13" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto14.jpg" data-caption="Cuadro de Danza — Foto 14"><img src="imagenes/danza/foto14.jpg" alt="Cuadro de danza foto 14" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/danza/foto15.jpg" data-caption="Cuadro de Danza — Foto 15"><img src="imagenes/danza/foto15.jpg" alt="Cuadro de danza foto 15" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERIA EDUCACION FISICA -->
+    <section class="section band">
+      <div class="container">
+        <div class="section-head" style="padding-bottom:40px;">
+          <p class="eyebrow">Galeria</p>
+          <h2>Educacion Fisica</h2>
+          <p>Actividades fisicas, deportivas y recreativas que forman parte de la vida estudiantil del instituto.</p>
+        </div>
+        <div class="galeria-grid" data-galeria="edfisica">
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto1.jpg"  data-caption="Educacion Fisica — Foto 1"><img  src="imagenes/educacion_fisica/foto1.jpg"  alt="Educacion fisica foto 1"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto2.jpg"  data-caption="Educacion Fisica — Foto 2"><img  src="imagenes/educacion_fisica/foto2.jpg"  alt="Educacion fisica foto 2"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto3.jpg"  data-caption="Educacion Fisica — Foto 3"><img  src="imagenes/educacion_fisica/foto3.jpg"  alt="Educacion fisica foto 3"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto4.jpg"  data-caption="Educacion Fisica — Foto 4"><img  src="imagenes/educacion_fisica/foto4.jpg"  alt="Educacion fisica foto 4"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto5.jpg"  data-caption="Educacion Fisica — Foto 5"><img  src="imagenes/educacion_fisica/foto5.jpg"  alt="Educacion fisica foto 5"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto6.jpg"  data-caption="Educacion Fisica — Foto 6"><img  src="imagenes/educacion_fisica/foto6.jpg"  alt="Educacion fisica foto 6"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto7.jpg"  data-caption="Educacion Fisica — Foto 7"><img  src="imagenes/educacion_fisica/foto7.jpg"  alt="Educacion fisica foto 7"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto8.jpg"  data-caption="Educacion Fisica — Foto 8"><img  src="imagenes/educacion_fisica/foto8.jpg"  alt="Educacion fisica foto 8"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto9.jpg"  data-caption="Educacion Fisica — Foto 9"><img  src="imagenes/educacion_fisica/foto9.jpg"  alt="Educacion fisica foto 9"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto10.jpg" data-caption="Educacion Fisica — Foto 10"><img src="imagenes/educacion_fisica/foto10.jpg" alt="Educacion fisica foto 10" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto11.jpg" data-caption="Educacion Fisica — Foto 11"><img src="imagenes/educacion_fisica/foto11.jpg" alt="Educacion fisica foto 11" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto12.jpg" data-caption="Educacion Fisica — Foto 12"><img src="imagenes/educacion_fisica/foto12.jpg" alt="Educacion fisica foto 12" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto13.jpg" data-caption="Educacion Fisica — Foto 13"><img src="imagenes/educacion_fisica/foto13.jpg" alt="Educacion fisica foto 13" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Script lightbox -->
+    <script>
+      (function () {
+        const overlay  = document.getElementById('lightbox');
+        const lbImg    = document.getElementById('lb-img');
+        const lbCap    = document.getElementById('lb-caption');
+        const lbClose  = document.getElementById('lb-close');
+        const lbPrev   = document.getElementById('lb-prev');
+        const lbNext   = document.getElementById('lb-next');
+
+        let currentItems = [];
+        let currentIndex = 0;
+
+        function openLightbox(items, index) {
+          currentItems = items;
+          currentIndex = index;
+          showImage();
+          overlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+          overlay.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+
+        function showImage() {
+          const item = currentItems[currentIndex];
+          lbImg.style.opacity = '0';
+          lbImg.style.transform = 'scale(.97)';
+          setTimeout(() => {
+            lbImg.src = item.dataset.src;
+            lbImg.alt = item.querySelector('img').alt;
+            lbCap.textContent = item.dataset.caption || '';
+            lbImg.style.transition = 'opacity .25s ease, transform .3s ease';
+            lbImg.style.opacity = '1';
+            lbImg.style.transform = 'scale(1)';
+          }, 120);
+        }
+
+        function navigate(dir) {
+          currentIndex = (currentIndex + dir + currentItems.length) % currentItems.length;
+          showImage();
+        }
+
+        // Bind clicks on all galeria items
+        document.querySelectorAll('.galeria-grid').forEach(grid => {
+          const items = Array.from(grid.querySelectorAll('.galeria-item'));
+          items.forEach((item, i) => {
+            item.addEventListener('click', () => openLightbox(items, i));
+          });
+        });
+
+        lbClose.addEventListener('click', closeLightbox);
+        lbPrev.addEventListener('click', () => navigate(-1));
+        lbNext.addEventListener('click', () => navigate(1));
+
+        // Click outside image closes
+        overlay.addEventListener('click', e => {
+          if (e.target === overlay) closeLightbox();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+          if (!overlay.classList.contains('active')) return;
+          if (e.key === 'Escape')      closeLightbox();
+          if (e.key === 'ArrowLeft')   navigate(-1);
+          if (e.key === 'ArrowRight')  navigate(1);
+        });
+      })();
+    </script>
+
+    <!-- Deportes -->
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">Deportes</p>
+        <h2>Competencia, salud y espiritu de equipo</h2>
+        <p>Los deportes forman parte de la vida estudiantil del instituto, promoviendo la salud, la integracion entre grados y la competencia sana entre companeros.</p>
+      </div>
+
+      <div class="container extras-grid-3">
+        <article class="extra-card futbol">
+          <div class="extra-card-bg"></div>
+          <div class="extra-card-body">
+            <span class="extra-tag">Deporte</span>
+            <span class="extra-card-icon">⚽</span>
+            <h3>Futbol</h3>
+            <p>Jornadas deportivas entre secciones y grados, fomentando la integracion, el liderazgo y la competencia sana dentro del instituto.</p>
+          </div>
+        </article>
+
+        <article class="extra-card voleibol">
+          <div class="extra-card-bg"></div>
+          <div class="extra-card-body">
+            <span class="extra-tag">Deporte</span>
+            <span class="extra-card-icon">🏐</span>
+            <h3>Voleibol</h3>
+            <p>El voleibol es una actividad que refuerza el trabajo en equipo, la comunicacion y el compañerismo entre los estudiantes del instituto.</p>
+          </div>
+        </article>
+
+        <article class="extra-card baloncesto">
+          <div class="extra-card-bg"></div>
+          <div class="extra-card-body">
+            <span class="extra-tag">Deporte</span>
+            <span class="extra-card-icon">🏀</span>
+            <h3>Baloncesto</h3>
+            <p>El baloncesto promueve la agilidad, la estrategia y el espiritu deportivo, con encuentros organizados que involucran a distintas secciones del instituto.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section visual-band">
+      <div class="container split align-center">
+        <div>
+          <p class="eyebrow">Mas que clases</p>
+          <h2>Formacion integral del estudiante</h2>
+          <p>Las actividades extracurriculares complementan la educacion academica desarrollando habilidades esenciales para la vida personal y profesional de cada estudiante.</p>
+          <div class="mini-list">
+            <span>Trabajo en equipo</span>
+            <span>Disciplina</span>
+            <span>Liderazgo</span>
+            <span>Sentido de pertenencia</span>
+          </div>
+        </div>
+        <div class="identity-grid">
+          <article>
+            <strong>Representacion institucional</strong>
+            <span>Danza y banda llevan el nombre del instituto a eventos y desfiles comunales.</span>
+          </article>
+          <article>
+            <strong>Salud fisica</strong>
+            <span>Los deportes promueven habitos saludables y bienestar entre los estudiantes.</span>
+          </article>
+          <article>
+            <strong>Integracion</strong>
+            <span>Actividades que unen a estudiantes de distintos grados y secciones.</span>
+          </article>
+          <article>
+            <strong>Orgullo estudiantil</strong>
+            <span>Participar fortalece la identidad y el compromiso con la comunidad educativa.</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA actividades -->
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Proximos eventos</p>
+        <h2>Mira la agenda de actividades</h2>
+        <p>Consulta la pagina de actividades para conocer los proximos eventos, jornadas deportivas y celebraciones institucionales del instituto.</p>
+      </div>
+      <div class="container" style="text-align:center; margin-top: -16px;">
+        <a class="btn primary" href="actividades.html" style="display:inline-flex;">Ver actividades del instituto</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
+        <a href="https://www.facebook.com/profile.php?id=100063787262594"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Visítanos en Facebook"
+           style="
+             display: inline-block;
+             flex-shrink: 0;
+             width: 42px;
+             height: 42px;
+             border-radius: 50%;
+             overflow: hidden;
+             box-shadow: 0 2px 8px rgba(0,0,0,.35);
+             transition: transform .2s ease, box-shadow .2s ease;
+           "
+           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
+           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
+          <img src="imagenes/facebook.png"
+               alt="Facebook del instituto"
+               style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Bain</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta academica</a>
+        <a href="matricula.html">Matricula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicacion</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
