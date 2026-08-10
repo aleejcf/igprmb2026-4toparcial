@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contacto del Instituto Roberto Micheletti Bain, Agua Blanca Sur, El Progreso, Yoro.">
-  <title>Contacto | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Contacto del Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <title>Contacto | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a class="active" href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -33,11 +44,11 @@
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
-          <p class="eyebrow">Estamos aqui para ayudarte</p>
+          <p class="eyebrow">Estamos aquí para ayudarte</p>
           <h1>Contacto</h1>
-          <p>Puedes escribirnos con dudas sobre matricula, oferta academica o cualquier consulta sobre el instituto. Tambien puedes visitarnos en Secretaria.</p>
+          <p>Puedes escribirnos con dudas sobre matrícula, oferta académica o cualquier consulta sobre el instituto. Tambien puedes visitarnos en Secretaría.</p>
         </div>
-        <img src="imagenes/acto_civico/contacto.jpg" alt="Ilustracion de contacto institucional" loading="eager">
+        <img src="imagenes/acto_civico/contacto.jpg" alt="Ilustración de contacto institucional" loading="eager">
       </div>
     </section>
 
@@ -50,7 +61,7 @@
           <article class="contact-detail">
             <div class="contact-detail-icon">📍</div>
             <div class="contact-detail-text">
-              <strong>Direccion</strong>
+              <strong>Dirección</strong>
               <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
             </div>
           </article>
@@ -58,32 +69,32 @@
           <article class="contact-detail">
             <div class="contact-detail-icon">🕗</div>
             <div class="contact-detail-text">
-              <strong>Horario de atencion</strong>
-              <p>Lunes a viernes, 8:00 AM – 12:00 PM<br>Enero 2026 (periodo de matricula)</p>
+              <strong>Horario de atención</strong>
+              <p>Lunes a viernes, 8:00 AM – 12:00 PM<br>Enero 2026 (período de matrícula)</p>
             </div>
           </article>
 
           <article class="contact-detail">
             <div class="contact-detail-icon">🏫</div>
             <div class="contact-detail-text">
-              <strong>Secretaria</strong>
-              <p>Para consultas presenciales, acercate directamente a Secretaria durante el horario indicado.</p>
+              <strong>Secretaría</strong>
+              <p>Para consultas presenciales, acércate directamente a Secretaría durante el horario indicado.</p>
             </div>
           </article>
 
           <article class="contact-detail">
             <div class="contact-detail-icon">📋</div>
             <div class="contact-detail-text">
-              <strong>Matricula extraordinaria</strong>
-              <p>Febrero 2026. Estudiantes que no completaron su matricula en el periodo ordinario pueden acercarse a Secretaria.</p>
+              <strong>Matrícula extraordinaria</strong>
+              <p>Febrero 2026. Estudiantes que no completaron su matrícula en el período ordinario pueden acercarse a Secretaría.</p>
             </div>
           </article>
         </div>
 
         <!-- Form -->
         <div class="contact-form" id="contact-form-wrap">
-          <h2>Envianos un mensaje</h2>
-          <p>Completa el formulario y te responderemos a traves del medio que indiques.</p>
+          <h2>Envíanos un mensaje</h2>
+          <p>Completa el formulario y te responderemos a través del medio que indiques.</p>
 
           <form id="contact-form" novalidate>
             <div class="form-row">
@@ -98,7 +109,7 @@
             </div>
 
             <div class="form-group">
-              <label for="correo">Correo electronico</label>
+              <label for="correo">Correo electrónico</label>
               <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" autocomplete="email">
             </div>
 
@@ -106,8 +117,8 @@
               <label for="asunto">Asunto</label>
               <select id="asunto" name="asunto" required>
                 <option value="" disabled selected>Selecciona un tema</option>
-                <option value="matricula">Proceso de matricula</option>
-                <option value="oferta">Oferta academica</option>
+                <option value="matricula">Proceso de matrícula</option>
+                <option value="oferta">Oferta académica</option>
                 <option value="reingreso">Reingreso</option>
                 <option value="extracurriculares">Actividades extracurriculares</option>
                 <option value="otro">Otro</option>
@@ -116,7 +127,7 @@
 
             <div class="form-group">
               <label for="mensaje">Mensaje</label>
-              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu consulta aqui..." required></textarea>
+              <textarea id="mensaje" name="mensaje" placeholder="Escribe tu consulta aquí..." required></textarea>
             </div>
 
             <button type="submit" class="form-submit">Enviar mensaje &rarr;</button>
@@ -136,9 +147,9 @@
     <!-- Google Maps -->
     <section class="section band">
       <div class="container section-head">
-        <p class="eyebrow">Ubicacion</p>
-        <h2>Encontranos en el mapa</h2>
-        <p>Instituto Gubernamental Polivalente "Roberto Micheletti Bain", Agua Blanca Sur, El Progreso, Yoro.</p>
+        <p class="eyebrow">Ubicación</p>
+        <h2>Encuéntranos en el mapa</h2>
+        <p>Instituto Gubernamental Polivalente "Roberto Micheletti Baín", Agua Blanca Sur, El Progreso, Yoro.</p>
       </div>
       <div class="container">
         <div class="map-embed-wrap">
@@ -150,7 +161,7 @@
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Ubicacion del Instituto Roberto Micheletti Bain en Google Maps"
+            title="Ubicación del Instituto Roberto Micheletti Baín en Google Maps"
           ></iframe>
         </div>
         <div style="text-align:center; margin-top: 20px;">
@@ -187,24 +198,26 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
   <script>
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
@@ -258,7 +271,7 @@
       } catch (err) {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar mensaje →';
-        alert('Hubo un problema al enviar el mensaje. Por favor intentalo de nuevo o contáctanos directamente a tareasiiibtpi@gmail.com');
+        alert('Hubo un problema al enviar el mensaje. Por favor inténtalo de nuevo o contáctanos directamente a tareasiiibtpi@gmail.com');
       }
     });
   </script>

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive hero-oscuro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bachillerato Tecnico Profesional en Informatica — Instituto Roberto Micheletti Bain">
-  <title>BTP Informatica | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Bachillerato Técnico Profesional en Informática — Instituto Roberto Micheletti Baín">
+  <title>BTP Informática | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/galeria.css">
   <style>
     /* ── HERO CARRERA ── */
     .carrera-hero {
@@ -479,8 +484,15 @@
   </style>
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
+    <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html">
         <span class="brand-mark">
           <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
@@ -488,22 +500,20 @@
         </span>
         <span class="brand-divider"></span>
         <span class="brand-text">
-          <span class="brand-name">Instituto Roberto Micheletti Bain</span>
+          <span class="brand-name">Instituto Roberto Micheletti Baín</span>
           <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
         </span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a class="active" href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -515,21 +525,21 @@
         <div>
           <a class="carrera-back" href="oferta-academica.html">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            Oferta academica
+            Oferta académica
           </a>
-          <div class="carrera-tag-hero">BTP · Bachillerato Tecnico Profesional</div>
-          <h1>BTP en <span>Informatica</span></h1>
-          <p class="carrera-hero-desc">Formacion tecnica orientada al uso de la tecnologia, herramientas digitales y fundamentos de informatica aplicada. Prepara a los estudiantes para el mundo laboral y la educacion superior en el area tecnologica.</p>
+          <div class="carrera-tag-hero">BTP · Bachillerato Técnico Profesional</div>
+          <h1>BTP en <span>Informática</span></h1>
+          <p class="carrera-hero-desc">Formación técnica orientada al uso de la tecnología, herramientas digitales y fundamentos de informática aplicada. Prepara a los estudiantes para el mundo laboral y la educación superior en el área tecnológica.</p>
           <div class="hero-pills">
-            <span class="hero-pill">💻 Tecnologia</span>
+            <span class="hero-pill">💻 Tecnología</span>
             <span class="hero-pill">📅 10mo – 12mo grado</span>
-            <span class="hero-pill">🎓 Titulo tecnico</span>
+            <span class="hero-pill">🎓 Título técnico</span>
             <span class="hero-pill">🕐 Jornada matutina</span>
           </div>
         </div>
         <div class="carrera-hero-logo">
-          <img class="logo-dark"  src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informatica">
-          <img class="logo-light" src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informatica">
+          <img class="logo-dark"  src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informática">
+          <img class="logo-light" src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informática">
         </div>
       </div>
     </section>
@@ -540,7 +550,7 @@
         <div class="stats-row">
           <div class="stat-item">
             <strong>3</strong>
-            <span>Anos de duracion</span>
+            <span>Años de duración</span>
           </div>
           <div class="stat-item">
             <strong>10mo</strong>
@@ -548,11 +558,11 @@
           </div>
           <div class="stat-item">
             <strong>BTP</strong>
-            <span>Titulo obtenido</span>
+            <span>Título obtenido</span>
           </div>
           <div class="stat-item">
             <strong>100%</strong>
-            <span>Practica aplicada</span>
+            <span>Práctica aplicada</span>
           </div>
         </div>
       </div>
@@ -564,34 +574,34 @@
         <div class="content-block">
           <div>
             <div class="block-label">Sobre la carrera</div>
-            <h2 class="block-title">Una formacion tecnica con base solida</h2>
-            <p class="block-text">El Bachillerato Tecnico Profesional en Informatica prepara a los estudiantes con conocimientos practicos y teoricos sobre sistemas informaticos, herramientas de productividad, redes basicas y soporte tecnico. Al finalizar, el estudiante obtiene un titulo reconocido por la Secretaria de Educacion de Honduras.</p>
+            <h2 class="block-title">Una formación técnica con base sólida</h2>
+            <p class="block-text">El Bachillerato Técnico Profesional en Informática prepara a los estudiantes con conocimientos prácticos y teóricos sobre sistemas informáticos, herramientas de productividad, redes básicas y soporte técnico. Al finalizar, el estudiante obtiene un título reconocido por la Secretaría de Educación de Honduras.</p>
             <br>
-            <p class="block-text">Esta carrera es ideal para quienes disfrutan trabajar con computadoras, resolver problemas tecnologicos y quieren una salida laboral inmediata o continuar estudios universitarios en el area de tecnologia.</p>
+            <p class="block-text">Esta carrera es ideal para quienes disfrutan trabajar con computadoras, resolver problemas tecnológicos y quieren una salida laboral inmediata o continuar estudios universitarios en el área de tecnología.</p>
           </div>
           <div>
-            <div class="block-label">Materias tecnicas</div>
-            <h2 class="block-title">Lo que aprenderas</h2>
+            <div class="block-label">Materias técnicas</div>
+            <h2 class="block-title">Lo que aprenderás</h2>
             <div class="materias-grid">
               <div class="materia-item">
                 <div class="materia-icon">💻</div>
                 <div>
-                  <div class="materia-name">Informatica Aplicada</div>
+                  <div class="materia-name">Informática Aplicada</div>
                   <div class="materia-desc">Uso de software de oficina y herramientas digitales</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">🌐</div>
                 <div>
-                  <div class="materia-name">Analisis y Diseño de Sistemas</div>
+                  <div class="materia-name">Análisis y Diseño de Sistemas</div>
                   <div class="materia-desc">Técnicas de análisis y diseño para el desarrollo de soluciones informáticas</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">🛠️</div>
                 <div>
-                  <div class="materia-name">Legislación aplicada a la Informatica</div>
-                  <div class="materia-desc">Conocimientos sobre leyes y regulaciones aplicables al uso de la informacion</div>
+                  <div class="materia-name">Legislación aplicada a la Informática</div>
+                  <div class="materia-desc">Conocimientos sobre leyes y regulaciones aplicables al uso de la información</div>
                 </div>
               </div>
               <div class="materia-item">
@@ -612,7 +622,7 @@
                 <div class="materia-icon">🖥️</div>
                 <div>
                   <div class="materia-name">Sistemas Operativos</div>
-                  <div class="materia-desc">Configuracion y administracion basica</div>
+                  <div class="materia-desc">Configuración y administración básica</div>
                 </div>
               </div>
             </div>
@@ -623,31 +633,129 @@
 
     <!-- IMAGEN BANNER -->
     <div class="container" style="padding-bottom: 0; padding-top: 0;">
-      <img src="imagenes/otros/area_info.jpg" alt="Area de Informatica"
+      <img src="imagenes/otros/area_info.jpg" alt="Área de Informática"
         style="width:100%; height:320px; object-fit:cover; border-radius:var(--r-lg); display:block;">
     </div>
+
+
+    <!-- FERIA DE IA + ACTIVIDADES DEL AREA -->
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">La carrera en acción</p>
+        <h2>Feria de Inteligencia Artificial</h2>
+        <p>Los estudiantes del área presentan proyectos y demostraciones de herramientas de inteligencia artificial ante la comunidad educativa. Es la actividad más visible del BTP en Informática.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid gal-destacada">
+          <figure class="gal-item">
+            <img src="imagenes/feria_ia/20260428_154309356_iOS.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 1" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/feria_ia/20260428_162206224_iOS.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 2" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/feria_ia/20260428_162820902_iOS.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 3" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/feria_ia/20260428_163022632_iOS.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 4" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/20260428_174023624_iOS.jpg" alt="Feria de Inteligencia Artificial — área de Informática 1" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/20260428_174032246_iOS.jpg" alt="Feria de Inteligencia Artificial — área de Informática 2" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/20260428_174037265_iOS.jpg" alt="Feria de Inteligencia Artificial — área de Informática 3" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/20260428_174044171_iOS.jpg" alt="Feria de Inteligencia Artificial — área de Informática 4" loading="lazy">
+          </figure>
+        </div>
+        <p style="text-align:center;margin-top:22px;">
+          <a class="btn secondary" href="actividades.html">Ver todas las actividades del instituto</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">Galería del área</p>
+        <h2>El día a día en Informática</h2>
+        <p>Clases, prácticas de laboratorio, proyectos y participaciones del área de Informática a lo largo del año escolar.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item">
+            <img src="imagenes/informatica/648623070_1328487639301613_1712665437558432915_n.jpg" alt="Actividad del área de Informática 1" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/649111480_1328487499301627_2847026547752436244_n.jpg" alt="Actividad del área de Informática 2" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/649328143_1328487545968289_4276313637047902837_n.jpg" alt="Actividad del área de Informática 3" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/655989933_1514260957376799_6132089168607295800_n.jpg" alt="Actividad del área de Informática 4" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/656197110_1514260917376803_1528310995379332530_n.jpg" alt="Actividad del área de Informática 5" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/656661808_1514261054043456_4213865338150364603_n.jpg" alt="Actividad del área de Informática 6" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/657247778_1514261130710115_6028123429475890967_n.jpg" alt="Actividad del área de Informática 7" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/657287697_1455700673014338_8797301864045324834_n.jpg" alt="Actividad del área de Informática 8" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/658828332_1514260887376806_5739627160015988521_n.jpg" alt="Actividad del área de Informática 9" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/663330562_1463844952199910_3035310053573422917_n.jpg" alt="Actividad del área de Informática 10" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/668081884_1463844915533247_1449656795538842056_n.jpg" alt="Actividad del área de Informática 11" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/668521351_1463845065533232_6091233502672075229_n.jpg" alt="Actividad del área de Informática 12" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/668574711_1463845035533235_8392455536476195130_n.jpg" alt="Actividad del área de Informática 13" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/669442479_1463844988866573_3769308038356098644_n.jpg" alt="Actividad del área de Informática 14" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/680640868_1579785800818916_335643574481108138_n.jpg" alt="Actividad del área de Informática 15" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
 
     <!-- SALIDAS LABORALES -->
     <section class="section band">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Despues de graduarte</p>
+          <p class="eyebrow">Después de graduarte</p>
           <h2>Salidas profesionales</h2>
-          <p>Con este bachillerato puedes insertarte en el mercado laboral directamente o continuar estudios universitarios en el area de tecnologia e informatica.</p>
+          <p>Con este bachillerato puedes insertarte en el mercado laboral directamente o continuar estudios universitarios en el área de tecnología e informática.</p>
         </div>
         <div class="salidas-img-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
-          <img src="imagenes/otros/laboratorio_1.jpeg" alt="Estudiantes de Informatica"
+          <img src="imagenes/otros/laboratorio_1.jpeg" alt="Estudiantes de Informática"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
           <img src="imagenes/otros/laboratorio_2.jpeg" alt="Equipos del laboratorio"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
-          <img src="imagenes/informatica/taller.jpg" alt="Taller de Informatica"
+          <img src="imagenes/informatica/taller.jpg" alt="Taller de Informática"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
         </div>
         <div class="salidas-grid">
           <div class="salida-card">
             <span class="salida-icon">🖥️</span>
-            <h4>Tecnico en soporte</h4>
-            <p>Reparacion, mantenimiento y configuracion de computadoras en empresas o de forma independiente.</p>
+            <h4>Técnico en soporte</h4>
+            <p>Reparación, mantenimiento y configuración de computadoras en empresas o de forma independiente.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">📋</span>
@@ -657,22 +765,22 @@
           <div class="salida-card">
             <span class="salida-icon">🌐</span>
             <h4>Operador de sistemas</h4>
-            <p>Administracion basica de equipos, redes y sistemas informaticos en organizaciones.</p>
+            <p>Administración básica de equipos, redes y sistemas informáticos en organizaciones.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">🎓</span>
             <h4>Estudios universitarios</h4>
-            <p>Base solida para continuar en Ingenieria en Sistemas, Informatica o carreras afines.</p>
+            <p>Base sólida para continuar en Ingeniería en Sistemas, Informática o carreras afines.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">💼</span>
             <h4>Emprendimiento digital</h4>
-            <p>Herramientas para ofrecer servicios tecnologicos de forma independiente.</p>
+            <p>Herramientas para ofrecer servicios tecnológicos de forma independiente.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">📡</span>
-            <h4>Instalacion de redes</h4>
-            <p>Configuracion de redes domesticas y empresariales basicas.</p>
+            <h4>Instalación de redes</h4>
+            <p>Configuración de redes domésticas y empresariales básicas.</p>
           </div>
         </div>
       </div>
@@ -685,19 +793,19 @@
           <div class="block-label">Perfil del estudiante</div>
           <h2 class="block-title">Esta carrera es para ti si…</h2>
           <ul class="perfil-list">
-            <li>Te gustan las computadoras y la tecnologia</li>
+            <li>Te gustan las computadoras y la tecnología</li>
             <li>Disfrutas resolver problemas y encontrar soluciones</li>
-            <li>Te interesa el soporte tecnico y los sistemas</li>
+            <li>Te interesa el soporte técnico y los sistemas</li>
             <li>Quieres trabajar con herramientas digitales</li>
-            <li>Buscas un titulo tecnico reconocido</li>
-            <li>Tienes curiosidad por como funcionan los sistemas</li>
+            <li>Buscas un título técnico reconocido</li>
+            <li>Tienes curiosidad por cómo funcionan los sistemas</li>
           </ul>
         </div>
         <div class="cta-card">
           <h3>¿Listo para inscribirte?</h3>
-          <p>El proceso de matricula 2026 esta abierto. Conoce los requisitos y pasos para ingresar al BTP en Informatica.</p>
+          <p>El proceso de matrícula 2026 está abierto. Conoce los requisitos y pasos para ingresar al BTP en Informática.</p>
           <a href="matricula.html" class="btn-cta">
-            Ver matricula 2026
+            Ver matrícula 2026
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
           <br>
@@ -732,23 +840,26 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+  <script src="js/galeria.js"></script>
 </body>
 </html>

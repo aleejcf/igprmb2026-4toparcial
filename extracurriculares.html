@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Actividades extracurriculares del Instituto Roberto Micheletti Bain: danza, banda de guerra, futbol, voleibol y baloncesto.">
-  <title>Extracurriculares | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Actividades extracurriculares del Instituto Roberto Micheletti Baín: danza, banda de guerra, futbol, voleibol y baloncesto.">
+  <title>Extracurriculares | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a class="active" href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -37,7 +48,7 @@
           <h1>Actividades extracurriculares</h1>
           <p>Danza, banda de guerra y deportes que forman el caracter, el trabajo en equipo y el orgullo institucional de cada estudiante.</p>
         </div>
-        <img src="imagenes/capacitaciones/capacitaciones.jpg" alt="Ilustracion de actividades extracurriculares" loading="eager">
+        <img src="imagenes/capacitaciones/capacitaciones.jpg" alt="Ilustración de actividades extracurriculares" loading="eager">
       </div>
     </section>
 
@@ -45,8 +56,8 @@
     <section class="section">
       <div class="container section-head">
         <p class="eyebrow">Arte y cultura</p>
-        <h2>Expresion, disciplina y orgullo institucional</h2>
-        <p>La danza y la banda de guerra representan al instituto en eventos civicos, desfiles y celebraciones, desarrollando disciplina y sentido de pertenencia.</p>
+        <h2>Expresión, disciplina y orgullo institucional</h2>
+        <p>La danza y la banda de guerra representan al instituto en eventos cívicos, desfiles y celebraciones, desarrollando disciplina y sentido de pertenencia.</p>
       </div>
 
       <div class="container extras-grid-2">
@@ -56,17 +67,17 @@
             <span class="extra-tag">Arte</span>
             <span class="extra-card-icon">💃</span>
             <h3>Grupo de Danza</h3>
-            <p>El grupo de danza del instituto participa en actos civicos, festividades culturales y eventos estudiantiles. Una expresion artistica que fortalece la identidad y el trabajo en equipo.</p>
+            <p>El grupo de danza del instituto participa en actos cívicos, festividades culturales y eventos estudiantiles. Una expresión artística que fortalece la identidad y el trabajo en equipo.</p>
           </div>
         </article>
 
         <article class="extra-card banda">
           <div class="extra-card-bg"></div>
           <div class="extra-card-body">
-            <span class="extra-tag">Civico</span>
+            <span class="extra-tag">Cívico</span>
             <span class="extra-card-icon">🥁</span>
             <h3>Banda de Guerra</h3>
-            <p>La banda de guerra del instituto desfila en conmemoraciones patrias y eventos civicos representando a la comunidad educativa con disciplina, precision y orgullo institucional.</p>
+            <p>La banda de guerra del instituto desfila en conmemoraciones patrias y eventos cívicos representando a la comunidad educativa con disciplina, precisión y orgullo institucional.</p>
           </div>
         </article>
       </div>
@@ -239,7 +250,7 @@
     <section class="section">
       <div class="container">
         <div class="section-head" style="padding-bottom:40px;">
-          <p class="eyebrow">Galeria</p>
+          <p class="eyebrow">Galería</p>
           <h2>Cuadro de Danza del Micheletti</h2>
           <p>Momentos del grupo de danza en presentaciones, ensayos y eventos institucionales.</p>
         </div>
@@ -267,24 +278,24 @@
     <section class="section band">
       <div class="container">
         <div class="section-head" style="padding-bottom:40px;">
-          <p class="eyebrow">Galeria</p>
-          <h2>Educacion Fisica</h2>
-          <p>Actividades fisicas, deportivas y recreativas que forman parte de la vida estudiantil del instituto.</p>
+          <p class="eyebrow">Galería</p>
+          <h2>Educación Física</h2>
+          <p>Actividades físicas, deportivas y recreativas que forman parte de la vida estudiantil del instituto.</p>
         </div>
         <div class="galeria-grid" data-galeria="edfisica">
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto1.jpg"  data-caption="Educacion Fisica — Foto 1"><img  src="imagenes/educacion_fisica/foto1.jpg"  alt="Educacion fisica foto 1"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto2.jpg"  data-caption="Educacion Fisica — Foto 2"><img  src="imagenes/educacion_fisica/foto2.jpg"  alt="Educacion fisica foto 2"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto3.jpg"  data-caption="Educacion Fisica — Foto 3"><img  src="imagenes/educacion_fisica/foto3.jpg"  alt="Educacion fisica foto 3"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto4.jpg"  data-caption="Educacion Fisica — Foto 4"><img  src="imagenes/educacion_fisica/foto4.jpg"  alt="Educacion fisica foto 4"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto5.jpg"  data-caption="Educacion Fisica — Foto 5"><img  src="imagenes/educacion_fisica/foto5.jpg"  alt="Educacion fisica foto 5"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto6.jpg"  data-caption="Educacion Fisica — Foto 6"><img  src="imagenes/educacion_fisica/foto6.jpg"  alt="Educacion fisica foto 6"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto7.jpg"  data-caption="Educacion Fisica — Foto 7"><img  src="imagenes/educacion_fisica/foto7.jpg"  alt="Educacion fisica foto 7"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto8.jpg"  data-caption="Educacion Fisica — Foto 8"><img  src="imagenes/educacion_fisica/foto8.jpg"  alt="Educacion fisica foto 8"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto9.jpg"  data-caption="Educacion Fisica — Foto 9"><img  src="imagenes/educacion_fisica/foto9.jpg"  alt="Educacion fisica foto 9"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto10.jpg" data-caption="Educacion Fisica — Foto 10"><img src="imagenes/educacion_fisica/foto10.jpg" alt="Educacion fisica foto 10" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto11.jpg" data-caption="Educacion Fisica — Foto 11"><img src="imagenes/educacion_fisica/foto11.jpg" alt="Educacion fisica foto 11" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto12.jpg" data-caption="Educacion Fisica — Foto 12"><img src="imagenes/educacion_fisica/foto12.jpg" alt="Educacion fisica foto 12" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto13.jpg" data-caption="Educacion Fisica — Foto 13"><img src="imagenes/educacion_fisica/foto13.jpg" alt="Educacion fisica foto 13" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto1.jpg"  data-caption="Educacion Fisica — Foto 1"><img  src="imagenes/educacion_fisica/foto1.jpg"  alt="Educación física foto 1"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto2.jpg"  data-caption="Educacion Fisica — Foto 2"><img  src="imagenes/educacion_fisica/foto2.jpg"  alt="Educación física foto 2"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto3.jpg"  data-caption="Educacion Fisica — Foto 3"><img  src="imagenes/educacion_fisica/foto3.jpg"  alt="Educación física foto 3"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto4.jpg"  data-caption="Educacion Fisica — Foto 4"><img  src="imagenes/educacion_fisica/foto4.jpg"  alt="Educación física foto 4"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto5.jpg"  data-caption="Educacion Fisica — Foto 5"><img  src="imagenes/educacion_fisica/foto5.jpg"  alt="Educación física foto 5"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto6.jpg"  data-caption="Educacion Fisica — Foto 6"><img  src="imagenes/educacion_fisica/foto6.jpg"  alt="Educación física foto 6"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto7.jpg"  data-caption="Educacion Fisica — Foto 7"><img  src="imagenes/educacion_fisica/foto7.jpg"  alt="Educación física foto 7"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto8.jpg"  data-caption="Educacion Fisica — Foto 8"><img  src="imagenes/educacion_fisica/foto8.jpg"  alt="Educación física foto 8"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto9.jpg"  data-caption="Educacion Fisica — Foto 9"><img  src="imagenes/educacion_fisica/foto9.jpg"  alt="Educación física foto 9"  loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto10.jpg" data-caption="Educacion Fisica — Foto 10"><img src="imagenes/educacion_fisica/foto10.jpg" alt="Educación física foto 10" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto11.jpg" data-caption="Educacion Fisica — Foto 11"><img src="imagenes/educacion_fisica/foto11.jpg" alt="Educación física foto 11" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto12.jpg" data-caption="Educacion Fisica — Foto 12"><img src="imagenes/educacion_fisica/foto12.jpg" alt="Educación física foto 12" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/educacion_fisica/foto13.jpg" data-caption="Educacion Fisica — Foto 13"><img src="imagenes/educacion_fisica/foto13.jpg" alt="Educación física foto 13" loading="lazy"></div>
         </div>
       </div>
     </section>
@@ -365,8 +376,8 @@
     <section class="section band">
       <div class="container section-head">
         <p class="eyebrow">Deportes</p>
-        <h2>Competencia, salud y espiritu de equipo</h2>
-        <p>Los deportes forman parte de la vida estudiantil del instituto, promoviendo la salud, la integracion entre grados y la competencia sana entre companeros.</p>
+        <h2>Competencia, salud y espíritu de equipo</h2>
+        <p>Los deportes forman parte de la vida estudiantil del instituto, promoviendo la salud, la integración entre grados y la competencia sana entre compañeros.</p>
       </div>
 
       <div class="container extras-grid-3">
@@ -376,7 +387,7 @@
             <span class="extra-tag">Deporte</span>
             <span class="extra-card-icon">⚽</span>
             <h3>Futbol</h3>
-            <p>Jornadas deportivas entre secciones y grados, fomentando la integracion, el liderazgo y la competencia sana dentro del instituto.</p>
+            <p>Jornadas deportivas entre secciones y grados, fomentando la integración, el liderazgo y la competencia sana dentro del instituto.</p>
           </div>
         </article>
 
@@ -386,7 +397,7 @@
             <span class="extra-tag">Deporte</span>
             <span class="extra-card-icon">🏐</span>
             <h3>Voleibol</h3>
-            <p>El voleibol es una actividad que refuerza el trabajo en equipo, la comunicacion y el compañerismo entre los estudiantes del instituto.</p>
+            <p>El voleibol es una actividad que refuerza el trabajo en equipo, la comunicación y el compañerismo entre los estudiantes del instituto.</p>
           </div>
         </article>
 
@@ -396,7 +407,7 @@
             <span class="extra-tag">Deporte</span>
             <span class="extra-card-icon">🏀</span>
             <h3>Baloncesto</h3>
-            <p>El baloncesto promueve la agilidad, la estrategia y el espiritu deportivo, con encuentros organizados que involucran a distintas secciones del instituto.</p>
+            <p>El baloncesto promueve la agilidad, la estrategia y el espíritu deportivo, con encuentros organizados que involucran a distintas secciones del instituto.</p>
           </div>
         </article>
       </div>
@@ -406,9 +417,9 @@
     <section class="section visual-band">
       <div class="container split align-center">
         <div>
-          <p class="eyebrow">Mas que clases</p>
-          <h2>Formacion integral del estudiante</h2>
-          <p>Las actividades extracurriculares complementan la educacion academica desarrollando habilidades esenciales para la vida personal y profesional de cada estudiante.</p>
+          <p class="eyebrow">Más que clases</p>
+          <h2>Formación integral del estudiante</h2>
+          <p>Las actividades extracurriculares complementan la educación académica desarrollando habilidades esenciales para la vida personal y profesional de cada estudiante.</p>
           <div class="mini-list">
             <span>Trabajo en equipo</span>
             <span>Disciplina</span>
@@ -418,15 +429,15 @@
         </div>
         <div class="identity-grid">
           <article>
-            <strong>Representacion institucional</strong>
+            <strong>Representación institucional</strong>
             <span>Danza y banda llevan el nombre del instituto a eventos y desfiles comunales.</span>
           </article>
           <article>
-            <strong>Salud fisica</strong>
-            <span>Los deportes promueven habitos saludables y bienestar entre los estudiantes.</span>
+            <strong>Salud física</strong>
+            <span>Los deportes promueven hábitos saludables y bienestar entre los estudiantes.</span>
           </article>
           <article>
-            <strong>Integracion</strong>
+            <strong>Integración</strong>
             <span>Actividades que unen a estudiantes de distintos grados y secciones.</span>
           </article>
           <article>
@@ -440,9 +451,9 @@
     <!-- CTA actividades -->
     <section class="section">
       <div class="container section-head">
-        <p class="eyebrow">Proximos eventos</p>
+        <p class="eyebrow">Próximos eventos</p>
         <h2>Mira la agenda de actividades</h2>
-        <p>Consulta la pagina de actividades para conocer los proximos eventos, jornadas deportivas y celebraciones institucionales del instituto.</p>
+        <p>Consulta la página de actividades para conocer los próximos eventos, jornadas deportivas y celebraciones institucionales del instituto.</p>
       </div>
       <div class="container" style="text-align:center; margin-top: -16px;">
         <a class="btn primary" href="actividades.html" style="display:inline-flex;">Ver actividades del instituto</a>
@@ -475,23 +486,25 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
 </body>
 </html>

@@ -1,30 +1,41 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Matricula abierta 2026 del Instituto Roberto Micheletti Bain. Requisitos de primer ingreso y reingreso.">
-  <title>Matricula 2026 | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Matrícula abierta 2026 del Instituto Roberto Micheletti Baín. Requisitos de primer ingreso y reingreso.">
+  <title>Matrícula 2026 | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Bain</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle><span></span><span></span><span></span></button>
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a class="active" href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a class="active" href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -33,32 +44,32 @@
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
-          <p class="eyebrow">Matricula abierta 2026</p>
-          <h1>Proceso de admisión y matricula</h1>
-          <p>Instituto Gubernamental Polivalente "Roberto Micheletti Bain", Agua Blanca Sur, El Progreso, Yoro.</p>
+          <p class="eyebrow">Matrícula abierta 2026</p>
+          <h1>Proceso de admisión y matrícula</h1>
+          <p>Instituto Gubernamental Polivalente "Roberto Micheletti Baín", Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
-        <img src="imagenes/otros/matricula.jpg" alt="Ilustracion del proceso de matricula 2026" loading="eager">
+        <img src="imagenes/otros/matricula.jpg" alt="Ilustración del proceso de matrícula 2026" loading="eager">
       </div>
     </section>
 
     <section class="section">
       <div class="container cards-2">
         <article class="info-card">
-          <p class="eyebrow">Oferta academica</p>
+          <p class="eyebrow">Oferta académica</p>
           <h2>Niveles disponibles</h2>
           <ul class="arrow-list">
-            <li>III Ciclo de Educacion Basica</li>
-            <li>III Ciclo con Orientacion Tecnica: Estructuras Metalicas, Electricidad, Corte y Confeccion</li>
-            <li>BTP en Informatica</li>
-            <li>BTP en Contaduria y Finanzas</li>
+            <li>III Ciclo de Educación Básica</li>
+            <li>III Ciclo con Orientación Técnica: Estructuras Metálicas, Electricidad, Corte y Confección</li>
+            <li>BTP en Informática</li>
+            <li>BTP en Contaduría y Finanzas</li>
             <li>Bachillerato en Ciencias y Humanidades</li>
           </ul>
         </article>
         <article class="info-card highlight">
-          <p class="eyebrow">Horario de atencion</p>
+          <p class="eyebrow">Horario de atención</p>
           <h2>Lunes a viernes</h2>
           <p class="big-time">8:00 AM - 12:00 PM</p>
-          <p>Durante el mes de enero de 2026. Para matricula extraordinaria, acercarse a Secretaria durante febrero de 2026.</p>
+          <p>Durante el mes de enero de 2026. Para matrícula extraordinaria, acercarse a Secretaría durante febrero de 2026.</p>
         </article>
       </div>
     </section>
@@ -75,20 +86,20 @@
             <li>Partida de nacimiento original</li>
             <li>Copia de partida de nacimiento</li>
             <li>Copia de identidad del padre o encargado</li>
-            <li>Documentacion llena del proceso de matricula</li>
-            <li>2 fotografias tamano carnet</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
           </ul>
         </article>
         <article class="timeline">
           <div class="timeline-item">
             <span>2026</span>
-            <h3>Septimo y Decimo Grado</h3>
-            <p>Inicio del proceso de matricula para primer ingreso a Ciclo Basico y Bachillerato.</p>
+            <h3>Séptimo y Décimo Grado</h3>
+            <p>Inicio del proceso de matrícula para primer ingreso a Ciclo Básico y Bachillerato.</p>
           </div>
           <div class="timeline-item">
             <span>2026</span>
             <h3>Todos los grados</h3>
-            <p>Continuacion del proceso para todos los niveles y secciones del instituto.</p>
+            <p>Continuación del proceso para todos los niveles y secciones del instituto.</p>
           </div>
         </article>
       </div>
@@ -97,24 +108,24 @@
     <section class="section">
       <div class="container section-head">
         <p class="eyebrow">Pasos sugeridos</p>
-        <h2>Preparate antes de llegar a Secretaria</h2>
-        <p>Estos pasos ayudan a ordenar los documentos y evitar visitas incompletas durante el proceso de matricula.</p>
+        <h2>Prepárate antes de llegar a Secretaría</h2>
+        <p>Estos pasos ayudan a ordenar los documentos y evitar visitas incompletas durante el proceso de matrícula.</p>
       </div>
       <div class="container pathway">
         <article>
           <span>01</span>
           <h3>Reunir documentos</h3>
-          <p>Verifica que las copias sean legibles y que las fotografias sean tamano carnet.</p>
+          <p>Verifica que las copias sean legibles y que las fotografías sean tamaño carnet.</p>
         </article>
         <article>
           <span>02</span>
-          <h3>Llenar documentacion</h3>
-          <p>Completa la documentacion del proceso de matricula antes de entregarla.</p>
+          <h3>Llenar documentación</h3>
+          <p>Completa la documentación del proceso de matrícula antes de entregarla.</p>
         </article>
         <article>
           <span>03</span>
           <h3>Presentarse en horario</h3>
-          <p>Acercate de lunes a viernes, de 8:00 AM a 12:00 PM, durante el periodo indicado.</p>
+          <p>Acércate de lunes a viernes, de 8:00 AM a 12:00 PM, durante el período indicado.</p>
         </article>
       </div>
     </section>
@@ -123,16 +134,16 @@
       <div class="container split">
         <div>
           <p class="eyebrow">Reingreso</p>
-          <h2>Requisitos para estudiantes que continuan</h2>
-          <p>Estos documentos aplican para estudiantes que ya pertenecen al instituto y realizaran su matricula de reingreso.</p>
+          <h2>Requisitos para estudiantes que continúan</h2>
+          <p>Estos documentos aplican para estudiantes que ya pertenecen al instituto y realizarán su matrícula de reingreso.</p>
         </div>
         <div class="info-card">
           <ul class="check-list">
-            <li>Calificaciones del ano anterior</li>
+            <li>Calificaciones del año anterior</li>
             <li>Copia de partida de nacimiento</li>
             <li>Copia de identidad del padre o encargado</li>
-            <li>Documentacion llena del proceso de matricula</li>
-            <li>2 fotografias tamano carnet</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
           </ul>
         </div>
       </div>
@@ -164,23 +175,25 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
 </body>
 </html>

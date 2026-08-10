@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa.
+     hero-oscuro avisa de que la cabecera de esta pagina es una banda
+     de color oscura, para que el header se mantenga legible. -->
+<html lang="es" class="nav-immersive hero-oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Corte y Confección: orientación técnica del III Ciclo en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <title>Corte y Confección | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <style>
+    :root { --nivel-color: #7b3b7b; --nivel-color-2: #b85c9e; }
+    .nivel-hero::before {
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(150,60,150,.48) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 50% at 90% 20%, rgba(220,90,160,.3) 0%, transparent 55%),
+        linear-gradient(170deg, #05091a 0%, #0a1330 55%, #05091a 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="nivel-hero">
+      <div class="container nivel-hero-inner">
+        <div>
+          <a class="nivel-back" href="oferta-academica.html#tecnica">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Orientaciones técnicas
+          </a>
+          <div class="nivel-tag">III Ciclo con Orientación Técnica</div>
+          <h1>Corte y Confección</h1>
+          <p class="nivel-hero-desc">Práctica de técnicas básicas de diseño, corte, confección y elaboración de prendas.</p>
+          <div class="nivel-pills">
+            <span class="nivel-pill">🧵 Taller técnico</span>
+            <span class="nivel-pill">📅 7mo a 9no grado</span>
+            <span class="nivel-pill">✂️ Práctica aplicada</span>
+            <span class="nivel-pill">🏫 III Ciclo</span>
+          </div>
+        </div>
+        <div class="nivel-hero-icono" aria-hidden="true">🧵</div>
+      </div>
+    </section>
+
+    <div class="nivel-stats">
+      <div class="container">
+        <div class="nivel-stats-row">
+          <div class="nivel-stat"><strong>3</strong><span>Grados del III Ciclo</span></div>
+          <div class="nivel-stat"><strong>7mo</strong><span>Grado de inicio</span></div>
+          <div class="nivel-stat"><strong>Taller</strong><span>Modalidad de trabajo</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Sobre el taller</p>
+        <h2>Qué se trabaja en Corte y Confección</h2>
+        <p>Esta orientación forma parte del III Ciclo con Orientación Técnica, que el instituto ofrece de séptimo a noveno grado junto a la modalidad básica.</p>
+      </div>
+      <div class="container nivel-cards">
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">📐</div>
+          <h3>Patronaje inicial</h3>
+          <p>Elaboración de patrones básicos como paso previo al corte de la tela.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">🧶</div>
+          <h3>Uso de materiales</h3>
+          <p>Reconocimiento de telas, hilos y accesorios, y su aprovechamiento sin desperdicio.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">✨</div>
+          <h3>Acabados y presentación</h3>
+          <p>Terminado de la prenda y cuidado de los detalles finales del trabajo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">El taller por dentro</p>
+        <h2>Fotografías de Corte y Confección</h2>
+      </div>
+      <div class="container nivel-galeria">
+        <figure>
+          <img src="imagenes/otros/costura.jpg" alt="Clase de Corte y Confección" loading="lazy">
+          <figcaption>Clase de Corte y Confección</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/costura2.jpg" alt="Estudiantes en el taller de costura" loading="lazy">
+          <figcaption>Estudiantes en el taller de costura</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/costuraaa.jpg" alt="Trabajo con máquina de coser" loading="lazy">
+          <figcaption>Trabajo con máquina de coser</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Las otras orientaciones</p>
+        <h2>Explora los demás talleres</h2>
+      </div>
+      <div class="container">
+        <div class="nivel-hermanos">
+          <a class="nivel-hermano" href="orientacion-estructuras-metalicas.html"><span>🔩</span><span>Estructuras Metálicas</span></a>
+          <a class="nivel-hermano" href="orientacion-electricidad.html"><span>💡</span><span>Electricidad</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>¿Te interesa esta orientación?</h2>
+          <p>La orientación técnica se elige al matricularse en el III Ciclo. Consulta los requisitos y las fechas del proceso 2026.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
+            <a class="btn secondary" href="contacto.html">Contactar al instituto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" style="display:inline-block;flex-shrink:0;width:42px;height:42px;border-radius:50%;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.35);">
+          <img src="imagenes/facebook.png" alt="Facebook del instituto" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+</body>
+</html>

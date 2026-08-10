@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa.
+     hero-oscuro avisa de que la cabecera de esta pagina es una banda
+     de color oscura, para que el header se mantenga legible. -->
+<html lang="es" class="nav-immersive hero-oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estructuras Metálicas: orientación técnica del III Ciclo en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <title>Estructuras Metálicas | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <style>
+    :root { --nivel-color: #3d5a80; --nivel-color-2: #5a7ca8; }
+    .nivel-hero::before {
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(90,110,140,.55) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 50% at 90% 20%, rgba(45,109,228,.35) 0%, transparent 55%),
+        linear-gradient(170deg, #05091a 0%, #0a1330 55%, #05091a 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="nivel-hero">
+      <div class="container nivel-hero-inner">
+        <div>
+          <a class="nivel-back" href="oferta-academica.html#tecnica">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            Orientaciones técnicas
+          </a>
+          <div class="nivel-tag">III Ciclo con Orientación Técnica</div>
+          <h1>Estructuras Metálicas</h1>
+          <p class="nivel-hero-desc">Aprendizaje práctico relacionado con trabajo, medición y construcción de estructuras metálicas.</p>
+          <div class="nivel-pills">
+            <span class="nivel-pill">🔩 Taller técnico</span>
+            <span class="nivel-pill">📅 7mo a 9no grado</span>
+            <span class="nivel-pill">🛠️ Práctica guiada</span>
+            <span class="nivel-pill">🏫 III Ciclo</span>
+          </div>
+        </div>
+        <div class="nivel-hero-icono" aria-hidden="true">🔩</div>
+      </div>
+    </section>
+
+    <div class="nivel-stats">
+      <div class="container">
+        <div class="nivel-stats-row">
+          <div class="nivel-stat"><strong>3</strong><span>Grados del III Ciclo</span></div>
+          <div class="nivel-stat"><strong>7mo</strong><span>Grado de inicio</span></div>
+          <div class="nivel-stat"><strong>Taller</strong><span>Modalidad de trabajo</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Sobre el taller</p>
+        <h2>Qué se trabaja en Estructuras Metálicas</h2>
+        <p>Esta orientación forma parte del III Ciclo con Orientación Técnica, que el instituto ofrece de séptimo a noveno grado junto a la modalidad básica.</p>
+      </div>
+      <div class="container nivel-cards">
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">🧰</div>
+          <h3>Uso responsable de herramientas</h3>
+          <p>Manejo correcto y seguro del equipo del taller, con supervisión docente en cada práctica.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">📏</div>
+          <h3>Medición y trazado</h3>
+          <p>Toma de medidas, marcado y trazado sobre material antes de cortar o unir las piezas.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">🤝</div>
+          <h3>Trabajo en equipo</h3>
+          <p>Organización por grupos para repartir tareas y completar un trabajo entre varios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">El taller por dentro</p>
+        <h2>Fotografías de Estructuras Metálicas</h2>
+      </div>
+      <div class="container nivel-galeria">
+        <figure>
+          <img src="imagenes/otros/metalesm.jpg" alt="Estudiantes trabajando en el taller de Estructuras Metálicas" loading="lazy">
+          <figcaption>Estudiantes trabajando en el taller de Estructuras Metálicas</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/soldadura.jpg" alt="Práctica de soldadura en el taller" loading="lazy">
+          <figcaption>Práctica de soldadura en el taller</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/metales1.jpg" alt="Montaje de una estructura metálica" loading="lazy">
+          <figcaption>Montaje de una estructura metálica</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/metales2.jpg" alt="Trabajo con piezas metálicas" loading="lazy">
+          <figcaption>Trabajo con piezas metálicas</figcaption>
+        </figure>
+        <figure>
+          <img src="imagenes/otros/metalesns.jpg" alt="Actividad del taller de Estructuras Metálicas" loading="lazy">
+          <figcaption>Actividad del taller de Estructuras Metálicas</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Las otras orientaciones</p>
+        <h2>Explora los demás talleres</h2>
+      </div>
+      <div class="container">
+        <div class="nivel-hermanos">
+          <a class="nivel-hermano" href="orientacion-electricidad.html"><span>💡</span><span>Electricidad</span></a>
+          <a class="nivel-hermano" href="orientacion-corte-confeccion.html"><span>🧵</span><span>Corte y Confección</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>¿Te interesa esta orientación?</h2>
+          <p>La orientación técnica se elige al matricularse en el III Ciclo. Consulta los requisitos y las fechas del proceso 2026.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
+            <a class="btn secondary" href="contacto.html">Contactar al instituto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" style="display:inline-block;flex-shrink:0;width:42px;height:42px;border-radius:50%;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.35);">
+          <img src="imagenes/facebook.png" alt="Facebook del instituto" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+</body>
+</html>

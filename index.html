@@ -1,17 +1,29 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica del resto del sitio. -->
+<html lang="es" class="nav-immersive">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Instituto Gubernamental Polivalente Roberto Micheletti Bain, Agua Blanca Sur, El Progreso, Yoro. Educacion basica, tecnica y bachilleratos.">
+  <meta name="description" content="Instituto Gubernamental Polivalente Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro. Educación básica, técnica y bachilleratos.">
   <title>Instituto Roberto Micheletti Baín | Inicio</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/galeria.css">
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
 
   <!-- Lightbox global -->
   <div id="rmb-lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada">
@@ -20,7 +32,7 @@
   </div>
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
+    <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html" aria-label="Inicio">
         <span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span>
         <span class="brand-divider"></span>
@@ -29,18 +41,19 @@
           <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
         </span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle>
+        <span class="mt-label">Menú</span>
+        <span class="mt-bars"><span></span><span></span><span></span></span>
       </button>
       <div class="nav-links" data-menu>
         <a class="active" href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -49,19 +62,19 @@
     <!-- ══════════════════════════════════════
          HERO
     ══════════════════════════════════════ -->
-    <section class="hero">
+    <section class="hero" data-sec="Inicio">
       <div class="hero-art" aria-hidden="true">
         <div class="hero-card card-a">BTP</div>
         <div class="hero-card card-b">III Ciclo</div>
-        <div class="hero-card card-c">Tecnica</div>
+        <div class="hero-card card-c">Técnica</div>
       </div>
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Agua Blanca Sur, El Progreso, Yoro</p>
           <h1>Instituto Gubernamental Polivalente "Roberto Micheletti Baín"</h1>
-          <p class="lead">Formación basica, tecnica y de bachillerato para estudiantes que desean prepararse con disciplina, conocimiento practico y compromiso con su comunidad.</p>
+          <p class="lead">Formación básica, técnica y de bachillerato para estudiantes que desean prepararse con disciplina, conocimiento práctico y compromiso con su comunidad.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="matricula.html">Ver matricula 2026</a>
+            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
             <a class="btn secondary" href="oferta-academica.html">Conocer carreras</a>
           </div>
         </div>
@@ -76,7 +89,7 @@
               <img src="imagenes/otros/estudiantes.jpg" alt="Estudiantes del instituto">
             </div>
             <div class="photo-stack-item">
-              <img src="imagenes/otros/auditorio.jpg" alt="Talleres tecnicos">
+              <img src="imagenes/otros/auditorio.jpg" alt="Talleres técnicos">
             </div>
 
           </div>
@@ -102,20 +115,20 @@
     <!-- ══════════════════════════════════════
          IDENTIDAD INSTITUCIONAL
     ══════════════════════════════════════ -->
-    <section class="section intro-section">
+    <section class="section intro-section" data-sec="Identidad">
       <div class="container split align-center">
         <div>
           <p class="eyebrow">Identidad institucional</p>
-          <h2>Un centro publico con formacion polivalente</h2>
-          <p>El instituto combina aprendizaje academico con orientacion tecnica para que cada estudiante encuentre una ruta de crecimiento acorde a sus habilidades, intereses y metas familiares.</p>
+          <h2>Un centro público con formación polivalente</h2>
+          <p>El instituto combina aprendizaje académico con orientación técnica para que cada estudiante encuentre una ruta de crecimiento acorde a sus habilidades, intereses y metas familiares.</p>
         </div>
         <div class="identity-grid" aria-label="Principios institucionales">
           <article>
             <strong>Disciplina</strong>
-            <span>Habitos de estudio, responsabilidad y puntualidad.</span>
+            <span>Hábitos de estudio, responsabilidad y puntualidad.</span>
           </article>
           <article>
-            <strong>Practica</strong>
+            <strong>Práctica</strong>
             <span>Aprendizaje aplicado en aulas, talleres y actividades.</span>
           </article>
           <article>
@@ -124,7 +137,7 @@
           </article>
           <article>
             <strong>Futuro</strong>
-            <span>Preparacion para continuar estudios o incorporarse a nuevas oportunidades.</span>
+            <span>Preparación para continuar estudios o incorporarse a nuevas oportunidades.</span>
           </article>
         </div>
       </div>
@@ -133,47 +146,100 @@
     <!-- ══════════════════════════════════════
          OFERTA ACADÉMICA
     ══════════════════════════════════════ -->
-    <section class="section">
+    <section class="section" data-sec="Oferta académica">
       <div class="container section-head">
         <p class="eyebrow">Oferta institucional</p>
-        <h2>Educacion para distintas etapas</h2>
-        <p>El instituto ofrece III Ciclo de Educacion Basica, III Ciclo con orientacion tecnica y bachilleratos para continuar la formacion academica y profesional.</p>
+        <h2>Educación para distintas etapas</h2>
+        <p>El instituto ofrece III Ciclo de Educación Básica, III Ciclo con orientación técnica y bachilleratos para continuar la formación académica y profesional.</p>
       </div>
       <div class="container feature-grid">
         <article class="feature-card">
-          <span class="icon-box">7-9</span>
-          <h3>III Ciclo de Educacion Basica</h3>
-          <p>Formacion para estudiantes de septimo, octavo y noveno grado en modalidad basica.</p>
+          <span class="icon-box nivel-logo">
+            <img class="logo-dark"  src="imagenes/prim_white.png" alt="">
+            <img class="logo-light" src="imagenes/edu_p.png" alt="">
+          </span>
+          <h3>III Ciclo de Educación Básica</h3>
+          <p>Formación para estudiantes de séptimo, octavo y noveno grado en modalidad básica.</p>
           <a href="oferta-academica.html#basica">Ver nivel</a>
         </article>
         <article class="feature-card">
-          <span class="icon-box">TP</span>
-          <h3>III Ciclo con Orientacion Tecnica</h3>
-          <p>Estructuras Metalicas, Electricidad y Corte y Confeccion desde septimo a noveno grado.</p>
+          <span class="icon-box nivel-logo">
+            <img class="logo-dark"  src="imagenes/a_tecwhite.png" alt="">
+            <img class="logo-light" src="imagenes/a_tecnicas.png" alt="">
+          </span>
+          <h3>III Ciclo con Orientación Técnica</h3>
+          <p>Estructuras Metálicas, Electricidad y Corte y Confección desde séptimo a noveno grado.</p>
           <a href="oferta-academica.html#tecnica">Ver talleres</a>
         </article>
         <article class="feature-card">
-          <span class="icon-box">BTP</span>
+          <span class="icon-box nivel-logo">
+            <img class="logo-dark"  src="imagenes/bach_white.png" alt="">
+            <img class="logo-light" src="imagenes/bach.png" alt="">
+          </span>
           <h3>Bachilleratos</h3>
-          <p>Informatica, Contaduria y Finanzas, y Ciencias y Humanidades.</p>
+          <p>Informática, Contaduría y Finanzas, y Ciencias y Humanidades.</p>
           <a href="oferta-academica.html#bachilleratos">Ver bachilleratos</a>
         </article>
+      </div>
+      <div class="container" style="text-align:center; margin-top:36px;">
+        <a class="btn primary" href="test-vocacional.html">¿No sabes cuál elegir? Haz el test vocacional &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         BTP EN INFORMÁTICA — CARRERA DESTACADA
+    ══════════════════════════════════════ -->
+    <section class="section" data-sec="Informática">
+      <div class="container split align-center">
+        <div>
+          <p class="eyebrow">Carrera destacada</p>
+          <h2>BTP en Informática</h2>
+          <p>El área de Informática es la que más actividad genera en el instituto: proyectos de laboratorio, prácticas de soporte técnico y la Feria de Inteligencia Artificial, donde los estudiantes exponen su trabajo ante toda la comunidad educativa.</p>
+          <div class="mini-list">
+            <span>Ofimática</span>
+            <span>Programación</span>
+            <span>Sistemas Operativos</span>
+            <span>Análisis y Diseño</span>
+          </div>
+          <div class="hero-actions" style="margin-top:26px;">
+            <a class="btn primary" href="carrera-informatica.html">Conocer la carrera</a>
+            <a class="btn secondary" href="actividades.html">Ver sus actividades</a>
+          </div>
+        </div>
+
+        <div class="gal-grid gal-destacada">
+          <figure class="gal-item">
+            <img src="imagenes/feria_ia/20260428_162206224_iOS.jpg" alt="Feria de Inteligencia Artificial del BTP en Informática" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/otros/laboratorio_1.jpeg" alt="Laboratorio de Informática" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/taller.jpg" alt="Taller de Informática" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/informatica/20260428_174023624_iOS.jpg" alt="Estudiantes de Informática en la Feria de IA" loading="lazy">
+          </figure>
+          <figure class="gal-item">
+            <img src="imagenes/otros/laboratorio_2.jpeg" alt="Equipos del laboratorio de Informática" loading="lazy">
+          </figure>
+        </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
          TALLERES — DECK CAROUSEL DE FOTOS
     ══════════════════════════════════════ -->
-    <section class="section visual-band">
+    <section class="section visual-band" data-sec="Talleres">
       <div class="container split align-center">
         <div>
           <p class="eyebrow">Aprender haciendo</p>
           <h2>Talleres que despiertan habilidades reales</h2>
-          <p>Las orientaciones tecnicas permiten explorar areas practicas desde el III Ciclo: estructuras metalicas, electricidad y corte y confeccion. Esta base ayuda al estudiante a descubrir intereses vocacionales antes de elegir su siguiente etapa.</p>
+          <p>Las orientaciones técnicas permiten explorar áreas prácticas desde el III Ciclo: estructuras metálicas, electricidad y corte y confección. Esta base ayuda al estudiante a descubrir intereses vocacionales antes de elegir su siguiente etapa.</p>
           <div class="mini-list">
-            <span>Estructuras Metalicas</span>
+            <span>Estructuras Metálicas</span>
             <span>Electricidad</span>
-            <span>Corte y Confeccion</span>
+            <span>Corte y Confección</span>
           </div>
         </div>
 
@@ -181,11 +247,11 @@
         <div class="campus-gallery-wrap">
           <div class="deck-wrap" id="deck-talleres" role="region" aria-label="Fotos de talleres">
             <div class="deck-card">
-              <img src="imagenes/otros/metalesm.jpg" alt="Taller de Estructuras Metalicas">
+              <img src="imagenes/otros/metalesm.jpg" alt="Taller de Estructuras Metálicas">
             </div>
             <!-- Carta 2 -->
             <div class="deck-card">
-              <img src="imagenes/otros/costura.jpg" alt="Taller de Corte y Confeccion">
+              <img src="imagenes/otros/costura.jpg" alt="Taller de Corte y Confección">
             </div>
             <!-- Carta 3 -->
             <div class="deck-card">
@@ -201,7 +267,7 @@
             </div>
           </div>
           <div class="deck-dots" id="dots-talleres"></div>
-          <div class="deck-label" id="label-talleres">Haz clic para ver mas fotos</div>
+          <div class="deck-label" id="label-talleres">Haz clic para ver más fotos</div>
 
         </div>
       </div>
@@ -210,12 +276,12 @@
     <!-- ══════════════════════════════════════
          MATRICULA
     ══════════════════════════════════════ -->
-    <section class="section band">
+    <section class="section band" data-sec="Matrícula 2026">
       <div class="container split">
         <div>
-          <p class="eyebrow">Matricula abierta 2026</p>
+          <p class="eyebrow">Matrícula abierta 2026</p>
           <h2>Requisitos claros para primer ingreso y reingreso</h2>
-          <p>La atencion se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2026.</p>
+          <p>La atención se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2026.</p>
         </div>
         <div class="callout">
           <h3>Primer ingreso</h3>
@@ -223,8 +289,8 @@
             <li>Partida de nacimiento original</li>
             <li>Copia de partida de nacimiento</li>
             <li>Copia de identidad del padre o encargado</li>
-            <li>Documentacion llena del proceso de matricula</li>
-            <li>2 fotografias tamaño carnet</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
           </ul>
           <a class="btn primary full" href="matricula.html">Ver todos los requisitos</a>
         </div>
@@ -234,7 +300,7 @@
     <!-- ══════════════════════════════════════
          VIDEO SECCIÓN — Reproductores cinematicos
     ══════════════════════════════════════ -->
-    <section class="section">
+    <section class="section" data-sec="Videos">
       <div class="container section-head">
         <p class="eyebrow">El instituto en video</p>
         <h2>Conoce el instituto de cerca</h2>
@@ -248,10 +314,10 @@
           <div class="cine-player" id="cine-main" data-video="video/logo_micheletti.mp4">
             <div class="cine-placeholder">
               <span class="cine-placeholder-icon">🎬</span>
-              <span class="cine-placeholder-label">Video de presentacion<br>del instituto<br><br>Agrega: data-video="ruta/video.mp4"</span>
+              <span class="cine-placeholder-label">Video de presentación<br>del instituto<br><br>Agrega: data-video="ruta/video.mp4"</span>
             </div>
             <div class="cine-overlay">
-              <div class="cine-title-tag">Presentacion institucional</div>
+              <div class="cine-title-tag">Presentación institucional</div>
               <div class="cine-play-btn" aria-label="Reproducir">
                 <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
               </div>
@@ -338,27 +404,27 @@
     <!-- ══════════════════════════════════════
          RUTA ESTUDIANTIL
     ══════════════════════════════════════ -->
-    <section class="section band">
+    <section class="section band" data-sec="Ruta estudiantil">
       <div class="container section-head">
         <p class="eyebrow">Ruta estudiantil</p>
-        <h2>Del III Ciclo a la educacion media</h2>
-        <p>La organizacion academica facilita que el estudiante avance de forma ordenada desde septimo grado hasta su bachillerato.</p>
+        <h2>Del III Ciclo a la educación media</h2>
+        <p>La organización académica facilita que el estudiante avance de forma ordenada desde séptimo grado hasta su bachillerato.</p>
       </div>
       <div class="container pathway">
         <article>
           <span>01</span>
           <h3>Ingreso a III Ciclo</h3>
-          <p>Septimo, octavo y noveno grado en modalidad basica o con orientacion tecnica.</p>
+          <p>Séptimo, octavo y noveno grado en modalidad básica o con orientación técnica.</p>
         </article>
         <article>
           <span>02</span>
-          <h3>Exploracion de habilidades</h3>
-          <p>Participacion en actividades academicas, civicas, deportivas y talleres.</p>
+          <h3>Exploración de habilidades</h3>
+          <p>Participación en actividades académicas, cívicas, deportivas y talleres.</p>
         </article>
         <article>
           <span>03</span>
-          <h3>Eleccion de bachillerato</h3>
-          <p>Informatica, Contaduria y Finanzas, o Ciencias y Humanidades.</p>
+          <h3>Elección de bachillerato</h3>
+          <p>Informática, Contaduría y Finanzas, o Ciencias y Humanidades.</p>
         </article>
       </div>
     </section>
@@ -366,23 +432,23 @@
     <!-- ══════════════════════════════════════
          GALERÍA MASONRY — Vida estudiantil
     ══════════════════════════════════════ -->
-    <section class="section">
+    <section class="section" data-sec="Galería">
       <div class="container section-head">
         <p class="eyebrow">Vida institucional</p>
-        <h2>Galeria del instituto</h2>
-        <p>Momentos, eventos, talleres y celebraciones que reflejan la identidad del Instituto Roberto Micheletti Bain.</p>
+        <h2>Galería del instituto</h2>
+        <p>Momentos, eventos, talleres y celebraciones que reflejan la identidad del Instituto Roberto Micheletti Baín.</p>
       </div>
 
       <div class="container photo-masonry" id="photo-masonry">
 
         <div class="pm-item" data-label="Actividades academicas">
-          <img src="imagenes/otros/elecciones.jpg" alt="Actividades academicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Academicas</span></div>
+          <img src="imagenes/otros/elecciones.jpg" alt="Actividades académicas">
+          <div class="pm-overlay"><span class="pm-overlay-label">Académicas</span></div>
         </div>
 
         <div class="pm-item" data-label="Actos civicos">
-          <img src="imagenes/otros/acto_civico.jpg" alt="Actos civicos">
-          <div class="pm-overlay"><span class="pm-overlay-label">Civicos</span></div>
+          <img src="imagenes/otros/acto_civico.jpg" alt="Actos cívicos">
+          <div class="pm-overlay"><span class="pm-overlay-label">Cívicos</span></div>
         </div>
 
         <div class="pm-item" data-label="Banda de guerra">
@@ -401,8 +467,8 @@
         </div>
 
         <div class="pm-item" data-label="Taller de metalicas">
-          <img src="imagenes/otros/metales2.jpg" alt="Taller metalicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Metalicas</span></div>
+          <img src="imagenes/otros/metales2.jpg" alt="Taller metálicas">
+          <div class="pm-overlay"><span class="pm-overlay-label">Metálicas</span></div>
         </div>
 
         <div class="pm-item" data-label="Electricidad">
@@ -411,8 +477,8 @@
         </div>
 
         <div class="pm-item" data-label="Graduacion">
-          <img src="imagenes/otros/graduacion.jpg" alt="Graduacion">
-          <div class="pm-overlay"><span class="pm-overlay-label">Graduacion</span></div>
+          <img src="imagenes/otros/graduacion.jpg" alt="Graduación">
+          <div class="pm-overlay"><span class="pm-overlay-label">Graduación</span></div>
         </div>
       </div>
     </section>
@@ -420,17 +486,17 @@
     <!-- ══════════════════════════════════════
          EVENTOS — DECK CAROUSEL ACTIVIDADES
     ══════════════════════════════════════ -->
-    <section class="section band">
+    <section class="section band" data-sec="Eventos">
       <div class="container split">
         <div>
           <p class="eyebrow">Vida escolar</p>
           <h2>Eventos y actividades del instituto</h2>
-          <p>Este sitio funciona como espacio de promocion para compartir actividades academicas, culturales, civicas, deportivas y tecnicas del instituto.</p>
+          <p>Este sitio funciona como espacio de promoción para compartir actividades académicas, culturales, cívicas, deportivas y técnicas del instituto.</p>
           <div class="activity-strip" style="margin-top:24px;">
-            <a href="actividades.html#academicas">Academicas</a>
-            <a href="actividades.html#civicas">Civicas</a>
+            <a href="actividades.html#academicas">Académicas</a>
+            <a href="actividades.html#civicas">Cívicas</a>
             <a href="actividades.html#deportivas">Deportivas</a>
-            <a href="actividades.html#tecnicas">Tecnicas</a>
+            <a href="actividades.html#tecnicas">Técnicas</a>
           </div>
         </div>
 
@@ -438,23 +504,23 @@
         <div class="campus-gallery-wrap">
           <div class="deck-wrap" id="deck-actividades" role="region" aria-label="Fotos de actividades">
             <div class="deck-card">
-              <img src="imagenes/acto_civico/reunion_p.jpg" alt="Reunion de padres de familia">
+              <img src="imagenes/acto_civico/reunion_p.jpg" alt="Reunión de padres de familia">
             </div>
             <div class="deck-card">
-              <img src="imagenes/acto_civico/presentacion_d.jpg" alt="Presentacion de docentes">
+              <img src="imagenes/acto_civico/presentacion_d.jpg" alt="Presentación de docentes">
             </div>
             <div class="deck-card">
-              <img src="imagenes/acto_civico/toma_p.jpg" alt="Toma de posesion de autoridades estudiantiles">
+              <img src="imagenes/acto_civico/toma_p.jpg" alt="Toma de posesión de autoridades estudiantiles">
             </div>
             <div class="deck-card">
               <img src="imagenes/acto_civico/diadel_idioma.jpg" alt="Día del Idioma">
             </div>
             <div class="deck-card">
-              <img src="imagenes/acto_civico/eleccion_c_v.jpg" alt="Eleccion de chico y chica verano">
+              <img src="imagenes/acto_civico/eleccion_c_v.jpg" alt="Elección de chico y chica verano">
             </div>
           </div>
           <div class="deck-dots" id="dots-actividades"></div>
-          <div class="deck-label" id="label-actividades">Haz clic para ver mas fotos</div>
+          <div class="deck-label" id="label-actividades">Haz clic para ver más fotos</div>
         </div>
       </div>
     </section>
@@ -486,24 +552,27 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+  <script src="js/galeria.js"></script>
   <script>
   /* ═══════════════════════════════════════════════
      DECK CAROUSEL — engine
@@ -594,8 +663,8 @@
     render();
   }
 
-  const tLabels = ["Taller de Estructuras Metalicas", "Taller de Corte y Confeccion", "Taller de Pintura", "Taller de Soldadura", "Estudiantes en clase"];
-  const aLabels = ["Reunion de padres de familia", "Presentacion de docentes", "Toma de posesion de autoridades estudiantiles", "Dia del Idioma Español", "Eleccion de chico y chica verano"];
+  const tLabels = ["Taller de Estructuras Metálicas", "Taller de Corte y Confección", "Taller de Pintura", "Taller de Soldadura", "Estudiantes en clase"];
+  const aLabels = ["Reunión de padres de familia", "Presentación de docentes", "Toma de posesión de autoridades estudiantiles", "Día del Idioma Español", "Elección de chico y chica verano"];
 
   initDeck("deck-talleres",    "dots-talleres",    "label-talleres",    tLabels);
   initDeck("deck-actividades", "dots-actividades", "label-actividades", aLabels);

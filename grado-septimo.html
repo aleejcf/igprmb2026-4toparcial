@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa.
+     hero-oscuro avisa de que la cabecera de esta pagina es una banda
+     de color oscura, para que el header se mantenga legible. -->
+<html lang="es" class="nav-immersive hero-oscuro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Séptimo Grado del III Ciclo de Educación Básica en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <title>Séptimo Grado | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <style>
+    :root { --nivel-color: #174aa8; --nivel-color-2: #2d6de4; }
+    .nivel-hero::before {
+      background:
+        radial-gradient(ellipse 70% 60% at 10% 50%, rgba(45,109,228,.5) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 50% at 90% 20%, rgba(100,170,255,.3) 0%, transparent 55%),
+        linear-gradient(170deg, #05091a 0%, #0a1330 55%, #05091a 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="nivel-hero">
+      <div class="container nivel-hero-inner">
+        <div>
+          <a class="nivel-back" href="oferta-academica.html#basica">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+            III Ciclo de Educación Básica
+          </a>
+          <div class="nivel-tag">III Ciclo · Grado de ingreso</div>
+          <h1>Séptimo Grado</h1>
+          <p class="nivel-hero-desc">Primer grado del III Ciclo de Educación Básica. Es el grado de ingreso al instituto y el punto de partida de la formación en Agua Blanca Sur.</p>
+          <div class="nivel-pills">
+            <span class="nivel-pill">📚 Educación Básica</span>
+            <span class="nivel-pill">📅 7mo grado</span>
+            <span class="nivel-pill">🏫 Modalidad básica o técnica</span>
+          </div>
+        </div>
+        <div class="nivel-hero-icono" aria-hidden="true">7️⃣</div>
+      </div>
+    </section>
+
+    <div class="nivel-stats">
+      <div class="container">
+        <div class="nivel-stats-row">
+          <div class="nivel-stat"><strong>7mo</strong><span>Grado</span></div>
+          <div class="nivel-stat"><strong>III</strong><span>Ciclo de Educación Básica</span></div>
+          <div class="nivel-stat"><strong>2</strong><span>Modalidades a elegir</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container split align-center">
+        <div>
+          <p class="eyebrow">Grado de ingreso</p>
+          <h2>Séptimo Grado en el instituto</h2>
+          <p>Primer grado del III Ciclo de Educación Básica. Es el grado de ingreso al instituto y el punto de partida de la formación en Agua Blanca Sur.</p>
+          <p>El III Ciclo de Educación Básica del instituto abarca séptimo, octavo y noveno grado, y puede cursarse en modalidad básica o con orientación técnica.</p>
+        </div>
+        <figure style="margin:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sombra-md);">
+          <img src="imagenes/otros/septimo_grado.jpeg" alt="Estudiantes de Séptimo Grado" loading="lazy" style="width:100%;display:block;">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">Qué significa este grado</p>
+        <h2>Lo que distingue a Séptimo</h2>
+      </div>
+      <div class="container nivel-cards">
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">🚪</div>
+          <h3>Grado de ingreso</h3>
+          <p>Séptimo es el grado con el que se entra al instituto, tanto en modalidad básica como con orientación técnica.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">📚</div>
+          <h3>Base del III Ciclo</h3>
+          <p>Fortalece los conocimientos generales que se seguirán trabajando en octavo y noveno.</p>
+        </article>
+        <article class="nivel-card">
+          <div class="nivel-card-icono" aria-hidden="true">🧭</div>
+          <h3>Primer contacto con los talleres</h3>
+          <p>Quienes eligen la orientación técnica empiezan aquí a conocer el taller.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container section-head">
+        <p class="eyebrow">Dos caminos</p>
+        <h2>Modalidad básica u orientación técnica</h2>
+        <p>En el III Ciclo el estudiante puede cursar la modalidad básica o sumar una orientación técnica, que se trabaja en taller.</p>
+      </div>
+      <div class="container">
+        <div class="nivel-hermanos">
+          <a class="nivel-hermano" href="orientacion-estructuras-metalicas.html"><span>🔩</span><span>Estructuras Metálicas</span></a>
+          <a class="nivel-hermano" href="orientacion-electricidad.html"><span>💡</span><span>Electricidad</span></a>
+          <a class="nivel-hermano" href="orientacion-corte-confeccion.html"><span>🧵</span><span>Corte y Confección</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container section-head">
+        <p class="eyebrow">Los otros grados</p>
+        <h2>Recorrido del III Ciclo</h2>
+      </div>
+      <div class="container">
+        <div class="nivel-hermanos">
+          <a class="nivel-hermano" href="grado-octavo.html"><span>8️⃣</span><span>Octavo Grado</span></a>
+          <a class="nivel-hermano" href="grado-noveno.html"><span>9️⃣</span><span>Noveno Grado</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>Matrícula 2026 abierta</h2>
+          <p>La atención se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2026.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="matricula.html">Ver requisitos</a>
+            <a class="btn secondary" href="grado-octavo.html">Octavo Grado &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" style="display:inline-block;flex-shrink:0;width:42px;height:42px;border-radius:50%;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.35);">
+          <img src="imagenes/facebook.png" alt="Facebook del instituto" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+</body>
+</html>

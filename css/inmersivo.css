@@ -1,0 +1,718 @@
+/* ============================================================
+   INSTITUTO RMB — inmersivo.css
+   Navegacion inmersiva. Se enlaza SOLO desde index.html y todo
+   esta condicionado a que <html> lleve la clase .nav-immersive,
+   asi que ninguna otra pagina se ve afectada.
+
+     A) header transparente
+     B) boton "Menu" visible tambien en escritorio
+     C) menu a pantalla completa con foto por seccion
+     D) indice lateral de secciones (scroll spy)
+     E) cortina de transicion entre paginas
+   ============================================================ */
+
+/* ── A. HEADER TRANSPARENTE ──────────────────────────────── */
+/* El header original es sticky, es decir que ocupa su espacio y el hero
+   empieza DEBAJO. Para que el header pueda ser transparente necesita
+   flotar ENCIMA del hero, asi que aqui pasa a fixed y el hero recupera
+   el alto completo mas un margen superior para que su contenido no
+   quede tapado por el header. */
+.nav-immersive .site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+.nav-immersive .hero { min-height: 100vh; }
+.nav-immersive .hero-grid { padding-top: 150px; }
+
+/* Mismo motivo en las paginas internas: su cabecera es la primera seccion
+   y el header fijo se le pondria encima. .page-hero traia 92px de padding
+   superior y .carrera-hero 96px; aqui se les suma el alto del header. */
+.nav-immersive .page-hero    { padding-top: 172px; }
+.nav-immersive .carrera-hero { padding-top: 176px; }
+
+/* El :not(.menu-open) evita que el header recupere fondo mientras el
+   menu a pantalla completa esta abierto. */
+.nav-immersive:not(.menu-open) .site-header.scrolled {
+  background: rgba(3, 9, 26, .92);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom-color: rgba(255, 255, 255, .08);
+}
+
+[data-theme="light"].nav-immersive:not(.menu-open) .site-header.scrolled {
+  background: rgba(255, 255, 255, .92);
+  border-bottom-color: var(--linea);
+}
+
+/* La barra de enlaces desaparece: todo vive ahora en el menu */
+.nav-immersive .nav-links { display: none !important; }
+
+/* Nota: el header transparente no necesita forzar colores. Como el hero
+   ahora sigue al tema (ver bloque H), los colores por defecto de cada tema
+   ya contrastan: hero oscuro + marca blanca, hero claro + marca azul.
+
+   EXCEPCION: las paginas de carrera abren con .carrera-hero, una banda de
+   color oscura que identifica a cada bachillerato (granate, azul, verde) y
+   que NO sigue al tema a proposito. En esas paginas el <html> lleva ademas
+   la clase .hero-oscuro y el header vuelve a ir en blanco mientras esta
+   arriba, o el texto quedaria oscuro sobre oscuro e ilegible en tema claro. */
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .brand-name { color: var(--blanco); }
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .brand-sub  { color: rgba(255,255,255,.55); }
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .brand-divider { background: rgba(255,255,255,.35); }
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .brand-mark .logo-dark  { display: block; }
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .brand-mark .logo-light { display: none; }
+
+/* El boton de menu y el de tema, igual */
+[data-theme="light"].nav-immersive.hero-oscuro:not(.menu-open) .site-header:not(.scrolled) .menu-toggle {
+  border-color: rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+}
+[data-theme="light"].nav-immersive.hero-oscuro:not(.menu-open) .site-header:not(.scrolled) .menu-toggle:hover {
+  border-color: rgba(255,255,255,.4);
+  background: rgba(255,255,255,.16);
+}
+[data-theme="light"].nav-immersive.hero-oscuro:not(.menu-open) .site-header:not(.scrolled) .mt-label {
+  color: var(--blanco);
+}
+[data-theme="light"].nav-immersive.hero-oscuro:not(.menu-open) .site-header:not(.scrolled) .mt-bars span {
+  background: var(--blanco);
+}
+.nav-immersive.hero-oscuro .site-header:not(.scrolled) .theme-btn {
+  border-color: rgba(255,255,255,.2);
+  background: rgba(255,255,255,.08);
+  color: var(--blanco);
+}
+
+/* ── A2. BOTON DE TEMA DISCRETO ──────────────────────────── */
+/* Va agrupado con el de menu (ver agruparAcciones en inmersivo.js) y en
+   reposo es casi invisible: sin caja y a media opacidad. Solo toma cuerpo
+   al señalarlo, y entonces aparece una etiqueta que explica que hace. */
+.nav-immersive .nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-immersive .theme-btn {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  border-color: transparent;
+  background: transparent;
+  opacity: .5;
+  transition: opacity .25s var(--ease), background .25s var(--ease),
+              border-color .25s var(--ease), transform .3s var(--ease-spring);
+}
+
+.nav-immersive .theme-btn:hover,
+.nav-immersive .theme-btn:focus-visible {
+  opacity: 1;
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.22);
+  /* estilos.css lo hace girar 20deg; con la etiqueta debajo, girar el
+     texto se ve mal, asi que aqui solo crece un poco */
+  transform: scale(1.06);
+}
+
+/* Sobre fondo claro el realce va en azul, no en blanco */
+[data-theme="light"].nav-immersive:not(.menu-open):not(.hero-oscuro) .theme-btn:hover,
+[data-theme="light"].nav-immersive:not(.menu-open) .site-header.scrolled .theme-btn:hover {
+  background: rgba(14,52,140,.08);
+  border-color: rgba(14,52,140,.2);
+}
+
+/* Etiqueta explicativa al señalar */
+.nav-immersive .theme-btn::after {
+  content: attr(aria-label);
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(3,9,26,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: opacity .25s var(--ease), transform .28s var(--ease);
+}
+
+.nav-immersive .theme-btn:hover::after,
+.nav-immersive .theme-btn:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── B. BOTON DE MENU ────────────────────────────────────── */
+.nav-immersive .menu-toggle {
+  display: inline-flex !important;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: auto;
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.22);
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background .25s var(--ease), border-color .25s var(--ease), transform .25s var(--ease-spring);
+}
+
+.nav-immersive .menu-toggle:hover {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.4);
+  transform: translateY(-2px);
+}
+
+/* IMPORTANTE: estilos.css define
+       .menu-toggle span { display:block; width:22px; height:2px; background:#fff }
+       [data-theme="light"] .menu-toggle span { background: var(--azul) }
+   y esos selectores alcanzan a TODOS los span del boton, incluidos los dos
+   nuevos contenedores .mt-label y .mt-bars: los aplastaria a 2px de alto y
+   les pondria fondo solido, encimando el texto con las barras. Por eso ambas
+   reglas llevan `> span.clase`, que gana en especificidad al selector de tipo,
+   y reponen tamano y fondo antes de dar su propio estilo. */
+.nav-immersive .menu-toggle > span.mt-label {
+  width: auto;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--blanco);
+  line-height: 1;
+}
+
+.nav-immersive .menu-toggle > span.mt-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 20px;
+  height: auto;
+  background: transparent;
+  border-radius: 0;
+}
+
+.nav-immersive .mt-bars span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--blanco);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform .4s var(--ease), opacity .25s, width .3s var(--ease);
+}
+
+/* La barra del medio es mas corta: detalle que da caracter */
+.nav-immersive .mt-bars span:nth-child(2) { width: 62%; align-self: flex-end; }
+.nav-immersive .menu-toggle:hover .mt-bars span:nth-child(2) { width: 100%; }
+
+/* En tema claro el boton va en azul, tanto sobre el hero claro como sobre el
+   header blanco al bajar. La excepcion es el menu abierto: ahi el boton esta
+   sobre el overlay oscuro y vuelve a blanco (regla base de arriba). */
+[data-theme="light"].nav-immersive:not(.menu-open) .menu-toggle {
+  border-color: rgba(14, 52, 140, .2);
+  background: rgba(14, 52, 140, .06);
+}
+
+[data-theme="light"].nav-immersive:not(.menu-open) .menu-toggle:hover {
+  border-color: rgba(14, 52, 140, .42);
+  background: rgba(14, 52, 140, .12);
+}
+
+[data-theme="light"].nav-immersive:not(.menu-open) .mt-label {
+  color: var(--azul);
+}
+
+[data-theme="light"].nav-immersive:not(.menu-open) .mt-bars span {
+  background: var(--azul);
+}
+
+/* Estado abierto: las barras se convierten en X */
+.nav-immersive.menu-open .mt-bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-immersive.menu-open .mt-bars span:nth-child(2) { opacity: 0; }
+.nav-immersive.menu-open .mt-bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* Con el menu abierto el header queda por encima para poder cerrarlo */
+.nav-immersive.menu-open .site-header {
+  z-index: 9600;
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+.nav-immersive.menu-open .site-header .brand-name { color: var(--blanco); }
+.nav-immersive.menu-open .site-header .brand-sub  { color: rgba(255,255,255,.55); }
+.nav-immersive.menu-open .site-header .brand-divider { background: rgba(255,255,255,.35); }
+.nav-immersive.menu-open .brand-mark .logo-dark  { display: block; }
+.nav-immersive.menu-open .brand-mark .logo-light { display: none; }
+
+/* Con el menu abierto el boton de tema esta sobre el overlay oscuro,
+   asi que va en blanco aunque el tema activo sea el claro. */
+.nav-immersive.menu-open .theme-btn {
+  border-color: rgba(255, 255, 255, .2);
+  background: rgba(255, 255, 255, .08);
+  color: var(--blanco);
+}
+
+/* ── C. MENU A PANTALLA COMPLETA ─────────────────────────── */
+.fs-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  visibility: hidden;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path .8s cubic-bezier(.76,0,.24,1), visibility .8s;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.fs-menu.open {
+  visibility: visible;
+  clip-path: inset(0 0 0 0);
+}
+
+/* Fondo con foto por seccion */
+.fs-menu-bg {
+  position: fixed;
+  inset: 0;
+  background: var(--azul-noche);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.fs-menu-photo {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.14);
+  transition: opacity .8s var(--ease), transform 1.6s var(--ease);
+}
+
+.fs-menu-photo.show { opacity: .3; transform: scale(1); }
+
+.fs-menu-scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 15% 50%, rgba(45,109,228,.28) 0%, transparent 60%),
+    radial-gradient(ellipse 45% 45% at 85% 25%, rgba(244,123,32,.2) 0%, transparent 55%),
+    linear-gradient(100deg, rgba(3,9,26,.94) 0%, rgba(3,9,26,.7) 55%, rgba(3,9,26,.5) 100%);
+}
+
+.fs-menu-inner {
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(240px, .75fr);
+  align-items: center;
+  gap: 56px;
+  padding: 120px 0 64px;
+}
+
+/* Lista de enlaces */
+.fs-menu-list { display: flex; flex-direction: column; }
+
+.fs-link {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 18px;
+  padding: 5px 0;
+  text-decoration: none;
+  color: rgba(255,255,255,.5);
+  font-size: clamp(1.55rem, 4.4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.12;
+  opacity: 0;
+  transform: translateY(38px);
+  transition: opacity .55s var(--ease), transform .65s var(--ease), color .3s var(--ease);
+}
+
+.fs-menu.open .fs-link { opacity: 1; transform: translateY(0); }
+
+.fs-num {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  color: rgba(255,255,255,.3);
+  flex-shrink: 0;
+  width: 26px;
+  transition: color .3s var(--ease);
+}
+
+.fs-text {
+  display: inline-block;
+  transition: transform .45s var(--ease-spring);
+}
+
+.fs-desc {
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  color: rgba(255,255,255,.42);
+  opacity: 0;
+  transform: translateX(-12px);
+  transition: opacity .35s var(--ease), transform .45s var(--ease);
+}
+
+.fs-link:hover,
+.fs-link:focus-visible { color: var(--blanco); outline: none; }
+.fs-link:hover .fs-text,
+.fs-link:focus-visible .fs-text { transform: translateX(18px); }
+.fs-link:hover .fs-num,
+.fs-link:focus-visible .fs-num { color: var(--naranja-2); }
+.fs-link:hover .fs-desc,
+.fs-link:focus-visible .fs-desc { opacity: 1; transform: translateX(14px); }
+
+/* Pagina actual */
+.fs-link.active { color: var(--blanco); }
+.fs-link.active .fs-num { color: var(--naranja); }
+.fs-link.active::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--naranja);
+  box-shadow: 0 0 16px var(--naranja-glow);
+  align-self: center;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+/* Columna lateral del menu */
+.fs-menu-aside {
+  border-left: 1px solid rgba(255,255,255,.14);
+  padding-left: 34px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s var(--ease) .45s, transform .7s var(--ease) .45s;
+}
+
+.fs-menu.open .fs-menu-aside { opacity: 1; transform: translateY(0); }
+
+.fs-aside-block { margin-bottom: 26px; }
+
+.fs-aside-block strong {
+  display: block;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--naranja-2);
+  margin-bottom: 7px;
+}
+
+.fs-aside-block p {
+  font-size: .88rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,.68);
+}
+
+.fs-aside-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--naranja), var(--naranja-2));
+  color: #fff;
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  box-shadow: 0 12px 30px rgba(244,123,32,.32);
+  transition: transform .3s var(--ease-spring), box-shadow .3s var(--ease);
+}
+
+.fs-aside-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px rgba(244,123,32,.45);
+}
+
+.fs-aside-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  color: rgba(255,255,255,.68);
+  text-decoration: none;
+  font-size: .82rem;
+  font-weight: 700;
+  transition: color .25s;
+}
+
+.fs-aside-social:hover { color: var(--blanco); }
+
+.fs-aside-social img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ── D. INDICE LATERAL DE SECCIONES ──────────────────────── */
+.sec-nav {
+  position: fixed;
+  right: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px 12px;
+  border-radius: 999px;
+  background: rgba(3,9,26,.42);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(255,255,255,.14);
+  box-shadow: 0 10px 40px rgba(0,0,0,.28);
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+}
+
+.sec-nav.ready { opacity: 1; }
+
+.sec-nav button {
+  position: relative;
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.34);
+  cursor: pointer;
+  transition: background .3s var(--ease), height .35s var(--ease-spring);
+}
+
+.sec-nav button:hover { background: rgba(255,255,255,.75); }
+
+.sec-nav button.active {
+  background: var(--naranja);
+  height: 24px;
+  box-shadow: 0 0 14px var(--naranja-glow);
+}
+
+/* Etiqueta al pasar el mouse */
+.sec-nav button::after {
+  content: attr(data-label);
+  position: absolute;
+  right: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(8px);
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: rgba(3,9,26,.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.14);
+  color: #fff;
+  font-size: .72rem;
+  font-weight: 700;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .28s var(--ease), transform .32s var(--ease);
+}
+
+.sec-nav button:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ── E. CORTINA DE TRANSICION ────────────────────────────── */
+.pt-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 10050;
+  pointer-events: none;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(165deg, #03091a 0%, #0a2a6e 60%, #060f2e 100%);
+  transform: translateY(0);
+  animation: ptReveal .8s cubic-bezier(.76,0,.24,1) .1s forwards;
+}
+
+.pt-curtain img {
+  width: 84px;
+  height: 84px;
+  object-fit: contain;
+  animation: ptPulse 1.4s var(--ease) infinite alternate;
+}
+
+@keyframes ptReveal {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-100%); }
+}
+
+@keyframes ptCover {
+  from { transform: translateY(100%); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes ptPulse {
+  from { opacity: .55; transform: scale(.94); }
+  to   { opacity: 1;   transform: scale(1); }
+}
+
+.pt-curtain.pt-cover {
+  pointer-events: auto;
+  animation: ptCover .55s cubic-bezier(.76,0,.24,1) forwards;
+}
+
+/* Cortina aparcada fuera de pantalla, sin animacion de apertura.
+   Se usa cuando ya hubo splash y al volver con el boton "atras". */
+.pt-curtain.pt-noreveal {
+  animation: none;
+  transform: translateY(-100%);
+}
+
+/* Aunque este aparcada, debe poder cubrir al salir de la pagina */
+.pt-curtain.pt-noreveal.pt-cover {
+  animation: ptCover .55s cubic-bezier(.76,0,.24,1) forwards;
+}
+
+/* ── F. RESPONSIVE ───────────────────────────────────────── */
+@media (max-width: 1100px) {
+  .sec-nav { display: none; }
+}
+
+@media (max-width: 860px) {
+  .fs-menu-inner {
+    grid-template-columns: 1fr;
+    gap: 38px;
+    align-items: start;
+    padding: 104px 0 56px;
+  }
+  .fs-menu-aside {
+    border-left: 0;
+    border-top: 1px solid rgba(255,255,255,.14);
+    padding-left: 0;
+    padding-top: 26px;
+  }
+  .fs-desc { display: none; }
+}
+
+@media (max-width: 540px) {
+  .nav-immersive .menu-toggle { padding: 0 14px; gap: 9px; }
+  .nav-immersive .mt-label { font-size: .64rem; letter-spacing: .12em; }
+  .fs-link { gap: 12px; }
+  .fs-num { width: 20px; font-size: .62rem; }
+}
+
+/* ══════════════════════════════════════════════════════════
+   H. HERO QUE SIGUE AL TEMA
+   estilos.css tiene un bloque titulado "COMPONENTES CON FONDO
+   OSCURO PROPIO" que deja el hero en oscuro pase lo que pase:
+       [data-theme="light"] .hero { background: var(--azul-noche); }
+       [data-theme="light"] .hero h1 { color: var(--blanco) !important; }
+   Aqui se libera para que en tema claro el hero sea claro de verdad.
+   Todo cuelga de [data-theme="light"].nav-immersive, y ademas .hero solo
+   existe en index.html, asi que ninguna otra pagina se ve afectada.
+   ══════════════════════════════════════════════════════════ */
+
+[data-theme="light"].nav-immersive .hero {
+  background: var(--celeste-2);
+  color: var(--texto);
+}
+
+/* Malla de color de fondo, en version clara */
+[data-theme="light"].nav-immersive .hero::before {
+  background:
+    radial-gradient(ellipse 80% 60% at 20% 60%, rgba(45,109,228,.17) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(244,123,32,.15) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 50% at 90% 80%, rgba(23,74,168,.13) 0%, transparent 50%),
+    linear-gradient(170deg, #ffffff 0%, #eef4ff 52%, #dde8fb 100%);
+}
+
+/* La retícula de puntos pasa de blanca a azul */
+[data-theme="light"].nav-immersive .hero::after {
+  background-image: radial-gradient(rgba(14,52,140,.11) 1px, transparent 1px);
+}
+
+/* Las particulas del canvas se bajan un poco: sobre claro pesan mas */
+[data-theme="light"].nav-immersive .hero > canvas { opacity: .38 !important; }
+
+/* ── Texto (hay que repetir !important para ganarle al de estilos.css) ── */
+[data-theme="light"].nav-immersive .hero h1,
+[data-theme="light"].nav-immersive .hero h2,
+[data-theme="light"].nav-immersive .hero h3 { color: var(--texto) !important; }
+
+[data-theme="light"].nav-immersive .hero p,
+[data-theme="light"].nav-immersive .hero .lead { color: var(--muted) !important; }
+
+/* Naranja mas oscuro: el --naranja-2 no contrasta sobre fondo claro */
+[data-theme="light"].nav-immersive .hero .eyebrow { color: var(--naranja) !important; }
+
+/* ── Tarjetas flotantes (BTP / III Ciclo / Tecnica) ── */
+[data-theme="light"].nav-immersive .hero-card {
+  background: rgba(255,255,255,.7);
+  border-color: rgba(14,52,140,.14);
+  color: var(--azul);
+  box-shadow: var(--sombra);
+}
+
+/* ── Panel de fotos y estadisticas ── */
+[data-theme="light"].nav-immersive .hero-panel {
+  background: rgba(255,255,255,.6);
+  border-color: rgba(14,52,140,.12);
+  box-shadow: 0 32px 100px rgba(10,42,110,.14), inset 0 1px 0 rgba(255,255,255,.7);
+}
+
+[data-theme="light"].nav-immersive .hero .stat {
+  background: rgba(255,255,255,.78);
+  border-color: rgba(14,52,140,.12);
+}
+
+[data-theme="light"].nav-immersive .hero .stat:hover { background: #fff; }
+[data-theme="light"].nav-immersive .hero .stat strong { color: var(--naranja); }
+[data-theme="light"].nav-immersive .hero .stat span   { color: var(--muted); }
+
+/* ── Boton secundario ──
+   estilos.css lo deja blanco translucido porque contaba con fondo oscuro. */
+[data-theme="light"].nav-immersive .hero .btn.secondary {
+  background: rgba(255,255,255,.78);
+  color: var(--azul);
+  border-color: rgba(14,52,140,.2);
+}
+
+[data-theme="light"].nav-immersive .hero .btn.secondary:hover {
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(10,42,110,.14);
+}
+
+/* ── G. MOVIMIENTO REDUCIDO ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .fs-menu { transition: visibility .01s; clip-path: none; }
+  .fs-link { transition: color .2s; opacity: 1; transform: none; }
+  .fs-menu-aside { transition: none; opacity: 1; transform: none; }
+  .pt-curtain { display: none; animation: none; }
+  .sec-nav button { transition: background .2s; }
+}

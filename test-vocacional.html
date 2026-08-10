@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <!-- La clase nav-immersive activa la navegacion a pantalla completa
      (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
-     sola a la barra de navegacion clasica. -->
+     sola a la barra de navegacion clasica del resto del sitio. -->
 <html lang="es" class="nav-immersive">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Ubicación del Instituto Roberto Micheletti Baín en Agua Blanca Sur, El Progreso, Yoro.">
-  <title>Ubicación | Instituto Roberto Micheletti Baín</title>
+  <meta name="description" content="Test vocacional del Instituto Roberto Micheletti Baín: descubre qué bachillerato se ajusta mejor a tus intereses.">
+  <title>Test Vocacional | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <link rel="stylesheet" href="css/vocacional.css">
 </head>
 <body>
 
@@ -23,6 +25,7 @@
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
     <img src="imagenes/irmb/irmb_black.png" alt="">
   </div>
+
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
@@ -30,82 +33,85 @@
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta académica</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
         <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a class="active" href="ubicacion.html">Ubicación</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="container page-hero-grid">
+    <section class="page-hero" data-sec="Test vocacional">
+      <div class="container page-hero-grid" style="grid-template-columns: 1fr;">
         <div>
-          <p class="eyebrow">Cómo llegar</p>
-          <h1>Agua Blanca Sur, El Progreso, Yoro</h1>
-          <p>El instituto se encuentra al servicio de la comunidad de Agua Blanca Sur y zonas cercanas del municipio de El Progreso.</p>
+          <p class="eyebrow">Elige tu camino</p>
+          <h1>¿Qué bachillerato me conviene?</h1>
+          <p>Responde 5 preguntas rápidas sobre tus intereses y gustos. Al final te sugerimos el bachillerato del instituto que más se ajusta a ti: Informática, Contaduría y Finanzas, o Ciencias y Humanidades.</p>
         </div>
-        <img src="imagenes/ubicacion-mapa.svg" alt="Ilustración de ubicación del instituto" loading="eager">
       </div>
     </section>
 
-    <section class="section">
-      <div class="container split">
-        <div class="info-card">
-          <p class="eyebrow">Dirección</p>
-          <h2>Instituto Gubernamental Polivalente "Roberto Micheletti Baín"</h2>
-          <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
-          <a class="btn primary" href="https://maps.google.com/?q=Agua+Blanca+Sur+El+Progreso+Yoro+Honduras" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+    <section class="section" data-sec="Preguntas">
+      <div class="container voc-wrap">
+
+        <!-- Modo quiz -->
+        <div id="voc-quiz-mode">
+          <div class="voc-progress-label">
+            <span id="voc-progress-label">Pregunta 1 de 5</span>
+            <span id="voc-progress-pct">0%</span>
+          </div>
+          <div class="voc-progress-track">
+            <div class="voc-progress-fill" id="voc-progress-fill"></div>
+          </div>
+
+          <div class="voc-card">
+            <div class="voc-question">
+              <span class="voc-question-num" id="voc-qnum">Pregunta 1</span>
+              <h2 id="voc-qtext"></h2>
+              <div class="voc-options" id="voc-options"></div>
+            </div>
+            <div class="voc-nav-row">
+              <button type="button" class="voc-btn-text" id="voc-back-btn">&larr; Anterior</button>
+              <span class="voc-hint">Elige la opción que más se parezca a ti</span>
+            </div>
+          </div>
         </div>
-        <div class="map-box image-map" role="img" aria-label="Representación de ubicación del instituto">
-          <img src="imagenes/otros/ubicacion.jpg" alt="Mapa de ubicación del instituto">
+
+        <!-- Resultado -->
+        <div class="voc-result" id="voc-result">
+          <div class="voc-result-icon" id="voc-result-icon">💻</div>
+          <p class="voc-result-eyebrow">Tu resultado</p>
+          <span class="voc-result-tag voc-tag-inf" id="voc-result-tag">BTP Informática</span>
+          <h2 id="voc-result-title"></h2>
+          <p class="voc-result-desc" id="voc-result-desc"></p>
+          <div class="voc-tie-list" id="voc-tie-list" style="display:none;"></div>
+          <div class="voc-result-actions">
+            <a class="btn primary" id="voc-result-cta" href="#">Conocer esta carrera &rarr;</a>
+            <button type="button" class="btn secondary" id="voc-retake-btn">Repetir el test</button>
+          </div>
         </div>
+
       </div>
     </section>
 
     <section class="section band">
-      <div class="container cards-2">
-        <article class="info-card">
-          <p class="eyebrow">Atención de matrícula</p>
-          <h2>Horario enero 2026</h2>
-          <p class="big-time">8:00 AM - 12:00 PM</p>
-          <p>Lunes a viernes durante el mes de enero.</p>
-        </article>
-        <article class="info-card">
-          <p class="eyebrow">Secretaría</p>
-          <h2>Matrícula extraordinaria</h2>
-          <p>Durante febrero de 2026, los estudiantes que no pudieron matricularse en el período ordinario deben acercarse a Secretaría.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container section-head">
-        <p class="eyebrow">Antes de visitar</p>
-        <h2>Información útil para familias y estudiantes</h2>
-        <p>Para procesos de matrícula, es recomendable llevar todos los documentos en una carpeta y revisar que la información esté completa antes de presentarse.</p>
-      </div>
-      <div class="container cards-3">
-        <article class="info-card">
-          <h3>Ubicación</h3>
-          <p>Agua Blanca Sur, municipio de El Progreso, departamento de Yoro, Honduras.</p>
-        </article>
-        <article class="info-card">
-          <h3>Atención</h3>
-          <p>Durante enero de 2026, la atención de matrícula indicada es de lunes a viernes de 8:00 AM a 12:00 PM.</p>
-        </article>
-        <article class="info-card">
-          <h3>Secretaría</h3>
-          <p>Para matrícula extraordinaria en febrero de 2026, los estudiantes deben acercarse a Secretaría.</p>
-        </article>
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>¿Ya sabes cuál elegir?</h2>
+          <p>Revisa la oferta completa de bachilleratos, la orientación técnica y los requisitos de matrícula 2026.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="oferta-academica.html#bachilleratos">Ver bachilleratos</a>
+            <a class="btn secondary" href="matricula.html">Ver matrícula 2026</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
 
- <footer class="footer">
+  <footer class="footer">
     <div class="container footer-grid">
       <div style="display:flex; align-items:center; gap:1rem;">
         <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
@@ -150,5 +156,6 @@
   <script src="js/main.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script src="js/vocacional.js"></script>
 </body>
 </html>

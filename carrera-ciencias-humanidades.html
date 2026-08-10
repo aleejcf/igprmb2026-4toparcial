@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive hero-oscuro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bachillerato en Ciencias y Humanidades — Instituto Roberto Micheletti Bain">
-  <title>BCH Ciencias y Humanidades | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Bachillerato en Ciencias y Humanidades — Instituto Roberto Micheletti Baín">
+  <title>BCH Ciencias y Humanidades | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
   <style>
     /* ── HERO CARRERA ── */
     .carrera-hero {
@@ -471,8 +475,15 @@
   </style>
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
+    <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html">
         <span class="brand-mark">
           <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
@@ -480,22 +491,20 @@
         </span>
         <span class="brand-divider"></span>
         <span class="brand-text">
-          <span class="brand-name">Instituto Roberto Micheletti Bain</span>
+          <span class="brand-name">Instituto Roberto Micheletti Baín</span>
           <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
         </span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a class="active" href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -507,15 +516,15 @@
         <div>
           <a class="carrera-back" href="oferta-academica.html">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            Oferta academica
+            Oferta académica
           </a>
           <div class="carrera-tag-hero">BCH · Bachillerato en Ciencias y Humanidades</div>
           <h1>Bachillerato en <span>Ciencias y Humanidades</span></h1>
-          <p class="carrera-hero-desc">Formacion academica general que prepara a los estudiantes para continuar estudios superiores en cualquier area del conocimiento: ciencias, humanidades, arte, ingenieria, derecho y mas.</p>
+          <p class="carrera-hero-desc">Formación académica general que prepara a los estudiantes para continuar estudios superiores en cualquier área del conocimiento: ciencias, humanidades, arte, ingeniería, derecho y más.</p>
           <div class="hero-pills">
             <span class="hero-pill">🔬 Ciencias</span>
             <span class="hero-pill">📅 10mo – 12mo grado</span>
-            <span class="hero-pill">🎓 Bachillerato academico</span>
+            <span class="hero-pill">🎓 Bachillerato académico</span>
             <span class="hero-pill">🏛️ Base universitaria</span>
           </div>
         </div>
@@ -532,7 +541,7 @@
         <div class="stats-row">
           <div class="stat-item">
             <strong>3</strong>
-            <span>Anos de duracion</span>
+            <span>Años de duración</span>
           </div>
           <div class="stat-item">
             <strong>10mo</strong>
@@ -540,7 +549,7 @@
           </div>
           <div class="stat-item">
             <strong>BCH</strong>
-            <span>Titulo obtenido</span>
+            <span>Título obtenido</span>
           </div>
           <div class="stat-item">
             <strong>∞</strong>
@@ -556,55 +565,55 @@
         <div class="content-block">
           <div>
             <div class="block-label">Sobre la carrera</div>
-            <h2 class="block-title">Una base solida para cualquier camino</h2>
-            <p class="block-text">El Bachillerato en Ciencias y Humanidades ofrece una formacion academica integral que abarca matematicas, ciencias naturales, idiomas, historia, filosofia y lenguaje. Es la opcion mas amplia del instituto, pensada para estudiantes que aun exploran sus intereses o que desean acceder a cualquier carrera universitaria.</p>
+            <h2 class="block-title">Una base sólida para cualquier camino</h2>
+            <p class="block-text">El Bachillerato en Ciencias y Humanidades ofrece una formación académica integral que abarca matemáticas, ciencias naturales, idiomas, historia, filosofía y lenguaje. Es la opción más amplia del instituto, pensada para estudiantes que aun exploran sus intereses o que desean acceder a cualquier carrera universitaria.</p>
             <br>
-            <p class="block-text">A diferencia de los bachilleratos tecnicos, este ofrece una ruta academica general que no cierra ninguna puerta. Es ideal para quienes buscan flexibilidad y maxima apertura para sus estudios superiores.</p>
+            <p class="block-text">A diferencia de los bachilleratos técnicos, este ofrece una ruta académica general que no cierra ninguna puerta. Es ideal para quienes buscan flexibilidad y máxima apertura para sus estudios superiores.</p>
           </div>
           <div>
-            <div class="block-label">Areas de estudio</div>
-            <h2 class="block-title">Lo que aprenderas</h2>
+            <div class="block-label">Áreas de estudio</div>
+            <h2 class="block-title">Lo que aprenderás</h2>
             <div class="areas-grid">
               <div class="area-item">
                 <div class="area-icon">🔢</div>
                 <div>
-                  <div class="area-name">Matematicas y Calculo</div>
-                  <div class="area-desc">Algebra, geometria, estadistica y funciones</div>
+                  <div class="area-name">Matemáticas y Cálculo</div>
+                  <div class="area-desc">Algebra, geometria, estadística y funciones</div>
                 </div>
               </div>
               <div class="area-item">
                 <div class="area-icon">🧬</div>
                 <div>
                   <div class="area-name">Ciencias Naturales</div>
-                  <div class="area-desc">Biologia, quimica y fisica aplicada</div>
+                  <div class="area-desc">Biología, química y física aplicada</div>
                 </div>
               </div>
               <div class="area-item">
                 <div class="area-icon">📚</div>
                 <div>
                   <div class="area-name">Lenguaje y Literatura</div>
-                  <div class="area-desc">Comprension lectora, escritura y expresion</div>
+                  <div class="area-desc">Comprensión lectora, escritura y expresión</div>
                 </div>
               </div>
               <div class="area-item">
                 <div class="area-icon">🌍</div>
                 <div>
                   <div class="area-name">Ciencias Sociales</div>
-                  <div class="area-desc">Historia, geografia y educacion civica</div>
+                  <div class="area-desc">Historia, geografía y educación cívica</div>
                 </div>
               </div>
               <div class="area-item">
                 <div class="area-icon">🗣️</div>
                 <div>
                   <div class="area-name">Idioma Extranjero</div>
-                  <div class="area-desc">Ingles basico e intermedio</div>
+                  <div class="area-desc">Inglés básico e intermedio</div>
                 </div>
               </div>
               <div class="area-item">
                 <div class="area-icon">🧠</div>
                 <div>
-                  <div class="area-name">Filosofia y Etica</div>
-                  <div class="area-desc">Pensamiento critico y valores</div>
+                  <div class="area-name">Filosofía y Ética</div>
+                  <div class="area-desc">Pensamiento crítico y valores</div>
                 </div>
               </div>
             </div>
@@ -617,7 +626,7 @@
     <div class="container" style="padding-bottom: 0; padding-top: 0;">
       <img
         src="imagenes/humanidades/bch.jpg"
-        alt="Salon o actividad de Ciencias y Humanidades"
+        alt="Salón o actividad de Ciencias y Humanidades"
         style="width:100%; height:320px; object-fit:cover; border-radius:var(--r-lg); display:block;"
       >
     </div>
@@ -626,9 +635,9 @@
     <section class="section band">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Despues de graduarte</p>
-          <h2>Donde puede llevarte este bachillerato</h2>
-          <p>El BCH en Ciencias y Humanidades habilita el acceso a practicamente todas las carreras universitarias en Honduras y el extranjero.</p>
+          <p class="eyebrow">Después de graduarte</p>
+          <h2>Dónde puede llevarte este bachillerato</h2>
+          <p>El BCH en Ciencias y Humanidades habilita el acceso a prácticamente todas las carreras universitarias en Honduras y el extranjero.</p>
         </div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
           <img
@@ -638,7 +647,7 @@
           >
           <img
             src="imagenes/humanidades/estudiantes2.jpg"
-            alt="Salon de clases"
+            alt="Salón de clases"
             style="border-radius:var(--r); height:160px; width:100%; object-fit:cover; display:block;"
           >
           <img
@@ -651,32 +660,32 @@
           <div class="salida-card">
             <span class="salida-icon">⚕️</span>
             <h4>Ciencias de la salud</h4>
-            <p>Medicina, enfermeria, quimica farmaceutica y carreras del area medica y biologica.</p>
+            <p>Medicina, enfermería, química farmacéutica y carreras del área médica y biológica.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">⚙️</span>
-            <h4>Ingenieria y tecnologia</h4>
-            <p>Civil, industrial, sistemas, electronica y cualquier ingenieria universitaria.</p>
+            <h4>Ingeniería y tecnología</h4>
+            <p>Civil, industrial, sistemas, electrónica y cualquier ingeniería universitaria.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">⚖️</span>
             <h4>Derecho y ciencias sociales</h4>
-            <p>Abogacia, sociologia, ciencias politicas, trabajo social y afines.</p>
+            <p>Abogacía, sociología, ciencias políticas, trabajo social y afines.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">🎨</span>
-            <h4>Arte y comunicacion</h4>
-            <p>Periodismo, comunicacion social, diseño grafico y carreras creativas.</p>
+            <h4>Arte y comunicación</h4>
+            <p>Periodismo, comunicación social, diseño gráfico y carreras creativas.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">📐</span>
             <h4>Arquitectura y urbanismo</h4>
-            <p>Diseno arquitectonico, construccion y gestion del espacio urbano.</p>
+            <p>Diseño arquitectónico, construcción y gestión del espacio urbano.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">🏫</span>
-            <h4>Educacion y pedagogia</h4>
-            <p>Formacion docente, psicologia educativa y desarrollo infantil.</p>
+            <h4>Educación y pedagogía</h4>
+            <p>Formación docente, psicología educativa y desarrollo infantil.</p>
           </div>
         </div>
       </div>
@@ -689,19 +698,19 @@
           <div class="block-label">Perfil del estudiante</div>
           <h2 class="block-title">Esta carrera es para ti si…</h2>
           <ul class="perfil-list">
-            <li>Aun no defines que quieres estudiar en la universidad</li>
-            <li>Te interesan varias areas del conocimiento</li>
-            <li>Quieres una base academica solida y amplia</li>
+            <li>Aún no defines qué quieres estudiar en la universidad</li>
+            <li>Te interesan varias áreas del conocimiento</li>
+            <li>Quieres una base académica sólida y amplia</li>
             <li>Te gustan las ciencias, las letras o ambas</li>
             <li>Tienes metas universitarias en cualquier carrera</li>
-            <li>Valoras el pensamiento critico y el razonamiento</li>
+            <li>Valoras el pensamiento crítico y el razonamiento</li>
           </ul>
         </div>
         <div class="cta-card">
           <h3>¿Listo para inscribirte?</h3>
-          <p>El proceso de matricula 2026 esta abierto. Conoce los requisitos y pasos para ingresar al BCH en Ciencias y Humanidades.</p>
+          <p>El proceso de matrícula 2026 está abierto. Conoce los requisitos y pasos para ingresar al BCH en Ciencias y Humanidades.</p>
           <a href="matricula.html" class="btn-cta">
-            Ver matricula 2026
+            Ver matrícula 2026
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           </a>
           <br>
@@ -736,23 +745,25 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
 </body>
 </html>

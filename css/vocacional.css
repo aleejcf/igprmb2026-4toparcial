@@ -1,0 +1,222 @@
+/* ============================================================
+   INSTITUTO RMB — vocacional.css
+   Test vocacional: "¿Qué bachillerato me conviene?"
+   Componente independiente para test-vocacional.html.
+   ============================================================ */
+
+.voc-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* ── BARRA DE PROGRESO ───────────────────────────────────── */
+.voc-progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.voc-progress-track {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--linea);
+  overflow: hidden;
+  margin-bottom: 34px;
+}
+
+.voc-progress-fill {
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--azul-3), var(--naranja));
+  transition: width .4s var(--ease);
+}
+
+/* ── TARJETA DE PREGUNTA ─────────────────────────────────── */
+.voc-card {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  border-radius: var(--r-xl);
+  padding: 44px 40px;
+  box-shadow: var(--sombra-md);
+}
+
+[data-theme="dark"] .voc-card {
+  background: #0d1c3a;
+  border-color: rgba(255,255,255,.07);
+}
+
+.voc-question-num {
+  display: block;
+  color: var(--naranja);
+  font-weight: 800;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  margin-bottom: 10px;
+}
+
+.voc-question h2 {
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  line-height: 1.35;
+  margin-bottom: 28px;
+}
+
+.voc-options { display: grid; gap: 12px; }
+
+.voc-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: left;
+  padding: 16px 18px;
+  border-radius: var(--r);
+  border: 2px solid var(--linea);
+  background: var(--fondo);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: .96rem;
+  font-weight: 600;
+  color: var(--texto);
+  transition: border-color .2s, background .2s, transform .2s var(--ease);
+}
+
+.voc-option:hover { border-color: var(--azul-3); transform: translateX(3px); }
+
+.voc-option.selected {
+  border-color: var(--naranja);
+  background: linear-gradient(135deg, rgba(244,123,32,.12), rgba(45,109,228,.08));
+}
+
+.voc-option-letter {
+  flex-shrink: 0;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--celeste);
+  color: var(--azul-2);
+  font-weight: 900;
+  font-size: .85rem;
+}
+
+.voc-option.selected .voc-option-letter { background: var(--naranja); color: #fff; }
+
+[data-theme="dark"] .voc-option {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.1);
+  color: var(--texto);
+}
+
+[data-theme="dark"] .voc-option-letter { background: rgba(255,255,255,.08); color: #cfe0ff; }
+
+.voc-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.voc-btn-text {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: .88rem;
+  cursor: pointer;
+  padding: 10px;
+  font-family: inherit;
+}
+
+.voc-btn-text:disabled { opacity: .35; cursor: default; }
+.voc-btn-text:hover:not(:disabled) { color: var(--azul-3); }
+
+.voc-hint {
+  font-size: .8rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+/* ── RESULTADO ────────────────────────────────────────────── */
+.voc-result { display: none; text-align: center; }
+.voc-result.show { display: block; }
+
+.voc-result-icon { font-size: 3.4rem; margin-bottom: 8px; }
+
+.voc-result-eyebrow {
+  color: var(--naranja);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: .78rem;
+  margin-bottom: 14px;
+}
+
+.voc-result-tag {
+  display: inline-flex;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: .8rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.voc-tag-inf { background: linear-gradient(135deg, #b01010, #e03030); }
+.voc-tag-cf  { background: linear-gradient(135deg, var(--azul), var(--azul-3)); }
+.voc-tag-ch  { background: linear-gradient(135deg, #0a6622, #1a9940); }
+
+.voc-result h2 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin: 0 0 14px;
+}
+
+.voc-result-desc {
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto 28px;
+  font-size: 1rem;
+}
+
+.voc-tie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 26px;
+}
+
+.voc-tie-chip {
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: var(--celeste);
+  color: var(--azul-2);
+  font-weight: 800;
+  font-size: .82rem;
+}
+
+[data-theme="dark"] .voc-tie-chip { background: rgba(255,255,255,.08); color: #cfe0ff; }
+
+.voc-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .voc-card { padding: 30px 22px; }
+  .voc-nav-row { flex-direction: column; align-items: flex-start; }
+}

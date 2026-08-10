@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="es">
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica. -->
+<html lang="es" class="nav-immersive hero-oscuro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Bachillerato Tecnico Profesional en Contaduria y Finanzas — Instituto Roberto Micheletti Bain">
-  <title>BTP Contaduria y Finanzas | Instituto Roberto Micheletti Bain</title>
+  <meta name="description" content="Bachillerato Técnico Profesional en Contaduría y Finanzas — Instituto Roberto Micheletti Baín">
+  <title>BTP Contaduría y Finanzas | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
   <style>
     /* ── HERO CARRERA ── */
     .carrera-hero {
@@ -578,6 +582,13 @@
   </style>
 </head>
 <body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
   <!-- Lightbox para galerías masonry -->
   <div id="cf-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none';document.body.style.overflow=''">
     <img id="cf-lb-img" src="" alt="" style="max-width:92vw;max-height:90vh;border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.6);object-fit:contain;">
@@ -586,7 +597,7 @@
 
 
   <header class="site-header">
-    <nav class="nav container" aria-label="Navegacion principal">
+    <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html">
         <span class="brand-mark">
           <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
@@ -594,22 +605,20 @@
         </span>
         <span class="brand-divider"></span>
         <span class="brand-text">
-          <span class="brand-name">Instituto Roberto Micheletti Bain</span>
+          <span class="brand-name">Instituto Roberto Micheletti Baín</span>
           <span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span>
         </span>
       </a>
-      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
-      </button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a class="active" href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a class="active" href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </nav>
   </header>
@@ -621,21 +630,21 @@
         <div>
           <a class="carrera-back" href="oferta-academica.html">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-            Oferta academica
+            Oferta académica
           </a>
-          <div class="carrera-tag-hero">BTP · Bachillerato Tecnico Profesional</div>
-          <h1>BTP en <span>Contaduria y Finanzas</span></h1>
-          <p class="carrera-hero-desc">Preparacion en procesos contables, registros financieros y organizacion de informacion economica. Forma profesionales con orden, precision y responsabilidad en el manejo de documentos financieros.</p>
+          <div class="carrera-tag-hero">BTP · Bachillerato Técnico Profesional</div>
+          <h1>BTP en <span>Contaduría y Finanzas</span></h1>
+          <p class="carrera-hero-desc">Preparación en procesos contables, registros financieros y organización de información económica. Forma profesionales con orden, precisión y responsabilidad en el manejo de documentos financieros.</p>
           <div class="hero-pills">
             <span class="hero-pill">💰 Finanzas</span>
             <span class="hero-pill">📅 10mo – 12mo grado</span>
-            <span class="hero-pill">🎓 Titulo tecnico</span>
+            <span class="hero-pill">🎓 Título técnico</span>
             <span class="hero-pill">🕐 Jornada matutina</span>
           </div>
         </div>
         <div class="carrera-hero-logo">
-          <img class="logo-dark"  src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduria">
-          <img class="logo-light" src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduria">
+          <img class="logo-dark"  src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduría">
+          <img class="logo-light" src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduría">
         </div>
       </div>
     </section>
@@ -646,7 +655,7 @@
         <div class="stats-row">
           <div class="stat-item">
             <strong>3</strong>
-            <span>Anos de duracion</span>
+            <span>Años de duración</span>
           </div>
           <div class="stat-item">
             <strong>10mo</strong>
@@ -654,11 +663,11 @@
           </div>
           <div class="stat-item">
             <strong>BTP</strong>
-            <span>Titulo obtenido</span>
+            <span>Título obtenido</span>
           </div>
           <div class="stat-item">
             <strong>100%</strong>
-            <span>Practica aplicada</span>
+            <span>Práctica aplicada</span>
           </div>
         </div>
       </div>
@@ -670,55 +679,55 @@
         <div class="content-block">
           <div>
             <div class="block-label">Sobre la carrera</div>
-            <h2 class="block-title">Formacion financiera desde el aula</h2>
-            <p class="block-text">El Bachillerato Tecnico Profesional en Contaduria y Finanzas brinda al estudiante los conocimientos necesarios para manejar registros contables, elaborar documentos financieros y aplicar principios de administracion economica en distintos contextos laborales.</p>
+            <h2 class="block-title">Formación financiera desde el aula</h2>
+            <p class="block-text">El Bachillerato Técnico Profesional en Contaduría y Finanzas brinda al estudiante los conocimientos necesarios para manejar registros contables, elaborar documentos financieros y aplicar principios de administración económica en distintos contextos laborales.</p>
             <br>
-            <p class="block-text">Es la carrera ideal para quienes disfrutan el orden, los numeros, la organizacion y quieren tener una salida laboral clara al terminar el bachillerato, ya sea en empresas locales o emprendimientos propios.</p>
+            <p class="block-text">Es la carrera ideal para quienes disfrutan el orden, los números, la organización y quieren tener una salida laboral clara al terminar el bachillerato, ya sea en empresas locales o emprendimientos propios.</p>
           </div>
           <div>
-            <div class="block-label">Materias tecnicas</div>
-            <h2 class="block-title">Lo que aprenderas</h2>
+            <div class="block-label">Materias técnicas</div>
+            <h2 class="block-title">Lo que aprenderás</h2>
             <div class="materias-grid">
               <div class="materia-item">
                 <div class="materia-icon">📒</div>
                 <div>
                   <div class="materia-name">Contabilidad General</div>
-                  <div class="materia-desc">Principios y registros contables basicos</div>
+                  <div class="materia-desc">Principios y registros contables básicos</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">📊</div>
                 <div>
-                  <div class="materia-name">Analisis Financiero</div>
-                  <div class="materia-desc">Interpretacion de estados y reportes</div>
+                  <div class="materia-name">Análisis Financiero</div>
+                  <div class="materia-desc">Interpretación de estados y reportes</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">🧾</div>
                 <div>
-                  <div class="materia-name">Documentacion Comercial</div>
+                  <div class="materia-name">Documentación Comercial</div>
                   <div class="materia-desc">Facturas, recibos y documentos de empresa</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">💻</div>
                 <div>
-                  <div class="materia-name">Informatica Aplicada</div>
-                  <div class="materia-desc">Excel y herramientas de calculo financiero</div>
+                  <div class="materia-name">Informática Aplicada</div>
+                  <div class="materia-desc">Excel y herramientas de cálculo financiero</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">🏦</div>
                 <div>
-                  <div class="materia-name">Administracion</div>
-                  <div class="materia-desc">Gestion basica de negocios y recursos</div>
+                  <div class="materia-name">Administración</div>
+                  <div class="materia-desc">Gestión básica de negocios y recursos</div>
                 </div>
               </div>
               <div class="materia-item">
                 <div class="materia-icon">⚖️</div>
                 <div>
-                  <div class="materia-name">Legislacion Tributaria</div>
-                  <div class="materia-desc">Marco legal del sistema fiscal hondureno</div>
+                  <div class="materia-name">Legislación Tributaria</div>
+                  <div class="materia-desc">Marco legal del sistema fiscal hondureño</div>
                 </div>
               </div>
             </div>
@@ -738,42 +747,42 @@
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/finanzas1.jpg" alt="Estudiantes de la clase de contabilidad"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span>📒</span>Agrega: imagenes/contaduria/aula1.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span>📒</span>Agrega: imagenes/contaduría/aula1.jpg</div>
             <div class="m-overlay"><span class="m-caption">Clase de Contabilidad General</span></div>
           </div>
 
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/finanzas2.jpg" alt="Trabajo en grupo"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span>📊</span>Agrega: imagenes/contaduria/aula2.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span>📊</span>Agrega: imagenes/contaduría/aula2.jpg</div>
             <div class="m-overlay"><span class="m-caption">Maestros del área</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/finanzas3.jpg" alt="Practica de documentos"
+            <img src="imagenes/contaduria_finanzas/finanzas3.jpg" alt="Práctica de documentos"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span>🧾</span>Agrega: imagenes/contaduria/aula3.jpg</div>
-            <div class="m-overlay"><span class="m-caption">Lic. Javier Alberto Lopez</span></div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span>🧾</span>Agrega: imagenes/contaduría/aula3.jpg</div>
+            <div class="m-overlay"><span class="m-caption">Lic. Javier Alberto López</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/finanzas4.jpg" alt="Clase de informatica aplicada"
+            <img src="imagenes/contaduria_finanzas/finanzas4.jpg" alt="Clase de informática aplicada"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span>💻</span>Agrega: imagenes/contaduria/aula4.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span>💻</span>Agrega: imagenes/contaduría/aula4.jpg</div>
             <div class="m-overlay"><span class="m-caption">Lic. Celia Villatoro</span></div>
           </div>
 
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/finanzas5.jpg" alt="Estudiante revisando registros"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span>📝</span>Agrega: imagenes/contaduria/aula5.jpg</div>
-            <div class="m-overlay"><span class="m-caption">Estudiantes de ultimo año de CF</span></div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span>📝</span>Agrega: imagenes/contaduría/aula5.jpg</div>
+            <div class="m-overlay"><span class="m-caption">Estudiantes de último año de CF</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/talento_cf.jpg" alt="Exposicion de estudiantes"
+            <img src="imagenes/contaduria_finanzas/talento_cf.jpg" alt="Exposición de estudiantes"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span>🎓</span>Agrega: imagenes/contaduria/aula6.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span>🎓</span>Agrega: imagenes/contaduría/aula6.jpg</div>
             <div class="m-overlay"><span class="m-caption">Talento estudiantil para el canto</span></div>
           </div>
 
@@ -785,15 +794,15 @@
     <section class="section band">
       <div class="container">
         <div class="section-head">
-          <p class="eyebrow">Despues de graduarte</p>
+          <p class="eyebrow">Después de graduarte</p>
           <h2>Salidas profesionales</h2>
-          <p>Al obtener el titulo de BTP en Contaduria y Finanzas tienes opciones directas de empleo en el sector empresarial o la posibilidad de continuar estudios universitarios en el area de negocios.</p>
+          <p>Al obtener el título de BTP en Contaduría y Finanzas tienes opciones directas de empleo en el sector empresarial o la posibilidad de continuar estudios universitarios en el área de negocios.</p>
         </div>
         <div class="salidas-grid">
           <div class="salida-card">
             <span class="salida-icon">🏢</span>
             <h4>Auxiliar contable</h4>
-            <p>Apoyo en registros, libros contables y documentacion en empresas locales o comercios.</p>
+            <p>Apoyo en registros, libros contables y documentación en empresas locales o comercios.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">🧾</span>
@@ -808,7 +817,7 @@
           <div class="salida-card">
             <span class="salida-icon">🎓</span>
             <h4>Estudios universitarios</h4>
-            <p>Base para continuar en Contaduria Publica, Administracion de Empresas o carreras afines.</p>
+            <p>Base para continuar en Contaduría Pública, Administración de Empresas o carreras afines.</p>
           </div>
           <div class="salida-card">
             <span class="salida-icon">💼</span>
@@ -851,24 +860,26 @@
                style="width:100%;height:100%;object-fit:cover;display:block;">
         </a>
         <div>
-          <h2>Instituto Roberto Micheletti Bain</h2>
+          <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
-        <a href="oferta-academica.html">Oferta academica</a>
-        <a href="matricula.html">Matricula 2026</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
-        <a href="ubicacion.html">Ubicacion</a>
+        <a href="ubicacion.html">Ubicación</a>
       </div>
     </div>
   </footer>
 
   <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
 
   <script>
   // Lightbox masonry

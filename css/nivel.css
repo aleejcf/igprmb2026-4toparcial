@@ -1,0 +1,292 @@
+/* ============================================================
+   INSTITUTO RMB — nivel.css
+   Hoja compartida por las páginas de orientación técnica y de
+   grado del III Ciclo. Cada página define su color propio en
+   la variable --nivel-color (y --nivel-color-2), así que este
+   archivo no se repite ni se duplica por página.
+   ============================================================ */
+
+:root {
+  --nivel-color:   #174aa8;
+  --nivel-color-2: #2d6de4;
+}
+
+/* ── CABECERA DE NIVEL ───────────────────────────────────── */
+.nivel-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--azul-noche);
+  color: var(--blanco);
+  padding: 96px 0 80px;
+}
+
+.nivel-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 10% 50%, var(--nivel-color) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 50% at 90% 20%, var(--nivel-color-2) 0%, transparent 55%),
+    linear-gradient(170deg, #05091a 0%, #0a1330 55%, #05091a 100%);
+  opacity: .92;
+}
+
+/* Retícula de puntos, como en el resto del sitio */
+.nivel-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.nivel-hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 200px;
+  gap: 48px;
+  align-items: center;
+}
+
+.nivel-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(255,255,255,.7);
+  text-decoration: none;
+  font-size: .8rem;
+  font-weight: 700;
+  margin-bottom: 22px;
+  transition: color .25s var(--ease), gap .25s var(--ease);
+}
+
+.nivel-back:hover { color: var(--blanco); gap: 12px; }
+
+.nivel-tag {
+  display: inline-block;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.22);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.nivel-hero h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  margin-bottom: 18px;
+}
+
+.nivel-hero-desc {
+  font-size: 1.08rem;
+  line-height: 1.75;
+  color: rgba(255,255,255,.78);
+  max-width: 580px;
+  margin-bottom: 30px;
+}
+
+.nivel-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.nivel-pill {
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.16);
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.nivel-hero-icono {
+  display: grid;
+  place-items: center;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.18);
+  font-size: 4.6rem;
+  line-height: 1;
+  justify-self: center;
+}
+
+/* ── FRANJA DE DATOS ─────────────────────────────────────── */
+.nivel-stats { background: var(--fondo); border-bottom: 1px solid var(--linea); }
+
+.nivel-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 34px 0;
+}
+
+.nivel-stat { text-align: center; }
+
+.nivel-stat strong {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--nivel-color-2);
+}
+
+.nivel-stat span {
+  display: block;
+  margin-top: 5px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* ── TARJETAS DE APRENDIZAJE ─────────────────────────────── */
+.nivel-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.nivel-card {
+  padding: 26px 24px;
+  border-radius: var(--r-lg);
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra);
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+.nivel-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-md); }
+
+.nivel-card-icono {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: var(--celeste);
+  font-size: 1.35rem;
+  margin-bottom: 15px;
+}
+
+.nivel-card h3 { font-size: 1.02rem; margin-bottom: 7px; }
+.nivel-card p  { font-size: .89rem; color: var(--muted); line-height: 1.65; }
+
+[data-theme="dark"] .nivel-card {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.1);
+}
+
+[data-theme="dark"] .nivel-card-icono { background: rgba(255,255,255,.08); }
+
+/* ── GALERÍA DEL NIVEL ───────────────────────────────────── */
+.nivel-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.nivel-galeria figure {
+  margin: 0;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  background: var(--blanco);
+}
+
+.nivel-galeria img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s var(--ease);
+}
+
+.nivel-galeria figure:hover img { transform: scale(1.05); }
+
+.nivel-galeria figcaption {
+  padding: 12px 15px;
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+[data-theme="dark"] .nivel-galeria figure { background: rgba(255,255,255,.04); }
+
+/* ── LLAMADA FINAL ───────────────────────────────────────── */
+.nivel-cta {
+  text-align: center;
+  padding: 52px 30px;
+  border-radius: var(--r-xl);
+  background: linear-gradient(140deg, var(--nivel-color), var(--nivel-color-2));
+  color: var(--blanco);
+}
+
+.nivel-cta h2 { color: var(--blanco) !important; margin-bottom: 12px; }
+
+.nivel-cta p {
+  color: rgba(255,255,255,.82) !important;
+  max-width: 520px;
+  margin: 0 auto 26px;
+}
+
+.nivel-cta-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.nivel-cta .btn.secondary {
+  background: rgba(255,255,255,.16);
+  border-color: rgba(255,255,255,.45);
+  color: var(--blanco);
+}
+
+.nivel-cta .btn.secondary:hover { background: rgba(255,255,255,.26); }
+
+/* ── ENLACES ENTRE NIVELES HERMANOS ──────────────────────── */
+.nivel-hermanos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.nivel-hermano {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px 19px;
+  border-radius: var(--r);
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  font-size: .92rem;
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease), border-color .25s;
+}
+
+.nivel-hermano:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-md);
+  border-color: var(--nivel-color-2);
+}
+
+.nivel-hermano span:first-child { font-size: 1.5rem; line-height: 1; }
+
+[data-theme="dark"] .nivel-hermano {
+  background: rgba(255,255,255,.04);
+  border-color: rgba(255,255,255,.1);
+}
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .nivel-hero-inner { grid-template-columns: 1fr; gap: 32px; }
+  .nivel-hero-icono { width: 128px; height: 128px; font-size: 3.4rem; justify-self: start; }
+}

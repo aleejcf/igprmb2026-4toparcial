@@ -8,6 +8,13 @@
 (function () {
   "use strict";
 
+  /* ── MODO DE NAVEGACIÓN ───────────────────────────────────
+     Las páginas cuyo <html> lleva la clase .nav-immersive usan
+     el menú a pantalla completa de js/inmersivo.js. Las demás
+     siguen con la barra de dropdowns de siempre.
+  ─────────────────────────────────────────────────────────── */
+  const IMMERSIVE = document.documentElement.classList.contains("nav-immersive");
+
   /* ── TEMA AUTOMÁTICO POR HORA + TOGGLE MANUAL ─────────── */
   const THEME_KEY = "rmb-theme";
 
@@ -63,6 +70,11 @@
   if (isHomePage && !splashShown) {
     sessionStorage.setItem(SPLASH_KEY, "1");
     document.body.style.overflow = "hidden";
+
+    // El splash ya hace de intro: anulamos la apertura de la cortina para no
+    // encadenar dos animaciones. La cortina sigue viva para las transiciones.
+    const curtainAtStart = document.getElementById("pt-curtain");
+    if (curtainAtStart) curtainAtStart.classList.add("pt-noreveal");
 
     // Crear el splash
     const splash = document.createElement("div");
@@ -266,13 +278,13 @@
     });
   }
 
-  buildDropdownNav();
+  if (!IMMERSIVE) buildDropdownNav();
 
   /* ── MOBILE MENU ──────────────────────────────────────── */
   const menuButton = document.querySelector("[data-menu-toggle]");
   const menu = document.querySelector("[data-menu]");
 
-  if (menuButton && menu) {
+  if (!IMMERSIVE && menuButton && menu) {
     menuButton.addEventListener("click", () => {
       const isOpen = menu.classList.toggle("open");
       menuButton.setAttribute("aria-expanded", String(isOpen));
