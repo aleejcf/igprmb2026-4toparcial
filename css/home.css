@@ -233,9 +233,13 @@
 
 .tech-panel > * { position: relative; z-index: 1; }
 
-.tech-panel .eyebrow { color: rgba(255,255,255,.6); }
-.tech-panel h2 { color: #fff; }
-.tech-panel p { color: rgba(255,255,255,.75); }
+/* El panel es oscuro a proposito sin importar el tema del sitio (como
+   una etiqueta de terminal). !important porque .split/.section-head
+   ya traen reglas de color por tema (pensadas para tarjetas claras)
+   con la misma especificidad y pisaban el blanco de este panel. */
+.tech-panel .eyebrow { color: rgba(255,255,255,.6) !important; }
+.tech-panel h2 { color: #fff !important; }
+.tech-panel p { color: rgba(255,255,255,.75) !important; }
 
 .tech-chips {
   display: flex;
