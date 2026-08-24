@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica del resto del sitio.
+
+     Los avatares de esta pagina son un espacio reservado (circulo
+     punteado) para cuando se agreguen fotos y nombres reales de
+     cada docente; por ahora cada tarjeta muestra el area/materia
+     a cargo. -->
+<html lang="es" class="nav-immersive">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cuerpo docente del Instituto Roberto Micheletti Baín: dirección, educación básica, orientación técnica y bachilleratos.">
+  <title>Cuerpo Docente | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <link rel="stylesheet" href="css/docentes.css">
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a class="active" href="docentes.html">Cuerpo Docente</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" data-sec="Cuerpo Docente">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Quiénes somos</p>
+          <h1>Cuerpo Docente</h1>
+          <p>Un equipo comprometido con la formación académica y técnica de cada estudiante, organizado por área para acompañar todo el recorrido del III Ciclo hasta el bachillerato.</p>
+        </div>
+        <img src="imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg" alt="Presentación de docentes del instituto" loading="eager">
+      </div>
+    </section>
+
+    <section class="section" data-sec="Dirección">
+      <div class="container doc-area">
+        <div class="doc-area-head">
+          <p class="eyebrow">Dirección y coordinación</p>
+          <h3>Gestión institucional</h3>
+          <p>A cargo de la administración general del instituto y del seguimiento académico de los distintos niveles y modalidades.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Dirección</span>
+            <h4>Nombre por confirmar</h4>
+            <p class="doc-note">Responsable de la dirección general del Instituto Roberto Micheletti Baín.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Coordinación académica</span>
+            <h4>Nombre por confirmar</h4>
+            <p class="doc-note">Da seguimiento académico a los distintos grados, orientaciones y bachilleratos del instituto.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" data-sec="Educación Básica">
+      <div class="container doc-area" style="margin-bottom:0;">
+        <div class="doc-area-head">
+          <p class="eyebrow">III Ciclo</p>
+          <h3>Educación Básica</h3>
+          <p>Docentes a cargo de las materias generales de séptimo, octavo y noveno grado en modalidad básica.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Español y Estudios Sociales</span>
+            <h4>Gera George, Delmy Oneida Domínguez, Wilmer Alexander Oseguera, Edith Roxana Guerra, Lourdes Karina Joch, Daniel Alberto Ortiz Norberto</h4>
+            <p class="doc-note">Español, Educación Cívica, Estudios Sociales, Historia de Honduras, Sociología y Fundamentos de Psicología en 7°, 8° y 9°.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Matemáticas y Ciencias Naturales</span>
+            <h4>Kenia Yamileth Bustamante, Lesly Matamoros, Josué Leopoldo Maldonado Lainez</h4>
+            <p class="doc-note">Matemáticas, Ciencias Naturales, Biología, Física y Química de 7° a 10°.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Inglés</span>
+            <h4>Suyapa Albertina Ortíz</h4>
+            <p class="doc-note">Inglés e Inglés Técnico de 7° a 11°, en ambos bachilleratos técnicos.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Educación Física, Artística y Tecnología</span>
+            <h4>Wilfredo Yanez, Wilson Jose Alas, Maryori Cáceres, Carlos López, Ricardo Estrada</h4>
+            <p class="doc-note">Educación Física, Artística y Tecnología en jornada matutina y vespertina.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Módulos Básicos y Talleres Rotativos</span>
+            <h4>Sandra Lilibeth Sierra</h4>
+            <p class="doc-note">Módulos Básicos, Rotativos u Ocupacionales de 7° a 9°. Hay 2 plazas vacantes en esta área (Ciencias Naturales y Módulos Básicos de 7°).</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-sec="Orientación Técnica">
+      <div class="container doc-area">
+        <div class="doc-area-head">
+          <p class="eyebrow">III Ciclo con orientación técnica</p>
+          <h3>Talleres técnicos</h3>
+          <p>Encargados de los talleres prácticos que se cursan junto a las materias del III Ciclo.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Estructuras Metálicas</span>
+            <h4>Nombre por confirmar</h4>
+            <p class="doc-note">A cargo del taller de Estructuras Metálicas.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Electricidad</span>
+            <h4>Nombre por confirmar</h4>
+            <p class="doc-note">A cargo del taller de Electricidad.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Corte y Confección</span>
+            <h4>Nombre por confirmar</h4>
+            <p class="doc-note">A cargo del taller de Corte y Confección.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band" data-sec="Bachilleratos">
+      <div class="container doc-area" style="margin-bottom:0;">
+        <div class="doc-area-head">
+          <p class="eyebrow">Educación media</p>
+          <h3>Bachilleratos</h3>
+          <p>Docentes especializados en las materias técnicas y académicas de cada bachillerato.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">BTP Informática</span>
+            <h4>Karla Andrade, Kebin Stanly Rodríguez</h4>
+            <p class="doc-note">Programación, Redes Informáticas, Desarrollo Web, Ofimática y Análisis y Diseño de Sistemas en 11° y 12° BTPI, jornada matutina y vespertina.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">BTP Contaduría y Finanzas</span>
+            <h4>Celia Villatoro, José Javier Alberto López</h4>
+            <p class="doc-note">Contabilidad, Contabilidad de Costos, Contabilidad Bancaria, Auditoría, Matemática Financiera y Legislación Mercantil en 11° y 12° BTPCF.</p>
+          </article>
+          <article class="doc-card">
+            <div class="doc-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+            </div>
+            <span class="doc-role">Ciencias y Humanidades</span>
+            <h4>Fernando Moncada, Gloria Garay, José A. Vásquez, Ada Iris García, Adalicsy Cárcamo</h4>
+            <p class="doc-note">Matemática, Física, Química, Biología, Historia Universal, Sociología, Filosofía, Antropología y Artística del Bachillerato en Ciencias y Humanidades, jornada vespertina.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-sec="Únete">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>¿Quieres conocer más sobre el instituto?</h2>
+          <p>Revisa la oferta académica completa o contáctanos para más información sobre cada área.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="oferta-academica.html">Ver oferta académica</a>
+            <a class="btn secondary" href="contacto.html">Contactar al instituto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
+          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Cuerpo Docente</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+</body>
+</html>

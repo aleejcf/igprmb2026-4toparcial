@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica del resto del sitio. -->
+<html lang="es" class="nav-immersive">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Infraestructura del Instituto Roberto Micheletti Baín: talleres técnicos, laboratorio de informática, auditorio y áreas deportivas.">
+  <title>Infraestructura | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/nivel.css">
+  <link rel="stylesheet" href="css/infraestructura.css">
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a class="active" href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Cuerpo Docente</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" data-sec="Infraestructura">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Nuestro campus</p>
+          <h1>Infraestructura del instituto</h1>
+          <p>Conoce los espacios donde los estudiantes del Instituto Roberto Micheletti Baín aprenden, practican sus talleres técnicos y participan en la vida escolar.</p>
+        </div>
+        <img src="imagenes/otros/cole.jpg" alt="Campus del Instituto Roberto Micheletti Baín" loading="eager">
+      </div>
+    </section>
+
+    <section class="section" data-sec="Espacios">
+      <div class="container section-head">
+        <p class="eyebrow">Espacios del campus</p>
+        <h2>Aulas, talleres y áreas comunes</h2>
+        <p>El instituto cuenta con espacios pensados tanto para la formación académica como para la práctica técnica y la vida estudiantil.</p>
+      </div>
+
+      <div class="container infra-grid">
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/iii_ciclo_polivalente/metalesm.jpg" alt="Taller de Estructuras Metálicas" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Talleres técnicos</h3>
+            <p>Espacios de práctica para Estructuras Metálicas, Electricidad y Corte y Confección, donde los estudiantes del III Ciclo con orientación técnica desarrollan habilidades reales.</p>
+          </div>
+        </article>
+
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/instalaciones/laboratorio_1.jpeg" alt="Laboratorio de Informática" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Laboratorio de Informática</h3>
+            <p>Equipo de cómputo para las clases del Bachillerato Técnico Profesional en Informática y para proyectos como la Feria de Inteligencia Artificial.</p>
+          </div>
+        </article>
+
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/auditorio.jpg" alt="Auditorio del instituto" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Auditorio</h3>
+            <p>Espacio para actos cívicos, presentaciones y eventos institucionales que reúnen a toda la comunidad educativa.</p>
+          </div>
+        </article>
+
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/estudiantes.jpg" alt="Aulas de clase" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Aulas de clase</h3>
+            <p>Espacios donde se imparten las clases del III Ciclo de Educación Básica y de los tres bachilleratos del instituto.</p>
+          </div>
+        </article>
+
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/futbol.jpg" alt="Área deportiva" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Áreas deportivas</h3>
+            <p>Espacios para la práctica de fútbol y otras actividades deportivas y recreativas dentro del instituto.</p>
+          </div>
+        </article>
+
+        <article class="infra-card">
+          <div class="infra-card-img">
+            <img src="imagenes/otros/acto_civico.jpg" alt="Patio cívico" loading="lazy">
+          </div>
+          <div class="infra-card-body">
+            <h3>Patio cívico</h3>
+            <p>Punto de encuentro para actos cívicos, formaciones y celebraciones especiales del calendario escolar.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section band" data-sec="Visítanos">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>Conoce el instituto en persona</h2>
+          <p>La mejor forma de conocer nuestras instalaciones es visitándonos durante el período de matrícula o contactando a Secretaría.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
+            <a class="btn secondary" href="contacto.html">Contactar al instituto</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
+          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Cuerpo Docente</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+</body>
+</html>

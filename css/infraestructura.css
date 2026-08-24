@@ -1,0 +1,54 @@
+/* ============================================================
+   INSTITUTO RMB — infraestructura.css
+   Galeria de espacios del campus para infraestructura.html.
+   ============================================================ */
+
+.infra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.infra-card {
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra);
+  transition: transform .35s var(--ease-spring), box-shadow .35s var(--ease);
+}
+
+.infra-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-md);
+}
+
+.infra-card-img { aspect-ratio: 4 / 3; overflow: hidden; }
+
+.infra-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s var(--ease);
+}
+
+.infra-card:hover .infra-card-img img { transform: scale(1.06); }
+
+.infra-card-body { padding: 22px 24px; }
+
+.infra-card-body h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.infra-card-body p {
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+[data-theme="dark"] .infra-card {
+  background: #0d1c3a;
+  border-color: rgba(255,255,255,.07);
+}

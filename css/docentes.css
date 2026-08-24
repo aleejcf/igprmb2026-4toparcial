@@ -1,0 +1,92 @@
+/* ============================================================
+   INSTITUTO RMB — docentes.css
+   Tarjetas de personal docente por area, para docentes.html.
+   Los avatares son un espacio reservado (circulo punteado) hasta
+   que se agreguen fotos y nombres reales de cada docente.
+   ============================================================ */
+
+.doc-area { margin-bottom: 56px; }
+.doc-area:last-child { margin-bottom: 0; }
+
+.doc-area-head { margin-bottom: 24px; }
+
+.doc-area-head h3 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.doc-area-head p {
+  color: var(--muted);
+  font-size: .92rem;
+  max-width: 620px;
+}
+
+.doc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.doc-card {
+  text-align: center;
+  padding: 30px 22px;
+  border-radius: var(--r-lg);
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+  box-shadow: var(--sombra);
+  transition: transform .3s var(--ease-spring), box-shadow .3s var(--ease);
+}
+
+.doc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-md);
+}
+
+.doc-avatar {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--celeste), #d6e6ff);
+  border: 2px dashed rgba(23,74,168,.35);
+  color: var(--azul-2);
+}
+
+.doc-avatar svg { width: 34px; height: 34px; opacity: .6; }
+
+.doc-role {
+  display: inline-block;
+  font-size: .7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  color: var(--naranja);
+  margin-bottom: 10px;
+}
+
+.doc-card h4 {
+  font-size: .96rem;
+  font-style: italic;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.doc-card p.doc-note {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+[data-theme="dark"] .doc-card {
+  background: #0d1c3a;
+  border-color: rgba(255,255,255,.07);
+}
+
+[data-theme="dark"] .doc-avatar {
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.28);
+  color: #cfe0ff;
+}
