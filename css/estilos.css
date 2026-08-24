@@ -38,6 +38,21 @@
   --r:    16px;
   --r-lg: 24px;
   --r-xl: 32px;
+
+  /* Spacing scale */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 40px;
+  --sp-6: 64px;
+
+  /* Categorías de eventos (agenda institucional) */
+  --cat-civico:     #1a56db;
+  --cat-cultural:   #7e3af2;
+  --cat-academico:  #057a55;
+  --cat-gobierno:   #d03801;
+  --cat-graduacion: #c27803;
 }
 
 /* ── 2. RESET & BASE ─────────────────────────────────────── */
@@ -622,6 +637,7 @@ img { display: block; max-width: 100%; height: auto; }
   border-radius: var(--r-lg);
   padding: 30px;
   box-shadow: var(--sombra);
+  cursor: default;
   transition:
     transform .35s var(--ease-spring),
     box-shadow .35s var(--ease),
@@ -647,11 +663,13 @@ img { display: block; max-width: 100%; height: auto; }
 .feature-card:hover,
 .program-card:hover,
 .activity-card:hover,
+.activity-card:focus-visible,
 .info-card:hover,
 .event-item:hover {
   transform: translateY(-8px);
   box-shadow: var(--sombra-md);
   border-color: rgba(45,109,228,.2);
+  outline: none;
 }
 
 .feature-card:hover::after,
@@ -724,6 +742,8 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .feature-card:hover .icon-box,
+.activity-card { cursor: pointer; }
+
 .activity-card:hover .icon-box {
   transform: scale(1.1) rotate(-4deg);
 }
@@ -761,6 +781,180 @@ img { display: block; max-width: 100%; height: auto; }
 .agenda-galeria:hover .agenda-ver-fotos { gap: 11px; opacity: 1 !important; }
 
 [data-theme="dark"] .agenda-ver-fotos { color: var(--naranja-2); }
+
+/* ── 13a-2. GRID Y TARJETAS DE AGENDA (sin estilos inline) ────
+   Reemplaza el patrón anterior de repetir el mismo bloque de
+   estilo inline en cada <article> de la agenda institucional.
+   El color de cada categoría sale de --cat-* vía data-categoria.
+─────────────────────────────────────────────────────────────── */
+.agenda-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--sp-3);
+}
+
+.agenda-card {
+  --cat-color: var(--cat-civico);
+  background: var(--blanco);
+  border-radius: var(--r);
+  padding: var(--sp-4);
+  border-left: 4px solid var(--cat-color);
+  box-shadow: var(--sombra);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+}
+
+.agenda-card[data-categoria="cultural"]   { --cat-color: var(--cat-cultural); }
+.agenda-card[data-categoria="academico"]  { --cat-color: var(--cat-academico); }
+.agenda-card[data-categoria="gobierno"]   { --cat-color: var(--cat-gobierno); }
+.agenda-card[data-categoria="graduacion"] { --cat-color: var(--cat-graduacion); }
+
+.agenda-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-2);
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: var(--cat-color);
+  color: var(--blanco);
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+}
+
+.agenda-card h3 {
+  font-size: 1.05rem;
+  margin: .25rem 0 .5rem;
+}
+
+.agenda-card p {
+  font-size: .9rem;
+  opacity: .75;
+  margin: 0;
+}
+
+/* Miniatura de portada real para las tarjetas que ya tienen fotos,
+   en vez de solo el texto "Ver fotos →" */
+.agenda-card.tiene-fotos {
+  cursor: pointer;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.agenda-card.tiene-fotos:hover,
+.agenda-card.tiene-fotos:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra-md);
+  outline: none;
+}
+
+.agenda-card-thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.agenda-card.tiene-fotos .agenda-card-body {
+  padding: var(--sp-4);
+}
+
+.agenda-card.tiene-fotos:hover .agenda-ver-fotos { gap: 11px; opacity: 1 !important; }
+
+/* Leyenda de colores de categoría */
+.agenda-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+  font-size: .82rem;
+  opacity: .8;
+}
+
+.agenda-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.agenda-legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--legend-color);
+  display: inline-block;
+}
+
+[data-theme="dark"] .agenda-card { background: var(--surface, #101a33); }
+
+/* ── 13a-3. ÍCONO SOCIAL DEL FOOTER (Facebook) ────────────────
+   Antes usaba onmouseover/onmouseout inline en las 21 páginas;
+   ahora es una sola regla :hover/:focus-visible reutilizada por
+   todo el sitio.
+─────────────────────────────────────────────────────────────── */
+.footer-social {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.footer-social:hover,
+.footer-social:focus-visible {
+  transform: scale(1.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,.45);
+}
+
+.footer-social img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── 13a-4. LISTA Y CTA DE LAS TARJETAS DE ACTIVIDAD ────────── */
+.activity-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-2) 0 var(--sp-3);
+  font-size: .88rem;
+  opacity: .85;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  color: var(--azul-3);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+[data-theme="dark"] .activity-cta { color: var(--naranja-2); }
+
+/* ── 13a-5. GRID DE FOTOS SUELTAS (cierre de página) ─────────── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--sp-3);
+  margin-top: var(--sp-4);
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: var(--r);
+}
 
 /* ── 13b. LOGOS DE NIVEL ─────────────────────────────────────
    Iconos propios para Educación Básica, Orientación Técnica y

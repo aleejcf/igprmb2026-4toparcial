@@ -24,12 +24,14 @@
 
   const MENU = [
     { href: "index.html",             text: "Inicio",            desc: "Portada del instituto",             photo: "imagenes/otros/cole.jpg" },
-    { href: "historia.html",          text: "Historia",          desc: "Cuatro décadas de compromiso",      photo: "imagenes/acto_civico/historia.jpg" },
-    { href: "oferta-academica.html",  text: "Oferta académica",  desc: "Niveles, talleres y bachilleratos", photo: "imagenes/otros/area_info.jpg" },
+    { href: "historia.html",          text: "Historia",          desc: "Cuatro décadas de compromiso",      photo: "imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg" },
+    { href: "infraestructura.html",   text: "Infraestructura",   desc: "Talleres, laboratorio y auditorio", photo: "imagenes/otros/auditorio.jpg" },
+    { href: "docentes.html",          text: "Cuerpo Docente",    desc: "Quiénes forman a los estudiantes",  photo: "imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg" },
+    { href: "oferta-academica.html",  text: "Oferta académica",  desc: "Niveles, talleres y bachilleratos", photo: "imagenes/otros/instalaciones/area_info.jpg" },
     { href: "matricula.html",         text: "Matrícula 2026",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg" },
     { href: "actividades.html",       text: "Actividades",       desc: "Académicas, cívicas y técnicas",    photo: "imagenes/otros/acto_civico.jpg" },
     { href: "extracurriculares.html", text: "Extracurriculares", desc: "Danza, banda y deportes",           photo: "imagenes/otros/grupo_danza.jpg" },
-    { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/contacto.jpg" },
+    { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/acto_inaugural/reunion-personal-administrativo.jpg" },
     { href: "ubicacion.html",         text: "Ubicación",         desc: "Agua Blanca Sur, El Progreso",      photo: "imagenes/otros/ubicacion.jpg" }
   ];
 
@@ -120,7 +122,7 @@
     '</div>' +
     '<a class="fs-aside-cta" href="matricula.html">Matrícula 2026 &rarr;</a>' +
     '<a class="fs-aside-social" href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer">' +
-      '<img src="imagenes/facebook.png" alt="">Síguenos en Facebook' +
+      '<img src="imagenes/irmb/facebook.png" alt="">Síguenos en Facebook' +
     '</a>';
 
   inner.append(list, aside);

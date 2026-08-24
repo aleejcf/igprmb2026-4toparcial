@@ -36,6 +36,8 @@
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Docentes</a>
       </div>
     </nav>
   </header>
@@ -46,7 +48,7 @@
         <div>
           <p class="eyebrow">Eventos y actividades</p>
           <h1>Vida estudiantil del instituto</h1>
-          <p>Esta página está preparada para promocionar actividades reales del instituto: eventos académicos, cívicos, deportivos, culturales y técnicos.</p>
+          <p>Actos cívicos, ferias académicas, jornadas culturales y elecciones estudiantiles que marcan el calendario escolar del Instituto Roberto Micheletti Baín. Explora la agenda del año y revive cada evento en fotos.</p>
         </div>
         <img src="imagenes/otros/vida_estudiantil.jpg" alt="Ilustración de actividades institucionales" loading="eager">
       </div>
@@ -54,27 +56,27 @@
 
     <section class="section">
       <div class="container cards-4">
-        <article class="activity-card" id="academicas" onclick="abrirGaleria('academicas')" style="cursor:pointer;">
+        <article class="activity-card" data-galeria="academicas" role="button" tabindex="0" aria-label="Ver galería de actividades académicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </span>
           <h2>Actividades académicas</h2>
-          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+          <ul class="activity-list">
             <li>· Feria de Inteligencia Artificial</li>
             <li>· Capacitaciones al alumnado</li>
             <li>· Graduación 2025</li>
           </ul>
-          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+          <span class="activity-cta">
             Ver galería
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" id="civicas" onclick="abrirGaleria('civicas')" style="cursor:pointer;">
+        <article class="activity-card" data-galeria="civicas" role="button" tabindex="0" aria-label="Ver galería de actividades cívicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
           </span>
           <h2>Actividades cívicas</h2>
-          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+          <ul class="activity-list">
             <li>· Inauguración de clases</li>
             <li>· Reunión de Padres de Familia</li>
             <li>· Día del Idioma Español</li>
@@ -84,36 +86,36 @@
             <li>· Día del Arbol</li>
             <li>· Día del Medio Ambiente</li>
           </ul>
-          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+          <span class="activity-cta">
             Ver galería
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" id="deportivas" onclick="abrirGaleria('deportivas')" style="cursor:pointer;">
+        <article class="activity-card" data-galeria="deportivas" role="button" tabindex="0" aria-label="Ver galería de actividades deportivas y estudiantiles">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
           </span>
           <h2>Actividades deportivas</h2>
-          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+          <ul class="activity-list">
             <li>· Elección del Chico y Chica Verano</li>
             <li>· Elecciones Estudiantiles</li>
             <li>· Toma de Posesión del Gobierno Estudiantil</li>
           </ul>
-          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+          <span class="activity-cta">
             Ver galería
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" id="tecnicas" onclick="abrirGaleria('tecnicas')" style="cursor:pointer;">
+        <article class="activity-card" data-galeria="tecnicas" role="button" tabindex="0" aria-label="Ver galería de actividades técnicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
           </span>
           <h2>Actividades técnicas</h2>
-          <ul style="list-style:none;padding:0;margin:.5rem 0 1rem;font-size:.88rem;opacity:.85;display:flex;flex-direction:column;gap:.35rem;">
+          <ul class="activity-list">
             <li>· Feria de Inteligencia Artificial</li>
             <li>· Capacitaciones al alumnado</li>
           </ul>
-          <span style="display:inline-flex;align-items:center;gap:.4rem;color:var(--accent,#3b6cf8);font-weight:600;font-size:.9rem;">
+          <span class="activity-cta">
             Ver galería
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
@@ -251,28 +253,28 @@
           categoria: 'Académico',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/feria_ia/20260428_154309356_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162206224_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162820902_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
-            { type:'img', src:'imagenes/feria_ia/20260428_163022632_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
-            { type:'img', src:'imagenes/informatica/20260428_174023624_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
-            { type:'img', src:'imagenes/informatica/20260428_174032246_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
-            { type:'img', src:'imagenes/informatica/20260428_174037265_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
-            { type:'img', src:'imagenes/informatica/20260428_174044171_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
-            { type:'img', src:'imagenes/capacitaciones/647412349_1496732515796310_7912374494154411009_n.jpg', caption:'Capacitaciones al alumnado — fotografía 1' },
-            { type:'img', src:'imagenes/capacitaciones/654464672_1508631537939741_1897078648681287476_n.jpg', caption:'Capacitaciones al alumnado — fotografía 2' },
-            { type:'img', src:'imagenes/capacitaciones/654766847_1508631511273077_7708582756287514010_n.jpg', caption:'Capacitaciones al alumnado — fotografía 3' },
-            { type:'img', src:'imagenes/capacitaciones/701009529_1565128282290066_4423913963027649820_n.jpg', caption:'Capacitaciones al alumnado — fotografía 4' },
-            { type:'img', src:'imagenes/capacitaciones/702569879_1565128082290086_8511597484464137749_n.jpg', caption:'Capacitaciones al alumnado — fotografía 5' },
-            { type:'img', src:'imagenes/capacitaciones/702589494_1565128488956712_3480383630120712863_n.jpg', caption:'Capacitaciones al alumnado — fotografía 6' },
-            { type:'img', src:'imagenes/capacitaciones/702879241_1565128095623418_8343492748470213219_n.jpg', caption:'Capacitaciones al alumnado — fotografía 7' },
-            { type:'img', src:'imagenes/capacitaciones/703200867_1565123285623899_8286361293401109145_n.jpg', caption:'Capacitaciones al alumnado — fotografía 8' },
-            { type:'img', src:'imagenes/capacitaciones/camara_de_comercio.jpg', caption:'Capacitación con la Cámara de Comercio' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion0.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion2.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion3.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitaciones.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/infop.jpg', caption:'Capacitación impartida por el INFOP' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-01.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-02.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-03.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-04.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-02.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-03.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-04.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01.jpg', caption:'Capacitaciones al alumnado — fotografía 1' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-02.jpg', caption:'Capacitaciones al alumnado — fotografía 2' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-03.jpg', caption:'Capacitaciones al alumnado — fotografía 3' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-04.jpg', caption:'Capacitaciones al alumnado — fotografía 4' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-05.jpg', caption:'Capacitaciones al alumnado — fotografía 5' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-06.jpg', caption:'Capacitaciones al alumnado — fotografía 6' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-07.jpg', caption:'Capacitaciones al alumnado — fotografía 7' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-08.jpg', caption:'Capacitaciones al alumnado — fotografía 8' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio.jpg', caption:'Capacitación con la Cámara de Comercio' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion0.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion2.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion3.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/infop.jpg', caption:'Capacitación impartida por el INFOP' },
             // { type:'video', src:'videos/feria_ia.mp4',             caption:'Video de la Feria de IA' },
           ]
         },
@@ -281,59 +283,59 @@
           categoria: 'Cívico',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
           media: [
-            { type:'img',   src:'imagenes/acto_civico/marvin.jpg',          caption:'Acto cívico institucional' },
-            { type:'img',   src:'imagenes/acto_civico/decision.jpg',         caption:'Acto Cívico — El Valor de la Decisión' },
-            { type:'img',   src:'imagenes/acto_civico/toma_mesa.jpg',        caption:'Toma de posesión del Gobierno Estudiantil' },
-            { type:'img',   src:'imagenes/acto_civico/escenario_idioma.jpg', caption:'Acto Cívico — Día del Idioma Español' },
-            { type:'img',   src:'imagenes/acto_civico/dia_pa_ma.jpg',        caption:'Acto Cívico — Día de la Madre y del Padre' },
-            { type:'img', src:'imagenes/dia_del_arbol/707781271_1574851351317759_7914037860895708947_n.jpg', caption:'Día del Árbol — fotografía 1' },
-            { type:'img', src:'imagenes/dia_del_arbol/708192697_1574852154651012_8916714041578953560_n.jpg', caption:'Día del Árbol — fotografía 2' },
-            { type:'img', src:'imagenes/dia_del_arbol/708289423_1574856567983904_9011291781592404284_n.jpg', caption:'Día del Árbol — fotografía 3' },
-            { type:'img', src:'imagenes/dia_del_arbol/709013891_1574849341317960_4326692512646119187_n.jpg', caption:'Día del Árbol — fotografía 4' },
-            { type:'img', src:'imagenes/dia_del_arbol/709121887_1574851467984414_5493454724295442129_n.jpg', caption:'Día del Árbol — fotografía 5' },
-            { type:'img', src:'imagenes/dia_del_arbol/709345969_1574856671317227_7554591191732041776_n.jpg', caption:'Día del Árbol — fotografía 6' },
-            { type:'img', src:'imagenes/dia_del_arbol/709386145_1574848154651412_5731777444811942724_n.jpg', caption:'Día del Árbol — fotografía 7' },
-            { type:'img', src:'imagenes/dia_del_arbol/709406145_1574849754651252_545583279264995727_n.jpg', caption:'Día del Árbol — fotografía 8' },
-            { type:'img', src:'imagenes/dia_del_arbol/710079251_1574849701317924_5433537081798918039_n.jpg', caption:'Día del Árbol — fotografía 9' },
-            { type:'img', src:'imagenes/dia_del_arbol/710080599_1574856621317232_2891100392200066258_n.jpg', caption:'Día del Árbol — fotografía 10' },
-            { type:'img', src:'imagenes/dia_del_arbol/710226726_1574849137984647_5175485133111292635_n.jpg', caption:'Día del Árbol — fotografía 11' },
-            { type:'img', src:'imagenes/dia_del_arbol/710315617_1574848237984737_590570260286533680_n.jpg', caption:'Día del Árbol — fotografía 12' },
-            { type:'img', src:'imagenes/dia_del_arbol/710448329_1574848897984671_8643461320637748785_n.jpg', caption:'Día del Árbol — fotografía 13' },
-            { type:'img', src:'imagenes/dia_del_arbol/710596717_1574856481317246_6886847321993366619_n.jpg', caption:'Día del Árbol — fotografía 14' },
-            { type:'img', src:'imagenes/dia_del_arbol/710700907_1574851287984432_4569612498770806790_n.jpg', caption:'Día del Árbol — fotografía 15' },
-            { type:'img', src:'imagenes/dia_de_latierra/674328121_1475461821038223_109526403230124588_n.jpg', caption:'Día de la Tierra — fotografía 1' },
-            { type:'img', src:'imagenes/dia_de_latierra/676723107_122108182604921975_3340453934435248953_n.jpg', caption:'Día de la Tierra — fotografía 2' },
-            { type:'img', src:'imagenes/dia_de_latierra/676813101_122108182646921975_1762891257476837700_n.jpg', caption:'Día de la Tierra — fotografía 3' },
-            { type:'img', src:'imagenes/dia_de_latierra/676923947_122108182778921975_4766589500541547228_n.jpg', caption:'Día de la Tierra — fotografía 4' },
-            { type:'img', src:'imagenes/dia_de_latierra/677099440_122108182736921975_1318454922788045824_n.jpg', caption:'Día de la Tierra — fotografía 5' },
-            { type:'img', src:'imagenes/dia_de_latierra/677208841_122108182694921975_3397487834830698126_n.jpg', caption:'Día de la Tierra — fotografía 6' },
-            { type:'img', src:'imagenes/dia_de_latierra/678234133_1475461957704876_9175942870778863848_n.jpg', caption:'Día de la Tierra — fotografía 7' },
-            { type:'img', src:'imagenes/dia_de_latierra/678429762_1475461927704879_3503531357576064437_n.jpg', caption:'Día de la Tierra — fotografía 8' },
-            { type:'img', src:'imagenes/dia_de_latierra/678543139_1475461881038217_4490184525202487576_n.jpg', caption:'Día de la Tierra — fotografía 9' },
-            { type:'img', src:'imagenes/dia_de_latierra/678914559_1475461854371553_1761464912939953407_n.jpg', caption:'Día de la Tierra — fotografía 10' },
-            { type:'img', src:'imagenes/dia_de_latierra/autoridades.jpg', caption:'Autoridades presentes en el acto' },
-            { type:'img', src:'imagenes/dia_de_latierra/candidata1.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_de_latierra/decoracion.jpg', caption:'Decoración del evento' },
-            { type:'img', src:'imagenes/dia_de_latierra/ganadora.jpg', caption:'Anuncio de la ganadora' },
-            { type:'img', src:'imagenes/dia_de_latierra/himno.jpg', caption:'Entonación del Himno Nacional' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/718576636_1584994830303411_2264480867136102870_n.jpg', caption:'Día del Medio Ambiente — fotografía 1' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/718938066_1584995053636722_2773367946162664876_n.jpg', caption:'Día del Medio Ambiente — fotografía 2' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719113450_1585000866969474_2278502716408534302_n.jpg', caption:'Día del Medio Ambiente — fotografía 3' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719463982_1585000756969485_2242047343305370497_n.jpg', caption:'Día del Medio Ambiente — fotografía 4' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719557665_1584994856970075_6047304793515253391_n.jpg', caption:'Día del Medio Ambiente — fotografía 5' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719567890_1584995006970060_8861259595519026674_n.jpg', caption:'Día del Medio Ambiente — fotografía 6' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720250669_1585000330302861_8026199129076047288_n.jpg', caption:'Día del Medio Ambiente — fotografía 7' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720335844_1585000450302849_5624571272262785322_n.jpg', caption:'Día del Medio Ambiente — fotografía 8' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720973199_1584994963636731_4033157795250938149_n.jpg', caption:'Día del Medio Ambiente — fotografía 9' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra2.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra3.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata1.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata2.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata3.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata4.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/stand.jpg', caption:'Stand de exposición estudiantil' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/stand2.jpg', caption:'Stand de exposición estudiantil' },
+            { type:'img',   src:'imagenes/acto_civico/verano_2026/marvin.jpg',          caption:'Acto cívico institucional' },
+            { type:'img',   src:'imagenes/acto_civico/acto_decision_metas/decision.jpg',         caption:'Acto Cívico — El Valor de la Decisión' },
+            { type:'img',   src:'imagenes/acto_civico/gobierno_estudiantil/toma_mesa.jpg',        caption:'Toma de posesión del Gobierno Estudiantil' },
+            { type:'img',   src:'imagenes/acto_civico/dia_idioma/escenario-dia-idioma-espanol.jpg', caption:'Acto Cívico — Día del Idioma Español' },
+            { type:'img',   src:'imagenes/acto_civico/dia_madre_padre/dia_pa_ma.jpg',        caption:'Acto Cívico — Día de la Madre y del Padre' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-01.jpg', caption:'Día del Árbol — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-02.jpg', caption:'Día del Árbol — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-03.jpg', caption:'Día del Árbol — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-04.jpg', caption:'Día del Árbol — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-05.jpg', caption:'Día del Árbol — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-06.jpg', caption:'Día del Árbol — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-07.jpg', caption:'Día del Árbol — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-08.jpg', caption:'Día del Árbol — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-09.jpg', caption:'Día del Árbol — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-10.jpg', caption:'Día del Árbol — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-11.jpg', caption:'Día del Árbol — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-12.jpg', caption:'Día del Árbol — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-13.jpg', caption:'Día del Árbol — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-14.jpg', caption:'Día del Árbol — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-15.jpg', caption:'Día del Árbol — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-01.jpg', caption:'Día de la Tierra — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-02.jpg', caption:'Día de la Tierra — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-03.jpg', caption:'Día de la Tierra — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-04.jpg', caption:'Día de la Tierra — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-05.jpg', caption:'Día de la Tierra — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-06.jpg', caption:'Día de la Tierra — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-07.jpg', caption:'Día de la Tierra — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-08.jpg', caption:'Día de la Tierra — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-09.jpg', caption:'Día de la Tierra — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-10.jpg', caption:'Día de la Tierra — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/autoridades.jpg', caption:'Autoridades presentes en el acto' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/candidata1.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/decoracion.jpg', caption:'Decoración del evento' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/ganadora.jpg', caption:'Anuncio de la ganadora' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/himno.jpg', caption:'Entonación del Himno Nacional' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-01.jpg', caption:'Día del Medio Ambiente — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02.jpg', caption:'Día del Medio Ambiente — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-03.jpg', caption:'Día del Medio Ambiente — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-04.jpg', caption:'Día del Medio Ambiente — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-05.jpg', caption:'Día del Medio Ambiente — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-06.jpg', caption:'Día del Medio Ambiente — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-07.jpg', caption:'Día del Medio Ambiente — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-08.jpg', caption:'Día del Medio Ambiente — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-09.jpg', caption:'Día del Medio Ambiente — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra2.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra3.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata1.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata2.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata3.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata4.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/stand.jpg', caption:'Stand de exposición estudiantil' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/stand2.jpg', caption:'Stand de exposición estudiantil' },
             // { type:'video', src:'videos/acto_civico.mp4',                    caption:'Video del acto cívico' },
           ]
         },
@@ -342,7 +344,7 @@
           categoria: 'Deportivo / Gobierno Estudiantil',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>`,
           media: [
-            { type:'img',   src:'imagenes/acto_civico/toma_mesa.jpg', caption:'Elecciones y Gobierno Estudiantil' },
+            { type:'img',   src:'imagenes/acto_civico/gobierno_estudiantil/toma_mesa.jpg', caption:'Elecciones y Gobierno Estudiantil' },
             { type:'img',   src:'imagenes/otros/jovenes_e.jpg',        caption:'Participación estudiantil' },
             // { type:'video', src:'videos/chico_chica_verano.mp4',       caption:'Elección del Chico y Chica Verano' },
           ]
@@ -352,14 +354,14 @@
           categoria: 'Técnico',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/feria_ia/20260428_154309356_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162206224_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162820902_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
-            { type:'img', src:'imagenes/feria_ia/20260428_163022632_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
-            { type:'img', src:'imagenes/informatica/20260428_174023624_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
-            { type:'img', src:'imagenes/informatica/20260428_174032246_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
-            { type:'img', src:'imagenes/informatica/20260428_174037265_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
-            { type:'img', src:'imagenes/informatica/20260428_174044171_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-01.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-02.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-03.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-04.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-02.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-03.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-04.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
             // { type:'video', src:'videos/capacitacion.mp4',         caption:'Video de capacitación técnica' },
           ]
         },
@@ -368,21 +370,21 @@
           categoria: 'Cívico / Ambiental',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-7"/><path d="M9 15H6a4 4 0 0 1-.9-7.9A5 5 0 0 1 15 4.5a4.5 4.5 0 0 1 3 8.5h-3"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/dia_del_arbol/707781271_1574851351317759_7914037860895708947_n.jpg', caption:'Día del Árbol — fotografía 1' },
-            { type:'img', src:'imagenes/dia_del_arbol/708192697_1574852154651012_8916714041578953560_n.jpg', caption:'Día del Árbol — fotografía 2' },
-            { type:'img', src:'imagenes/dia_del_arbol/708289423_1574856567983904_9011291781592404284_n.jpg', caption:'Día del Árbol — fotografía 3' },
-            { type:'img', src:'imagenes/dia_del_arbol/709013891_1574849341317960_4326692512646119187_n.jpg', caption:'Día del Árbol — fotografía 4' },
-            { type:'img', src:'imagenes/dia_del_arbol/709121887_1574851467984414_5493454724295442129_n.jpg', caption:'Día del Árbol — fotografía 5' },
-            { type:'img', src:'imagenes/dia_del_arbol/709345969_1574856671317227_7554591191732041776_n.jpg', caption:'Día del Árbol — fotografía 6' },
-            { type:'img', src:'imagenes/dia_del_arbol/709386145_1574848154651412_5731777444811942724_n.jpg', caption:'Día del Árbol — fotografía 7' },
-            { type:'img', src:'imagenes/dia_del_arbol/709406145_1574849754651252_545583279264995727_n.jpg', caption:'Día del Árbol — fotografía 8' },
-            { type:'img', src:'imagenes/dia_del_arbol/710079251_1574849701317924_5433537081798918039_n.jpg', caption:'Día del Árbol — fotografía 9' },
-            { type:'img', src:'imagenes/dia_del_arbol/710080599_1574856621317232_2891100392200066258_n.jpg', caption:'Día del Árbol — fotografía 10' },
-            { type:'img', src:'imagenes/dia_del_arbol/710226726_1574849137984647_5175485133111292635_n.jpg', caption:'Día del Árbol — fotografía 11' },
-            { type:'img', src:'imagenes/dia_del_arbol/710315617_1574848237984737_590570260286533680_n.jpg', caption:'Día del Árbol — fotografía 12' },
-            { type:'img', src:'imagenes/dia_del_arbol/710448329_1574848897984671_8643461320637748785_n.jpg', caption:'Día del Árbol — fotografía 13' },
-            { type:'img', src:'imagenes/dia_del_arbol/710596717_1574856481317246_6886847321993366619_n.jpg', caption:'Día del Árbol — fotografía 14' },
-            { type:'img', src:'imagenes/dia_del_arbol/710700907_1574851287984432_4569612498770806790_n.jpg', caption:'Día del Árbol — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-01.jpg', caption:'Día del Árbol — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-02.jpg', caption:'Día del Árbol — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-03.jpg', caption:'Día del Árbol — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-04.jpg', caption:'Día del Árbol — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-05.jpg', caption:'Día del Árbol — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-06.jpg', caption:'Día del Árbol — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-07.jpg', caption:'Día del Árbol — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-08.jpg', caption:'Día del Árbol — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-09.jpg', caption:'Día del Árbol — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-10.jpg', caption:'Día del Árbol — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-11.jpg', caption:'Día del Árbol — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-12.jpg', caption:'Día del Árbol — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-13.jpg', caption:'Día del Árbol — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-14.jpg', caption:'Día del Árbol — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_arbol/dia-del-arbol-15.jpg', caption:'Día del Árbol — fotografía 15' },
           ]
         },
         tierra: {
@@ -390,21 +392,21 @@
           categoria: 'Cívico / Ambiental',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20a15 15 0 0 1 0-20"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/dia_de_latierra/674328121_1475461821038223_109526403230124588_n.jpg', caption:'Día de la Tierra — fotografía 1' },
-            { type:'img', src:'imagenes/dia_de_latierra/676723107_122108182604921975_3340453934435248953_n.jpg', caption:'Día de la Tierra — fotografía 2' },
-            { type:'img', src:'imagenes/dia_de_latierra/676813101_122108182646921975_1762891257476837700_n.jpg', caption:'Día de la Tierra — fotografía 3' },
-            { type:'img', src:'imagenes/dia_de_latierra/676923947_122108182778921975_4766589500541547228_n.jpg', caption:'Día de la Tierra — fotografía 4' },
-            { type:'img', src:'imagenes/dia_de_latierra/677099440_122108182736921975_1318454922788045824_n.jpg', caption:'Día de la Tierra — fotografía 5' },
-            { type:'img', src:'imagenes/dia_de_latierra/677208841_122108182694921975_3397487834830698126_n.jpg', caption:'Día de la Tierra — fotografía 6' },
-            { type:'img', src:'imagenes/dia_de_latierra/678234133_1475461957704876_9175942870778863848_n.jpg', caption:'Día de la Tierra — fotografía 7' },
-            { type:'img', src:'imagenes/dia_de_latierra/678429762_1475461927704879_3503531357576064437_n.jpg', caption:'Día de la Tierra — fotografía 8' },
-            { type:'img', src:'imagenes/dia_de_latierra/678543139_1475461881038217_4490184525202487576_n.jpg', caption:'Día de la Tierra — fotografía 9' },
-            { type:'img', src:'imagenes/dia_de_latierra/678914559_1475461854371553_1761464912939953407_n.jpg', caption:'Día de la Tierra — fotografía 10' },
-            { type:'img', src:'imagenes/dia_de_latierra/autoridades.jpg', caption:'Autoridades presentes en el acto' },
-            { type:'img', src:'imagenes/dia_de_latierra/candidata1.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_de_latierra/decoracion.jpg', caption:'Decoración del evento' },
-            { type:'img', src:'imagenes/dia_de_latierra/ganadora.jpg', caption:'Anuncio de la ganadora' },
-            { type:'img', src:'imagenes/dia_de_latierra/himno.jpg', caption:'Entonación del Himno Nacional' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-01.jpg', caption:'Día de la Tierra — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-02.jpg', caption:'Día de la Tierra — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-03.jpg', caption:'Día de la Tierra — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-04.jpg', caption:'Día de la Tierra — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-05.jpg', caption:'Día de la Tierra — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-06.jpg', caption:'Día de la Tierra — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-07.jpg', caption:'Día de la Tierra — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-08.jpg', caption:'Día de la Tierra — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-09.jpg', caption:'Día de la Tierra — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-10.jpg', caption:'Día de la Tierra — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/autoridades.jpg', caption:'Autoridades presentes en el acto' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/candidata1.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/decoracion.jpg', caption:'Decoración del evento' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/ganadora.jpg', caption:'Anuncio de la ganadora' },
+            { type:'img', src:'imagenes/acto_civico/dia_de_latierra/himno.jpg', caption:'Entonación del Himno Nacional' },
           ]
         },
         ambiente: {
@@ -412,24 +414,24 @@
           categoria: 'Cívico / Ambiental',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8c0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/dia_del_medioambiente/718576636_1584994830303411_2264480867136102870_n.jpg', caption:'Día del Medio Ambiente — fotografía 1' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/718938066_1584995053636722_2773367946162664876_n.jpg', caption:'Día del Medio Ambiente — fotografía 2' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719113450_1585000866969474_2278502716408534302_n.jpg', caption:'Día del Medio Ambiente — fotografía 3' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719463982_1585000756969485_2242047343305370497_n.jpg', caption:'Día del Medio Ambiente — fotografía 4' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719557665_1584994856970075_6047304793515253391_n.jpg', caption:'Día del Medio Ambiente — fotografía 5' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/719567890_1584995006970060_8861259595519026674_n.jpg', caption:'Día del Medio Ambiente — fotografía 6' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720250669_1585000330302861_8026199129076047288_n.jpg', caption:'Día del Medio Ambiente — fotografía 7' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720335844_1585000450302849_5624571272262785322_n.jpg', caption:'Día del Medio Ambiente — fotografía 8' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/720973199_1584994963636731_4033157795250938149_n.jpg', caption:'Día del Medio Ambiente — fotografía 9' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra2.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/alfombra3.jpg', caption:'Elaboración de alfombra ecológica' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata1.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata2.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata3.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/candidata4.jpg', caption:'Candidata en representación de su sección' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/stand.jpg', caption:'Stand de exposición estudiantil' },
-            { type:'img', src:'imagenes/dia_del_medioambiente/stand2.jpg', caption:'Stand de exposición estudiantil' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-01.jpg', caption:'Día del Medio Ambiente — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02.jpg', caption:'Día del Medio Ambiente — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-03.jpg', caption:'Día del Medio Ambiente — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-04.jpg', caption:'Día del Medio Ambiente — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-05.jpg', caption:'Día del Medio Ambiente — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-06.jpg', caption:'Día del Medio Ambiente — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-07.jpg', caption:'Día del Medio Ambiente — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-08.jpg', caption:'Día del Medio Ambiente — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-09.jpg', caption:'Día del Medio Ambiente — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra2.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/alfombra3.jpg', caption:'Elaboración de alfombra ecológica' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata1.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata2.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata3.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/candidata4.jpg', caption:'Candidata en representación de su sección' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/stand.jpg', caption:'Stand de exposición estudiantil' },
+            { type:'img', src:'imagenes/acto_civico/dia_del_medioambiente/stand2.jpg', caption:'Stand de exposición estudiantil' },
           ]
         },
         feria: {
@@ -437,14 +439,14 @@
           categoria: 'Académico / Técnico',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/feria_ia/20260428_154309356_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162206224_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
-            { type:'img', src:'imagenes/feria_ia/20260428_162820902_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
-            { type:'img', src:'imagenes/feria_ia/20260428_163022632_iOS.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
-            { type:'img', src:'imagenes/informatica/20260428_174023624_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
-            { type:'img', src:'imagenes/informatica/20260428_174032246_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
-            { type:'img', src:'imagenes/informatica/20260428_174037265_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
-            { type:'img', src:'imagenes/informatica/20260428_174044171_iOS.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-01.jpg', caption:'Feria de Inteligencia Artificial — fotografía 1' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-02.jpg', caption:'Feria de Inteligencia Artificial — fotografía 2' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-03.jpg', caption:'Feria de Inteligencia Artificial — fotografía 3' },
+            { type:'img', src:'imagenes/informatica/feria_ia/feria-ia-04.jpg', caption:'Feria de Inteligencia Artificial — fotografía 4' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 1' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-02.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 2' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-03.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 3' },
+            { type:'img', src:'imagenes/informatica/desde_el_colegio/desde-el-colegio-area-04.jpg', caption:'Feria de Inteligencia Artificial — área de Informática 4' },
           ]
         },
         capacitacion: {
@@ -452,22 +454,339 @@
           categoria: 'Académico',
           icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`,
           media: [
-            { type:'img', src:'imagenes/capacitaciones/647412349_1496732515796310_7912374494154411009_n.jpg', caption:'Capacitaciones al alumnado — fotografía 1' },
-            { type:'img', src:'imagenes/capacitaciones/654464672_1508631537939741_1897078648681287476_n.jpg', caption:'Capacitaciones al alumnado — fotografía 2' },
-            { type:'img', src:'imagenes/capacitaciones/654766847_1508631511273077_7708582756287514010_n.jpg', caption:'Capacitaciones al alumnado — fotografía 3' },
-            { type:'img', src:'imagenes/capacitaciones/701009529_1565128282290066_4423913963027649820_n.jpg', caption:'Capacitaciones al alumnado — fotografía 4' },
-            { type:'img', src:'imagenes/capacitaciones/702569879_1565128082290086_8511597484464137749_n.jpg', caption:'Capacitaciones al alumnado — fotografía 5' },
-            { type:'img', src:'imagenes/capacitaciones/702589494_1565128488956712_3480383630120712863_n.jpg', caption:'Capacitaciones al alumnado — fotografía 6' },
-            { type:'img', src:'imagenes/capacitaciones/702879241_1565128095623418_8343492748470213219_n.jpg', caption:'Capacitaciones al alumnado — fotografía 7' },
-            { type:'img', src:'imagenes/capacitaciones/703200867_1565123285623899_8286361293401109145_n.jpg', caption:'Capacitaciones al alumnado — fotografía 8' },
-            { type:'img', src:'imagenes/capacitaciones/camara_de_comercio.jpg', caption:'Capacitación con la Cámara de Comercio' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion0.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion2.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitacion3.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/capacitaciones.jpg', caption:'Jornada de capacitación al alumnado' },
-            { type:'img', src:'imagenes/capacitaciones/infop.jpg', caption:'Capacitación impartida por el INFOP' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01.jpg', caption:'Capacitaciones al alumnado — fotografía 1' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-02.jpg', caption:'Capacitaciones al alumnado — fotografía 2' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-03.jpg', caption:'Capacitaciones al alumnado — fotografía 3' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-04.jpg', caption:'Capacitaciones al alumnado — fotografía 4' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-05.jpg', caption:'Capacitaciones al alumnado — fotografía 5' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-06.jpg', caption:'Capacitaciones al alumnado — fotografía 6' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-07.jpg', caption:'Capacitaciones al alumnado — fotografía 7' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-08.jpg', caption:'Capacitaciones al alumnado — fotografía 8' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio.jpg', caption:'Capacitación con la Cámara de Comercio' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion0.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion2.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion3.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones.jpg', caption:'Jornada de capacitación al alumnado' },
+            { type:'img', src:'imagenes/otros/capacitaciones/infop_visionmundial_alumnos/infop.jpg', caption:'Capacitación impartida por el INFOP' },
           ]
-        }
+        },
+        inauguracion: {
+          titulo: 'Acto Cívico — Inauguración de Clases',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-01.jpg', caption:'Inauguración de Clases — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-02.jpg', caption:'Inauguración de Clases — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-03.jpg', caption:'Inauguración de Clases — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-04.jpg', caption:'Inauguración de Clases — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-05.jpg', caption:'Inauguración de Clases — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-06.jpg', caption:'Inauguración de Clases — fotografía 6' },
+          ]
+        },
+        reunionpadres: {
+          titulo: 'Acto Cívico — Reunión de Padres de Familia',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-01.jpg', caption:'Reunión de Padres de Familia — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-02.jpg', caption:'Reunión de Padres de Familia — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-03.jpg', caption:'Reunión de Padres de Familia — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-04.jpg', caption:'Reunión de Padres de Familia — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-05.jpg', caption:'Reunión de Padres de Familia — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-06.jpg', caption:'Reunión de Padres de Familia — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/reunion_padres/reunion-padres-foto-07.jpg', caption:'Reunión de Padres de Familia — fotografía 7' },
+          ]
+        },
+        madrepadre: {
+          titulo: 'Acto Cívico — Día de la Madre y del Padre',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-01.jpg', caption:'Día de la Madre y del Padre — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-02.jpg', caption:'Día de la Madre y del Padre — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-03.jpg', caption:'Día de la Madre y del Padre — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-04.jpg', caption:'Día de la Madre y del Padre — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-05.jpg', caption:'Día de la Madre y del Padre — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-06.jpg', caption:'Día de la Madre y del Padre — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-07.jpg', caption:'Día de la Madre y del Padre — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-08.jpg', caption:'Día de la Madre y del Padre — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-09.jpg', caption:'Día de la Madre y del Padre — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-10.jpg', caption:'Día de la Madre y del Padre — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-11.jpg', caption:'Día de la Madre y del Padre — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-12.jpg', caption:'Día de la Madre y del Padre — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-13.jpg', caption:'Día de la Madre y del Padre — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-14.jpg', caption:'Día de la Madre y del Padre — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-15.jpg', caption:'Día de la Madre y del Padre — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/dia_madre_padre/dia-madre-padre-16.jpg', caption:'Día de la Madre y del Padre — fotografía 16' },
+          ]
+        },
+        decision: {
+          titulo: 'Acto Cívico — El Valor de la Decisión',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-01.jpg', caption:'El Valor de la Decisión — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-02.jpg', caption:'El Valor de la Decisión — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-03.jpg', caption:'El Valor de la Decisión — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-04.jpg', caption:'El Valor de la Decisión — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-05.jpg', caption:'El Valor de la Decisión — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-06.jpg', caption:'El Valor de la Decisión — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/valor_dela_decision/valor-de-la-decision-07.jpg', caption:'El Valor de la Decisión — fotografía 7' },
+          ]
+        },
+        verano: {
+          titulo: 'Elección del Chico y Chica Verano',
+          categoria: 'Cultural',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-01.jpg', caption:'Elección Chico y Chica Verano — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-02.jpg', caption:'Elección Chico y Chica Verano — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-03.jpg', caption:'Elección Chico y Chica Verano — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-04.jpg', caption:'Elección Chico y Chica Verano — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-05.jpg', caption:'Elección Chico y Chica Verano — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-06.jpg', caption:'Elección Chico y Chica Verano — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-07.jpg', caption:'Elección Chico y Chica Verano — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-08.jpg', caption:'Elección Chico y Chica Verano — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-09.jpg', caption:'Elección Chico y Chica Verano — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-10.jpg', caption:'Elección Chico y Chica Verano — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-11.jpg', caption:'Elección Chico y Chica Verano — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-12.jpg', caption:'Elección Chico y Chica Verano — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-13.jpg', caption:'Elección Chico y Chica Verano — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-14.jpg', caption:'Elección Chico y Chica Verano — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-15.jpg', caption:'Elección Chico y Chica Verano — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-16.jpg', caption:'Elección Chico y Chica Verano — fotografía 16' },
+          ]
+        },
+        aniversario42: {
+          titulo: '42° Aniversario del Instituto',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-01.jpg', caption:'42° Aniversario del Instituto — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-02.jpg', caption:'42° Aniversario del Instituto — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-03.jpg', caption:'42° Aniversario del Instituto — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-04.jpg', caption:'42° Aniversario del Instituto — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-05.jpg', caption:'42° Aniversario del Instituto — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-06.jpg', caption:'42° Aniversario del Instituto — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-07.jpg', caption:'42° Aniversario del Instituto — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-08.jpg', caption:'42° Aniversario del Instituto — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-09.jpg', caption:'42° Aniversario del Instituto — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-10.jpg', caption:'42° Aniversario del Instituto — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-11.jpg', caption:'42° Aniversario del Instituto — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-12.jpg', caption:'42° Aniversario del Instituto — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-13.jpg', caption:'42° Aniversario del Instituto — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-14.jpg', caption:'42° Aniversario del Instituto — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-15.jpg', caption:'42° Aniversario del Instituto — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/42_aniversario/42-aniversario-16.jpg', caption:'42° Aniversario del Instituto — fotografía 16' },
+          ]
+        },
+        graduacion2025: {
+          titulo: 'Graduación 2025',
+          categoria: 'Graduación',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-01.jpg', caption:'Graduación 2025 — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-02.jpg', caption:'Graduación 2025 — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-03.jpg', caption:'Graduación 2025 — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-04.jpg', caption:'Graduación 2025 — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-05.jpg', caption:'Graduación 2025 — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-06.jpg', caption:'Graduación 2025 — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-07.jpg', caption:'Graduación 2025 — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-08.jpg', caption:'Graduación 2025 — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-09.jpg', caption:'Graduación 2025 — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-10.jpg', caption:'Graduación 2025 — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-100.jpg', caption:'Graduación 2025 — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-101.jpg', caption:'Graduación 2025 — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-102.jpg', caption:'Graduación 2025 — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-103.jpg', caption:'Graduación 2025 — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-104.jpg', caption:'Graduación 2025 — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/graduacion_2025/graduacion-2025-105.jpg', caption:'Graduación 2025 — fotografía 16' },
+          ]
+        },
+        homenajejosue: {
+          titulo: 'Homenaje al Profesor Josué',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-01.jpg', caption:'Homenaje al Profesor Josué — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-02.jpg', caption:'Homenaje al Profesor Josué — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-03.jpg', caption:'Homenaje al Profesor Josué — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-04.jpg', caption:'Homenaje al Profesor Josué — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-05.jpg', caption:'Homenaje al Profesor Josué — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-06.jpg', caption:'Homenaje al Profesor Josué — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-07.jpg', caption:'Homenaje al Profesor Josué — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-08.jpg', caption:'Homenaje al Profesor Josué — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-09.jpg', caption:'Homenaje al Profesor Josué — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-10.jpg', caption:'Homenaje al Profesor Josué — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-11.jpg', caption:'Homenaje al Profesor Josué — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-12.jpg', caption:'Homenaje al Profesor Josué — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-13.jpg', caption:'Homenaje al Profesor Josué — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-14.jpg', caption:'Homenaje al Profesor Josué — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-15.jpg', caption:'Homenaje al Profesor Josué — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-16.jpg', caption:'Homenaje al Profesor Josué — fotografía 16' },
+          ]
+        },
+        honorexcelencia: {
+          titulo: 'Honor y Excelencia Académica',
+          categoria: 'Académico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg', caption:'Honor y Excelencia Académica — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-02.jpg', caption:'Honor y Excelencia Académica — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-03.jpg', caption:'Honor y Excelencia Académica — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-04.jpg', caption:'Honor y Excelencia Académica — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-05.jpg', caption:'Honor y Excelencia Académica — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-06.jpg', caption:'Honor y Excelencia Académica — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-07.jpg', caption:'Honor y Excelencia Académica — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-08.jpg', caption:'Honor y Excelencia Académica — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-09.jpg', caption:'Honor y Excelencia Académica — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-10.jpg', caption:'Honor y Excelencia Académica — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-11.jpg', caption:'Honor y Excelencia Académica — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-12.jpg', caption:'Honor y Excelencia Académica — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-13.jpg', caption:'Honor y Excelencia Académica — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-14.jpg', caption:'Honor y Excelencia Académica — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-15.jpg', caption:'Honor y Excelencia Académica — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/honor_excelencia/honor-excelencia-16.jpg', caption:'Honor y Excelencia Académica — fotografía 16' },
+          ]
+        },
+        identidadnacional: {
+          titulo: 'Acto Cívico — Identidad Nacional',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-01.jpg', caption:'Identidad Nacional — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-02.jpg', caption:'Identidad Nacional — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-03.jpg', caption:'Identidad Nacional — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-04.jpg', caption:'Identidad Nacional — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-05.jpg', caption:'Identidad Nacional — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-06.jpg', caption:'Identidad Nacional — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-07.jpg', caption:'Identidad Nacional — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-08.jpg', caption:'Identidad Nacional — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-09.jpg', caption:'Identidad Nacional — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-10.jpg', caption:'Identidad Nacional — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-11.jpg', caption:'Identidad Nacional — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-12.jpg', caption:'Identidad Nacional — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-13.jpg', caption:'Identidad Nacional — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-14.jpg', caption:'Identidad Nacional — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-15.jpg', caption:'Identidad Nacional — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/identidad_nacional/identidad-nacional-16.jpg', caption:'Identidad Nacional — fotografía 16' },
+          ]
+        },
+        diaestudiante: {
+          titulo: 'Día del Estudiante',
+          categoria: 'Cultural',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-01.jpg', caption:'Día del Estudiante — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-02.jpg', caption:'Día del Estudiante — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-03.jpg', caption:'Día del Estudiante — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-04.jpg', caption:'Día del Estudiante — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-05.jpg', caption:'Día del Estudiante — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-06.jpg', caption:'Día del Estudiante — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-07.jpg', caption:'Día del Estudiante — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-08.jpg', caption:'Día del Estudiante — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-09.jpg', caption:'Día del Estudiante — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-10.jpg', caption:'Día del Estudiante — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-11.jpg', caption:'Día del Estudiante — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-12.jpg', caption:'Día del Estudiante — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-13.jpg', caption:'Día del Estudiante — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-14.jpg', caption:'Día del Estudiante — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-15.jpg', caption:'Día del Estudiante — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/dia_estudiante/dia-estudiante-16.jpg', caption:'Día del Estudiante — fotografía 16' },
+          ]
+        },
+        eleccionpobierno: {
+          titulo: 'Elección de Gobierno Estudiantil',
+          categoria: 'Gobierno Estudiantil',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-01.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-02.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-03.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-04.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-05.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-06.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-07.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-08.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-09.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-10.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-11.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-12.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-13.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-14.jpg', caption:'Elección de Gobierno Estudiantil — fotografía 14' },
+          ]
+        },
+        oratoria: {
+          titulo: 'Concurso de Oratoria',
+          categoria: 'Académico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-01.jpg', caption:'Concurso de Oratoria — fotografía 1' },
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-02.jpg', caption:'Concurso de Oratoria — fotografía 2' },
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-03.jpg', caption:'Concurso de Oratoria — fotografía 3' },
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-04.jpg', caption:'Concurso de Oratoria — fotografía 4' },
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-05.jpg', caption:'Concurso de Oratoria — fotografía 5' },
+            { type:'img', src:'imagenes/otros/concurso_oratoria/concurso-oratoria-06.jpg', caption:'Concurso de Oratoria — fotografía 6' },
+          ]
+        },
+        humildadhogar: {
+          titulo: 'Acto Cívico — Humildad en el Hogar',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-01.jpg', caption:'Humildad en el Hogar — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-02.jpg', caption:'Humildad en el Hogar — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-03.jpg', caption:'Humildad en el Hogar — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-04.jpg', caption:'Humildad en el Hogar — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-05.jpg', caption:'Humildad en el Hogar — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-06.jpg', caption:'Humildad en el Hogar — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-07.jpg', caption:'Humildad en el Hogar — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-08.jpg', caption:'Humildad en el Hogar — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-09.jpg', caption:'Humildad en el Hogar — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/humildad_hogar/humildad-hogar-10.jpg', caption:'Humildad en el Hogar — fotografía 10' },
+          ]
+        },
+        tomaposesion: {
+          titulo: 'Toma de Posesión del Gobierno Estudiantil',
+          categoria: 'Gobierno Estudiantil',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg', caption:'Toma de posesión del Gobierno Estudiantil' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/toma_mesa.jpg', caption:'Toma de posesión — mesa directiva' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-01.jpg', caption:'Toma de posesión — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-02.jpg', caption:'Toma de posesión — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-03.jpg', caption:'Toma de posesión — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-04.jpg', caption:'Toma de posesión — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-05.jpg', caption:'Toma de posesión — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-06.jpg', caption:'Toma de posesión — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-07.jpg', caption:'Toma de posesión — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-08.jpg', caption:'Toma de posesión — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-09.jpg', caption:'Toma de posesión — fotografía 9' },
+          ]
+        },
+        idiomacompleto: {
+          titulo: 'Acto Cívico — Día del Idioma Español',
+          categoria: 'Cívico',
+          icono: `<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>`,
+          media: [
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-01.jpg', caption:'Día del Idioma Español — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-02.jpg', caption:'Día del Idioma Español — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-03.jpg', caption:'Día del Idioma Español — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-04.jpg', caption:'Día del Idioma Español — fotografía 4' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-05.jpg', caption:'Día del Idioma Español — fotografía 5' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-06.jpg', caption:'Día del Idioma Español — fotografía 6' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-07.jpg', caption:'Día del Idioma Español — fotografía 7' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-08.jpg', caption:'Día del Idioma Español — fotografía 8' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-09.jpg', caption:'Día del Idioma Español — fotografía 9' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-10.jpg', caption:'Día del Idioma Español — fotografía 10' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-11.jpg', caption:'Día del Idioma Español — fotografía 11' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-12.jpg', caption:'Día del Idioma Español — fotografía 12' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-13.jpg', caption:'Día del Idioma Español — fotografía 13' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-14.jpg', caption:'Día del Idioma Español — fotografía 14' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-15.jpg', caption:'Día del Idioma Español — fotografía 15' },
+            { type:'img', src:'imagenes/acto_civico/dia_idioma/dia-idioma-foto-16.jpg', caption:'Día del Idioma Español — fotografía 16' },
+          ]
+        },
       };
 
       let mediaActual = [];
@@ -594,17 +913,33 @@
       document.getElementById('galeria-modal').addEventListener('click', function(e) {
         if (e.target === this) cerrarGaleria();
       });
+
+      // Delegación de eventos para abrir galerías: cualquier elemento con
+      // data-galeria (tarjetas de actividad y tarjetas de agenda) abre su
+      // galería con clic o con Enter/Espacio, sin repetir un manejador por card.
+      document.addEventListener('click', e => {
+        const trigger = e.target.closest('[data-galeria]');
+        if (trigger) abrirGaleria(trigger.dataset.galeria);
+      });
+      document.addEventListener('keydown', e => {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        const trigger = e.target.closest('[data-galeria]');
+        if (trigger) {
+          e.preventDefault();
+          abrirGaleria(trigger.dataset.galeria);
+        }
+      });
     </script>
 
     <section class="section visual-band">
       <div class="container split align-center">
         <div class="image-frame">
-          <img src="imagenes/otros/jovenes_e.jpg" alt="Ilustración institucional para galería" loading="lazy">
+          <img src="imagenes/acto_civico/42_aniversario/42-aniversario-01.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
         </div>
         <div>
           <p class="eyebrow">Galería institucional</p>
-          <h2>Un espacio preparado para imagenes reales</h2>
-          <p>La galería institucional destaca actividades, talleres, aulas y eventos que reflejan la participación estudiantil y el trabajo educativo del centro.</p>
+          <h2>21 eventos, un año escolar completo</h2>
+          <p>Desde la inauguración de clases hasta la Graduación 2025, cada tarjeta de la agenda abre una galería con fotos reales del evento: actos cívicos, ferias académicas, jornadas culturales y procesos del Gobierno Estudiantil.</p>
           <div class="mini-list">
             <span>Eventos</span>
             <span>Talleres</span>
@@ -616,146 +951,210 @@
     </section>
 
     <section class="section band" id="plantilla-eventos">
+      <div class="container section-head">
+        <p class="eyebrow">Agenda institucional</p>
+        <h2>Actividades del año escolar</h2>
+        <p>Registro de las actividades académicas, cívicas, culturales y técnicas realizadas en el Instituto Roberto Micheletti Baín.</p>
+      </div>
       <div class="container">
-        <div style="text-align:center;margin-bottom:2.5rem;">
-          <p class="eyebrow">Agenda institucional</p>
-          <h2>Actividades del año escolar</h2>
-          <p style="max-width:600px;margin:0 auto;">Registro de las actividades académicas, cívicas, culturales y técnicas realizadas y programadas en el Instituto Roberto Micheletti Baín.</p>
+        <div class="agenda-grid">
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="inauguracion" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Inauguración de Clases">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Inauguración de Clases</h3>
+              <p>Ceremonia oficial de apertura del año escolar, con bienvenida a docentes, alumnos y padres de familia.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="reunionpadres" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Reunión de Padres de Familia">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/reunion_padres/reunion-padres-foto-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Reunión de Padres de Familia</h3>
+              <p>Encuentro institucional con padres y encargados para informar sobre el avance académico y compromisos del período.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="idiomacompleto" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Idioma Español">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_idioma/decoracion-dia-idioma-espanol.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Día del Idioma Español</h3>
+              <p>Celebración del Día del Idioma con presentaciones literarias, declamación y valoración de la lengua castellana.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="madrepadre" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día de la Madre y del Padre">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_madre_padre/dia-madre-padre-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Día de la Madre y del Padre</h3>
+              <p>Homenaje especial a las madres y padres de familia con participación de estudiantes y docentes del instituto.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="decision" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — El Valor de la Decisión">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/acto_decision_metas/decision.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — El Valor de la Decisión</h3>
+              <p>Jornada reflexiva orientada a motivar al estudiantado a tomar decisiones firmes para alcanzar sus metas de vida.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="tierra" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día de la Tierra">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Día de la Tierra</h3>
+              <p>Conmemoración del Día Mundial de la Tierra con actividades de conciencia ambiental y cuidado del entorno.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="arbol" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Árbol">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_del_arbol/dia-del-arbol-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Día del Árbol</h3>
+              <p>Actividad de sensibilización y siembra de árboles como parte del compromiso del instituto con el medio ambiente.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="ambiente" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Medio Ambiente">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Día del Medio Ambiente</h3>
+              <p>Jornada de reflexión y acción en torno al cuidado del planeta, con participación de toda la comunidad educativa.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="identidadnacional" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Identidad Nacional">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/identidad_nacional/identidad-nacional-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Identidad Nacional</h3>
+              <p>Actividad que fortalece el sentido de pertenencia y el orgullo por los símbolos y valores patrios.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="humildadhogar" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Humildad en el Hogar">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/humildad_hogar/humildad-hogar-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>Acto Cívico — Humildad en el Hogar</h3>
+              <p>Reflexión sobre los valores de humildad y respeto que se cultivan desde el hogar y se proyectan en la vida escolar.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="aniversario42" role="button" tabindex="0" aria-label="Ver fotos de 42° Aniversario del Instituto">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/42_aniversario/42-aniversario-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CÍVICO</span>
+              <h3>42° Aniversario del Instituto</h3>
+              <p>Celebración de un aniversario más del instituto, con la participación de toda la comunidad educativa.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="verano" role="button" tabindex="0" aria-label="Ver fotos de Elección del Chico y Chica Verano">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/verano_2026/verano-2026-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CULTURAL</span>
+              <h3>Elección del Chico y Chica Verano</h3>
+              <p>Concurso estudiantil de representación y valores que elige a los embajadores del instituto para la temporada de verano.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="diaestudiante" role="button" tabindex="0" aria-label="Ver fotos de Día del Estudiante">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_estudiante/dia-estudiante-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CULTURAL</span>
+              <h3>Día del Estudiante</h3>
+              <p>Jornada especial de celebración y convivencia dedicada a todo el estudiantado del instituto.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="feria" role="button" tabindex="0" aria-label="Ver fotos de Feria de Inteligencia Artificial">
+            <img class="agenda-card-thumb" src="imagenes/informatica/feria_ia/feria-ia-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">ACADÉMICO</span>
+              <h3>Feria de Inteligencia Artificial</h3>
+              <p>Exposición de proyectos y demostraciones de herramientas de IA desarrollados por los alumnos de las orientaciones técnicas.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="capacitacion" role="button" tabindex="0" aria-label="Ver fotos de Capacitaciones al Alumnado">
+            <img class="agenda-card-thumb" src="imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">ACADÉMICO</span>
+              <h3>Capacitaciones al Alumnado</h3>
+              <p>Talleres y capacitaciones formativas dirigidos al estudiantado en temas de habilidades técnicas, sociales y académicas.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="honorexcelencia" role="button" tabindex="0" aria-label="Ver fotos de Honor y Excelencia Académica">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">ACADÉMICO</span>
+              <h3>Honor y Excelencia Académica</h3>
+              <p>Reconocimiento a los estudiantes más destacados por su rendimiento académico durante el período escolar.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="oratoria" role="button" tabindex="0" aria-label="Ver fotos de Concurso de Oratoria">
+            <img class="agenda-card-thumb" src="imagenes/otros/concurso_oratoria/concurso-oratoria-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">ACADÉMICO</span>
+              <h3>Concurso de Oratoria</h3>
+              <p>Espacio donde los estudiantes demuestran sus habilidades de expresión oral y argumentación frente a un público.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="homenajejosue" role="button" tabindex="0" aria-label="Ver fotos de Homenaje al Profesor Josué">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">CULTURAL</span>
+              <h3>Homenaje al Profesor Josué</h3>
+              <p>Un homenaje especial de la comunidad educativa en reconocimiento a la labor y trayectoria del profesor Josué.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="gobierno" data-galeria="eleccionpobierno" role="button" tabindex="0" aria-label="Ver fotos de Elección de Gobierno Estudiantil">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">GOBIERNO ESTUDIANTIL</span>
+              <h3>Elección de Gobierno Estudiantil</h3>
+              <p>Proceso democrático en el que el estudiantado elige a sus representantes para el Gobierno Estudiantil del instituto.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="gobierno" data-galeria="tomaposesion" role="button" tabindex="0" aria-label="Ver fotos de Toma de Posesión del Nuevo Gobierno Estudiantil">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">GOBIERNO ESTUDIANTIL</span>
+              <h3>Toma de Posesión del Nuevo Gobierno Estudiantil</h3>
+              <p>Ceremonia oficial de juramentación e investidura de los estudiantes electos como representantes del instituto.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
+          <article class="agenda-card tiene-fotos" data-categoria="graduacion" data-galeria="graduacion2025" role="button" tabindex="0" aria-label="Ver fotos de Graduación 2025">
+            <img class="agenda-card-thumb" src="imagenes/acto_civico/graduacion_2025/graduacion-2025-01.jpg" alt="" loading="lazy">
+            <div class="agenda-card-body">
+              <span class="agenda-card-badge">GRADUACIÓN</span>
+              <h3>Graduación 2025</h3>
+              <p>Ceremonia de graduación de la promoción 2025, celebrando el esfuerzo y logro académico de los nuevos bachilleres del instituto.</p>
+              <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
+            </div>
+          </article>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem;">
-
-          <!-- CIVICAS -->
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Inauguración de Clases</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia oficial de apertura del año escolar, con bienvenida a docentes, alumnos y padres de familia.</p>
-          </article>
-
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Reunión de Padres de Familia</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Encuentro institucional con padres y encargados para informar sobre el avance académico y compromisos del período.</p>
-          </article>
-
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Idioma Español</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Celebración del Día del Idioma con presentaciones literarias, declamación y valoración de la lengua castellana.</p>
-          </article>
-
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día de la Madre y del Padre</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Homenaje especial a las madres y padres de familia con participación de estudiantes y docentes del instituto.</p>
-          </article>
-
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — El Valor de la Decisión</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Jornada reflexiva orientada a motivar al estudiantado a tomar decisiones firmes para alcanzar sus metas de vida.</p>
-          </article>
-
-          <article class="agenda-galeria" style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);" onclick="abrirGaleria('tierra')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirGaleria('tierra');}" aria-label="Ver fotos de Acto Cívico — Día de la Tierra">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día de la Tierra</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Conmemoración del Día Mundial de la Tierra con actividades de conciencia ambiental y cuidado del entorno.</p>
-            <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
-          </article>
-
-          <article class="agenda-galeria" style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);" onclick="abrirGaleria('arbol')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirGaleria('arbol');}" aria-label="Ver fotos de Acto Cívico — Día del Árbol">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Árbol</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Actividad de sensibilización y siembra de árboles como parte del compromiso del instituto con el medio ambiente.</p>
-            <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
-          </article>
-
-          <article class="agenda-galeria" style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #1a56db;box-shadow:0 2px 12px rgba(0,0,0,.08);" onclick="abrirGaleria('ambiente')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirGaleria('ambiente');}" aria-label="Ver fotos de Acto Cívico — Día del Medio Ambiente">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#1a56db;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CÍVICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Acto Cívico — Día del Medio Ambiente</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Jornada de reflexión y acción en torno al cuidado del planeta, con participación de toda la comunidad educativa.</p>
-            <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
-          </article>
-
-          <!-- CULTURALES -->
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #7e3af2;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#7e3af2;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">CULTURAL</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Elección del Chico y Chica Verano</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Concurso estudiantil de representación y valores que elige a los embajadores del instituto para la temporada de verano.</p>
-          </article>
-
-          <!-- ACADÉMICAS -->
-          <article class="agenda-galeria" style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #057a55;box-shadow:0 2px 12px rgba(0,0,0,.08);" onclick="abrirGaleria('feria')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirGaleria('feria');}" aria-label="Ver fotos de Feria de Inteligencia Artificial">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#057a55;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">ACADÉMICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Feria de Inteligencia Artificial</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Exposición de proyectos y demostraciones de herramientas de IA desarrollados por los alumnos de las orientaciones técnicas.</p>
-            <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
-          </article>
-
-          <article class="agenda-galeria" style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #057a55;box-shadow:0 2px 12px rgba(0,0,0,.08);" onclick="abrirGaleria('capacitacion')" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();abrirGaleria('capacitacion');}" aria-label="Ver fotos de Capacitaciones al Alumnado">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#057a55;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">ACADÉMICO</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Capacitaciones al Alumnado</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Talleres y capacitaciones formativas dirigidos al estudiantado en temas de habilidades técnicas, sociales y académicas.</p>
-            <p class="agenda-ver-fotos">Ver fotos &rarr;</p>
-          </article>
-
-          <!-- GOBIERNO ESTUDIANTIL -->
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #d03801;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#d03801;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GOBIERNO ESTUDIANTIL</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Elecciones Estudiantiles</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Proceso democrático en el que el estudiantado elige a sus representantes para el Gobierno Estudiantil del instituto.</p>
-          </article>
-
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #d03801;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#d03801;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GOBIERNO ESTUDIANTIL</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Toma de Posesión del Nuevo Gobierno Estudiantil</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia oficial de juramentación e investidura de los estudiantes electos como representantes del instituto.</p>
-          </article>
-
-          <!-- GRADUACIÓN -->
-          <article style="background:var(--surface,#fff);border-radius:16px;padding:1.5rem;border-left:4px solid #c27803;box-shadow:0 2px 12px rgba(0,0,0,.08);">
-            <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem;">
-              <span style="background:#c27803;color:#fff;font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:99px;letter-spacing:.05em;">GRADUACIÓN</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin:.25rem 0 .5rem;">Graduación 2025</h3>
-            <p style="font-size:.9rem;opacity:.75;margin:0;">Ceremonia de graduación de la promoción 2025, celebrando el esfuerzo y logro académico de los nuevos bachilleres del instituto.</p>
-          </article>
-
-        </div>
-
-        <!-- Leyenda de categorías -->
-        <div style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem;justify-content:center;">
-          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#1a56db;display:inline-block;"></span>Actos Cívicos</span>
-          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#057a55;display:inline-block;"></span>Académico</span>
-          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#7e3af2;display:inline-block;"></span>Cultural</span>
-          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#d03801;display:inline-block;"></span>Gobierno Estudiantil</span>
-          <span style="display:flex;align-items:center;gap:.4rem;font-size:.8rem;"><span style="width:12px;height:12px;border-radius:3px;background:#c27803;display:inline-block;"></span>Graduación</span>
+        <div class="agenda-legend">
+          <span class="agenda-legend-item"><span class="agenda-legend-swatch" style="--legend-color:var(--cat-civico);"></span>Actos Cívicos</span>
+          <span class="agenda-legend-item"><span class="agenda-legend-swatch" style="--legend-color:var(--cat-academico);"></span>Académico</span>
+          <span class="agenda-legend-item"><span class="agenda-legend-swatch" style="--legend-color:var(--cat-cultural);"></span>Cultural</span>
+          <span class="agenda-legend-item"><span class="agenda-legend-swatch" style="--legend-color:var(--cat-gobierno);"></span>Gobierno Estudiantil</span>
+          <span class="agenda-legend-item"><span class="agenda-legend-swatch" style="--legend-color:var(--cat-graduacion);"></span>Graduación</span>
         </div>
       </div>
     </section>
@@ -768,15 +1167,16 @@
           <p>Espacio destinado para mostrar fotografías de eventos académicos, cívicos, deportivos y culturales del instituto.</p>
         </div>
 
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:2rem;">
-          <img src="imagenes/dia_del_arbol/709013891_1574849341317960_4326692512646119187_n.jpg" alt="Siembra de árboles durante el Día del Árbol" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/dia_del_medioambiente/alfombra.jpg" alt="Elaboración de alfombra ecológica en el Día del Medio Ambiente" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/feria_ia/20260428_162206224_iOS.jpg" alt="Proyectos estudiantiles en la Feria de Inteligencia Artificial" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/dia_de_latierra/himno.jpg" alt="Entonación del Himno Nacional en el Día de la Tierra" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/capacitaciones/camara_de_comercio.jpg" alt="Capacitación impartida por la Cámara de Comercio" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/dia_del_medioambiente/stand.jpg" alt="Stand de exposición estudiantil" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/acto_civico/escenario_idioma.jpg" alt="Acto Cívico del Día del Idioma Español" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
-          <img src="imagenes/dia_del_arbol/710080599_1574856621317232_2891100392200066258_n.jpg" alt="Estudiantes participando en el Día del Árbol" loading="lazy" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;">
+        <div class="photo-grid">
+          <img src="imagenes/acto_civico/dia_del_arbol/dia-del-arbol-04.jpg" alt="Siembra de árboles durante el Día del Árbol" loading="lazy">
+          <img src="imagenes/acto_civico/dia_del_medioambiente/alfombra.jpg" alt="Elaboración de alfombra ecológica en el Día del Medio Ambiente" loading="lazy">
+          <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Proyectos estudiantiles en la Feria de Inteligencia Artificial" loading="lazy">
+          <img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-05.jpg" alt="Ceremonia de la Graduación 2025" loading="lazy">
+          <img src="imagenes/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio.jpg" alt="Capacitación impartida por la Cámara de Comercio" loading="lazy">
+          <img src="imagenes/acto_civico/42_aniversario/42-aniversario-05.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          <img src="imagenes/acto_civico/dia_idioma/escenario-dia-idioma-espanol.jpg" alt="Acto Cívico del Día del Idioma Español" loading="lazy">
+          <img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-03.jpg" alt="Homenaje al Profesor Josué" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -785,26 +1185,8 @@
  <footer class="footer">
     <div class="container footer-grid">
       <div style="display:flex; align-items:center; gap:1rem;">
-        <!-- Ícono Facebook a la IZQUIERDA del nombre del instituto -->
-        <a href="https://www.facebook.com/profile.php?id=100063787262594"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="Visítanos en Facebook"
-           style="
-             display: inline-block;
-             flex-shrink: 0;
-             width: 42px;
-             height: 42px;
-             border-radius: 50%;
-             overflow: hidden;
-             box-shadow: 0 2px 8px rgba(0,0,0,.35);
-             transition: transform .2s ease, box-shadow .2s ease;
-           "
-           onmouseover="this.style.transform='scale(1.15)';this.style.boxShadow='0 4px 16px rgba(0,0,0,.45)';"
-           onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 2px 8px rgba(0,0,0,.35)';">
-          <img src="imagenes/facebook.png"
-               alt="Facebook del instituto"
-               style="width:100%;height:100%;object-fit:cover;display:block;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
+          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
@@ -820,6 +1202,8 @@
         <a href="extracurriculares.html">Extracurriculares</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Docentes</a>
       </div>
     </div>
   </footer>
