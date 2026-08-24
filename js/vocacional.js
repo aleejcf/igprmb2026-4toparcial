@@ -53,9 +53,13 @@
     },
   ];
 
+  const ICON_MONITOR = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>';
+  const ICON_CHART   = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>';
+  const ICON_BOOK    = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>';
+
   const RESULTS = {
     inf: {
-      icon: "💻",
+      icon: ICON_MONITOR,
       tagClass: "voc-tag-inf",
       tag: "BTP Informática",
       title: "Bachillerato Técnico Profesional en Informática",
@@ -63,7 +67,7 @@
       href: "carrera-informatica.html",
     },
     cf: {
-      icon: "📊",
+      icon: ICON_CHART,
       tagClass: "voc-tag-cf",
       tag: "BTP Contaduría y Finanzas",
       title: "Bachillerato Técnico Profesional en Contaduría y Finanzas",
@@ -71,7 +75,7 @@
       href: "carrera-contaduria.html",
     },
     ch: {
-      icon: "📖",
+      icon: ICON_BOOK,
       tagClass: "voc-tag-ch",
       tag: "Bachillerato en Ciencias y Humanidades",
       title: "Bachillerato en Ciencias y Humanidades",
@@ -171,7 +175,7 @@
     const winnerKey = winners[0];
     const winner = RESULTS[winnerKey];
 
-    resultIcon.textContent = winner.icon;
+    resultIcon.innerHTML = winner.icon;
     resultTag.textContent = winner.tag;
     resultTag.className = "voc-result-tag " + winner.tagClass;
     resultTitle.textContent = winner.title;

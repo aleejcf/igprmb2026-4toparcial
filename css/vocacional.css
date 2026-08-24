@@ -150,7 +150,8 @@
 .voc-result { display: none; text-align: center; }
 .voc-result.show { display: block; }
 
-.voc-result-icon { font-size: 3.4rem; margin-bottom: 8px; }
+.voc-result-icon { margin-bottom: 8px; color: var(--azul); }
+.voc-result-icon svg { width: 52px; height: 52px; }
 
 .voc-result-eyebrow {
   color: var(--naranja);
