@@ -103,6 +103,31 @@ img { display: block; max-width: 100%; height: auto; }
 
 .align-center { align-items: center; }
 
+/* ── Fila editorial foto + texto (ej. "Momentos que nos definen" en
+   historia.html), alternando el lado de la foto con .reverse ── */
+.moment-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+  align-items: center;
+}
+.moment-row + .moment-row { margin-top: 48px; }
+.moment-row.reverse { direction: rtl; }
+.moment-row.reverse > * { direction: ltr; }
+.moment-photo {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: var(--r-lg);
+  box-shadow: var(--sombra-md);
+  display: block;
+}
+@media (max-width: 760px) {
+  .moment-row { grid-template-columns: 1fr; }
+  .moment-row.reverse { direction: ltr; }
+  .moment-photo { height: 220px; }
+}
+
 .cards-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .cards-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .cards-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
