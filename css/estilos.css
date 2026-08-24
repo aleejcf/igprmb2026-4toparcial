@@ -3503,9 +3503,10 @@ img { display: block; max-width: 100%; height: auto; }
     }
 
     .form-success-icon {
-      font-size: 3.5rem;
       margin-bottom: 16px;
+      color: var(--verde);
     }
+    .form-success-icon svg { width: 56px; height: 56px; }
 
     .form-success h3 {
       font-size: 1.4rem;
