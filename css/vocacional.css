@@ -92,7 +92,7 @@
 
 .voc-option.selected {
   border-color: var(--naranja);
-  background: linear-gradient(135deg, rgba(244,123,32,.12), rgba(45,109,228,.08));
+  background: linear-gradient(135deg, rgba(164,38,48,.12), rgba(47,45,127,.08));
 }
 
 .voc-option-letter {
