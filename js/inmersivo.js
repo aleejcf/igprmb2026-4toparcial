@@ -24,15 +24,15 @@
 
   const MENU = [
     { href: "index.html",             text: "Inicio",            desc: "Portada del instituto",             photo: "imagenes/otros/cole.jpg" },
-    { href: "historia.html",          text: "Historia",          desc: "Cuatro décadas de compromiso",      photo: "imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg" },
-    { href: "infraestructura.html",   text: "Infraestructura",   desc: "Talleres, laboratorio y auditorio", photo: "imagenes/otros/auditorio.jpg" },
-    { href: "docentes.html",          text: "Cuerpo Docente",    desc: "Quiénes forman a los estudiantes",  photo: "imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg" },
-    { href: "oferta-academica.html",  text: "Oferta académica",  desc: "Niveles, talleres y bachilleratos", photo: "imagenes/otros/instalaciones/area_info.jpg" },
-    { href: "matricula.html",         text: "Matrícula 2026",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg" },
-    { href: "actividades.html",       text: "Actividades",       desc: "Académicas, cívicas y técnicas",    photo: "imagenes/otros/acto_civico.jpg" },
-    { href: "extracurriculares.html", text: "Extracurriculares", desc: "Danza, banda y deportes",           photo: "imagenes/otros/grupo_danza.jpg" },
-    { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/acto_inaugural/reunion-personal-administrativo.jpg" },
-    { href: "ubicacion.html",         text: "Ubicación",         desc: "Agua Blanca Sur, El Progreso",      photo: "imagenes/otros/ubicacion.jpg" }
+    { href: "historia.html",          text: "Historia",          desc: "Cuatro décadas de compromiso",      photo: "imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg", group: "Institución" },
+    { href: "infraestructura.html",   text: "Infraestructura",   desc: "Talleres, laboratorio y auditorio", photo: "imagenes/otros/auditorio.jpg", group: "Institución" },
+    { href: "oferta-academica.html",  text: "Oferta académica",  desc: "Niveles, talleres y bachilleratos", photo: "imagenes/otros/instalaciones/area_info.jpg", group: "Oferta académica" },
+    { href: "actividades.html",       text: "Actividades",       desc: "Académicas, cívicas y técnicas",    photo: "imagenes/otros/acto_civico.jpg", group: "Vida estudiantil" },
+    { href: "extracurriculares.html", text: "Extracurriculares", desc: "Danza, banda y deportes",           photo: "imagenes/otros/grupo_danza.jpg", group: "Vida estudiantil" },
+    { href: "docentes.html",          text: "Cuerpo Docente",    desc: "Quiénes forman a los estudiantes",  photo: "imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg", group: "Recursos" },
+    { href: "matricula.html",         text: "Matrícula 2026",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg", group: "Matrícula", highlight: true },
+    { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/acto_inaugural/reunion-personal-administrativo.jpg", group: "Matrícula" },
+    { href: "ubicacion.html",         text: "Ubicación",         desc: "Agua Blanca Sur, El Progreso",      photo: "imagenes/otros/ubicacion.jpg", group: "Matrícula" }
   ];
 
   const currentPage = window.location.pathname.split("/").pop() || "index.html";
@@ -74,9 +74,19 @@
   list.className = "fs-menu-list";
   list.setAttribute("aria-label", "Páginas del sitio");
 
+  let lastGroup = null;
   const links = MENU.map((item, i) => {
+    if (item.group && item.group !== lastGroup) {
+      lastGroup = item.group;
+      const label = document.createElement("span");
+      label.className = "fs-group-label";
+      label.textContent = item.group;
+      list.appendChild(label);
+    }
+
     const a = document.createElement("a");
     a.className = "fs-link";
+    if (item.highlight) a.classList.add("fs-link-highlight");
     a.href = item.href;
     if (item.href === currentPage) {
       a.classList.add("active");

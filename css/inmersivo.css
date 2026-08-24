@@ -391,6 +391,30 @@
 .fs-link:hover .fs-desc,
 .fs-link:focus-visible .fs-desc { opacity: 1; transform: translateX(14px); }
 
+/* Encabezados de grupo (Institución / Oferta académica / Vida
+   estudiantil / Recursos / Matrícula) dentro del menú a pantalla
+   completa — agrupan los enlaces en vez de una lista plana. */
+.fs-group-label {
+  display: block;
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .38);
+  margin: 22px 0 6px 44px;
+}
+
+.fs-group-label:first-of-type { margin-top: 26px; }
+
+/* El enlace de Matrícula se destaca en burdeos (color institucional
+   de acento) para que la conversión principal sea visible en el
+   propio menú, no solo en la barra lateral. */
+.fs-link-highlight .fs-num,
+.fs-link-highlight .fs-text { color: var(--naranja); }
+
+.fs-link-highlight:hover,
+.fs-link-highlight:focus-visible .fs-text { color: var(--naranja-2); }
+
 /* Pagina actual */
 .fs-link.active { color: var(--blanco); }
 .fs-link.active .fs-num { color: var(--naranja); }

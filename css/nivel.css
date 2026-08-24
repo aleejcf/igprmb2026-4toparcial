@@ -112,9 +112,18 @@
   border-radius: 50%;
   background: rgba(255,255,255,.08);
   border: 1px solid rgba(255,255,255,.18);
-  font-size: 4.6rem;
   line-height: 1;
   justify-self: center;
+  color: #fff;
+}
+
+.nivel-hero-icono svg { width: 44%; height: 44%; }
+
+/* Insignia numérica de grado (7°, 8°, 9°) en vez de emoji de número */
+.nivel-hero-icono.nivel-hero-num {
+  font-family: var(--font-display, "Plus Jakarta Sans");
+  font-size: 3.4rem;
+  font-weight: 700;
 }
 
 /* ── FRANJA DE DATOS ─────────────────────────────────────── */
@@ -170,9 +179,11 @@
   height: 46px;
   border-radius: 13px;
   background: var(--celeste);
-  font-size: 1.35rem;
   margin-bottom: 15px;
+  color: var(--nivel-color-2);
 }
+
+.nivel-card-icono svg { width: 22px; height: 22px; }
 
 .nivel-card h3 { font-size: 1.02rem; margin-bottom: 7px; }
 .nivel-card p  { font-size: .89rem; color: var(--muted); line-height: 1.65; }

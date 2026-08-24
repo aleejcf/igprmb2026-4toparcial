@@ -11,7 +11,8 @@
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <style>
@@ -22,10 +23,13 @@
       cursor: pointer;
       position: relative;
     }
-    .program-card-link:hover {
+    .program-card-link:hover,
+    .program-card-link:focus-visible {
       transform: translateY(-8px);
       box-shadow: var(--sombra-md);
+      outline: none;
     }
+    .program-card-link:focus-visible { box-shadow: var(--sombra-md), 0 0 0 2px var(--azul); }
     .program-card-cta {
       display: inline-flex;
       align-items: center;
@@ -44,28 +48,19 @@
       opacity: .85;
       transform: translateX(3px);
     }
-    /* Color por carrera */
-    .card-rojo .program-card-cta {
-      background: linear-gradient(135deg, #b01010, #e03030);
-    }
-    .card-verde .program-card-cta {
-      background: linear-gradient(135deg, #0a6622, #1a9940);
-    }
-    .card-rojo:hover { border-color: rgba(200,30,30,.25) !important; }
-    .card-verde:hover { border-color: rgba(20,140,60,.25) !important; }
+    /* Color por bachillerato */
+    .card-rojo .program-card-cta { background: linear-gradient(135deg, var(--naranja), var(--naranja-2)); }
+    .card-verde .program-card-cta { background: linear-gradient(135deg, var(--verde), var(--verde-2)); }
+    .card-rojo:hover { border-color: rgba(164,38,48,.25) !important; }
+    .card-verde:hover { border-color: rgba(27,98,55,.25) !important; }
 
-    /* ── Espacios para imágenes ── */
+    /* ── Fotografías de cada grado/orientación ── */
     .card-img-slot {
       width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 10px;
+      border-radius: var(--r);
       overflow: hidden;
-      background: var(--gris-2, #f0f0f0);
       margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--gris-3, #d0d0d0);
       position: relative;
     }
     .card-img-slot img {
@@ -75,23 +70,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 8px;
-    }
-    .card-img-slot .img-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--gris-5, #aaa);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-align: center;
-      padding: 12px;
-      pointer-events: none;
-    }
-    .card-img-slot .img-placeholder svg {
-      opacity: .45;
     }
 
     /* Slot en info-card del III Ciclo Básico */
@@ -104,34 +82,15 @@
     .split-img-slot {
       width: 100%;
       aspect-ratio: 4 / 3;
-      border-radius: 14px;
+      border-radius: var(--r-lg);
       overflow: hidden;
-      background: var(--gris-2, #f0f0f0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--gris-3, #d0d0d0);
+      box-shadow: var(--sombra);
     }
     .split-img-slot img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-    }
-    .split-img-slot .img-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--gris-5, #aaa);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-align: center;
-      padding: 12px;
-    }
-    .split-img-slot .img-placeholder svg {
-      opacity: .45;
     }
   </style>
 </head>
@@ -170,7 +129,7 @@
           <h1>Niveles y carreras disponibles</h1>
           <p>La oferta del instituto se organiza en III Ciclo de Educación Básica, III Ciclo con Orientación Técnica y tres bachilleratos.</p>
         </div>
-        <img src="imagenes/irmb/talleres-tecnicos.svg" alt="Ilustración de talleres técnicos" loading="eager">
+        <img src="imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg" alt="Reconocimiento a estudiantes destacados del instituto" loading="eager">
       </div>
     </section>
 
@@ -199,10 +158,6 @@
           <!-- Espacio para imagen de Septimo Grado -->
           <div class="card-img-slot">
             <img src="imagenes/otros/iii_ciclo_comun/septimo_grado.jpeg" alt="Séptimo Grado">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Séptimo Grado
-            </div>
           </div>
           <span class="program-tag">III Ciclo</span>
           <h3>Séptimo Grado</h3>
@@ -212,10 +167,6 @@
           <!-- Espacio para imagen de Octavo Grado -->
           <div class="card-img-slot">
             <img src="imagenes/otros/iii_ciclo_comun/octavo_grado.jpeg" alt="Octavo Grado">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Octavo Grado
-            </div>
           </div>
           <span class="program-tag">III Ciclo</span>
           <h3>Octavo Grado</h3>
@@ -248,10 +199,6 @@
           <!-- Espacio para imagen de Estructuras Metalicas -->
           <div class="card-img-slot">
             <img src="imagenes/otros/iii_ciclo_polivalente/metalesns.jpg" alt="Estructuras Metálicas">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Estructuras Metálicas
-            </div>
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Estructuras Metálicas</h3>
@@ -266,11 +213,7 @@
         <a href="orientacion-electricidad.html" class="program-card program-card-link" aria-label="Ver la página de Electricidad">
           <!-- Espacio para imagen de Electricidad -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_polivalente/metales1.jpg" alt="Electricidad">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Electricidad
-            </div>
+            <img src="imagenes/otros/electricidad.jpg" alt="Electricidad">
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Electricidad</h3>
@@ -286,10 +229,6 @@
           <!-- Espacio para imagen de Corte y Confeccion -->
           <div class="card-img-slot">
             <img src="imagenes/otros/iii_ciclo_polivalente/costuraaa.jpg" alt="Corte y Confección">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Corte y Confección
-            </div>
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Corte y Confección</h3>

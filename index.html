@@ -11,10 +11,12 @@
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <link rel="stylesheet" href="css/galeria.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
 
@@ -62,55 +64,26 @@
 
   <main>
     <!-- ══════════════════════════════════════
-         HERO
+         HERO — fotografía real, sin estadísticas infladas
     ══════════════════════════════════════ -->
-    <section class="hero" data-sec="Inicio">
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-card card-a">BTP</div>
-        <div class="hero-card card-b">III Ciclo</div>
-        <div class="hero-card card-c">Técnica</div>
+    <section class="hero-editorial" data-sec="Inicio">
+      <div class="hero-editorial-media">
+        <img src="imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg" alt="Estudiantes reunidos bajo la cancha techada del instituto durante un acto cívico" fetchpriority="high">
       </div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Agua Blanca Sur, El Progreso, Yoro</p>
-          <h1>Instituto Gubernamental Polivalente "Roberto Micheletti Baín"</h1>
-          <p class="lead">Formación básica, técnica y de bachillerato para estudiantes que desean prepararse con disciplina, conocimiento práctico y compromiso con su comunidad.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
-            <a class="btn secondary" href="oferta-academica.html">Conocer carreras</a>
-          </div>
+      <div class="container hero-editorial-inner">
+        <p class="eyebrow">Agua Blanca Sur, El Progreso, Yoro — desde 1984</p>
+        <h1>Un instituto público donde se aprende haciendo.</h1>
+        <p class="lead">Educación básica, orientación técnica desde el III Ciclo y tres bachilleratos para continuar después de noveno grado. Todo dentro de la misma comunidad, en Agua Blanca Sur.</p>
+        <div class="hero-editorial-actions">
+          <a class="btn primary" href="oferta-academica.html">Conoce nuestra oferta académica</a>
+          <a class="btn secondary" href="matricula.html">Información de matrícula</a>
         </div>
-
-        <!-- FOTO STACK flotante -->
-        <aside class="hero-panel" aria-label="Fotos del instituto">
-          <div class="photo-stack">
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/cole.jpg" alt="Campus del instituto">
-            </div>
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/estudiantes.jpg" alt="Estudiantes del instituto">
-            </div>
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/auditorio.jpg" alt="Talleres técnicos">
-            </div>
-
-          </div>
-
-          <div class="hero-stats-row">
-            <div class="stat">
-              <strong>600+</strong>
-              <span>estudiantes aproximadamente</span>
-            </div>
-            <div class="stat">
-              <strong>40+</strong>
-              <span>años de excelencia educativa</span>
-            </div>
-            <div class="stat">
-              <strong>3</strong>
-              <span>bachilleratos disponibles</span>
-            </div>
-          </div>
-        </aside>
+      </div>
+      <div class="container facts-strip">
+        <div class="facts-strip-item"><strong>1984</strong><span>Año de fundación</span></div>
+        <div class="facts-strip-item"><strong>42°</strong><span>Aniversario celebrado</span></div>
+        <div class="facts-strip-item"><strong>3</strong><span>Bachilleratos disponibles</span></div>
+        <div class="facts-strip-item"><strong>~450</strong><span>Estudiantes en el ciclo actual</span></div>
       </div>
     </section>
 
@@ -121,8 +94,8 @@
       <div class="container split align-center">
         <div>
           <p class="eyebrow">Identidad institucional</p>
-          <h2>Un centro público con formación polivalente</h2>
-          <p>El instituto combina aprendizaje académico con orientación técnica para que cada estudiante encuentre una ruta de crecimiento acorde a sus habilidades, intereses y metas familiares.</p>
+          <h2>Dignidad, trabajo y cultura</h2>
+          <p>Ese es el lema que acompaña al instituto desde su fundación. Combina aprendizaje académico con orientación técnica para que cada estudiante encuentre una ruta acorde a sus habilidades, intereses y metas familiares.</p>
         </div>
         <div class="identity-grid" aria-label="Principios institucionales">
           <article>
@@ -146,91 +119,97 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         OFERTA ACADÉMICA
+         OFERTA ACADÉMICA — explorador, no cards idénticas
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Oferta académica">
       <div class="container section-head">
         <p class="eyebrow">Oferta institucional</p>
-        <h2>Educación para distintas etapas</h2>
-        <p>El instituto ofrece III Ciclo de Educación Básica, III Ciclo con orientación técnica y bachilleratos para continuar la formación académica y profesional.</p>
+        <h2>Tres caminos después de noveno grado</h2>
+        <p>La organización académica facilita que el estudiante avance de forma ordenada desde séptimo grado hasta su bachillerato.</p>
       </div>
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/prim_white.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/edu_p.png" alt="">
-          </span>
-          <h3>III Ciclo de Educación Básica</h3>
-          <p>Formación para estudiantes de séptimo, octavo y noveno grado en modalidad básica.</p>
-          <a href="oferta-academica.html#basica">Ver nivel</a>
-        </article>
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/a_tecwhite.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/a_tecnicas.png" alt="">
-          </span>
-          <h3>III Ciclo con Orientación Técnica</h3>
-          <p>Estructuras Metálicas, Electricidad y Corte y Confección desde séptimo a noveno grado.</p>
-          <a href="oferta-academica.html#tecnica">Ver talleres</a>
-        </article>
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/bach_white.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/bach.png" alt="">
-          </span>
-          <h3>Bachilleratos</h3>
-          <p>Informática, Contaduría y Finanzas, y Ciencias y Humanidades.</p>
-          <a href="oferta-academica.html#bachilleratos">Ver bachilleratos</a>
-        </article>
-      </div>
-      <div class="container" style="text-align:center; margin-top:36px;">
-        <a class="btn primary" href="test-vocacional.html">¿No sabes cuál elegir? Haz el test vocacional &rarr;</a>
+      <div class="container offer-explorer">
+        <div class="offer-explorer-intro">
+          <p>Desde séptimo grado se puede optar por la modalidad básica o por una orientación técnica. Al llegar a bachillerato, se elige entre tres programas técnicos y académicos.</p>
+          <a class="btn primary" href="test-vocacional.html">¿No sabes cuál elegir? Haz el test vocacional</a>
+        </div>
+        <div class="offer-list">
+          <a class="offer-row" href="oferta-academica.html#basica">
+            <span class="offer-row-index">01</span>
+            <span class="offer-row-body">
+              <h3>III Ciclo de Educación Básica</h3>
+              <p>Séptimo, octavo y noveno grado en modalidad básica.</p>
+            </span>
+            <span class="offer-row-thumb"><img src="imagenes/otros/iii_ciclo_comun/noveno_grado.jpeg" alt="" loading="lazy"></span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="offer-row" href="oferta-academica.html#tecnica">
+            <span class="offer-row-index">02</span>
+            <span class="offer-row-body">
+              <h3>III Ciclo con Orientación Técnica</h3>
+              <p>Estructuras Metálicas, Electricidad y Corte y Confección desde séptimo a noveno grado.</p>
+            </span>
+            <span class="offer-row-thumb"><img src="imagenes/otros/iii_ciclo_polivalente/soldadura.jpg" alt="" loading="lazy"></span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="offer-row" href="oferta-academica.html#bachilleratos">
+            <span class="offer-row-index">03</span>
+            <span class="offer-row-body">
+              <h3>Bachilleratos</h3>
+              <p>Informática, Contaduría y Finanzas, y Ciencias y Humanidades.</p>
+            </span>
+            <span class="offer-row-thumb"><img src="imagenes/informatica/feria_ia/feria-ia-01.jpg" alt="" loading="lazy"></span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         BTP EN INFORMÁTICA — CARRERA DESTACADA
+         BTP EN INFORMÁTICA — panel con acento técnico
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Informática">
-      <div class="container split align-center">
-        <div>
-          <p class="eyebrow">Carrera destacada</p>
-          <h2>BTP en Informática</h2>
-          <p>El área de Informática es la que más actividad genera en el instituto: proyectos de laboratorio, prácticas de soporte técnico y la Feria de Inteligencia Artificial, donde los estudiantes exponen su trabajo ante toda la comunidad educativa.</p>
-          <div class="mini-list">
-            <span>Ofimática</span>
-            <span>Programación</span>
-            <span>Sistemas Operativos</span>
-            <span>Análisis y Diseño</span>
+      <div class="container">
+        <div class="tech-panel split align-center">
+          <div>
+            <p class="eyebrow">Carrera destacada</p>
+            <h2>BTP en Informática</h2>
+            <p>El área de Informática es la que más actividad genera en el instituto: proyectos de laboratorio, prácticas de soporte técnico y la Feria de Inteligencia Artificial, donde los estudiantes exponen su trabajo ante toda la comunidad educativa.</p>
+            <div class="tech-chips">
+              <span class="tech-chip">ofimática</span>
+              <span class="tech-chip">programación</span>
+              <span class="tech-chip">sistemas operativos</span>
+              <span class="tech-chip">análisis y diseño</span>
+              <span class="tech-chip">feria de IA</span>
+            </div>
+            <div class="hero-editorial-actions">
+              <a class="btn primary" href="carrera-informatica.html">Conocer la carrera</a>
+              <a class="btn secondary" href="actividades.html#academicas">Ver sus actividades</a>
+            </div>
           </div>
-          <div class="hero-actions" style="margin-top:26px;">
-            <a class="btn primary" href="carrera-informatica.html">Conocer la carrera</a>
-            <a class="btn secondary" href="actividades.html">Ver sus actividades</a>
-          </div>
-        </div>
 
-        <div class="gal-grid gal-destacada">
-          <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Feria de Inteligencia Artificial del BTP en Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/otros/instalaciones/laboratorio_1.jpeg" alt="Laboratorio de Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/taller.jpg" alt="Taller de Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg" alt="Estudiantes de Informática en la Feria de IA" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/otros/instalaciones/laboratorio_2.jpeg" alt="Equipos del laboratorio de Informática" loading="lazy">
-          </figure>
+          <div class="gal-grid gal-destacada">
+            <figure class="gal-item">
+              <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Feria de Inteligencia Artificial del BTP en Informática" loading="lazy">
+            </figure>
+            <figure class="gal-item">
+              <img src="imagenes/otros/instalaciones/laboratorio_1.jpeg" alt="Laboratorio de Informática" loading="lazy">
+            </figure>
+            <figure class="gal-item">
+              <img src="imagenes/informatica/desde_el_colegio/taller.jpg" alt="Taller de Informática" loading="lazy">
+            </figure>
+            <figure class="gal-item">
+              <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg" alt="Estudiantes de Informática en la Feria de IA" loading="lazy">
+            </figure>
+            <figure class="gal-item">
+              <img src="imagenes/otros/instalaciones/laboratorio_2.jpeg" alt="Equipos del laboratorio de Informática" loading="lazy">
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         TALLERES — DECK CAROUSEL DE FOTOS
+         TALLERES — "aprender haciendo"
     ══════════════════════════════════════ -->
     <section class="section visual-band" data-sec="Talleres">
       <div class="container split align-center">
@@ -245,33 +224,63 @@
           </div>
         </div>
 
-        <!-- DECK CAROUSEL — Talleres -->
         <div class="campus-gallery-wrap">
           <div class="deck-wrap" id="deck-talleres" role="region" aria-label="Fotos de talleres">
             <div class="deck-card">
               <img src="imagenes/otros/iii_ciclo_polivalente/metalesm.jpg" alt="Taller de Estructuras Metálicas">
             </div>
-            <!-- Carta 2 -->
             <div class="deck-card">
               <img src="imagenes/otros/iii_ciclo_polivalente/costura.jpg" alt="Taller de Corte y Confección">
             </div>
-            <!-- Carta 3 -->
             <div class="deck-card">
               <img src="imagenes/otros/iii_ciclo_polivalente/pintura.jpg" alt="Taller de Pintura">
             </div>
-            <!-- Carta 4 -->
             <div class="deck-card">
               <img src="imagenes/otros/iii_ciclo_polivalente/soldadura.jpg" alt="Taller de Soldadura">
             </div>
-            <!-- Carta 5 -->
             <div class="deck-card">
               <img src="imagenes/otros/iii_ciclo_polivalente/costura2.jpg" alt="Estudiantes en clase">
             </div>
           </div>
           <div class="deck-dots" id="dots-talleres"></div>
           <div class="deck-label" id="label-talleres">Haz clic para ver más fotos</div>
-
         </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         VIDA ESTUDIANTIL — mosaico asimétrico
+    ══════════════════════════════════════ -->
+    <section class="section" data-sec="Vida estudiantil">
+      <div class="container section-head">
+        <p class="eyebrow">Fuera del aula</p>
+        <h2>Aquí pasan cosas</h2>
+        <p>Danza, banda de guerra, fútbol y actos cívicos que forman comunidad tanto como las clases.</p>
+      </div>
+      <div class="container life-mosaic">
+        <div class="life-mosaic-item span-2-2">
+          <img src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo.jpg" alt="Cuadro de danza folclórica del instituto" loading="lazy">
+          <span class="life-mosaic-label">Danza folclórica</span>
+        </div>
+        <div class="life-mosaic-item">
+          <img src="imagenes/otros/banda_guerra/banda_abs.jpg" alt="Banda de guerra del instituto" loading="lazy">
+          <span class="life-mosaic-label">Banda de guerra</span>
+        </div>
+        <div class="life-mosaic-item">
+          <img src="imagenes/otros/futbol.jpg" alt="Estudiantes jugando fútbol" loading="lazy">
+          <span class="life-mosaic-label">Fútbol</span>
+        </div>
+        <div class="life-mosaic-item span-2-1">
+          <img src="imagenes/acto_civico/42_aniversario/42-aniversario-03.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          <span class="life-mosaic-label">42° Aniversario</span>
+        </div>
+        <div class="life-mosaic-item span-2-1">
+          <img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-01.jpg" alt="Ceremonia de la Graduación 2025" loading="lazy">
+          <span class="life-mosaic-label">Graduación 2025</span>
+        </div>
+      </div>
+      <div class="container" style="text-align:center; margin-top:32px;">
+        <a class="btn secondary" href="actividades.html" style="color:var(--azul); border-color:var(--linea);">Ver la agenda completa de actividades</a>
       </div>
     </section>
 
@@ -300,7 +309,7 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         VIDEO SECCIÓN — Reproductores cinematicos
+         VIDEO SECCIÓN
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Videos">
       <div class="container section-head">
@@ -311,12 +320,11 @@
 
       <div class="container video-grid">
 
-        <!-- Video principal grande -->
         <div class="vg-main">
           <div class="cine-player" id="cine-main" data-video="video/logo_institucional/logo_micheletti.mp4">
             <div class="cine-placeholder">
-              <span class="cine-placeholder-icon">🎬</span>
-              <span class="cine-placeholder-label">Video de presentación<br>del instituto<br><br>Agrega: data-video="ruta/video.mp4"</span>
+              <svg class="cine-placeholder-icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10.5l5-3v9l-5-3"/></svg>
+              <span class="cine-placeholder-label">Video de presentación<br>del instituto</span>
             </div>
             <div class="cine-overlay">
               <div class="cine-title-tag">Presentación institucional</div>
@@ -342,10 +350,9 @@
           </div>
         </div>
 
-        <!-- Video lateral 1 -->
         <div class="vg-side" id="cine-side1" data-video="video/promocion_btpi/video_promo.mp4">
           <div class="cine-placeholder">
-            <span class="cine-placeholder-icon" style="font-size:2rem">🎉</span>
+            <svg class="cine-placeholder-icon" style="width:1.7rem;height:1.7rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             <span class="cine-placeholder-label" style="font-size:.7rem">Video de actividades</span>
           </div>
           <div class="cine-overlay">
@@ -371,10 +378,9 @@
           </div>
         </div>
 
-        <!-- Video lateral 2 -->
         <div class="vg-side" id="cine-side2" data-video="video/educacion_fisica/voleibol.mp4">
           <div class="cine-placeholder">
-            <span class="cine-placeholder-icon" style="font-size:2rem">⚽</span>
+            <svg class="cine-placeholder-icon" style="width:1.7rem;height:1.7rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 0 0 20"/><path d="M12 2a15 15 0 0 1 0 20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
             <span class="cine-placeholder-label" style="font-size:.7rem">Video deportivo</span>
           </div>
           <div class="cine-overlay">
@@ -404,125 +410,27 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         RUTA ESTUDIANTIL
+         CONTACTO / UBICACIÓN — franja compacta
     ══════════════════════════════════════ -->
-    <section class="section band" data-sec="Ruta estudiantil">
+    <section class="section band" data-sec="Contacto">
       <div class="container section-head">
-        <p class="eyebrow">Ruta estudiantil</p>
-        <h2>Del III Ciclo a la educación media</h2>
-        <p>La organización académica facilita que el estudiante avance de forma ordenada desde séptimo grado hasta su bachillerato.</p>
+        <p class="eyebrow">¿Tienes preguntas?</p>
+        <h2>Escríbenos o visítanos</h2>
       </div>
-      <div class="container pathway">
-        <article>
-          <span>01</span>
-          <h3>Ingreso a III Ciclo</h3>
-          <p>Séptimo, octavo y noveno grado en modalidad básica o con orientación técnica.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Exploración de habilidades</h3>
-          <p>Participación en actividades académicas, cívicas, deportivas y talleres.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Elección de bachillerato</h3>
-          <p>Informática, Contaduría y Finanzas, o Ciencias y Humanidades.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         GALERÍA MASONRY — Vida estudiantil
-    ══════════════════════════════════════ -->
-    <section class="section" data-sec="Galería">
-      <div class="container section-head">
-        <p class="eyebrow">Vida institucional</p>
-        <h2>Galería del instituto</h2>
-        <p>Momentos, eventos, talleres y celebraciones que reflejan la identidad del Instituto Roberto Micheletti Baín.</p>
-      </div>
-
-      <div class="container photo-masonry" id="photo-masonry">
-
-        <div class="pm-item" data-label="Actividades academicas">
-          <img src="imagenes/otros/elecciones.jpg" alt="Actividades académicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Académicas</span></div>
+      <div class="container contact-strip">
+        <div class="contact-strip-item">
+          <strong>Dirección</strong>
+          <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
+          <a href="ubicacion.html">Ver ubicación y cómo llegar &rarr;</a>
         </div>
-
-        <div class="pm-item" data-label="Actos civicos">
-          <img src="imagenes/otros/acto_civico.jpg" alt="Actos cívicos">
-          <div class="pm-overlay"><span class="pm-overlay-label">Cívicos</span></div>
+        <div class="contact-strip-item">
+          <strong>Horario de atención</strong>
+          <p>Lunes a viernes, 8:00 AM &ndash; 12:00 PM (matrícula, enero 2026).</p>
         </div>
-
-        <div class="pm-item" data-label="Banda de guerra">
-          <img src="imagenes/otros/banda_guerra/banda_abs.jpg" alt="Banda de guerra">
-          <div class="pm-overlay"><span class="pm-overlay-label">Banda</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Grupo de danza">
-          <img src="imagenes/otros/grupo_danza.jpg" alt="Grupo de danza">
-          <div class="pm-overlay"><span class="pm-overlay-label">Danza</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Futbol">
-          <img src="imagenes/otros/futbol.jpg" alt="Futbol">
-          <div class="pm-overlay"><span class="pm-overlay-label">Futbol</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Taller de metalicas">
-          <img src="imagenes/otros/iii_ciclo_polivalente/metales2.jpg" alt="Taller metálicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Metálicas</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Electricidad">
-          <img src="imagenes/otros/electricidad.jpg" alt="Electricidad">
-          <div class="pm-overlay"><span class="pm-overlay-label">Electricidad</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Graduacion">
-          <img src="imagenes/otros/graduacion.jpg" alt="Graduación">
-          <div class="pm-overlay"><span class="pm-overlay-label">Graduación</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         EVENTOS — DECK CAROUSEL ACTIVIDADES
-    ══════════════════════════════════════ -->
-    <section class="section band" data-sec="Eventos">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Vida escolar</p>
-          <h2>Eventos y actividades del instituto</h2>
-          <p>Este sitio funciona como espacio de promoción para compartir actividades académicas, culturales, cívicas, deportivas y técnicas del instituto.</p>
-          <div class="activity-strip" style="margin-top:24px;">
-            <a href="actividades.html#academicas">Académicas</a>
-            <a href="actividades.html#civicas">Cívicas</a>
-            <a href="actividades.html#deportivas">Deportivas</a>
-            <a href="actividades.html#tecnicas">Técnicas</a>
-          </div>
-        </div>
-
-        <!-- DECK — Actividades -->
-        <div class="campus-gallery-wrap">
-          <div class="deck-wrap" id="deck-actividades" role="region" aria-label="Fotos de actividades">
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/reunion_padres/asamblea-padres-de-familia.jpg" alt="Reunión de padres de familia">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg" alt="Presentación de docentes">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg" alt="Toma de posesión de autoridades estudiantiles">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/dia_idioma/decoracion-dia-idioma-espanol.jpg" alt="Día del Idioma">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/verano_2026/escenario-eleccion-chico-chica-verano.jpg" alt="Elección de chico y chica verano">
-            </div>
-          </div>
-          <div class="deck-dots" id="dots-actividades"></div>
-          <div class="deck-label" id="label-actividades">Haz clic para ver más fotos</div>
+        <div class="contact-strip-item">
+          <strong>Contacto</strong>
+          <p>Formulario de contacto y redes sociales del instituto.</p>
+          <a href="contacto.html">Ir a Contacto &rarr;</a>
         </div>
       </div>
     </section>

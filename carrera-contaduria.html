@@ -11,7 +11,8 @@
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <style>
@@ -265,13 +266,16 @@
       width: 36px;
       height: 36px;
       border-radius: var(--r-sm);
-      background: linear-gradient(135deg, #c05c00, var(--naranja));
+      background: linear-gradient(135deg, var(--naranja-dark, var(--naranja-2)), var(--naranja));
       display: grid;
       place-items: center;
-      font-size: 1rem;
       flex-shrink: 0;
-      box-shadow: 0 4px 12px rgba(244,123,32,.35);
+      box-shadow: 0 4px 12px rgba(164,38,48,.35);
+      color: #fff;
     }
+    .materia-icon svg { width: 18px; height: 18px; }
+    .hero-pill svg { width: 14px; height: 14px; flex-shrink: 0; }
+    .salida-icon svg { width: 40px; height: 40px; }
 
     .materia-name {
       font-size: .88rem;
@@ -639,9 +643,9 @@
           <p class="carrera-hero-desc">Preparación en procesos contables, registros financieros y organización de información económica. Forma profesionales con orden, precisión y responsabilidad en el manejo de documentos financieros.</p>
           <div class="hero-pills">
             <span class="hero-pill">💰 Finanzas</span>
-            <span class="hero-pill">📅 10mo – 12mo grado</span>
-            <span class="hero-pill">🎓 Título técnico</span>
-            <span class="hero-pill">🕐 Jornada matutina</span>
+            <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 10mo – 12mo grado</span>
+            <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Título técnico</span>
+            <span class="hero-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Jornada matutina</span>
           </div>
         </div>
         <div class="carrera-hero-logo">
@@ -698,7 +702,7 @@
                 </div>
               </div>
               <div class="materia-item">
-                <div class="materia-icon">📊</div>
+                <div class="materia-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></div>
                 <div>
                   <div class="materia-name">Análisis Financiero</div>
                   <div class="materia-desc">Interpretación de estados y reportes</div>
@@ -712,7 +716,7 @@
                 </div>
               </div>
               <div class="materia-item">
-                <div class="materia-icon">💻</div>
+                <div class="materia-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
                 <div>
                   <div class="materia-name">Informática Aplicada</div>
                   <div class="materia-desc">Excel y herramientas de cálculo financiero</div>
@@ -756,7 +760,7 @@
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/dia_contador/finanzas2.jpg" alt="Trabajo en grupo"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span>📊</span>Agrega: imagenes/contaduría/aula2.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>Agrega: imagenes/contaduría/aula2.jpg</div>
             <div class="m-overlay"><span class="m-caption">Maestros del área</span></div>
           </div>
 
@@ -770,7 +774,7 @@
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/dia_contador/finanzas4.jpg" alt="Clase de informática aplicada"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span>💻</span>Agrega: imagenes/contaduría/aula4.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>Agrega: imagenes/contaduría/aula4.jpg</div>
             <div class="m-overlay"><span class="m-caption">Lic. Celia Villatoro</span></div>
           </div>
 
@@ -784,7 +788,7 @@
           <div class="m-item">
             <img src="imagenes/contaduria_finanzas/dia_contador/talento_cf.jpg" alt="Exposición de estudiantes"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span>🎓</span>Agrega: imagenes/contaduría/aula6.jpg</div>
+            <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>Agrega: imagenes/contaduría/aula6.jpg</div>
             <div class="m-overlay"><span class="m-caption">Talento estudiantil para el canto</span></div>
           </div>
 
@@ -817,12 +821,12 @@
             <p>Registro y seguimiento de entradas y salidas de productos en almacenes y tiendas.</p>
           </div>
           <div class="salida-card">
-            <span class="salida-icon">🎓</span>
+            <span class="salida-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>
             <h4>Estudios universitarios</h4>
             <p>Base para continuar en Contaduría Pública, Administración de Empresas o carreras afines.</p>
           </div>
           <div class="salida-card">
-            <span class="salida-icon">💼</span>
+            <span class="salida-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M17 7V5a2 2 0 0 0-2-2h-6a2 2 0 0 0-2 2v2"/><line x1="2" y1="13" x2="22" y2="13"/></svg></span>
             <h4>Emprendimiento propio</h4>
             <p>Herramientas financieras para gestionar un negocio personal con orden y responsabilidad.</p>
           </div>

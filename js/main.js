@@ -352,7 +352,8 @@
     ".section-head, .feature-card, .program-card, .activity-card, " +
     ".info-card, .callout, .event-item, .pathway article, " +
     ".identity-grid article, .decision-grid article, .image-frame, " +
-    ".timeline-item, .timeline, .hero-stats-row .stat"
+    ".timeline-item, .timeline, .hero-stats-row .stat, " +
+    ".offer-row, .facts-strip-item, .life-mosaic-item, .contact-strip-item"
   );
 
   if ("IntersectionObserver" in window) {
