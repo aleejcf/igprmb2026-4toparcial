@@ -29,6 +29,7 @@
     { href: "oferta-academica.html",  text: "Oferta académica",  desc: "Niveles, talleres y bachilleratos", photo: "imagenes/otros/instalaciones/area_info.jpg", group: "Oferta académica" },
     { href: "actividades.html",       text: "Actividades",       desc: "Académicas, cívicas y técnicas",    photo: "imagenes/otros/acto_civico.jpg", group: "Vida estudiantil" },
     { href: "extracurriculares.html", text: "Extracurriculares", desc: "Danza, banda y deportes",           photo: "imagenes/otros/grupo_danza.jpg", group: "Vida estudiantil" },
+    { href: "galeria.html",           text: "Galería",           desc: "Graduaciones, aniversarios y más",  photo: "imagenes/acto_civico/graduacion_2025/graduacion-2025-08.jpg", group: "Recursos" },
     { href: "docentes.html",          text: "Cuerpo Docente",    desc: "Quiénes forman a los estudiantes",  photo: "imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg", group: "Recursos" },
     { href: "matricula.html",         text: "Matrícula 2026",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg", group: "Matrícula", highlight: true },
     { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/acto_inaugural/reunion-personal-administrativo.jpg", group: "Matrícula" },

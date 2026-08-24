@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<!-- La clase nav-immersive activa la navegacion a pantalla completa
+     (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
+     sola a la barra de navegacion clasica del resto del sitio.
+
+     Esta pagina usa .gal-grid / .gal-item (css/galeria.css + js/galeria.js,
+     ya usados en index.html y carrera-informatica.html) para el visor de
+     fotos: cada seccion es su propia rejilla, asi el visor solo pasa
+     fotos dentro de la misma categoria al usar las flechas. -->
+<html lang="es" class="nav-immersive">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Galería fotográfica del Instituto Roberto Micheletti Baín: graduaciones, aniversarios, Feria de Inteligencia Artificial, vida estudiantil y actividades cívicas.">
+  <title>Galería | Instituto Roberto Micheletti Baín</title>
+  <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/galeria.css">
+</head>
+<body>
+
+  <!-- Cortina de transicion entre paginas.
+       Arranca cubriendo la pantalla y se retira sola con CSS, asi que
+       aunque el JavaScript falle la pagina nunca queda tapada. -->
+  <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
+    <img src="imagenes/irmb/irmb_black.png" alt="">
+  </div>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
+      <div class="nav-links" data-menu>
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a class="active" href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Docentes</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero" data-sec="Galería">
+      <div class="container page-hero-grid">
+        <div>
+          <p class="eyebrow">Momentos del instituto</p>
+          <h1>Galería fotográfica</h1>
+          <p>Graduaciones, aniversarios, la Feria de Inteligencia Artificial, danza, deportes y la vida cívica del Instituto Roberto Micheletti Baín, contada en fotos reales del año escolar.</p>
+        </div>
+        <img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-08.jpg" alt="Graduando 2025 con su familia sobre la alfombra roja" loading="eager" fetchpriority="high">
+      </div>
+    </section>
+
+    <!-- ═══════════ GRADUACIÓN 2025 ═══════════ -->
+    <section class="section" data-sec="Graduación 2025">
+      <div class="container section-head">
+        <p class="eyebrow">III promoción del ciclo</p>
+        <h2>Graduación 2025</h2>
+        <p>Toga, birrete y alfombra roja para cada graduando junto a su familia — el cierre del bachillerato en el instituto.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid gal-destacada">
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-15.jpg" alt="Graduanda 2025 acompañada de sus padres" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-20.jpg" alt="Graduando 2025 con toga y banda del instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-28.jpg" alt="Familia acompañando a un graduando 2025" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-35.jpg" alt="Graduanda 2025 posando con birrete" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-42.jpg" alt="Graduando 2025 en la alfombra roja de la ceremonia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-50.jpg" alt="Graduanda 2025 con ramo y familia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-58.jpg" alt="Graduando 2025 sonriendo junto a sus padres" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-65.jpg" alt="Graduanda 2025 caminando la alfombra roja con su familia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-72.jpg" alt="Graduando 2025 con toga azul del instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-80.jpg" alt="Graduanda 2025 acompañada de su familia en la ceremonia" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ ANIVERSARIOS ═══════════ -->
+    <section class="section band" data-sec="Aniversarios">
+      <div class="container section-head">
+        <p class="eyebrow">Décadas de historia</p>
+        <h2>Aniversarios institucionales</h2>
+        <p>El 42° aniversario del instituto y los 25 años del programa de Ciencias y Humanidades, celebrados con danza folclórica, actos formales y toda la comunidad educativa.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-09.jpg" alt="Personal administrativo en el acto del 42° Aniversario" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-15.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-20.jpg" alt="Estudiantes en el acto del 42° Aniversario" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-25.jpg" alt="Comunidad educativa reunida en el 42° Aniversario" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-30.jpg" alt="Presentación cultural del 42° Aniversario" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/42_aniversario/42-aniversario-35.jpg" alt="Escenario decorado del 42° Aniversario" loading="lazy"></figure>
+        </div>
+        <p class="section-sub" style="margin-top:28px;">25° Aniversario del programa de Ciencias y Humanidades</p>
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-05.jpg" alt="Gala formal del 25° Aniversario de Ciencias y Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-12.jpg" alt="Invitados en la celebración de los 25 años de Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-18.jpg" alt="Docentes del área de Humanidades en su 25° Aniversario" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-24.jpg" alt="Decoración de la gala del 25° Aniversario de Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-30.jpg" alt="Comunidad educativa en el 25° Aniversario de Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-38.jpg" alt="Reconocimiento durante el 25° Aniversario de Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-45.jpg" alt="Celebración de los 25 años del programa de Humanidades" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/25_aniversario/25-aniversario-humanidades-52.jpg" alt="Momento formal del 25° Aniversario de Humanidades" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ INFORMÁTICA EN ACCIÓN ═══════════ -->
+    <section class="section" data-sec="Informática">
+      <div class="container section-head">
+        <p class="eyebrow">BTP en Informática</p>
+        <h2>Informática en acción</h2>
+        <p>Feria de Inteligencia Artificial, reconocimientos de Honor y Mérito, y la llegada de nuevo equipo de cómputo al laboratorio.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid gal-destacada">
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-23.jpg" alt="Proyecto de Inteligencia Artificial presentado por estudiantes" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-28.jpg" alt="Estudiantes explicando su proyecto en la Feria de IA" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-33.jpg" alt="Stand de la Feria de Inteligencia Artificial" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-38.jpg" alt="Demostración de un proyecto en la Feria de IA" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-43.jpg" alt="Estudiantes de Informática en la Feria de IA" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-ia-48.jpg" alt="Público recorriendo la Feria de Inteligencia Artificial" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/feria_ia/feria-networking-grupo-premiacion.jpg" alt="Premiación de proyectos de la Feria de IA y Redes" loading="lazy"></figure>
+        </div>
+        <p class="section-sub" style="margin-top:28px;">Honor y Mérito — Excelencia Académica de Informática</p>
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-02.jpg" alt="Estudiante de Informática recibiendo reconocimiento por excelencia académica" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-05.jpg" alt="Entrega de Honor y Mérito del área de Informática" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-08.jpg" alt="Reconocimiento académico a estudiantes de Informática" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-11.jpg" alt="Estudiantes destacados de Informática con su reconocimiento" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/nuevo_equipo_computo/nuevo-equipo-computo-02.jpg" alt="Nuevo equipo de cómputo instalado en el laboratorio" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/nuevo_equipo_computo/nuevo-equipo-computo-05.jpg" alt="Computadoras nuevas del laboratorio de Informática" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ DANZA Y DEPORTE ═══════════ -->
+    <section class="section band" data-sec="Vida estudiantil">
+      <div class="container section-head">
+        <p class="eyebrow">Danza folclórica y deporte</p>
+        <h2>Vida estudiantil</h2>
+        <p>El grupo de danza participa en festivales de toda la región — Ticamaya, Cristo Rey, la Feria de la Casia — y Educación Física llena el resto del año.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-foto-02.jpg" alt="Grupo de danza del instituto en el Festival de Ticamaya" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-grupo-bailando.jpg" alt="Baile en circulo del grupo de danza en Ticamaya" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo.jpg" alt="Pareja de baile folclórico en el Festival de Ticamaya" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-foto-01.jpg" alt="Grupo de danza del instituto en el Festival de Cristo Rey" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando.jpg" alt="Baile en circulo del grupo de danza en Cristo Rey" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia.jpg" alt="Pareja de baile folclórico en el Festival de Cristo Rey" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-foto-01.jpg" alt="Grupo de danza del instituto en la Feria de la Casia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca.jpg" alt="Pareja de baile folclórico en la Feria de la Casia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca.jpg" alt="Vestuario folclórico del grupo de danza en la Feria de la Casia" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/educacion_fisica/educacion-fisica-extra-03.jpg" alt="Estudiantes en clase de Educación Física" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/educacion_fisica/educacion-fisica-extra-08.jpg" alt="Actividad deportiva en clase de Educación Física" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ DÍAS CONMEMORATIVOS ═══════════ -->
+    <section class="section" data-sec="Días conmemorativos">
+      <div class="container section-head">
+        <p class="eyebrow">Calendario cívico</p>
+        <h2>Días conmemorativos</h2>
+        <p>Día del Idioma Español, Identidad Nacional, Día de la Madre y el Padre, Día del Estudiante y el programa de Verano 2026 — el calendario cívico del instituto a lo largo del año.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_idioma/dia-idioma-foto-05.jpg" alt="Actividad del Día del Idioma Español" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_idioma/dia-idioma-foto-12.jpg" alt="Estudiantes celebrando el Día del Idioma Español" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_idioma/dia-idioma-foto-20.jpg" alt="Presentación del Día del Idioma Español" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/identidad_nacional/identidad-nacional-05.jpg" alt="Acto cívico del Día de la Identidad Nacional" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/identidad_nacional/identidad-nacional-12.jpg" alt="Estudiantes en la celebración de Identidad Nacional" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/identidad_nacional/identidad-nacional-20.jpg" alt="Presentación cultural del Día de la Identidad Nacional" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_madre_padre/dia-madre-padre-05.jpg" alt="Celebración del Día de la Madre y el Padre" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_madre_padre/dia-madre-padre-12.jpg" alt="Familias en la celebración del Día de la Madre y el Padre" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_madre_padre/dia-madre-padre-20.jpg" alt="Acto del Día de la Madre y el Padre en el instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_estudiante/dia-estudiante-05.jpg" alt="Celebración del Día del Estudiante" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/dia_estudiante/dia-estudiante-12.jpg" alt="Actividades del Día del Estudiante" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/verano_2026/verano-2026-05.jpg" alt="Actividad del programa de Verano 2026" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/verano_2026/verano-2026-12.jpg" alt="Estudiantes en el programa de Verano 2026" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/verano_2026/verano-2026-20.jpg" alt="Presentación del programa de Verano 2026" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ COMUNIDAD Y ALIANZAS ═══════════ -->
+    <section class="section band" data-sec="Comunidad">
+      <div class="container section-head">
+        <p class="eyebrow">Más allá del aula</p>
+        <h2>Comunidad y alianzas</h2>
+        <p>Becas DOIT, capacitaciones con INFOP y Visión Mundial, taller de oratoria, debate académico y el Día del Contador — programas reales de formación y alianzas del instituto.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/becas_doit/becas-doit-02.jpg" alt="Entrega de becas del programa DOIT" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/becas_doit/becas-doit-05.jpg" alt="Estudiantes beneficiados con becas DOIT" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/becas_doit/becas-doit-08.jpg" alt="Ceremonia de becas DOIT en el instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-03.jpg" alt="Capacitación a docentes con Visión Mundial" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-10.jpg" alt="Docentes en taller de capacitación con Visión Mundial" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-17.jpg" alt="Sesión de capacitación docente con Visión Mundial" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/taller_oratoria/taller-oratoria-01.jpg" alt="Taller de oratoria para estudiantes" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/otros/capacitaciones/taller_oratoria/taller-oratoria-03.jpg" alt="Estudiantes practicando en el taller de oratoria" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/debate_2026/debate-2026-03.jpg" alt="Estudiantes participando en el Debate Académico 2026" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/debate_2026/debate-2026-07.jpg" alt="Ronda del Debate Académico 2026" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/humanidades/debate_2026/debate-2026-11.jpg" alt="Jurado del Debate Académico 2026" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/contaduria_finanzas/dia_contador/dia-contador-foto-03.jpg" alt="Celebración del Día del Contador" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/contaduria_finanzas/dia_contador/dia-contador-foto-10.jpg" alt="Estudiantes de Contaduría en el Día del Contador" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/contaduria_finanzas/dia_contador/dia-contador-foto-17.jpg" alt="Actividad del Día del Contador en el instituto" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ RECONOCIMIENTOS Y VIDA DEMOCRÁTICA ═══════════ -->
+    <section class="section" data-sec="Reconocimientos">
+      <div class="container section-head">
+        <p class="eyebrow">Comunidad educativa</p>
+        <h2>Reconocimientos y vida democrática</h2>
+        <p>El homenaje al profesor Josué, Honor y Mérito general, y la elección del Gobierno Estudiantil — el instituto también se organiza y se reconoce a sí mismo.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid">
+          <figure class="gal-item"><img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-03.jpg" alt="Homenaje al profesor Josué por su trayectoria en el instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-08.jpg" alt="Comunidad educativa en el homenaje al profesor Josué" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-13.jpg" alt="Reconocimiento a la trayectoria del profesor Josué" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-18.jpg" alt="Docentes acompañando el homenaje al profesor Josué" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/honor_excelencia/honor-excelencia-03.jpg" alt="Entrega de Honor y Mérito a estudiantes destacados" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/honor_excelencia/honor-excelencia-08.jpg" alt="Estudiantes recibiendo reconocimiento de Honor y Mérito" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/honor_excelencia/honor-excelencia-13.jpg" alt="Ceremonia de Honor y Mérito del instituto" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-02.jpg" alt="Toma de posesión del Gobierno Estudiantil" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg" alt="Juramentación del nuevo Gobierno Estudiantil" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-03.jpg" alt="Jornada de elección del Gobierno Estudiantil" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-07.jpg" alt="Estudiantes votando en la elección del Gobierno Estudiantil" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/proyectos_clase/programacion/sistema_votaciones/sistema-votaciones-05.jpg" alt="Mesa de votación (JRV) el día de elecciones estudiantiles" loading="lazy"></figure>
+          <figure class="gal-item"><img src="imagenes/informatica/proyectos_clase/programacion/sistema_votaciones/sistema-votaciones-12.jpg" alt="Estudiantes en fila para votar en las elecciones estudiantiles" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="container">
+        <div class="nivel-cta">
+          <h2>¿Quieres ser parte de la próxima foto?</h2>
+          <p>Revisa la oferta académica completa o la información de matrícula 2026.</p>
+          <div class="nivel-cta-botones">
+            <a class="btn primary" href="oferta-academica.html">Ver oferta académica</a>
+            <a class="btn secondary" href="matricula.html">Ver matrícula 2026</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div style="display:flex; align-items:center; gap:1rem;">
+        <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
+          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+        </a>
+        <div>
+          <h2>Instituto Roberto Micheletti Baín</h2>
+          <p>Agua Blanca Sur, El Progreso, Yoro.</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Inicio</a>
+        <a href="historia.html">Historia</a>
+        <a href="oferta-academica.html">Oferta académica</a>
+        <a href="matricula.html">Matrícula 2026</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="ubicacion.html">Ubicación</a>
+        <a href="infraestructura.html">Infraestructura</a>
+        <a href="docentes.html">Docentes</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <!-- Navegacion inmersiva: debe ir despues de main.js -->
+  <script src="js/inmersivo.js"></script>
+  <script src="js/galeria.js"></script>
+</body>
+</html>

@@ -5,6 +5,17 @@
    (ver js/galeria.js). Reutilizable en cualquier página.
    ============================================================ */
 
+/* ── SUB-ETIQUETA dentro de una sección (ej. "25° Aniversario de
+   Humanidades" dentro de la sección "Aniversarios institucionales") ── */
+.section-sub {
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--naranja-2);
+  margin-bottom: 14px;
+}
+
 /* ── CUADRÍCULA ──────────────────────────────────────────── */
 .gal-grid {
   display: grid;
