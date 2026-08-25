@@ -563,6 +563,30 @@ img { display: block; max-width: 100%; height: auto; }
   box-shadow: 0 10px 30px rgba(255,255,255,.1);
 }
 
+/* .btn.secondary asume un fondo oscuro/de color (texto blanco). Sobre
+   una seccion plana clara (.section sin .visual-band, o .band en modo
+   claro) ese texto blanco queda invisible. Variante para esos casos. */
+.btn.secondary.on-light,
+[data-theme="light"] .btn.secondary.on-light {
+  color: var(--azul);
+  background: rgba(47,45,127,.06);
+  border-color: var(--linea);
+}
+.btn.secondary.on-light:hover,
+[data-theme="light"] .btn.secondary.on-light:hover {
+  background: rgba(47,45,127,.12);
+  box-shadow: none;
+}
+[data-theme="dark"] .btn.secondary.on-light {
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.35);
+}
+[data-theme="dark"] .btn.secondary.on-light:hover {
+  background: rgba(255,255,255,.22);
+  border-color: rgba(255,255,255,.5);
+}
+
 .btn.full { width: 100%; margin-top: 20px; }
 
 /* ── 9. PAGE HERO (inner pages) ──────────────────────────── */

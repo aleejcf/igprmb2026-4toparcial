@@ -7,6 +7,37 @@
    editorial del Home.
    ============================================================ */
 
+/* ── IDENTIDAD — mosaico de fotos reales ──────────────────────
+   Reemplaza las 4 tarjetas de texto (Disciplina/Práctica/Comunidad/
+   Futuro) que repetían lo que ya dice el lema a la izquierda
+   ("Dignidad, trabajo y cultura"). Fotos reales en su lugar. */
+.identity-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.identity-photos figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.identity-photos img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.identity-photos figure:hover img { transform: scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .identity-photos img { transition: none; }
+}
+
 /* ── HERO EDITORIAL ──────────────────────────────────────────
    Fotografía real a pantalla completa + overlay + tipografía
    grande. Composición asimétrica: el copy vive en la mitad
@@ -170,6 +201,12 @@
 .offer-row:hover h3,
 .offer-row:focus-visible h3 { color: var(--azul); }
 
+/* --azul es un tono oscuro fijo (no cambia por tema) — sobre el fondo
+   oscuro de este bloque en modo oscuro quedaba casi invisible al hacer
+   hover. Se usa un tono mas claro solo en modo oscuro. */
+[data-theme="dark"] .offer-row:hover h3,
+[data-theme="dark"] .offer-row:focus-visible h3 { color: var(--azul-3); }
+
 .offer-row-body p {
   margin: 0;
   color: var(--muted);
@@ -195,6 +232,28 @@
 
 .offer-row:hover .offer-row-thumb img,
 .offer-row:focus-visible .offer-row-thumb img { transform: scale(1.08); }
+
+/* Variante con la insignia institucional de cada modalidad (misma que
+   en oferta-academica.html) en vez de una foto — evita fotos genericas
+   o poco representativas (ej. una sola foto no puede representar los
+   3 bachilleratos a la vez). */
+.offer-row-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--celeste-2);
+}
+.offer-row-badge img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
+.offer-row-badge .logo-dark  { display: block; }
+.offer-row-badge .logo-light { display: none; }
+[data-theme="light"] .offer-row-badge .logo-dark  { display: none; }
+[data-theme="light"] .offer-row-badge .logo-light { display: block; }
+.offer-row:hover .offer-row-badge img,
+.offer-row:focus-visible .offer-row-badge img { transform: none; }
 
 .offer-row-arrow {
   color: var(--muted);
@@ -256,6 +315,27 @@
   background: rgba(255, 255, 255, .08);
   border: 1px solid rgba(255, 255, 255, .14);
   color: rgba(255,255,255,.9);
+}
+
+/* En modo claro el panel "tech" pasa a un tono claro (en vez de quedar
+   siempre oscuro sin importar el tema, que hacia que el boton de tema
+   pareciera no hacer nada en esta seccion). */
+[data-theme="light"] .tech-panel {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+}
+[data-theme="light"] .tech-panel::before {
+  background-image:
+    linear-gradient(rgba(47,45,127,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47,45,127,.06) 1px, transparent 1px);
+}
+[data-theme="light"] .tech-panel .eyebrow { color: var(--naranja) !important; }
+[data-theme="light"] .tech-panel h2 { color: var(--texto) !important; }
+[data-theme="light"] .tech-panel p { color: var(--muted) !important; }
+[data-theme="light"] .tech-chip {
+  background: var(--celeste-2);
+  border-color: var(--linea);
+  color: var(--azul);
 }
 
 .tech-panel .gal-grid img { border-radius: var(--radius-md); }

@@ -23,10 +23,13 @@
     return (h >= 6 && h < 18) ? "light" : "dark";
   }
 
+  const ICON_SOL  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg>';
+  const ICON_LUNA = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>';
+
   function applyTheme(theme) {
     document.documentElement.setAttribute("data-theme", theme);
     const btn = document.querySelector(".theme-btn");
-    if (btn) btn.textContent = theme === "dark" ? "☀️" : "🌙";
+    if (btn) btn.innerHTML = theme === "dark" ? ICON_SOL : ICON_LUNA;
   }
 
   const savedTheme = localStorage.getItem(THEME_KEY);
@@ -39,7 +42,7 @@
     btn.className = "theme-btn";
     btn.setAttribute("aria-label", "Cambiar tema");
     const current = document.documentElement.getAttribute("data-theme") || getAutoTheme();
-    btn.textContent = current === "dark" ? "☀️" : "🌙";
+    btn.innerHTML = current === "dark" ? ICON_SOL : ICON_LUNA;
 
     btn.addEventListener("click", () => {
       const now = document.documentElement.getAttribute("data-theme");
