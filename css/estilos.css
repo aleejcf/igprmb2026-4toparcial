@@ -1911,7 +1911,7 @@ img { display: block; max-width: 100%; height: auto; }
   .form-group input,
   .form-group select,
   .form-group textarea {
-    background: #0a1631;
+    background-color: #0a1631;
     border-color: rgba(255,255,255,.1);
     color: #e8f0ff;
   }
@@ -1922,7 +1922,7 @@ img { display: block; max-width: 100%; height: auto; }
   .form-group input:focus,
   .form-group select:focus,
   .form-group textarea:focus {
-    background: #0d1e40;
+    background-color: #0d1e40;
     border-color: var(--azul-3);
   }
 
@@ -2025,7 +2025,7 @@ img { display: block; max-width: 100%; height: auto; }
 [data-theme="light"] .form-group input,
 [data-theme="light"] .form-group select,
 [data-theme="light"] .form-group textarea {
-  background: var(--fondo);
+  background-color: var(--fondo);
   border-color: var(--linea);
   color: var(--texto);
 }
@@ -2132,7 +2132,7 @@ img { display: block; max-width: 100%; height: auto; }
 [data-theme="dark"] .form-group input,
 [data-theme="dark"] .form-group select,
 [data-theme="dark"] .form-group textarea {
-  background: #0a1631;
+  background-color: #0a1631;
   border-color: rgba(255,255,255,.1);
   color: #e8f0ff;
 }
@@ -2141,7 +2141,7 @@ img { display: block; max-width: 100%; height: auto; }
 [data-theme="dark"] .form-group input:focus,
 [data-theme="dark"] .form-group select:focus,
 [data-theme="dark"] .form-group textarea:focus {
-  background: #0d1e40;
+  background-color: #0d1e40;
   border-color: var(--azul-3);
 }
 [data-theme="dark"] .ht-content { background: #0d1c3a; border-color: rgba(255,255,255,.07); }
@@ -3498,12 +3498,14 @@ img { display: block; max-width: 100%; height: auto; }
       padding: 13px 16px;
       border-radius: var(--r);
       border: 1.5px solid var(--linea);
-      background: var(--fondo);
+      background-color: var(--fondo);
       font-family: inherit;
       font-size: .95rem;
       color: var(--texto);
       transition: border-color .2s, box-shadow .2s, background .2s;
       outline: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
       appearance: none;
     }
 
@@ -3511,7 +3513,7 @@ img { display: block; max-width: 100%; height: auto; }
     .form-group select:focus,
     .form-group textarea:focus {
       border-color: var(--azul-3);
-      background: var(--blanco);
+      background-color: var(--blanco);
       box-shadow: 0 0 0 3px rgba(47,45,127,.12);
     }
 
