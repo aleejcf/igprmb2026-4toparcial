@@ -1028,8 +1028,17 @@ img { display: block; max-width: 100%; height: auto; }
   margin-bottom: 18px;
 }
 
-/* En .section-head el contenido va centrado */
-.section-head .nivel-logo { display: inline-flex; }
+/* En .section-head el badge va en su propia fila, centrado y arriba
+   del eyebrow — display:flex (no inline-flex) para que sea de bloque
+   y no quede flotando en la misma linea que el texto del eyebrow
+   (que tambien es inline-flex). */
+.section-head .nivel-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ── 14. PROGRAM CARDS ───────────────────────────────────── */
 .program-tag,
