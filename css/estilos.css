@@ -103,6 +103,60 @@ img { display: block; max-width: 100%; height: auto; }
 
 .align-center { align-items: center; }
 
+/* ── Escudo interactivo (historia.html) — hotspots invisibles sobre
+   el escudo real que revelan el significado de cada simbolo. ── */
+.escudo-wrap {
+  display: grid;
+  grid-template-columns: minmax(220px, 340px) 1fr;
+  gap: var(--space-6, 40px);
+  align-items: center;
+}
+
+.escudo-figura {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.escudo-img { width: 100%; height: auto; display: block; }
+
+.escudo-hotspot {
+  position: absolute;
+  border: none;
+  background: rgba(47,45,127,.08);
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0;
+  transition: opacity .2s, background .2s;
+}
+
+.escudo-hotspot:hover,
+.escudo-hotspot:focus-visible {
+  opacity: 1;
+  background: rgba(47,45,127,.14);
+}
+
+.escudo-hotspot:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+
+.escudo-hotspot--cinta     { top: 4%;   left: 14%; width: 72%; height: 26%; }
+.escudo-hotspot--antorcha  { top: 32%;  left: 36%; width: 28%; height: 20%; }
+.escudo-hotspot--libro     { top: 50%;  left: 24%; width: 52%; height: 18%; }
+.escudo-hotspot--laureles  { top: 66%;  left: 14%; width: 72%; height: 18%; }
+
+.escudo-texto .escudo-caption {
+  min-height: 3.6em;
+  font-size: 1.02rem;
+  color: var(--muted);
+  transition: opacity .15s;
+}
+
+@media (max-width: 720px) {
+  .escudo-wrap { grid-template-columns: 1fr; text-align: center; }
+  .escudo-figura { max-width: 220px; }
+}
+
 /* ── Fila editorial foto + texto (ej. "Momentos que nos definen" en
    historia.html), alternando el lado de la foto con .reverse ── */
 .moment-row {

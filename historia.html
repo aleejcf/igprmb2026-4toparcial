@@ -56,6 +56,24 @@
       </div>
     </section>
 
+    <!-- Escudo interactivo -->
+    <section class="section" data-sec="El escudo">
+      <div class="container escudo-wrap">
+        <div class="escudo-figura">
+          <img src="imagenes/irmb/irmb.png" alt="Escudo del Instituto Roberto Micheletti Baín" class="escudo-img">
+          <button type="button" class="escudo-hotspot escudo-hotspot--cinta" data-caption="La cinta lleva el nombre oficial: Instituto Gubernamental Polivalente “Roberto Micheletti Baín”, fundado en 1984." aria-label="La cinta: nombre del instituto"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--antorcha" data-caption="La antorcha representa el conocimiento que ilumina — la razón de ser de cualquier centro educativo." aria-label="La antorcha: el conocimiento"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--libro" data-caption="El libro abierto lleva el lema real del instituto: “Dignidad, Trabajo, Cultura”, junto al año de fundación." aria-label="El libro: el lema institucional"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--laureles" data-caption="Los laureles simbolizan el logro y el reconocimiento — la comunidad de Agua Blanca Sur que ha sostenido al instituto por más de cuatro décadas." aria-label="Los laureles: logro y comunidad"></button>
+        </div>
+        <div class="escudo-texto">
+          <p class="eyebrow">El escudo, explicado</p>
+          <h2>Cada símbolo cuenta algo real</h2>
+          <p class="escudo-caption" id="escudo-caption">Pasa el cursor o navega con la tecla Tab por el escudo para descubrir el significado de cada parte.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- Timeline -->
     <section class="section">
       <div class="container section-head">
@@ -283,5 +301,19 @@
   <script src="js/main.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script>
+    (function () {
+      const caption = document.getElementById("escudo-caption");
+      const original = caption ? caption.textContent : "";
+      document.querySelectorAll(".escudo-hotspot").forEach((h) => {
+        const mostrar = () => { caption.textContent = h.dataset.caption; };
+        const ocultar = () => { caption.textContent = original; };
+        h.addEventListener("mouseenter", mostrar);
+        h.addEventListener("focus", mostrar);
+        h.addEventListener("mouseleave", ocultar);
+        h.addEventListener("blur", ocultar);
+      });
+    })();
+  </script>
 </body>
 </html>
