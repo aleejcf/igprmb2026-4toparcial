@@ -76,6 +76,10 @@
   .gal-item img { filter: none; }
 }
 
+/* Cuadriculas donde las fotos van siempre a color, sin el juego de
+   blanco y negro al pasar el cursor. */
+.gal-grid-sin-bn .gal-item img { filter: none; }
+
 @media (prefers-reduced-motion: reduce) {
   .gal-item img { transition: none; }
 }
