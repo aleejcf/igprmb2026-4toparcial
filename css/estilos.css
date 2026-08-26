@@ -99,6 +99,23 @@ body::before {
 
 [data-theme="dark"] body::before { opacity: .05; mix-blend-mode: overlay; }
 
+/* ── Rastro de cursor (solo carrera-informatica.html) ── */
+.cursor-trail-dot {
+  position: fixed;
+  z-index: 9998;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  animation: cursorTrailFade .8s ease-out forwards;
+}
+
+@keyframes cursorTrailFade {
+  0%   { opacity: .55; transform: translate(-50%, -50%) scale(1); }
+  100% { opacity: 0;   transform: translate(-50%, -50%) scale(.2); }
+}
+
 a { color: inherit; }
 img { display: block; max-width: 100%; height: auto; }
 
