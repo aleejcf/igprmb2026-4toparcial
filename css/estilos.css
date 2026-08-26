@@ -99,6 +99,92 @@ body::before {
 
 [data-theme="dark"] body::before { opacity: .05; mix-blend-mode: overlay; }
 
+/* ── Creditos (easter egg, codigo Konami) ── */
+#rmb-creditos {
+  position: fixed;
+  inset: 0;
+  z-index: 9500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(15,14,46,.72);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: opacity .3s var(--ease);
+}
+
+#rmb-creditos.mostrar { opacity: 1; }
+
+.rmb-creditos-tarjeta {
+  position: relative;
+  max-width: 420px;
+  width: 100%;
+  background: var(--blanco);
+  color: var(--texto);
+  border-radius: var(--r-xl);
+  padding: 44px 32px 36px;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(0,0,0,.4);
+  transform: scale(.92) translateY(10px);
+  transition: transform .35s cubic-bezier(.2,1.4,.4,1);
+}
+
+#rmb-creditos.mostrar .rmb-creditos-tarjeta { transform: scale(1) translateY(0); }
+
+.rmb-creditos-antorcha {
+  width: 52px; height: 52px;
+  margin: 0 auto 16px;
+  color: var(--naranja);
+}
+.rmb-creditos-antorcha svg { width: 100%; height: 100%; }
+
+.rmb-creditos-eyebrow {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--naranja);
+  margin: 0 0 10px;
+}
+
+.rmb-creditos-tarjeta h2 {
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 1.35rem;
+  margin: 0 0 14px;
+}
+
+.rmb-creditos-tarjeta p { color: var(--muted); font-size: .94rem; margin: 0 0 10px; }
+
+.rmb-creditos-lema {
+  font-weight: 800;
+  letter-spacing: .06em;
+  color: var(--azul) !important;
+  margin-top: 18px !important;
+}
+
+.rmb-creditos-cerrar {
+  position: absolute;
+  top: 14px; right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: var(--celeste-2);
+  color: var(--muted);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.rmb-creditos-cerrar:hover { background: var(--celeste); }
+.rmb-creditos-cerrar:focus-visible { outline: 2px solid var(--azul); outline-offset: 2px; }
+
+[data-theme="dark"] .rmb-creditos-tarjeta { background: #1B1A52; }
+
+@media (prefers-reduced-motion: reduce) {
+  #rmb-creditos, .rmb-creditos-tarjeta { transition: opacity .2s; transform: none !important; }
+}
+
 /* ── Rastro de cursor (solo carrera-informatica.html) ── */
 .cursor-trail-dot {
   position: fixed;
