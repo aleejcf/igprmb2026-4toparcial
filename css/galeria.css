@@ -53,12 +53,27 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  transition: transform .55s var(--ease);
+  filter: grayscale(1) contrast(1.04);
+  transition: transform .55s var(--ease), filter .6s var(--ease);
 }
 
 .gal-grid.gal-destacada > .gal-item:first-child img { aspect-ratio: auto; height: 100%; }
 
-.gal-item:hover img { transform: scale(1.06); }
+.gal-item:hover img,
+.gal-item:focus-visible img {
+  transform: scale(1.06);
+  filter: grayscale(0) contrast(1.04);
+}
+
+@media (hover: none) {
+  /* Sin mouse (tactil) no hay hover real: se muestran a color directo
+     para no esconder la foto detras de una interaccion que no aplica. */
+  .gal-item img { filter: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-item img { transition: none; }
+}
 
 /* Lupa que aparece al señalar */
 .gal-item::after {
