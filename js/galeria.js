@@ -84,6 +84,16 @@
       contenedor.addEventListener("keydown", e => {
         if (e.key === "Enter" || e.key === " ") { e.preventDefault(); abrir(imagenes, i); }
       });
+
+      /* En la galeria principal (marcada con .gal-grid-persistente), una
+         vez que la foto se ve a color (mouse o teclado) se queda asi — no
+         vuelve a blanco y negro al quitar el cursor. En las demas paginas
+         el efecto es solo mientras dura el hover/foco. */
+      if (rejilla.classList.contains("gal-grid-persistente")) {
+        const marcarVista = () => contenedor.classList.add("gal-item-vista");
+        contenedor.addEventListener("mouseenter", marcarVista);
+        contenedor.addEventListener("focus", marcarVista);
+      }
     });
   });
 

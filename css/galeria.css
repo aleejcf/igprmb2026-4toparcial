@@ -60,9 +60,14 @@
 .gal-grid.gal-destacada > .gal-item:first-child img { aspect-ratio: auto; height: 100%; }
 
 .gal-item:hover img,
+.gal-item:focus-visible img,
+.gal-grid-persistente .gal-item.gal-item-vista img {
+  filter: grayscale(0) contrast(1.04);
+}
+
+.gal-item:hover img,
 .gal-item:focus-visible img {
   transform: scale(1.06);
-  filter: grayscale(0) contrast(1.04);
 }
 
 @media (hover: none) {
