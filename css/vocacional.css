@@ -147,8 +147,34 @@
 }
 
 /* ── RESULTADO ────────────────────────────────────────────── */
-.voc-result { display: none; text-align: center; }
+.voc-result { display: none; text-align: center; position: relative; }
 .voc-result.show { display: block; }
+
+/* ── Raspa y descubre — cubre el resultado hasta que el estudiante
+   lo "raspa" con el mouse o el dedo, como un raspadito. ── */
+.voc-scratch-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  cursor: grab;
+  touch-action: none;
+}
+.voc-scratch-wrap.oculto { display: none; }
+.voc-scratch-canvas { display: block; width: 100%; height: 100%; }
+.voc-scratch-hint {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: .8rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: #fff;
+  pointer-events: none;
+  text-shadow: 0 2px 8px rgba(0,0,0,.35);
+}
 
 .voc-result-icon { margin-bottom: 8px; color: var(--azul); }
 .voc-result-icon svg { width: 52px; height: 52px; }

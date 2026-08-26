@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
+  <link rel="stylesheet" href="css/sello-oficial.css">
 </head>
 <body>
 
@@ -207,6 +208,7 @@
   <script src="js/main.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script src="js/sello-oficial.js"></script>
   <script>
     const form = document.getElementById('contact-form');
     const successMsg = document.getElementById('form-success');
@@ -254,6 +256,7 @@
         if (res.ok) {
           form.style.display = 'none';
           successMsg.style.display = 'block';
+          if (window.RmbSello) RmbSello.estampar(successMsg, { bottom: '10px', right: '18px' });
         } else {
           throw new Error('Error del servidor');
         }

@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="css/inmersivo.css">
   <link rel="stylesheet" href="css/nivel.css">
   <link rel="stylesheet" href="css/vocacional.css">
+  <link rel="stylesheet" href="css/sello-oficial.css">
 </head>
 <body>
 
@@ -86,6 +87,10 @@
 
         <!-- Resultado -->
         <div class="voc-result" id="voc-result">
+          <div class="voc-scratch-wrap" id="voc-scratch-wrap">
+            <canvas class="voc-scratch-canvas" id="voc-scratch"></canvas>
+            <span class="voc-scratch-hint">Raspa para ver tu resultado</span>
+          </div>
           <div class="voc-result-icon" id="voc-result-icon"></div>
           <p class="voc-result-eyebrow">Tu resultado</p>
           <span class="voc-result-tag voc-tag-inf" id="voc-result-tag">BTP Informática</span>
@@ -145,6 +150,7 @@
   <script src="js/main.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script src="js/sello-oficial.js"></script>
   <script src="js/vocacional.js"></script>
 </body>
 </html>
