@@ -2,27 +2,87 @@
 <!-- La clase nav-immersive activa la navegacion a pantalla completa
      (css/inmersivo.css + js/inmersivo.js). Sin ella la pagina vuelve
      sola a la barra de navegacion clasica del resto del sitio. -->
-<html lang="es" class="nav-immersive">
+<html lang="es" class="nav-immersive hero-oscuro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Instituto Gubernamental Polivalente Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro. Educación básica, técnica y bachilleratos.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:description" content="Instituto Gubernamental Polivalente Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro. Educación básica, técnica y bachilleratos.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Instituto Roberto Micheletti Baín">
+  <meta name="twitter:description" content="Instituto Gubernamental Polivalente Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro. Educación básica, técnica y bachilleratos.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
   <title>Instituto Roberto Micheletti Baín | Inicio</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <link rel="stylesheet" href="css/galeria.css">
+  <link rel="stylesheet" href="css/home.css">
+  <!-- FASE 2 (auditoría): ficha de datos estructurados para que Google
+       muestre un panel de conocimiento (dirección, teléfono, fundación,
+       oferta académica) en vez de un enlace azul suelto. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "School",
+    "name": "Instituto Gubernamental Polivalente Roberto Micheletti Baín",
+    "alternateName": "Instituto Roberto Micheletti Baín",
+    "description": "Instituto público de educación básica, orientación técnica y bachillerato en Agua Blanca Sur, El Progreso, Yoro, Honduras.",
+    "foundingDate": "1984-06-29",
+    "url": "https://aleejcf.github.io/igprmb2026-4toparcial/",
+    "logo": "https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/irmb/irmb.png",
+    "image": "https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg",
+    "telephone": "+504-8816-2265",
+    "email": "subdireccionmichelettibain@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Agua Blanca Sur",
+      "addressLocality": "El Progreso",
+      "addressRegion": "Yoro",
+      "addressCountry": "HN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=100063787262594"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Oferta académica",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "EducationalOccupationalProgram", "name": "Bachillerato Técnico Profesional en Informática" } },
+        { "@type": "Offer", "itemOffered": { "@type": "EducationalOccupationalProgram", "name": "Bachillerato Técnico Profesional en Contaduría y Finanzas" } },
+        { "@type": "Offer", "itemOffered": { "@type": "EducationalOccupationalProgram", "name": "Bachillerato en Ciencias y Humanidades" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
 
   <!-- Lightbox global -->
@@ -34,7 +94,15 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html" aria-label="Inicio">
-        <span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span>
+        <span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span>
         <span class="brand-divider"></span>
         <span class="brand-text">
           <span class="brand-name">Instituto Roberto Micheletti Baín</span>
@@ -49,9 +117,10 @@
         <a class="active" href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -60,57 +129,36 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- ══════════════════════════════════════
-         HERO
+         HERO — fotografía real, sin estadísticas infladas
     ══════════════════════════════════════ -->
-    <section class="hero" data-sec="Inicio">
-      <div class="hero-art" aria-hidden="true">
-        <div class="hero-card card-a">BTP</div>
-        <div class="hero-card card-b">III Ciclo</div>
-        <div class="hero-card card-c">Técnica</div>
+    <section class="hero-editorial" data-sec="Inicio">
+      <div class="hero-editorial-media">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-480.avif 480w, imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-480.webp 480w, imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.jpg" width="1280" height="960" alt="Estudiantes reunidos bajo la cancha techada del instituto durante un acto cívico" fetchpriority="high">
+          </picture>
       </div>
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow">Agua Blanca Sur, El Progreso, Yoro</p>
-          <h1>Instituto Gubernamental Polivalente "Roberto Micheletti Baín"</h1>
-          <p class="lead">Formación básica, técnica y de bachillerato para estudiantes que desean prepararse con disciplina, conocimiento práctico y compromiso con su comunidad.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="matricula.html">Ver matrícula 2026</a>
-            <a class="btn secondary" href="oferta-academica.html">Conocer carreras</a>
-          </div>
+      <div class="container hero-editorial-inner">
+        <p class="eyebrow hero-in hero-in-1">Agua Blanca Sur, El Progreso, Yoro — desde 1984</p>
+        <h1 class="hero-in hero-in-2">Un instituto público donde se aprende haciendo.</h1>
+        <p class="lead hero-in hero-in-3">Educación básica, orientación técnica desde el III Ciclo y tres bachilleratos para continuar después de noveno grado. Todo dentro de la misma comunidad, en Agua Blanca Sur.</p>
+        <div class="hero-editorial-actions hero-in hero-in-4">
+          <a class="btn primary" href="matricula.html">Ver requisitos de matrícula 2027</a>
+          <a class="hero-editorial-link" href="oferta-academica.html">Ver oferta académica <span aria-hidden="true">&rarr;</span></a>
         </div>
+        <p class="hero-editorial-note hero-in hero-in-5">Matrícula abierta · enero 2027 · lunes a viernes, 8:00 AM&ndash;12:00 PM</p>
+      </div>
+    </section>
 
-        <!-- FOTO STACK flotante -->
-        <aside class="hero-panel" aria-label="Fotos del instituto">
-          <div class="photo-stack">
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/cole.jpg" alt="Campus del instituto">
-            </div>
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/estudiantes.jpg" alt="Estudiantes del instituto">
-            </div>
-            <div class="photo-stack-item">
-              <img src="imagenes/otros/auditorio.jpg" alt="Talleres técnicos">
-            </div>
-
-          </div>
-
-          <div class="hero-stats-row">
-            <div class="stat">
-              <strong>600+</strong>
-              <span>estudiantes aproximadamente</span>
-            </div>
-            <div class="stat">
-              <strong>40+</strong>
-              <span>años de excelencia educativa</span>
-            </div>
-            <div class="stat">
-              <strong>3</strong>
-              <span>bachilleratos disponibles</span>
-            </div>
-          </div>
-        </aside>
+    <section class="facts-band">
+      <div class="container facts-strip">
+        <div class="facts-strip-item"><strong>1984</strong><span>Año de fundación</span></div>
+        <div class="facts-strip-item"><strong>42°</strong><span>Aniversario celebrado</span></div>
+        <div class="facts-strip-item"><strong>3</strong><span>Bachilleratos disponibles</span></div>
+        <div class="facts-strip-item"><strong>~450</strong><span>Estudiantes en el ciclo actual</span></div>
       </div>
     </section>
 
@@ -121,116 +169,191 @@
       <div class="container split align-center">
         <div>
           <p class="eyebrow">Identidad institucional</p>
-          <h2>Un centro público con formación polivalente</h2>
-          <p>El instituto combina aprendizaje académico con orientación técnica para que cada estudiante encuentre una ruta de crecimiento acorde a sus habilidades, intereses y metas familiares.</p>
+          <h2>Dignidad, trabajo y cultura</h2>
+          <p>Ese es el lema que acompaña al instituto desde su fundación. Combina aprendizaje académico con orientación técnica para que cada estudiante encuentre una ruta acorde a sus habilidades, intereses y metas familiares.</p>
         </div>
-        <div class="identity-grid" aria-label="Principios institucionales">
-          <article>
-            <strong>Disciplina</strong>
-            <span>Hábitos de estudio, responsabilidad y puntualidad.</span>
-          </article>
-          <article>
-            <strong>Práctica</strong>
-            <span>Aprendizaje aplicado en aulas, talleres y actividades.</span>
-          </article>
-          <article>
-            <strong>Comunidad</strong>
-            <span>Orgullo por Agua Blanca Sur y servicio local.</span>
-          </article>
-          <article>
-            <strong>Futuro</strong>
-            <span>Preparación para continuar estudios o incorporarse a nuevas oportunidades.</span>
-          </article>
+        <div class="identity-photos" aria-label="El instituto en imágenes">
+          <figure>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/vida-institucional-03-480.avif 480w, imagenes-optim/otros/vida-institucional-03-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/vida-institucional-03-480.webp 480w, imagenes-optim/otros/vida-institucional-03-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/vida-institucional-03-960.jpg" width="1280" height="960" alt="Estudiantes en formación bajo la cancha techada" loading="lazy">
+          </picture>
+          </figure>
+          <figure>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-480.avif 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-480.webp 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.jpg" width="1542" height="2048" alt="Práctica de soldadura en el taller de Estructuras Metálicas" loading="lazy">
+          </picture>
+          </figure>
+          <figure>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/vida-institucional-11-480.avif 480w, imagenes-optim/otros/vida-institucional-11-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/vida-institucional-11-480.webp 480w, imagenes-optim/otros/vida-institucional-11-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/vida-institucional-11-960.jpg" width="1280" height="960" alt="Comunidad educativa reunida en un acto institucional" loading="lazy">
+          </picture>
+          </figure>
+          <figure>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-90-480.avif 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-90-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-90-480.webp 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-90-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-90-960.jpg" width="1280" height="960" alt="Graduanda recibiendo un reconocimiento de excelencia académica" loading="lazy">
+          </picture>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         OFERTA ACADÉMICA
+         OFERTA ACADÉMICA — explorador, no cards idénticas
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Oferta académica">
       <div class="container section-head">
         <p class="eyebrow">Oferta institucional</p>
-        <h2>Educación para distintas etapas</h2>
-        <p>El instituto ofrece III Ciclo de Educación Básica, III Ciclo con orientación técnica y bachilleratos para continuar la formación académica y profesional.</p>
+        <h2>De séptimo grado al bachillerato</h2>
+        <p>La organización académica facilita que el estudiante avance de forma ordenada por el III Ciclo y, al terminar noveno grado, hacia el bachillerato.</p>
       </div>
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/prim_white.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/edu_p.png" alt="">
-          </span>
-          <h3>III Ciclo de Educación Básica</h3>
-          <p>Formación para estudiantes de séptimo, octavo y noveno grado en modalidad básica.</p>
-          <a href="oferta-academica.html#basica">Ver nivel</a>
-        </article>
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/a_tecwhite.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/a_tecnicas.png" alt="">
-          </span>
-          <h3>III Ciclo con Orientación Técnica</h3>
-          <p>Estructuras Metálicas, Electricidad y Corte y Confección desde séptimo a noveno grado.</p>
-          <a href="oferta-academica.html#tecnica">Ver talleres</a>
-        </article>
-        <article class="feature-card">
-          <span class="icon-box nivel-logo">
-            <img class="logo-dark"  src="imagenes/irmb/bach_white.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/bach.png" alt="">
-          </span>
-          <h3>Bachilleratos</h3>
-          <p>Informática, Contaduría y Finanzas, y Ciencias y Humanidades.</p>
-          <a href="oferta-academica.html#bachilleratos">Ver bachilleratos</a>
-        </article>
-      </div>
-      <div class="container" style="text-align:center; margin-top:36px;">
-        <a class="btn primary" href="test-vocacional.html">¿No sabes cuál elegir? Haz el test vocacional &rarr;</a>
+      <div class="container offer-explorer">
+        <div class="offer-explorer-intro">
+          <!-- FASE 4 (auditoría §08): la foto sigue a la fila señalada,
+               igual que en el menú a pantalla completa — carga perezosa,
+               solo cuando se muestra de verdad (ver js/main.js). -->
+          <div class="offer-explorer-photo" id="offer-explorer-photo" aria-hidden="true"></div>
+          <p>El III Ciclo (7mo a 9no grado) se cursa en modalidad básica o con orientación técnica. Al terminar noveno grado, el bachillerato ofrece tres programas técnicos y académicos.</p>
+          <a class="btn primary" href="test-vocacional.html">¿No sabes cuál elegir? Haz el test vocacional</a>
+        </div>
+        <div class="offer-list">
+          <a class="offer-row" href="oferta-academica.html#basica" data-photo="imagenes/otros/iii_ciclo_comun/septimo_grado.jpeg">
+            <span class="offer-row-index">01</span>
+            <span class="offer-row-body">
+              <h3>III Ciclo de Educación Básica</h3>
+              <p>Séptimo, octavo y noveno grado en modalidad básica.</p>
+            </span>
+            <span class="offer-row-thumb offer-row-badge">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/prim_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/prim_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/prim_white-480.jpg" width="938" height="938" alt="">
+          </picture>
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/edu_p-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/edu_p-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/edu_p-480.jpg" width="938" height="938" alt="">
+          </picture>
+            </span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="offer-row" href="oferta-academica.html#tecnica" data-photo="imagenes/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura.jpg">
+            <span class="offer-row-index">02</span>
+            <span class="offer-row-body">
+              <h3>III Ciclo con Orientación Técnica</h3>
+              <p>Estructuras Metálicas, Electricidad y Corte y Confección desde séptimo a noveno grado.</p>
+            </span>
+            <span class="offer-row-thumb offer-row-badge">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/a_tecwhite-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/a_tecwhite-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/a_tecwhite-480.jpg" width="938" height="938" alt="">
+          </picture>
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/a_tecnicas-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/a_tecnicas-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/a_tecnicas-480.jpg" width="938" height="938" alt="">
+          </picture>
+            </span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a class="offer-row" href="oferta-academica.html#bachilleratos" data-photo="imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg">
+            <span class="offer-row-index">03</span>
+            <span class="offer-row-body">
+              <h3>Bachilleratos</h3>
+              <p>Informática, Contaduría y Finanzas, y Ciencias y Humanidades.</p>
+            </span>
+            <span class="offer-row-thumb offer-row-badge">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bach_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bach_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/bach_white-480.jpg" width="938" height="938" alt="">
+          </picture>
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bach-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bach-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/bach-480.jpg" width="938" height="938" alt="">
+          </picture>
+            </span>
+            <svg class="offer-row-arrow" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         BTP EN INFORMÁTICA — CARRERA DESTACADA
+         BTP EN INFORMÁTICA — panel con acento técnico
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Informática">
-      <div class="container split align-center">
-        <div>
-          <p class="eyebrow">Carrera destacada</p>
-          <h2>BTP en Informática</h2>
-          <p>El área de Informática es la que más actividad genera en el instituto: proyectos de laboratorio, prácticas de soporte técnico y la Feria de Inteligencia Artificial, donde los estudiantes exponen su trabajo ante toda la comunidad educativa.</p>
-          <div class="mini-list">
-            <span>Ofimática</span>
-            <span>Programación</span>
-            <span>Sistemas Operativos</span>
-            <span>Análisis y Diseño</span>
+      <div class="container">
+        <div class="tech-panel split align-center">
+          <div>
+            <p class="eyebrow">Carrera destacada</p>
+            <h2>BTP en Informática</h2>
+            <p>El área de Informática es la que más actividad genera en el instituto: proyectos de laboratorio, prácticas de soporte técnico y la Feria de Inteligencia Artificial, donde los estudiantes exponen su trabajo ante toda la comunidad educativa.</p>
+            <div class="tech-chips">
+              <span class="tech-chip">ofimática</span>
+              <span class="tech-chip">programación</span>
+              <span class="tech-chip">sistemas operativos</span>
+              <span class="tech-chip">análisis y diseño</span>
+              <span class="tech-chip">feria de IA</span>
+            </div>
+            <div class="hero-editorial-actions">
+              <a class="btn primary" href="carrera-informatica.html">Conocer la carrera</a>
+              <a class="btn secondary on-light" href="actividades.html#academicas">Ver sus actividades</a>
+            </div>
           </div>
-          <div class="hero-actions" style="margin-top:26px;">
-            <a class="btn primary" href="carrera-informatica.html">Conocer la carrera</a>
-            <a class="btn secondary" href="actividades.html">Ver sus actividades</a>
-          </div>
-        </div>
 
-        <div class="gal-grid gal-destacada">
-          <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Feria de Inteligencia Artificial del BTP en Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/otros/instalaciones/laboratorio_1.jpeg" alt="Laboratorio de Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/taller.jpg" alt="Taller de Informática" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg" alt="Estudiantes de Informática en la Feria de IA" loading="lazy">
-          </figure>
-          <figure class="gal-item">
-            <img src="imagenes/otros/instalaciones/laboratorio_2.jpeg" alt="Equipos del laboratorio de Informática" loading="lazy">
-          </figure>
+          <div class="gal-grid gal-destacada gal-grid-sin-bn">
+            <figure class="gal-item">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-02-1600.jpg" width="4032" height="3024" alt="Feria de Inteligencia Artificial del BTP en Informática" loading="lazy">
+          </picture>
+            </figure>
+            <figure class="gal-item">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/instalaciones/laboratorio_1-480.avif 480w, imagenes-optim/otros/instalaciones/laboratorio_1-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/instalaciones/laboratorio_1-480.webp 480w, imagenes-optim/otros/instalaciones/laboratorio_1-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/instalaciones/laboratorio_1-960.jpg" width="1280" height="779" alt="Laboratorio de Informática" loading="lazy">
+          </picture>
+            </figure>
+            <figure class="gal-item">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/taller-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/taller-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/taller-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/taller-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/taller-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/taller-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/taller-1600.jpg" width="2040" height="918" alt="Taller de Informática" loading="lazy">
+          </picture>
+            </figure>
+            <figure class="gal-item">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.jpg" width="3024" height="4032" alt="Estudiantes de Informática en la Feria de IA" loading="lazy">
+          </picture>
+            </figure>
+            <figure class="gal-item">
+              <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/instalaciones/laboratorio_2-480.avif 480w, imagenes-optim/otros/instalaciones/laboratorio_2-960.avif 960w, imagenes-optim/otros/instalaciones/laboratorio_2-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/instalaciones/laboratorio_2-480.webp 480w, imagenes-optim/otros/instalaciones/laboratorio_2-960.webp 960w, imagenes-optim/otros/instalaciones/laboratorio_2-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/instalaciones/laboratorio_2-1600.jpg" width="4032" height="3024" alt="Equipos del laboratorio de Informática" loading="lazy">
+          </picture>
+            </figure>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         TALLERES — DECK CAROUSEL DE FOTOS
+         TALLERES — "aprender haciendo"
     ══════════════════════════════════════ -->
     <section class="section visual-band" data-sec="Talleres">
       <div class="container split align-center">
@@ -245,47 +368,153 @@
           </div>
         </div>
 
-        <!-- DECK CAROUSEL — Talleres -->
-        <div class="campus-gallery-wrap">
-          <div class="deck-wrap" id="deck-talleres" role="region" aria-label="Fotos de talleres">
-            <div class="deck-card">
-              <img src="imagenes/otros/iii_ciclo_polivalente/metalesm.jpg" alt="Taller de Estructuras Metálicas">
-            </div>
-            <!-- Carta 2 -->
-            <div class="deck-card">
-              <img src="imagenes/otros/iii_ciclo_polivalente/costura.jpg" alt="Taller de Corte y Confección">
-            </div>
-            <!-- Carta 3 -->
-            <div class="deck-card">
-              <img src="imagenes/otros/iii_ciclo_polivalente/pintura.jpg" alt="Taller de Pintura">
-            </div>
-            <!-- Carta 4 -->
-            <div class="deck-card">
-              <img src="imagenes/otros/iii_ciclo_polivalente/soldadura.jpg" alt="Taller de Soldadura">
-            </div>
-            <!-- Carta 5 -->
-            <div class="deck-card">
-              <img src="imagenes/otros/iii_ciclo_polivalente/costura2.jpg" alt="Estudiantes en clase">
-            </div>
-          </div>
-          <div class="deck-dots" id="dots-talleres"></div>
-          <div class="deck-label" id="label-talleres">Haz clic para ver más fotos</div>
-
+        <!-- FASE 4 (auditoría §08): scroll horizontal nativo con snap en
+             vez del carrusel de cartas apiladas — son oficios en paralelo,
+             no una secuencia, así que desplazarse lateralmente sí tiene
+             sentido aquí. Sin JS: scroll-snap del navegador. -->
+        <div class="talleres-scroll" role="region" aria-label="Fotos de talleres" tabindex="0">
+          <figure class="talleres-scroll-item">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-480.avif 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-960.avif 960w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-480.webp 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-960.webp 960w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesm-1600.jpg" width="2048" height="1542" alt="Taller de Estructuras Metálicas" loading="lazy">
+          </picture>
+            <figcaption>Estructuras Metálicas</figcaption>
+          </figure>
+          <figure class="talleres-scroll-item">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costura-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costura-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costura-480.jpg" width="921" height="845" alt="Taller de Corte y Confección" loading="lazy">
+          </picture>
+            <figcaption>Corte y Confección</figcaption>
+          </figure>
+          <figure class="talleres-scroll-item">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/pintura-480.avif 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/pintura-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/pintura-480.webp 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/pintura-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/pintura-960.jpg" width="1542" height="2048" alt="Taller de Pintura" loading="lazy">
+          </picture>
+            <figcaption>Pintura</figcaption>
+          </figure>
+          <figure class="talleres-scroll-item">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-480.avif 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-480.webp 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/soldadura-960.jpg" width="1542" height="2048" alt="Taller de Soldadura" loading="lazy">
+          </picture>
+            <figcaption>Soldadura</figcaption>
+          </figure>
+          <figure class="talleres-scroll-item">
+            <img src="imagenes/otros/iii_ciclo_polivalente/taller_hogar/costura2.jpg" width="445" height="413" alt="Estudiantes en clase" loading="lazy">
+            <figcaption>Estudiantes en clase</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         MATRICULA
+         VIDA ESTUDIANTIL — mosaico asimétrico
     ══════════════════════════════════════ -->
-    <section class="section band" data-sec="Matrícula 2026">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Matrícula abierta 2026</p>
-          <h2>Requisitos claros para primer ingreso y reingreso</h2>
-          <p>La atención se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2026.</p>
+    <section class="section" data-sec="Vida estudiantil">
+      <div class="container section-head">
+        <p class="eyebrow">Fuera del aula</p>
+        <h2>Aquí pasan cosas</h2>
+        <p>Danza, banda de guerra, fútbol y actos cívicos que forman comunidad tanto como las clases.</p>
+      </div>
+      <div class="container life-mosaic">
+        <div class="life-mosaic-item span-2-2">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-480.avif 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-960.avif 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-480.webp 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-960.webp 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.jpg" width="2048" height="1152" alt="Cuadro de danza folclórica del instituto" loading="lazy">
+          </picture>
+          <span class="life-mosaic-label">Danza folclórica</span>
         </div>
-        <div class="callout">
+        <div class="life-mosaic-item">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/banda_guerra/banda_abs-480.avif 480w, imagenes-optim/otros/banda_guerra/banda_abs-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/banda_guerra/banda_abs-480.webp 480w, imagenes-optim/otros/banda_guerra/banda_abs-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/banda_guerra/banda_abs-960.jpg" width="1000" height="750" alt="Banda de guerra del instituto" loading="lazy">
+          </picture>
+          <span class="life-mosaic-label">Banda de guerra</span>
+        </div>
+        <div class="life-mosaic-item">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/futbol-480.avif 480w, imagenes-optim/otros/futbol-960.avif 960w, imagenes-optim/otros/futbol-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/futbol-480.webp 480w, imagenes-optim/otros/futbol-960.webp 960w, imagenes-optim/otros/futbol-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/futbol-1600.jpg" width="3024" height="4032" alt="Estudiantes jugando fútbol" loading="lazy">
+          </picture>
+          <span class="life-mosaic-label">Fútbol</span>
+        </div>
+        <div class="life-mosaic-item span-2-1">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-51-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-51-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-51-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-51-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-51-960.jpg" width="1280" height="960" alt="Grupo de danza folclórica frente al escenario del 42° Aniversario del instituto" loading="lazy">
+          </picture>
+          <span class="life-mosaic-label">42° Aniversario</span>
+        </div>
+        <div class="life-mosaic-item span-2-1">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-01-480.avif 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-01-480.webp 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-01-960.jpg" width="1440" height="1910" alt="Ceremonia de la Graduación 2025" loading="lazy">
+          </picture>
+          <span class="life-mosaic-label">Graduación 2025</span>
+        </div>
+      </div>
+      <div class="container" style="text-align:center; margin-top:32px;">
+        <a class="btn secondary on-light" href="actividades.html">Ver la agenda completa de actividades</a>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         COMUNIDAD Y ALIANZAS
+    ══════════════════════════════════════ -->
+    <section class="section band" data-sec="Comunidad">
+      <div class="container section-head">
+        <p class="eyebrow">Más allá del aula</p>
+        <h2>Comunidad y alianzas</h2>
+        <p>Programas de becas, capacitación docente y formación en oratoria que llegan al instituto gracias a alianzas reales con organizaciones que trabajan por la educación en Honduras.</p>
+      </div>
+      <div class="container">
+        <div class="gal-grid gal-grid-sin-bn">
+          <figure class="gal-item"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/becas_doit/becas-doit-03-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/becas_doit/becas-doit-03-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/capacitaciones/becas_doit/becas-doit-03-480.jpg" width="720" height="960" alt="Entrega de becas del programa DOIT a estudiantes del instituto" loading="lazy">
+          </picture></figure>
+          <figure class="gal-item"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-05-480.avif 480w, imagenes-optim/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-05-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-05-480.webp 480w, imagenes-optim/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-05-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/capacitaciones/visionmundial_docentes/capacitacion-vision-mundial-docentes-05-960.jpg" width="1280" height="591" alt="Capacitación a docentes en alianza con Visión Mundial" loading="lazy">
+          </picture></figure>
+          <figure class="gal-item"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/taller_oratoria/taller-oratoria-02-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/taller_oratoria/taller-oratoria-02-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/capacitaciones/taller_oratoria/taller-oratoria-02-480.jpg" width="578" height="328" alt="Estudiantes en el taller de oratoria" loading="lazy">
+          </picture></figure>
+        </div>
+        <p style="text-align:center;margin-top:22px;">
+          <a class="btn secondary on-light" href="galeria.html#comunidad">Ver más de comunidad y alianzas</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         MATRICULA — el clímax del scroll (Fase 2, auditoría §10):
+         única sección a sangre en burdeos de todo el sitio, para que
+         sea imposible de pasar por alto. Es el objetivo real del sitio.
+    ══════════════════════════════════════ -->
+    <section class="section matricula-climax" data-sec="Matrícula 2027">
+      <div class="container matricula-climax-head">
+        <p class="eyebrow">Matrícula abierta 2027</p>
+        <h2>Todo lo que necesitas para matricularte</h2>
+        <p>Atención de lunes a viernes, 8:00 AM&ndash;12:00 PM, durante enero de 2027. Matrícula extraordinaria en febrero.</p>
+      </div>
+      <div class="container matricula-climax-grid">
+        <article class="matricula-climax-card">
           <h3>Primer ingreso</h3>
           <ul class="check-list">
             <li>Partida de nacimiento original</li>
@@ -294,13 +523,33 @@
             <li>Documentación llena del proceso de matrícula</li>
             <li>2 fotografías tamaño carnet</li>
           </ul>
-          <a class="btn primary full" href="matricula.html">Ver todos los requisitos</a>
-        </div>
+        </article>
+        <article class="matricula-climax-card">
+          <h3>Reingreso</h3>
+          <ul class="check-list">
+            <li>Calificaciones del año anterior</li>
+            <li>Copia de partida de nacimiento</li>
+            <li>Copia de identidad del padre o encargado</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
+          </ul>
+        </article>
+        <article class="matricula-climax-card matricula-climax-dates">
+          <h3>Fechas y horario</h3>
+          <p class="matricula-climax-big">Enero 2027</p>
+          <p>Matrícula ordinaria<br>Lunes a viernes, 8:00 AM&ndash;12:00 PM</p>
+          <p class="matricula-climax-big">Febrero 2027</p>
+          <p>Matrícula extraordinaria</p>
+        </article>
+      </div>
+      <div class="container matricula-climax-actions">
+        <a class="btn primary" href="matricula.html">Ver todo el proceso &rarr;</a>
+        <a class="btn secondary" href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer">Escríbenos por WhatsApp</a>
       </div>
     </section>
 
     <!-- ══════════════════════════════════════
-         VIDEO SECCIÓN — Reproductores cinematicos
+         VIDEO SECCIÓN
     ══════════════════════════════════════ -->
     <section class="section" data-sec="Videos">
       <div class="container section-head">
@@ -311,12 +560,11 @@
 
       <div class="container video-grid">
 
-        <!-- Video principal grande -->
         <div class="vg-main">
           <div class="cine-player" id="cine-main" data-video="video/logo_institucional/logo_micheletti.mp4">
             <div class="cine-placeholder">
-              <span class="cine-placeholder-icon">🎬</span>
-              <span class="cine-placeholder-label">Video de presentación<br>del instituto<br><br>Agrega: data-video="ruta/video.mp4"</span>
+              <svg class="cine-placeholder-icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="15" height="14" rx="2"/><path d="M17 10.5l5-3v9l-5-3"/></svg>
+              <span class="cine-placeholder-label">Video de presentación<br>del instituto</span>
             </div>
             <div class="cine-overlay">
               <div class="cine-title-tag">Presentación institucional</div>
@@ -342,10 +590,9 @@
           </div>
         </div>
 
-        <!-- Video lateral 1 -->
         <div class="vg-side" id="cine-side1" data-video="video/promocion_btpi/video_promo.mp4">
           <div class="cine-placeholder">
-            <span class="cine-placeholder-icon" style="font-size:2rem">🎉</span>
+            <svg class="cine-placeholder-icon" style="width:1.7rem;height:1.7rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             <span class="cine-placeholder-label" style="font-size:.7rem">Video de actividades</span>
           </div>
           <div class="cine-overlay">
@@ -371,10 +618,9 @@
           </div>
         </div>
 
-        <!-- Video lateral 2 -->
         <div class="vg-side" id="cine-side2" data-video="video/educacion_fisica/voleibol.mp4">
           <div class="cine-placeholder">
-            <span class="cine-placeholder-icon" style="font-size:2rem">⚽</span>
+            <svg class="cine-placeholder-icon" style="width:1.7rem;height:1.7rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15 15 0 0 0 0 20"/><path d="M12 2a15 15 0 0 1 0 20"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
             <span class="cine-placeholder-label" style="font-size:.7rem">Video deportivo</span>
           </div>
           <div class="cine-overlay">
@@ -404,125 +650,27 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         RUTA ESTUDIANTIL
+         CONTACTO / UBICACIÓN — franja compacta
     ══════════════════════════════════════ -->
-    <section class="section band" data-sec="Ruta estudiantil">
+    <section class="section band" data-sec="Contacto">
       <div class="container section-head">
-        <p class="eyebrow">Ruta estudiantil</p>
-        <h2>Del III Ciclo a la educación media</h2>
-        <p>La organización académica facilita que el estudiante avance de forma ordenada desde séptimo grado hasta su bachillerato.</p>
+        <p class="eyebrow">¿Tienes preguntas?</p>
+        <h2>Escríbenos o visítanos</h2>
       </div>
-      <div class="container pathway">
-        <article>
-          <span>01</span>
-          <h3>Ingreso a III Ciclo</h3>
-          <p>Séptimo, octavo y noveno grado en modalidad básica o con orientación técnica.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Exploración de habilidades</h3>
-          <p>Participación en actividades académicas, cívicas, deportivas y talleres.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Elección de bachillerato</h3>
-          <p>Informática, Contaduría y Finanzas, o Ciencias y Humanidades.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         GALERÍA MASONRY — Vida estudiantil
-    ══════════════════════════════════════ -->
-    <section class="section" data-sec="Galería">
-      <div class="container section-head">
-        <p class="eyebrow">Vida institucional</p>
-        <h2>Galería del instituto</h2>
-        <p>Momentos, eventos, talleres y celebraciones que reflejan la identidad del Instituto Roberto Micheletti Baín.</p>
-      </div>
-
-      <div class="container photo-masonry" id="photo-masonry">
-
-        <div class="pm-item" data-label="Actividades academicas">
-          <img src="imagenes/otros/elecciones.jpg" alt="Actividades académicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Académicas</span></div>
+      <div class="container contact-strip">
+        <div class="contact-strip-item">
+          <strong>Dirección</strong>
+          <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
+          <a href="ubicacion.html">Ver ubicación y cómo llegar &rarr;</a>
         </div>
-
-        <div class="pm-item" data-label="Actos civicos">
-          <img src="imagenes/otros/acto_civico.jpg" alt="Actos cívicos">
-          <div class="pm-overlay"><span class="pm-overlay-label">Cívicos</span></div>
+        <div class="contact-strip-item">
+          <strong>Horario de atención</strong>
+          <p>Lunes a viernes, 8:00 AM &ndash; 12:00 PM (matrícula, enero 2027).</p>
         </div>
-
-        <div class="pm-item" data-label="Banda de guerra">
-          <img src="imagenes/otros/banda_guerra/banda_abs.jpg" alt="Banda de guerra">
-          <div class="pm-overlay"><span class="pm-overlay-label">Banda</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Grupo de danza">
-          <img src="imagenes/otros/grupo_danza.jpg" alt="Grupo de danza">
-          <div class="pm-overlay"><span class="pm-overlay-label">Danza</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Futbol">
-          <img src="imagenes/otros/futbol.jpg" alt="Futbol">
-          <div class="pm-overlay"><span class="pm-overlay-label">Futbol</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Taller de metalicas">
-          <img src="imagenes/otros/iii_ciclo_polivalente/metales2.jpg" alt="Taller metálicas">
-          <div class="pm-overlay"><span class="pm-overlay-label">Metálicas</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Electricidad">
-          <img src="imagenes/otros/electricidad.jpg" alt="Electricidad">
-          <div class="pm-overlay"><span class="pm-overlay-label">Electricidad</span></div>
-        </div>
-
-        <div class="pm-item" data-label="Graduacion">
-          <img src="imagenes/otros/graduacion.jpg" alt="Graduación">
-          <div class="pm-overlay"><span class="pm-overlay-label">Graduación</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══════════════════════════════════════
-         EVENTOS — DECK CAROUSEL ACTIVIDADES
-    ══════════════════════════════════════ -->
-    <section class="section band" data-sec="Eventos">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Vida escolar</p>
-          <h2>Eventos y actividades del instituto</h2>
-          <p>Este sitio funciona como espacio de promoción para compartir actividades académicas, culturales, cívicas, deportivas y técnicas del instituto.</p>
-          <div class="activity-strip" style="margin-top:24px;">
-            <a href="actividades.html#academicas">Académicas</a>
-            <a href="actividades.html#civicas">Cívicas</a>
-            <a href="actividades.html#deportivas">Deportivas</a>
-            <a href="actividades.html#tecnicas">Técnicas</a>
-          </div>
-        </div>
-
-        <!-- DECK — Actividades -->
-        <div class="campus-gallery-wrap">
-          <div class="deck-wrap" id="deck-actividades" role="region" aria-label="Fotos de actividades">
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/reunion_padres/asamblea-padres-de-familia.jpg" alt="Reunión de padres de familia">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg" alt="Presentación de docentes">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg" alt="Toma de posesión de autoridades estudiantiles">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/dia_idioma/decoracion-dia-idioma-espanol.jpg" alt="Día del Idioma">
-            </div>
-            <div class="deck-card">
-              <img src="imagenes/acto_civico/verano_2026/escenario-eleccion-chico-chica-verano.jpg" alt="Elección de chico y chica verano">
-            </div>
-          </div>
-          <div class="deck-dots" id="dots-actividades"></div>
-          <div class="deck-label" id="label-actividades">Haz clic para ver más fotos</div>
+        <div class="contact-strip-item">
+          <strong>Contacto</strong>
+          <p>Formulario de contacto y redes sociales del instituto.</p>
+          <a href="contacto.html">Ir a Contacto &rarr;</a>
         </div>
       </div>
     </section>
@@ -531,22 +679,37 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -556,136 +719,29 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
   <script src="js/galeria.js"></script>
   <script>
-  /* ═══════════════════════════════════════════════
-     DECK CAROUSEL — engine
-  ═══════════════════════════════════════════════ */
-  function initDeck(deckId, dotsId, labelId, labels) {
-    const wrap  = document.getElementById(deckId);
-    const dots  = document.getElementById(dotsId);
-    const lbl   = document.getElementById(labelId);
-    if (!wrap) return;
-
-    const cards = Array.from(wrap.querySelectorAll(".deck-card"));
-    const n     = cards.length;
-    let current = 0;
-    let animating = false;
-
-    // Posiciones de la baraja
-    const positions = [
-      { rotate: "0deg",    ty: "0px",  scale: "1",    z: n },
-      { rotate: "3deg",    ty: "4px",  scale: ".97",  z: n - 1 },
-      { rotate: "-2.5deg", ty: "8px",  scale: ".94",  z: n - 2 },
-      { rotate: "5deg",    ty: "12px", scale: ".91",  z: n - 3 },
-      { rotate: "-4deg",   ty: "16px", scale: ".88",  z: n - 4 },
-    ];
-
-    function setTransform(card, pos) {
-      if (!pos) { card.style.opacity = "0"; card.style.pointerEvents = "none"; return; }
-      card.style.opacity = "1";
-      card.style.pointerEvents = "";
-      card.style.zIndex    = pos.z;
-      card.style.transform = `rotate(${pos.rotate}) translateY(${pos.ty}) scale(${pos.scale})`;
-      card.style.transition = "transform .5s cubic-bezier(.34,1.3,.64,1), opacity .3s";
-    }
-
-    function render() {
-      cards.forEach((card, i) => {
-        const offset = ((i - current) % n + n) % n;
-        setTransform(card, offset < positions.length ? positions[offset] : null);
-      });
-      // dots
-      Array.from(dots.children).forEach((d, i) => {
-        d.classList.toggle("active", i === current);
-      });
-      // label
-      if (lbl && labels && labels[current]) lbl.textContent = labels[current];
-    }
-
-    function next() {
-      if (animating) return;
-      animating = true;
-
-      const topCard = cards[current];
-
-      // Animacion "lanzar"
-      topCard.style.transition = "none";
-      topCard.style.zIndex = n + 10;
-
-      // Fase 1: volar hacia la derecha y abajo
-      requestAnimationFrame(() => {
-        topCard.style.transition = "transform .5s cubic-bezier(.6,0,.4,1), opacity .4s";
-        topCard.style.transform  = "rotate(20deg) translateX(110%) translateY(-30px) scale(.88)";
-        topCard.style.opacity    = ".5";
-
-        setTimeout(() => {
-          // Fase 2: reposicionar sin transicion al fondo
-          current = (current + 1) % n;
-          render();
-          animating = false;
-        }, 500);
-      });
-    }
-
-    // Dots
-    if (dots) {
-      cards.forEach((_, i) => {
-        const d = document.createElement("div");
-        d.className = "deck-dot";
-        d.addEventListener("click", (e) => { e.stopPropagation(); current = i; render(); });
-        dots.appendChild(d);
-      });
-    }
-
-    // Click en el mazo
-    wrap.addEventListener("click", next);
-
-    // Auto-advance cada 4s
-    setInterval(() => { if (!document.hidden) next(); }, 4000);
-
-    render();
-  }
-
-  const tLabels = ["Taller de Estructuras Metálicas", "Taller de Corte y Confección", "Taller de Pintura", "Taller de Soldadura", "Estudiantes en clase"];
-  const aLabels = ["Reunión de padres de familia", "Presentación de docentes", "Toma de posesión de autoridades estudiantiles", "Día del Idioma Español", "Elección de chico y chica verano"];
-
-  initDeck("deck-talleres",    "dots-talleres",    "label-talleres",    tLabels);
-  initDeck("deck-actividades", "dots-actividades", "label-actividades", aLabels);
-
-
   /* ═══════════════════════════════════════════════
      CINE PLAYER — engine
   ═══════════════════════════════════════════════ */
   function initCinePlayers() {
     document.querySelectorAll(".cine-player, .vg-side").forEach(player => {
       const videoSrc = player.dataset.video;
+      const overlay       = player.querySelector(".cine-overlay");
+      const playBtn       = player.querySelector(".cine-play-btn");
+      const progressFill  = player.querySelector(".cine-progress-fill");
+      const progressWrap  = player.querySelector(".cine-progress-wrap");
+      const timeLabel     = player.querySelector(".cine-time");
+      const ppBtn         = player.querySelector("[data-action='playpause']");
+      const muteBtn       = player.querySelector("[data-action='mute']");
+      const fsBtn         = player.querySelector("[data-action='fullscreen']");
 
-      // Si hay video real, insertar el elemento <video>
-      if (videoSrc) {
-        const vid = document.createElement("video");
-        vid.src = videoSrc;
-        vid.preload = "metadata";
-        vid.playsInline = true;
-        player.insertBefore(vid, player.firstChild);
-      }
-
-      const vid   = player.querySelector("video");
-      const overlay = player.querySelector(".cine-overlay");
-      const playBtn = player.querySelector(".cine-play-btn");
-      const progressFill = player.querySelector(".cine-progress-fill");
-      const progressWrap = player.querySelector(".cine-progress-wrap");
-      const timeLabel    = player.querySelector(".cine-time");
-      const ppBtn        = player.querySelector("[data-action='playpause']");
-      const muteBtn      = player.querySelector("[data-action='mute']");
-      const fsBtn        = player.querySelector("[data-action='fullscreen']");
-
-      if (!vid) {
+      if (!videoSrc) {
         // Sin video: solo UI decorativa
         if (playBtn) playBtn.addEventListener("click", () => {
-          // Muestra un mensaje rápido si no hay video
           const msg = player.querySelector(".cine-title-tag");
           if (msg) { msg.textContent = "Agrega un video en data-video"; setTimeout(() => { if(msg) msg.textContent = msg.getAttribute("data-orig") || ""; }, 2000); }
         });
@@ -698,12 +754,49 @@
         return `${m}:${ss}`;
       }
 
+      // FASE 1 (auditoría): el <video> ya NO se crea al cargar la página.
+      // Antes se le asignaba `src` antes que `preload`, así que el
+      // navegador arrancaba la descarga completa de los tres videos del
+      // home (20MB) aunque nadie los reprodujera. Ahora es un façade real:
+      // no existe ningún <video> en el DOM hasta la primera interacción.
+      let vid = null;
+
+      function ensureVideo() {
+        if (vid) return vid;
+        vid = document.createElement("video");
+        vid.preload = "none";
+        vid.playsInline = true;
+        vid.src = videoSrc;
+        player.insertBefore(vid, player.firstChild);
+
+        // Progreso
+        vid.addEventListener("timeupdate", () => {
+          if (!vid.duration) return;
+          const pct = (vid.currentTime / vid.duration) * 100;
+          if (progressFill) progressFill.style.width = pct + "%";
+          if (timeLabel) timeLabel.textContent = `${fmt(vid.currentTime)} / ${fmt(vid.duration)}`;
+        });
+
+        // Fin de video
+        vid.addEventListener("ended", () => {
+          player.classList.remove("playing");
+          vid.currentTime = 0;
+        });
+
+        // Icono play/pause en botón pequeño
+        vid.addEventListener("play",  () => { if (ppBtn) ppBtn.querySelector("svg").innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'; });
+        vid.addEventListener("pause", () => { if (ppBtn) ppBtn.querySelector("svg").innerHTML = '<polygon points="5,3 19,12 5,21"/>'; });
+
+        return vid;
+      }
+
       function togglePlay() {
-        if (vid.paused) {
-          vid.play();
+        const v = ensureVideo();
+        if (v.paused) {
+          v.play();
           player.classList.add("playing");
         } else {
-          vid.pause();
+          v.pause();
           player.classList.remove("playing");
         }
       }
@@ -713,20 +806,15 @@
       if (playBtn) playBtn.addEventListener("click", (e) => { e.stopPropagation(); togglePlay(); });
       if (ppBtn)   ppBtn.addEventListener("click",   (e) => { e.stopPropagation(); togglePlay(); });
 
-      // Progreso
-      vid.addEventListener("timeupdate", () => {
-        if (!vid.duration) return;
-        const pct = (vid.currentTime / vid.duration) * 100;
-        if (progressFill) progressFill.style.width = pct + "%";
-        if (timeLabel) timeLabel.textContent = `${fmt(vid.currentTime)} / ${fmt(vid.duration)}`;
-      });
-
-      // Seek
+      // Seek — también crea el video si alguien lo toca antes de darle play
+      // (los controles aparecen con solo pasar el mouse por encima).
       if (progressWrap) {
         progressWrap.addEventListener("click", (e) => {
+          const v = ensureVideo();
+          if (!v.duration) return;
           const rect = progressWrap.getBoundingClientRect();
           const pct  = (e.clientX - rect.left) / rect.width;
-          vid.currentTime = pct * vid.duration;
+          v.currentTime = pct * v.duration;
         });
       }
 
@@ -734,8 +822,9 @@
       if (muteBtn) {
         muteBtn.addEventListener("click", (e) => {
           e.stopPropagation();
-          vid.muted = !vid.muted;
-          muteBtn.style.opacity = vid.muted ? ".4" : "1";
+          const v = ensureVideo();
+          v.muted = !v.muted;
+          muteBtn.style.opacity = v.muted ? ".4" : "1";
         });
       }
 
@@ -743,19 +832,10 @@
       if (fsBtn) {
         fsBtn.addEventListener("click", (e) => {
           e.stopPropagation();
+          ensureVideo();
           if (player.requestFullscreen) player.requestFullscreen();
         });
       }
-
-      // Fin de video
-      vid.addEventListener("ended", () => {
-        player.classList.remove("playing");
-        vid.currentTime = 0;
-      });
-
-      // Icono play/pause en botón pequeño
-      vid.addEventListener("play",  () => { if (ppBtn) ppBtn.querySelector("svg").innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>'; });
-      vid.addEventListener("pause", () => { if (ppBtn) ppBtn.querySelector("svg").innerHTML = '<polygon points="5,3 19,12 5,21"/>'; });
     });
   }
 
@@ -821,7 +901,7 @@
         transition: box-shadow .3s ease;
       }
       .photo-stack-item:hover {
-        box-shadow: 0 24px 60px rgba(10,42,110,.35), 0 0 0 2px rgba(244,123,32,.55) !important;
+        box-shadow: 0 24px 60px rgba(47,45,127,.35), 0 0 0 2px rgba(164,38,48,.55) !important;
       }
       .photo-stack-item.ps-exit {
         animation: psExit .55s cubic-bezier(.6,0,.4,1) forwards !important;
@@ -903,6 +983,34 @@
 
     function startTimer() { clearInterval(timer); timer = setInterval(() => { if (!document.hidden) advance(); }, 4000); }
     startTimer();
+  })();
+
+  /* ═══════════════════════════════════════════════
+     OFERTA — foto sincronizada con la fila señalada
+     FASE 4 (auditoría §08): igual mecánica que el menú a pantalla
+     completa — solo se descarga la foto que realmente se muestra.
+  ═══════════════════════════════════════════════ */
+  (function () {
+    const panel = document.getElementById("offer-explorer-photo");
+    const rows = document.querySelectorAll(".offer-row[data-photo]");
+    if (!panel || !rows.length) return;
+
+    function showPhoto(url) {
+      if (panel.dataset.current === url) return;
+      panel.dataset.current = url;
+      panel.style.backgroundImage = 'url("' + url + '")';
+      panel.classList.add("show");
+    }
+
+    rows.forEach((row) => {
+      const url = row.dataset.photo;
+      row.addEventListener("mouseenter", () => showPhoto(url));
+      row.addEventListener("focus", () => showPhoto(url));
+    });
+
+    // Foto inicial: la de la primera fila, para que el panel no quede
+    // vacío antes de que alguien pase el mouse.
+    showPhoto(rows[0].dataset.photo);
   })();
   </script>
 </body>

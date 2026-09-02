@@ -7,33 +7,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ubicación del Instituto Roberto Micheletti Baín en Agua Blanca Sur, El Progreso, Yoro.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/ubicacion.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Ubicación">
+  <meta property="og:description" content="Ubicación del Instituto Roberto Micheletti Baín en Agua Blanca Sur, El Progreso, Yoro.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/ubicacion.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ubicación">
+  <meta name="twitter:description" content="Ubicación del Instituto Roberto Micheletti Baín en Agua Blanca Sur, El Progreso, Yoro.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
   <title>Ubicación | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a class="active" href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -42,7 +73,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
@@ -50,7 +81,7 @@
           <h1>Agua Blanca Sur, El Progreso, Yoro</h1>
           <p>El instituto se encuentra al servicio de la comunidad de Agua Blanca Sur y zonas cercanas del municipio de El Progreso.</p>
         </div>
-        <img src="imagenes/irmb/ubicacion-mapa.svg" alt="Ilustración de ubicación del instituto" loading="eager">
+        <img src="imagenes/irmb/ubicacion-mapa.svg" width="900" height="620" alt="Ilustración de ubicación del instituto" loading="eager">
       </div>
     </section>
 
@@ -60,10 +91,19 @@
           <p class="eyebrow">Dirección</p>
           <h2>Instituto Gubernamental Polivalente "Roberto Micheletti Baín"</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro, Honduras.</p>
-          <a class="btn primary" href="https://maps.google.com/?q=Agua+Blanca+Sur+El+Progreso+Yoro+Honduras" target="_blank" rel="noopener noreferrer">Abrir en Google Maps</a>
+          <a class="btn primary" href="https://maps.google.com/?q=Agua+Blanca+Sur+El+Progreso+Yoro+Honduras" target="_blank" rel="noopener noreferrer">Cómo llegar</a>
         </div>
-        <div class="map-box image-map" role="img" aria-label="Representación de ubicación del instituto">
-          <img src="imagenes/otros/ubicacion.jpg" alt="Mapa de ubicación del instituto">
+        <div class="map-embed-wrap">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1841.9119915969716!2d-87.8716637980081!3d15.25578491226647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f666d2084f287cd%3A0x59482eec676a9622!2sInstituto%20Roberto%20Michelleti%20Bain!5e1!3m2!1ses-419!2shn!4v1780979804499!5m2!1ses-419!2shn"
+            width="100%"
+            height="360"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación del Instituto Roberto Micheletti Baín en Google Maps"
+          ></iframe>
         </div>
       </div>
     </section>
@@ -72,14 +112,14 @@
       <div class="container cards-2">
         <article class="info-card">
           <p class="eyebrow">Atención de matrícula</p>
-          <h2>Horario enero 2026</h2>
+          <h2>Horario enero 2027</h2>
           <p class="big-time">8:00 AM - 12:00 PM</p>
           <p>Lunes a viernes durante el mes de enero.</p>
         </article>
         <article class="info-card">
           <p class="eyebrow">Secretaría</p>
           <h2>Matrícula extraordinaria</h2>
-          <p>Durante febrero de 2026, los estudiantes que no pudieron matricularse en el período ordinario deben acercarse a Secretaría.</p>
+          <p>Durante febrero de 2027, los estudiantes que no pudieron matricularse en el período ordinario deben acercarse a Secretaría.</p>
         </article>
       </div>
     </section>
@@ -97,11 +137,11 @@
         </article>
         <article class="info-card">
           <h3>Atención</h3>
-          <p>Durante enero de 2026, la atención de matrícula indicada es de lunes a viernes de 8:00 AM a 12:00 PM.</p>
+          <p>Durante enero de 2027, la atención de matrícula indicada es de lunes a viernes de 8:00 AM a 12:00 PM.</p>
         </article>
         <article class="info-card">
           <h3>Secretaría</h3>
-          <p>Para matrícula extraordinaria en febrero de 2026, los estudiantes deben acercarse a Secretaría.</p>
+          <p>Para matrícula extraordinaria en febrero de 2027, los estudiantes deben acercarse a Secretaría.</p>
         </article>
       </div>
     </section>
@@ -109,22 +149,37 @@
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -134,6 +189,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
 </body>

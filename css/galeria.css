@@ -5,6 +5,17 @@
    (ver js/galeria.js). Reutilizable en cualquier página.
    ============================================================ */
 
+/* ── SUB-ETIQUETA dentro de una sección (ej. "25° Aniversario de
+   Humanidades" dentro de la sección "Aniversarios institucionales") ── */
+.section-sub {
+  font-size: .78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  color: var(--naranja-2);
+  margin-bottom: 14px;
+}
+
 /* ── CUADRÍCULA ──────────────────────────────────────────── */
 .gal-grid {
   display: grid;
@@ -42,12 +53,36 @@
   aspect-ratio: 4 / 3;
   object-fit: cover;
   display: block;
-  transition: transform .55s var(--ease);
+  filter: grayscale(1) contrast(1.04);
+  transition: transform .55s var(--ease), filter .6s var(--ease);
 }
 
 .gal-grid.gal-destacada > .gal-item:first-child img { aspect-ratio: auto; height: 100%; }
 
-.gal-item:hover img { transform: scale(1.06); }
+.gal-item:hover img,
+.gal-item:focus-visible img,
+.gal-grid-persistente .gal-item.gal-item-vista img {
+  filter: grayscale(0) contrast(1.04);
+}
+
+.gal-item:hover img,
+.gal-item:focus-visible img {
+  transform: scale(1.06);
+}
+
+@media (hover: none) {
+  /* Sin mouse (tactil) no hay hover real: se muestran a color directo
+     para no esconder la foto detras de una interaccion que no aplica. */
+  .gal-item img { filter: none; }
+}
+
+/* Cuadriculas donde las fotos van siempre a color, sin el juego de
+   blanco y negro al pasar el cursor. */
+.gal-grid-sin-bn .gal-item img { filter: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gal-item img { transition: none; }
+}
 
 /* Lupa que aparece al señalar */
 .gal-item::after {

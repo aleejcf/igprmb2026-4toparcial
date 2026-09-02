@@ -1,0 +1,160 @@
+/* ============================================================
+   INSTITUTO RMB — tokens.css
+   Paleta institucional (basada en el escudo), tipografía, espaciado,
+   radios, sombras y motion. Estos tokens son ADITIVOS: conviven con
+   las variables ya definidas en estilos.css (--azul, --naranja, etc.)
+   sin reemplazarlas todavía — se enlaza antes de estilos.css.
+   ============================================================ */
+
+/* ── FASE 4 (auditoría §08) — VIEW TRANSITIONS NATIVAS ────────
+   Reemplaza la cortina que interceptaba cada clic y esperaba 220ms
+   antes de navegar: el navegador hace un cross-fade real entre
+   páginas por su cuenta, sin JS y sin latencia. Progresiva — en
+   navegadores que no lo soportan (aún la mayoría en 2026 fuera de
+   Chromium) simplemente no pasa nada, la navegación es instantánea
+   como siempre. */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 240ms;
+}
+
+/* El escudo se mantiene en su lugar durante la transición en vez de
+   cross-fadear con el resto de la página — dos páginas del mismo
+   instituto, misma marca, sin parpadeo del logo. */
+.brand-mark {
+  view-transition-name: site-logo;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
+:root {
+  /* ── Paleta institucional ─────────────────────────────── */
+  --color-navy:          #2F2D7F;
+  --color-navy-dark:     #201F57;
+  --color-navy-light:    #4B49A0;
+  --color-burgundy:      #A42630;
+  --color-burgundy-dark: #7E1D25;
+  --color-green:         #1B6237;
+  --color-green-dark:    #12482A;
+
+  /* Neutros cálidos */
+  --color-warm-white:    #FAF9F6;
+  --color-off-white:     #F2F0EA;
+  --color-surface-muted: #ECEAE4;
+  --color-charcoal:      #1F2023;
+  --color-soft-gray:     #6B6E76;
+  --color-line:          rgba(47, 45, 127, .12);
+
+  /* Superficies (modo claro) */
+  --surface-page:    var(--color-warm-white);
+  --surface-card:    #FFFFFF;
+  --surface-elevated:#FFFFFF;
+  --text-primary:    var(--color-charcoal);
+  --text-muted:      var(--color-soft-gray);
+  --text-on-navy:    #FFFFFF;
+
+  /* Espaciado */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 20px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 72px;
+  --space-8: 104px;
+
+  /* Radios */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+
+  /* Sombras (tinte navy, no gris puro) */
+  --shadow-sm: 0 2px 10px rgba(47, 45, 127, .08);
+  --shadow-md: 0 12px 32px rgba(47, 45, 127, .12);
+  --shadow-lg: 0 28px 64px rgba(47, 45, 127, .18);
+
+  /* ── Motion (FASE 3, auditoría §06) ───────────────────────
+     Tres duraciones, tres curvas, cada una con un trabajo. La mayoría
+     de transiciones del sitio deberían usar una de estas seis en vez
+     de un valor suelto (".2s", ".3s var(--ease-spring)", etc.). */
+  --transition-fast: 150ms cubic-bezier(.22,.61,.36,1);  /* feedback: press, foco */
+  --transition-base: 260ms cubic-bezier(.22,.61,.36,1);  /* la mayoría: hover, color */
+  --transition-slow: 420ms cubic-bezier(.22,.61,.36,1);  /* entradas, overlays */
+
+  --ease-out:  cubic-bezier(.22, .61, .36, 1);   /* entra: arranca rápido, frena */
+  --ease-in:   cubic-bezier(.55, .06, .68, .19); /* sale: acelera al irse */
+  --ease-soft: cubic-bezier(.4, 0, .2, 1);       /* estados neutros: color, opacidad */
+
+  --mo-rise:    16px;  /* recorrido de un reveal al entrar en viewport */
+  --mo-lift:    -3px;  /* elevación al hover de tarjetas y filas */
+  --mo-zoom:    1.04;  /* zoom de imagen al hover */
+  --mo-stagger: 50ms;  /* entre hermanos en un reveal, tope 6 (ver main.js) */
+
+  /* Tipografía */
+  --font-ui: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+/* ── Modo oscuro ───────────────────────────────────────────
+   No es solo "fondo negro": fondo con tinte navy, superficies
+   escalonadas, texto cálido, azul institucional aclarado para
+   seguir siendo reconocible sobre oscuro, burdeos como acento
+   puntual (no como fondo). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface-page:     #14141F;
+    --surface-card:     #1C1C2A;
+    --surface-elevated: #252536;
+    --text-primary:     #F2F1ED;
+    --text-muted:       #A7A8B5;
+    --color-line:       rgba(255, 255, 255, .08);
+    --color-navy-light: #6664C4;
+    --shadow-sm: 0 2px 10px rgba(0, 0, 0, .35);
+    --shadow-md: 0 12px 32px rgba(0, 0, 0, .45);
+    --shadow-lg: 0 28px 64px rgba(0, 0, 0, .55);
+  }
+}
+
+:root[data-theme="dark"] {
+  --surface-page:     #14141F;
+  --surface-card:     #1C1C2A;
+  --surface-elevated: #252536;
+  --text-primary:     #F2F1ED;
+  --text-muted:       #A7A8B5;
+  --color-line:       rgba(255, 255, 255, .08);
+  --color-navy-light: #6664C4;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, .35);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, .45);
+  --shadow-lg: 0 28px 64px rgba(0, 0, 0, .55);
+}
+
+/* ── Reducción de movimiento, consolidada (FASE 3, auditoría) ──
+   El sitio ya respetaba prefers-reduced-motion en 8 archivos, pero
+   cada componente lo hacía por su cuenta — un componente nuevo podía
+   olvidarlo fácilmente. Redefiniendo los tokens de duración aquí,
+   cualquier regla que use var(--transition-*) o var(--mo-rise) queda
+   protegida automáticamente, sin necesitar su propio media query.
+   Los @media (prefers-reduced-motion) que ya existían por componente
+   (splash, cortina, tilt, etc.) se conservan: cubren animaciones que
+   no pasan por estos tokens (@keyframes, transform de hover directo). */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0.01ms;
+    --transition-base: 0.01ms;
+    --transition-slow: 0.01ms;
+    --mo-rise: 0px;
+    --mo-lift: 0px;
+    --mo-zoom: 1;
+  }
+}

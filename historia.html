@@ -6,34 +6,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Historia institucional del Instituto Roberto Micheletti Baín desde 1982.">
+  <meta name="description" content="Historia institucional del Instituto Roberto Micheletti Baín desde 1984.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/historia.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Historia">
+  <meta property="og:description" content="Historia institucional del Instituto Roberto Micheletti Baín desde 1984.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/historia.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Historia">
+  <meta name="twitter:description" content="Historia institucional del Instituto Roberto Micheletti Baín desde 1984.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg">
   <title>Historia | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a class="active" href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -42,7 +73,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
@@ -50,7 +81,33 @@
           <h1>Historia institucional</h1>
           <p>Construyendo comunidad educativa en Agua Blanca Sur, El Progreso, Yoro desde hace más de cuatro décadas.</p>
         </div>
-        <img src="imagenes/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada.jpg" alt="Ilustración institucional del instituto" loading="eager">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-480.avif 480w, imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-480.webp 480w, imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/acto_inaugural/estudiantes-formacion-cancha-techada-960.jpg" width="1280" height="960" alt="Estudiantes en formación en la cancha techada del instituto" loading="eager" fetchpriority="high">
+          </picture>
+      </div>
+    </section>
+
+    <!-- Escudo interactivo -->
+    <section class="section" data-sec="El escudo">
+      <div class="container escudo-wrap">
+        <div class="escudo-figura">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb-480.jpg" width="938" height="938" alt="Escudo del Instituto Roberto Micheletti Baín" class="escudo-img">
+          </picture>
+          <button type="button" class="escudo-hotspot escudo-hotspot--cinta" data-caption="La cinta lleva el nombre oficial: Instituto Gubernamental Polivalente “Roberto Micheletti Baín”, fundado en 1984." aria-label="La cinta: nombre del instituto"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--antorcha" data-caption="La antorcha representa el conocimiento que ilumina — la razón de ser de cualquier centro educativo." aria-label="La antorcha: el conocimiento"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--libro" data-caption="El libro abierto lleva el lema real del instituto: “Dignidad, Trabajo, Cultura”, junto al año de fundación." aria-label="El libro: el lema institucional"></button>
+          <button type="button" class="escudo-hotspot escudo-hotspot--laureles" data-caption="Los laureles simbolizan el logro y el reconocimiento — la comunidad de Agua Blanca Sur que ha sostenido al instituto por más de cuatro décadas." aria-label="Los laureles: logro y comunidad"></button>
+        </div>
+        <div class="escudo-texto">
+          <p class="eyebrow">El escudo, explicado</p>
+          <h2>Cada símbolo cuenta algo real</h2>
+          <p class="escudo-caption" id="escudo-caption">Pasa el cursor o navega con la tecla Tab por el escudo para descubrir el significado de cada parte.</p>
+        </div>
       </div>
     </section>
 
@@ -167,12 +224,12 @@
       </div>
       <div class="container mv-grid">
         <article class="mv-card mision">
-          <div class="mv-card-num">🎯</div>
+          <div class="mv-card-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
           <h3>Nuestra Misión</h3>
           <p>Formar personas que evidencien competencias en el ámbito técnico y profesional, capaces de responder comprometida y éticamente a las necesidades y demandas de empresas e instituciones que contribuyen al desarrollo nacional.</p>
         </article>
         <article class="mv-card vision">
-          <div class="mv-card-num">🔭</div>
+          <div class="mv-card-num"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></div>
           <h3>Nuestra Visión 2026</h3>
           <p>Ser reconocidos como una Institución de Educación Técnico Profesional que cumple un rol de agente de movilidad social a través de la educación, destacándose por su contribución activa al desarrollo social del país.</p>
         </article>
@@ -187,8 +244,8 @@
           <h2>Cuatro décadas de compromiso educativo</h2>
           <p>El instituto ha servido a generaciones de familias de Agua Blanca Sur, construyendo una identidad basada en disciplina, práctica y orgullo comunitario.</p>
           <div class="mini-list">
-            <span>+40 años de historia</span>
-            <span>600+ estudiantes</span>
+            <span>42 años de historia</span>
+            <span>~450 estudiantes</span>
             <span>3 bachilleratos</span>
             <span>Comunidad activa</span>
           </div>
@@ -213,26 +270,89 @@
         </div>
       </div>
     </section>
+
+    <!-- Momentos que nos definen -->
+    <section class="section" data-sec="Momentos">
+      <div class="container section-head">
+        <p class="eyebrow">Historia reciente</p>
+        <h2>Momentos que nos definen</h2>
+        <p>Tres celebraciones que muestran lo que el instituto es hoy: comunidad, trayectoria docente y programas con identidad propia.</p>
+      </div>
+
+      <div class="container moment-row">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-42-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-42-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-42-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-42-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="moment-photo" src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-42-960.jpg" width="1200" height="1600" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          </picture>
+        <div>
+          <p class="eyebrow">42° Aniversario</p>
+          <h3>Cuatro décadas cumplidas, y contando</h3>
+          <p>En 2026 el instituto celebró su 42° aniversario junto a toda la comunidad educativa: docentes, estudiantes y familias de Agua Blanca Sur que han acompañado el crecimiento del centro desde su fundación en 1984.</p>
+        </div>
+      </div>
+
+      <div class="container moment-row reverse">
+        <div>
+          <p class="eyebrow">25° Aniversario de Humanidades</p>
+          <h3>Un cuarto de siglo formando bachilleres</h3>
+          <p>El programa de Ciencias y Humanidades cumplió 25 años preparando estudiantes con una base académica amplia. Se celebró con una gala formal que reunió a docentes, egresados y autoridades del área.</p>
+        </div>
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/humanidades/25_aniversario/25-aniversario-humanidades-55-480.avif 480w, imagenes-optim/humanidades/25_aniversario/25-aniversario-humanidades-55-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/humanidades/25_aniversario/25-aniversario-humanidades-55-480.webp 480w, imagenes-optim/humanidades/25_aniversario/25-aniversario-humanidades-55-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="moment-photo" src="imagenes-optim/humanidades/25_aniversario/25-aniversario-humanidades-55-960.jpg" width="960" height="720" alt="Estudiantes celebrando el 25° Aniversario del programa de Ciencias y Humanidades" loading="lazy">
+          </picture>
+      </div>
+
+      <div class="container moment-row">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-480.avif 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-960.avif 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-480.webp 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-960.webp 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="moment-photo" src="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.jpg" width="2048" height="1153" alt="Acto de homenaje en el escenario del instituto, con la bandera de Honduras y el público presente" loading="lazy">
+          </picture>
+        <div>
+          <p class="eyebrow">Reconocimiento docente</p>
+          <h3>Homenaje al profesor Josué</h3>
+          <p>La comunidad educativa se reunió para reconocer en vida la trayectoria de uno de sus docentes — un recordatorio de que el instituto también se construye con las personas que dedican años a formar a sus estudiantes.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -242,7 +362,22 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script>
+    (function () {
+      const caption = document.getElementById("escudo-caption");
+      const original = caption ? caption.textContent : "";
+      document.querySelectorAll(".escudo-hotspot").forEach((h) => {
+        const mostrar = () => { caption.textContent = h.dataset.caption; };
+        const ocultar = () => { caption.textContent = original; };
+        h.addEventListener("mouseenter", mostrar);
+        h.addEventListener("focus", mostrar);
+        h.addEventListener("mouseleave", ocultar);
+        h.addEventListener("blur", ocultar);
+      });
+    })();
+  </script>
 </body>
 </html>

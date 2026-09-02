@@ -1,0 +1,674 @@
+/* ============================================================
+   INSTITUTO RMB — home.css
+   Composición exclusiva de index.html. Usa las variables ya
+   existentes en estilos.css (--azul, --naranja, --verde, --sombra,
+   --r, etc. — ya recoloreadas a la paleta institucional) y las
+   nuevas de tokens.css (--space-*, --font-display) para el ritmo
+   editorial del Home.
+   ============================================================ */
+
+/* ── IDENTIDAD — mosaico de fotos reales ──────────────────────
+   Reemplaza las 4 tarjetas de texto (Disciplina/Práctica/Comunidad/
+   Futuro) que repetían lo que ya dice el lema a la izquierda
+   ("Dignidad, trabajo y cultura"). Fotos reales en su lugar. */
+.identity-photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+.identity-photos figure {
+  margin: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+}
+
+.identity-photos img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.identity-photos figure:hover img { transform: scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  .identity-photos img { transition: none; }
+}
+
+/* ── HERO EDITORIAL ──────────────────────────────────────────
+   Fotografía real a pantalla completa + overlay + tipografía
+   grande. Composición asimétrica: el copy vive en la mitad
+   inferior-izquierda, no centrado. */
+.hero-editorial {
+  position: relative;
+  min-height: 82vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  color: #fff;
+}
+
+.hero-editorial-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-editorial-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  /* FASE 2 (auditoría, Concepto A): asentamiento casi imperceptible en la
+     carga — no es parallax, es un respiro de vida en la foto. */
+  animation: heroSettle 1.3s var(--ease-soft, ease-out) both;
+}
+
+@keyframes heroSettle {
+  from { transform: scale(1.045); }
+  to   { transform: scale(1); }
+}
+
+.hero-editorial-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* Degradado en cuatro paradas: sube el contraste del header (arriba) sin
+     apagar la foto, y sigue oscureciendo hacia el copy (abajo). Antes el
+     header quedaba casi ilegible sobre techos claros. */
+  background: linear-gradient(180deg,
+    rgba(15, 14, 46, .55) 0%,
+    rgba(15, 14, 46, .18) 30%,
+    rgba(15, 14, 46, .55) 62%,
+    rgba(15, 14, 46, .92) 100%);
+}
+
+.hero-editorial-inner {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-8) 0 var(--space-7);
+  max-width: 640px;
+}
+
+.hero-editorial .eyebrow {
+  color: #fff;
+  opacity: .85;
+}
+
+.hero-editorial h1 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: .98;
+  letter-spacing: -.03em;
+  max-width: 18ch;
+  margin: var(--space-2) 0 var(--space-3);
+  text-wrap: balance;
+}
+
+.hero-editorial .lead {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, .88);
+  max-width: 52ch;
+  margin-bottom: var(--space-4);
+}
+
+.hero-editorial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+/* CTA secundario como enlace de texto, no como segundo botón — un CTA
+   primario gana siempre a dos compitiendo por la misma atención. */
+.hero-editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: .92rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-fast), gap var(--transition-fast);
+}
+
+.hero-editorial-link:hover,
+.hero-editorial-link:focus-visible {
+  border-color: #fff;
+  gap: 10px;
+}
+
+.hero-editorial-note {
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .68);
+  margin-bottom: var(--space-6);
+}
+
+/* ── Secuencia de entrada ─────────────────────────────────────
+   No es un fade simultáneo: el ojo se guía en cuatro tiempos hacia
+   el CTA — eyebrow, titular, texto de apoyo, acciones. */
+.hero-in {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroIn .6s var(--ease-soft, ease-out) both;
+}
+
+.hero-in-1 { animation-delay: 0ms; }
+.hero-in-2 { animation-delay: 90ms; }
+.hero-in-3 { animation-delay: 180ms; }
+.hero-in-4 { animation-delay: 260ms; }
+.hero-in-5 { animation-delay: 340ms; }
+
+@keyframes heroIn {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-editorial-media img { animation: none; }
+  .hero-in { animation: none; opacity: 1; transform: none; }
+}
+
+/* Franja de hechos reales, en su propia sección solida justo debajo
+   del hero — no estadísticas infladas, solo datos verificables
+   (niveles, año de fundación, tamaño real). Banda opaca separada de
+   la fotografía a proposito: nada de numeros flotando sobre la foto. */
+.facts-band {
+  background: var(--azul-noche);
+  color: #fff;
+}
+
+.facts-strip {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.facts-strip-item {
+  padding: var(--space-5) var(--space-4) var(--space-5) 0;
+  border-right: 1px solid rgba(255, 255, 255, .14);
+}
+
+.facts-strip-item:last-child { border-right: none; }
+
+.facts-strip-item strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.facts-strip-item span {
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .68);
+}
+
+/* ── OFERTA ACADÉMICA — explorador asimétrico ────────────────
+   Columna de intro editorial + lista de niveles interactiva
+   (no tres cards idénticas). Cada fila expande su foto/detalle
+   al pasar el mouse o al enfocarse con teclado. */
+.offer-explorer {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.offer-explorer-intro {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.offer-explorer-intro .btn {
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* ── Foto sincronizada con la fila señalada (FASE 4, auditoría §08) */
+.offer-explorer-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-muted);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transition: opacity var(--transition-slow), background-image var(--transition-slow);
+}
+
+.offer-explorer-photo.show { opacity: 1; }
+
+@media (max-width: 900px) {
+  .offer-explorer-photo { display: none; }
+}
+
+.offer-list { display: flex; flex-direction: column; }
+
+.offer-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5) 0;
+  border-bottom: 1px solid var(--linea);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: padding-left var(--transition-base);
+}
+
+.offer-row:first-child { border-top: 1px solid var(--linea); }
+
+.offer-row:hover,
+.offer-row:focus-visible {
+  padding-left: var(--space-3);
+}
+
+.offer-row:focus-visible {
+  outline: 2px solid var(--azul);
+  outline-offset: 4px;
+}
+
+.offer-row-index {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--muted);
+  min-width: 2.4ch;
+}
+
+.offer-row-body h3 {
+  font-size: 1.35rem;
+  margin: 0 0 6px;
+  transition: color var(--transition-fast);
+}
+
+.offer-row:hover h3,
+.offer-row:focus-visible h3 { color: var(--azul); }
+
+/* --azul es un tono oscuro fijo (no cambia por tema) — sobre el fondo
+   oscuro de este bloque en modo oscuro quedaba casi invisible al hacer
+   hover. Se usa un tono mas claro solo en modo oscuro. */
+[data-theme="dark"] .offer-row:hover h3,
+[data-theme="dark"] .offer-row:focus-visible h3 { color: var(--azul-3); }
+
+.offer-row-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .95rem;
+  max-width: 52ch;
+}
+
+.offer-row-thumb {
+  width: 84px;
+  height: 84px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: var(--sombra);
+}
+
+.offer-row-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.offer-row:hover .offer-row-thumb img,
+.offer-row:focus-visible .offer-row-thumb img { transform: scale(1.08); }
+
+/* Variante con la insignia institucional de cada modalidad (misma que
+   en oferta-academica.html) en vez de una foto — evita fotos genericas
+   o poco representativas (ej. una sola foto no puede representar los
+   3 bachilleratos a la vez). */
+.offer-row-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--celeste-2);
+}
+.offer-row-badge img {
+  width: 68%;
+  height: 68%;
+  object-fit: contain;
+}
+.offer-row-badge .logo-dark  { display: block; }
+.offer-row-badge .logo-light { display: none; }
+[data-theme="light"] .offer-row-badge .logo-dark  { display: none; }
+[data-theme="light"] .offer-row-badge .logo-light { display: block; }
+.offer-row:hover .offer-row-badge img,
+.offer-row:focus-visible .offer-row-badge img { transform: none; }
+
+.offer-row-arrow {
+  color: var(--muted);
+  transition: transform var(--transition-base), color var(--transition-fast);
+}
+
+.offer-row:hover .offer-row-arrow,
+.offer-row:focus-visible .offer-row-arrow {
+  transform: translateX(4px);
+  color: var(--azul);
+}
+
+/* ── INFORMÁTICA — panel con acentos técnicos ────────────────
+   Fondo navy oscuro con patrón de grid sutil y chips tipo
+   etiqueta de terminal. Sigue siendo del instituto, no de una
+   empresa de software: el acento técnico es discreto. */
+.tech-panel {
+  position: relative;
+  background: var(--azul-noche);
+  color: #fff;
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-5);
+  overflow: hidden;
+}
+
+.tech-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(ellipse 80% 80% at 30% 20%, #000 40%, transparent 100%);
+}
+
+.tech-panel > * { position: relative; z-index: 1; }
+
+/* El panel es oscuro a proposito sin importar el tema del sitio (como
+   una etiqueta de terminal). !important porque .split/.section-head
+   ya traen reglas de color por tema (pensadas para tarjetas claras)
+   con la misma especificidad y pisaban el blanco de este panel. */
+.tech-panel .eyebrow { color: rgba(255,255,255,.6) !important; }
+.tech-panel h2 { color: #fff !important; }
+.tech-panel p { color: rgba(255,255,255,.75) !important; }
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+}
+
+.tech-chip {
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+  font-size: .78rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .14);
+  color: rgba(255,255,255,.9);
+}
+
+/* En modo claro el panel "tech" pasa a un tono claro (en vez de quedar
+   siempre oscuro sin importar el tema, que hacia que el boton de tema
+   pareciera no hacer nada en esta seccion). */
+[data-theme="light"] .tech-panel {
+  background: var(--blanco);
+  border: 1px solid var(--linea);
+}
+[data-theme="light"] .tech-panel::before {
+  background-image:
+    linear-gradient(rgba(47,45,127,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47,45,127,.06) 1px, transparent 1px);
+}
+[data-theme="light"] .tech-panel .eyebrow { color: var(--naranja) !important; }
+[data-theme="light"] .tech-panel h2 { color: var(--texto) !important; }
+[data-theme="light"] .tech-panel p { color: var(--muted) !important; }
+[data-theme="light"] .tech-chip {
+  background: var(--celeste-2);
+  border-color: var(--linea);
+  color: var(--azul);
+}
+
+.tech-panel .gal-grid img { border-radius: var(--radius-md); }
+
+/* ── VIDA ESTUDIANTIL — mosaico asimétrico ───────────────────
+   Grid con celdas de distinto tamaño (no todas iguales). */
+.life-mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 130px;
+  gap: var(--space-2);
+}
+
+.life-mosaic-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.life-mosaic-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.life-mosaic-item:hover img { transform: scale(1.06); }
+
+.life-mosaic-item.span-2-2 { grid-column: span 2; grid-row: span 2; }
+.life-mosaic-item.span-2-1 { grid-column: span 2; }
+.life-mosaic-item.span-1-2 { grid-row: span 2; }
+
+.life-mosaic-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-2) var(--space-3);
+  background: linear-gradient(0deg, rgba(0,0,0,.65), transparent);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 600;
+}
+
+/* ── TALLERES — scroll horizontal nativo con snap ─────────────
+   FASE 4 (auditoría §08): reemplaza el carrusel de cartas apiladas.
+   Sangra por el borde derecho del viewport a propósito — el corte es
+   la señal de que hay más, sin necesitar dots ni "haz clic para ver". */
+.talleres-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+.talleres-scroll-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(60vw, 260px);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-md);
+  margin: 0;
+}
+
+.talleres-scroll-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.talleres-scroll-item:hover img,
+.talleres-scroll-item:focus-within img { transform: scale(var(--mo-zoom)); }
+
+.talleres-scroll-item figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(0deg, rgba(0, 0, 0, .68), transparent);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.talleres-scroll:focus-visible {
+  outline: 2px solid var(--color-navy-light);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .talleres-scroll-item { width: min(70vw, 280px); }
+}
+
+/* ── MATRÍCULA — el clímax del scroll ─────────────────────────
+   FASE 2 (auditoría §10): única sección a sangre en burdeos de
+   todo el sitio. Es la sección que hoy convierte y antes era la
+   visualmente más débil del home — ahora es imposible de saltar. */
+.matricula-climax {
+  background: var(--color-burgundy-dark);
+  color: #fff;
+  padding: var(--space-8) 0;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path .8s var(--ease, ease-out);
+}
+
+.matricula-climax.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .matricula-climax { transition: none; clip-path: inset(0 0 0 0); }
+}
+
+.matricula-climax-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+}
+
+.matricula-climax-head .eyebrow { color: rgba(255, 255, 255, .75); }
+.matricula-climax-head h2 { color: #fff; }
+.matricula-climax-head p { color: rgba(255, 255, 255, .82); }
+
+.matricula-climax-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.matricula-climax-card {
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.matricula-climax-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.matricula-climax-card .check-list li {
+  color: rgba(255, 255, 255, .85);
+}
+
+.matricula-climax-dates p:not(.matricula-climax-big) {
+  color: rgba(255, 255, 255, .75);
+  font-size: .88rem;
+  margin: 0 0 var(--space-4);
+}
+
+.matricula-climax-big {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: var(--space-3) 0 2px;
+}
+
+.matricula-climax-dates .matricula-climax-big:first-of-type { margin-top: 0; }
+
+.matricula-climax-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.matricula-climax .btn.secondary {
+  border-color: rgba(255, 255, 255, .4);
+  color: #fff;
+}
+
+.matricula-climax .btn.secondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+@media (max-width: 900px) {
+  .matricula-climax-grid { grid-template-columns: 1fr 1fr; }
+  .matricula-climax-dates { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .matricula-climax-grid { grid-template-columns: 1fr; }
+  .matricula-climax-actions { flex-direction: column; }
+  .matricula-climax .btn { width: 100%; text-align: center; }
+}
+
+/* ── FRANJA DE CONTACTO/UBICACIÓN COMPACTA ───────────────────*/
+.contact-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+}
+
+.contact-strip-item strong {
+  display: block;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.contact-strip-item p { margin: 0 0 var(--space-2); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .offer-explorer { grid-template-columns: 1fr; }
+  .offer-explorer-intro { position: static; }
+  .offer-row-thumb { width: 64px; height: 64px; }
+  .life-mosaic { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; }
+  .life-mosaic-item.span-2-2 { grid-column: span 2; grid-row: span 2; }
+}
+
+@media (max-width: 560px) {
+  /* FASE 2 (auditoría): 100vh no dejaba asomar la franja de datos como
+     señal de que hay más página — svh también evita el salto por la
+     barra de direcciones de Chrome al hacer scroll. */
+  .hero-editorial { min-height: 88svh; }
+  .facts-strip { grid-template-columns: repeat(2, 1fr); }
+  .facts-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.18); }
+  .offer-row { grid-template-columns: auto 1fr; }
+  .offer-row-thumb { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .offer-row-thumb img,
+  .life-mosaic-item img { transition: none; }
+}

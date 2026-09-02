@@ -1,0 +1,60 @@
+/* ============================================================
+   INSTITUTO RMB — sello-oficial.css
+   "Sello" circular que se estampa sobre un documento/tarjeta,
+   como el sello real de un certificado. Ver js/sello-oficial.js.
+   ============================================================ */
+
+.sello-oficial {
+  position: absolute;
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 3px solid var(--naranja);
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  text-align: center;
+  color: var(--naranja);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", monospace;
+  font-weight: 800;
+  letter-spacing: .03em;
+  line-height: 1.25;
+  background: radial-gradient(circle, rgba(164,38,48,.06), transparent 70%);
+  opacity: 0;
+  transform: scale(2.8) rotate(-20deg);
+  transition: transform .5s cubic-bezier(.2,1.7,.4,1), opacity .3s;
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] .sello-oficial { mix-blend-mode: normal; }
+
+.sello-oficial::before {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px dashed var(--naranja);
+  border-radius: 50%;
+  opacity: .55;
+}
+
+.sello-oficial.mostrar {
+  opacity: 1;
+  transform: scale(1) rotate(-11deg);
+}
+
+.sello-oficial .sello-linea1 { font-size: .5rem; }
+.sello-oficial .sello-linea2 { font-size: .62rem; margin: 2px 0; }
+.sello-oficial .sello-linea3 { font-size: .46rem; opacity: .85; }
+
+@media (max-width: 480px) {
+  .sello-oficial { width: 84px; height: 84px; }
+  .sello-oficial .sello-linea1 { font-size: .42rem; }
+  .sello-oficial .sello-linea2 { font-size: .52rem; }
+  .sello-oficial .sello-linea3 { font-size: .38rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sello-oficial { transition: opacity .3s; transform: scale(1) rotate(-11deg) !important; }
+}

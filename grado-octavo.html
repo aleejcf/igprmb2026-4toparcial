@@ -7,11 +7,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Octavo Grado del III Ciclo de Educación Básica en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/grado-octavo.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Octavo Grado">
+  <meta property="og:description" content="Octavo Grado del III Ciclo de Educación Básica en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/grado-octavo.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/iii_ciclo_comun/octavo_grado.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Octavo Grado">
+  <meta name="twitter:description" content="Octavo Grado del III Ciclo de Educación Básica en el Instituto Roberto Micheletti Baín, Agua Blanca Sur, El Progreso, Yoro.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/iii_ciclo_comun/octavo_grado.jpeg">
   <title>Octavo Grado | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <link rel="stylesheet" href="css/nivel.css">
@@ -27,22 +43,37 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a class="active" href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -51,7 +82,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="nivel-hero">
       <div class="container nivel-hero-inner">
         <div>
@@ -63,12 +94,12 @@
           <h1>Octavo Grado</h1>
           <p class="nivel-hero-desc">Grado intermedio del III Ciclo de Educación Básica, donde se consolida lo aprendido en séptimo y se profundiza en la modalidad elegida.</p>
           <div class="nivel-pills">
-            <span class="nivel-pill">📚 Educación Básica</span>
-            <span class="nivel-pill">📅 8vo grado</span>
-            <span class="nivel-pill">🏫 Modalidad básica o técnica</span>
+            <span class="nivel-pill">Educación Básica</span>
+            <span class="nivel-pill">8vo grado</span>
+            <span class="nivel-pill">Modalidad básica o técnica</span>
           </div>
         </div>
-        <div class="nivel-hero-icono" aria-hidden="true">8️⃣</div>
+        <div class="nivel-hero-icono nivel-hero-num" aria-hidden="true">8°</div>
       </div>
     </section>
 
@@ -91,7 +122,11 @@
           <p>El III Ciclo de Educación Básica del instituto abarca séptimo, octavo y noveno grado, y puede cursarse en modalidad básica o con orientación técnica.</p>
         </div>
         <figure style="margin:0;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sombra-md);">
-          <img src="imagenes/otros/iii_ciclo_comun/octavo_grado.jpeg" alt="Estudiantes de Octavo Grado" loading="lazy" style="width:100%;display:block;">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-480.avif 480w, imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-480.webp 480w, imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.jpg" width="1280" height="960" alt="Estudiantes de Octavo Grado" loading="lazy" style="width:100%;display:block;">
+          </picture>
         </figure>
       </div>
     </section>
@@ -103,17 +138,17 @@
       </div>
       <div class="container nivel-cards">
         <article class="nivel-card">
-          <div class="nivel-card-icono" aria-hidden="true">📈</div>
+          <div class="nivel-card-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
           <h3>Consolidación</h3>
           <p>Se afianza la base construida en séptimo grado y se amplían los contenidos generales.</p>
         </article>
         <article class="nivel-card">
-          <div class="nivel-card-icono" aria-hidden="true">🛠️</div>
+          <div class="nivel-card-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
           <h3>Más práctica en el taller</h3>
           <p>En la orientación técnica aumenta el tiempo de trabajo práctico respecto a séptimo.</p>
         </article>
         <article class="nivel-card">
-          <div class="nivel-card-icono" aria-hidden="true">🎯</div>
+          <div class="nivel-card-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
           <h3>Preparación para noveno</h3>
           <p>Prepara al estudiante para el último grado del III Ciclo y la elección de bachillerato.</p>
         </article>
@@ -128,9 +163,9 @@
       </div>
       <div class="container">
         <div class="nivel-hermanos">
-          <a class="nivel-hermano" href="orientacion-estructuras-metalicas.html"><span>🔩</span><span>Estructuras Metálicas</span></a>
-          <a class="nivel-hermano" href="orientacion-electricidad.html"><span>💡</span><span>Electricidad</span></a>
-          <a class="nivel-hermano" href="orientacion-corte-confeccion.html"><span>🧵</span><span>Corte y Confección</span></a>
+          <a class="nivel-hermano" href="orientacion-estructuras-metalicas.html"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><span>Estructuras Metálicas</span></a>
+          <a class="nivel-hermano" href="orientacion-electricidad.html"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span><span>Electricidad</span></a>
+          <a class="nivel-hermano" href="orientacion-corte-confeccion.html"><span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span><span>Corte y Confección</span></a>
         </div>
       </div>
     </section>
@@ -142,8 +177,8 @@
       </div>
       <div class="container">
         <div class="nivel-hermanos">
-          <a class="nivel-hermano" href="grado-septimo.html"><span>7️⃣</span><span>Séptimo Grado</span></a>
-          <a class="nivel-hermano" href="grado-noveno.html"><span>9️⃣</span><span>Noveno Grado</span></a>
+          <a class="nivel-hermano" href="grado-septimo.html"><span>7°</span><span>Séptimo Grado</span></a>
+          <a class="nivel-hermano" href="grado-noveno.html"><span>9°</span><span>Noveno Grado</span></a>
         </div>
       </div>
     </section>
@@ -151,8 +186,8 @@
     <section class="section">
       <div class="container">
         <div class="nivel-cta">
-          <h2>Matrícula 2026 abierta</h2>
-          <p>La atención se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2026.</p>
+          <h2>Matrícula 2027 abierta</h2>
+          <p>La atención se realiza de lunes a viernes, de 8:00 AM a 12:00 PM, durante el mes de enero de 2027.</p>
           <div class="nivel-cta-botones">
             <a class="btn primary" href="matricula.html">Ver requisitos</a>
             <a class="btn secondary" href="grado-noveno.html">Noveno Grado &rarr;</a>
@@ -164,22 +199,37 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -189,6 +239,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
 </body>

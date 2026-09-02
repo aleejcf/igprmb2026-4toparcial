@@ -6,34 +6,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Matrícula abierta 2026 del Instituto Roberto Micheletti Baín. Requisitos de primer ingreso y reingreso.">
-  <title>Matrícula 2026 | Instituto Roberto Micheletti Baín</title>
+  <meta name="description" content="Matrícula abierta 2027 del Instituto Roberto Micheletti Baín. Requisitos de primer ingreso y reingreso.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/matricula.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Matrícula 2027">
+  <meta property="og:description" content="Matrícula abierta 2027 del Instituto Roberto Micheletti Baín. Requisitos de primer ingreso y reingreso.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/matricula.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/matricula.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Matrícula 2027">
+  <meta name="twitter:description" content="Matrícula abierta 2027 del Instituto Roberto Micheletti Baín. Requisitos de primer ingreso y reingreso.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/matricula.jpg">
+  <title>Matrícula 2027 | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a class="active" href="matricula.html">Matrícula 2026</a>
+        <a class="active" href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -42,19 +73,112 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
-          <p class="eyebrow">Matrícula abierta 2026</p>
+          <p class="eyebrow">Matrícula abierta 2027</p>
           <h1>Proceso de admisión y matrícula</h1>
           <p>Instituto Gubernamental Polivalente "Roberto Micheletti Baín", Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
-        <img src="imagenes/otros/matricula.jpg" alt="Ilustración del proceso de matrícula 2026" loading="eager">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/matricula-480.avif 480w, imagenes-optim/otros/matricula-960.avif 960w, imagenes-optim/otros/matricula-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/matricula-480.webp 480w, imagenes-optim/otros/matricula-960.webp 960w, imagenes-optim/otros/matricula-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/matricula-1600.jpg" width="4032" height="3024" alt="Estudiantes en formación durante el llamado a lista el día de matrícula" loading="eager" fetchpriority="high">
+          </picture>
       </div>
     </section>
 
-    <section class="section">
+    <!-- FASE 2 (auditoría): fechas y horario como primer dato, no
+         enterrados entre tarjetas. Es lo primero que busca una familia. -->
+    <section class="section matricula-quickfacts-wrap">
+      <div class="container matricula-quickfacts">
+        <div class="mq-item">
+          <strong>Enero 2027</strong>
+          <span>Matrícula ordinaria</span>
+        </div>
+        <div class="mq-item">
+          <strong>8:00 AM &ndash; 12:00 PM</strong>
+          <span>Lunes a viernes</span>
+        </div>
+        <div class="mq-item">
+          <strong>Febrero 2027</strong>
+          <span>Matrícula extraordinaria</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FASE 2 (auditoría): la página pasa de ser un folleto informativo
+         a un trámite con pasos explícitos — el mismo patrón que usa
+         GOV.UK para cualquier proceso administrativo. -->
+    <section class="section band" data-sec="El proceso">
+      <div class="container section-head">
+        <p class="eyebrow">El proceso</p>
+        <h2>Tres pasos para matricularte</h2>
+        <p>Así se ordena la visita a Secretaría, para que ningún trámite quede incompleto por falta de un documento.</p>
+      </div>
+      <div class="container pathway">
+        <article>
+          <span>01</span>
+          <h3>Reúne tus documentos</h3>
+          <p>Los requisitos varían si es tu primer ingreso o si ya perteneces al instituto. Revisa la lista exacta más abajo.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3>Llena la documentación</h3>
+          <p>Completa el formulario del proceso de matrícula antes de entregarlo en Secretaría.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3>Preséntate en horario</h3>
+          <p>Acércate de lunes a viernes, de 8:00 AM a 12:00 PM, durante el período indicado arriba.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Requisitos: primer ingreso y reingreso, uno junto al otro para
+         comparar de un vistazo — antes vivían en dos secciones separadas
+         por otro contenido, sin relación visible entre ambas. -->
+    <section class="section" id="requisitos">
+      <div class="container section-head">
+        <p class="eyebrow">Documentos exactos</p>
+        <h2>¿Qué necesitas llevar?</h2>
+      </div>
+      <div class="container cards-2">
+        <article class="info-card">
+          <h3>Primer ingreso</h3>
+          <p>Estudiantes nuevos en el instituto.</p>
+          <ul class="check-list">
+            <li>Partida de nacimiento original</li>
+            <li>Copia de partida de nacimiento</li>
+            <li>Copia de identidad del padre o encargado</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
+          </ul>
+        </article>
+        <article class="info-card">
+          <h3>Reingreso</h3>
+          <p>Estudiantes que ya pertenecen al instituto.</p>
+          <ul class="check-list">
+            <li>Calificaciones del año anterior</li>
+            <li>Copia de partida de nacimiento</li>
+            <li>Copia de identidad del padre o encargado</li>
+            <li>Documentación llena del proceso de matrícula</li>
+            <li>2 fotografías tamaño carnet</li>
+          </ul>
+        </article>
+      </div>
+      <div class="container matricula-actions">
+        <button type="button" class="btn secondary on-light" id="print-requisitos">
+          Imprimir esta lista &rarr;
+        </button>
+        <a class="btn primary" href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer">
+          ¿Dudas? Escríbenos por WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <section class="section band">
       <div class="container cards-2">
         <article class="info-card">
           <p class="eyebrow">Oferta académica</p>
@@ -71,105 +195,45 @@
           <p class="eyebrow">Horario de atención</p>
           <h2>Lunes a viernes</h2>
           <p class="big-time">8:00 AM - 12:00 PM</p>
-          <p>Durante el mes de enero de 2026. Para matrícula extraordinaria, acercarse a Secretaría durante febrero de 2026.</p>
+          <p>Durante el mes de enero de 2027. Para matrícula extraordinaria, acercarse a Secretaría durante febrero de 2027.</p>
         </article>
-      </div>
-    </section>
-
-    <section class="section band">
-      <div class="container section-head">
-        <p class="eyebrow">Primer ingreso</p>
-        <h2>Requisitos para estudiantes nuevos</h2>
-      </div>
-      <div class="container cards-2">
-        <article class="info-card">
-          <h3>Documentos solicitados</h3>
-          <ul class="check-list">
-            <li>Partida de nacimiento original</li>
-            <li>Copia de partida de nacimiento</li>
-            <li>Copia de identidad del padre o encargado</li>
-            <li>Documentación llena del proceso de matrícula</li>
-            <li>2 fotografías tamaño carnet</li>
-          </ul>
-        </article>
-        <article class="timeline">
-          <div class="timeline-item">
-            <span>2026</span>
-            <h3>Séptimo y Décimo Grado</h3>
-            <p>Inicio del proceso de matrícula para primer ingreso a Ciclo Básico y Bachillerato.</p>
-          </div>
-          <div class="timeline-item">
-            <span>2026</span>
-            <h3>Todos los grados</h3>
-            <p>Continuación del proceso para todos los niveles y secciones del instituto.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container section-head">
-        <p class="eyebrow">Pasos sugeridos</p>
-        <h2>Prepárate antes de llegar a Secretaría</h2>
-        <p>Estos pasos ayudan a ordenar los documentos y evitar visitas incompletas durante el proceso de matrícula.</p>
-      </div>
-      <div class="container pathway">
-        <article>
-          <span>01</span>
-          <h3>Reunir documentos</h3>
-          <p>Verifica que las copias sean legibles y que las fotografías sean tamaño carnet.</p>
-        </article>
-        <article>
-          <span>02</span>
-          <h3>Llenar documentación</h3>
-          <p>Completa la documentación del proceso de matrícula antes de entregarla.</p>
-        </article>
-        <article>
-          <span>03</span>
-          <h3>Presentarse en horario</h3>
-          <p>Acércate de lunes a viernes, de 8:00 AM a 12:00 PM, durante el período indicado.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section band">
-      <div class="container split">
-        <div>
-          <p class="eyebrow">Reingreso</p>
-          <h2>Requisitos para estudiantes que continúan</h2>
-          <p>Estos documentos aplican para estudiantes que ya pertenecen al instituto y realizarán su matrícula de reingreso.</p>
-        </div>
-        <div class="info-card">
-          <ul class="check-list">
-            <li>Calificaciones del año anterior</li>
-            <li>Copia de partida de nacimiento</li>
-            <li>Copia de identidad del padre o encargado</li>
-            <li>Documentación llena del proceso de matrícula</li>
-            <li>2 fotografías tamaño carnet</li>
-          </ul>
-        </div>
       </div>
     </section>
   </main>
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -179,7 +243,15 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
+  <script>
+    // FASE 2 (auditoría): "versión imprimible" en vez de un PDF hospedado
+    // aparte — usa la hoja de estilos @media print de css/estilos.css, así
+    // que Secretaría siempre imprime la lista de requisitos actualizada.
+    var printBtn = document.getElementById('print-requisitos');
+    if (printBtn) printBtn.addEventListener('click', function () { window.print(); });
+  </script>
 </body>
 </html>

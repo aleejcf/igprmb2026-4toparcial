@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aleejcf.github.io/igprmb2026-4toparcial/sitemap.xml

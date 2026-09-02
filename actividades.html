@@ -7,33 +7,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Actividades y eventos del Instituto Roberto Micheletti Baín.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/actividades.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Actividades">
+  <meta property="og:description" content="Actividades y eventos del Instituto Roberto Micheletti Baín.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/actividades.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/vida_estudiantil.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Actividades">
+  <meta name="twitter:description" content="Actividades y eventos del Instituto Roberto Micheletti Baín.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/vida_estudiantil.jpg">
   <title>Actividades | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a class="active" href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -42,7 +73,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
@@ -50,13 +81,92 @@
           <h1>Vida estudiantil del instituto</h1>
           <p>Actos cívicos, ferias académicas, jornadas culturales y elecciones estudiantiles que marcan el calendario escolar del Instituto Roberto Micheletti Baín. Explora la agenda del año y revive cada evento en fotos.</p>
         </div>
-        <img src="imagenes/otros/vida_estudiantil.jpg" alt="Ilustración de actividades institucionales" loading="eager">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/vida_estudiantil-480.avif 480w, imagenes-optim/otros/vida_estudiantil-960.avif 960w, imagenes-optim/otros/vida_estudiantil-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/vida_estudiantil-480.webp 480w, imagenes-optim/otros/vida_estudiantil-960.webp 960w, imagenes-optim/otros/vida_estudiantil-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/vida_estudiantil-1600.jpg" width="4032" height="3024" alt="Estudiantes participando en actividades del instituto" loading="eager" fetchpriority="high">
+          </picture>
+      </div>
+    </section>
+
+    <!-- Línea de tiempo del año escolar -->
+    <section class="section" data-sec="Línea del año">
+      <div class="container section-head">
+        <p class="eyebrow">De inicio a fin de año</p>
+        <h2>Un recorrido por el año escolar</h2>
+        <p>Desliza para ver el orden real en que ocurren estas actividades, de la inauguración de clases a la graduación.</p>
+      </div>
+      <div class="container timeline-scroll" id="timeline-scroll" tabindex="0" role="region" aria-label="Línea de tiempo del año escolar, desliza horizontalmente">
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-480.avif 480w, imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-480.webp 480w, imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.jpg" width="1280" height="960" alt="Inauguración de clases" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Inicio de año</span><strong>Inauguración de clases</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-480.avif 480w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-960.avif 960w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-480.webp 480w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-960.webp 960w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.jpg" width="2048" height="1536" alt="Reunión de Padres de Familia" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Cívico</span><strong>Reunión de Padres de Familia</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-480.avif 480w, imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-480.webp 480w, imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.jpg" width="960" height="720" alt="Día del Idioma Español" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>23 de abril</span><strong>Día del Idioma Español</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-480.avif 480w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-960.avif 960w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-480.webp 480w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-960.webp 960w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.jpg" width="2048" height="1153" alt="Día de la Madre y el Padre" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Cívico</span><strong>Día de la Madre y el Padre</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/verano_2026/verano-2026-05-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/verano_2026/verano-2026-05-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/verano_2026/verano-2026-05-480.jpg" width="720" height="960" alt="Elección de Chico y Chica Verano" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Verano</span><strong>Chico y Chica Verano</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-480.avif 480w, imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-480.webp 480w, imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.jpg" width="960" height="720" alt="Elección del Gobierno Estudiantil" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Gobierno Estudiantil</span><strong>Elecciones estudiantiles</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-15-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-15-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-15-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-15-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-15-960.jpg" width="1280" height="960" alt="42° Aniversario del instituto" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Aniversario</span><strong>42° del instituto</strong></div>
+        </article>
+        <article class="timeline-frame">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-480.avif 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-480.webp 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.jpg" width="1280" height="960" alt="Graduación 2025" loading="lazy">
+          </picture>
+          <div class="timeline-frame-body"><span>Cierre de año</span><strong>Graduación</strong></div>
+        </article>
       </div>
     </section>
 
     <section class="section">
       <div class="container cards-4">
-        <article class="activity-card" data-galeria="academicas" role="button" tabindex="0" aria-label="Ver galería de actividades académicas">
+        <article class="activity-card" id="academicas" data-galeria="academicas" role="button" tabindex="0" aria-label="Ver galería de actividades académicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
           </span>
@@ -71,7 +181,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" data-galeria="civicas" role="button" tabindex="0" aria-label="Ver galería de actividades cívicas">
+        <article class="activity-card" id="civicas" data-galeria="civicas" role="button" tabindex="0" aria-label="Ver galería de actividades cívicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
           </span>
@@ -91,7 +201,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" data-galeria="deportivas" role="button" tabindex="0" aria-label="Ver galería de actividades deportivas y estudiantiles">
+        <article class="activity-card" id="deportivas" data-galeria="deportivas" role="button" tabindex="0" aria-label="Ver galería de actividades deportivas y estudiantiles">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
           </span>
@@ -106,7 +216,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
           </span>
         </article>
-        <article class="activity-card" data-galeria="tecnicas" role="button" tabindex="0" aria-label="Ver galería de actividades técnicas">
+        <article class="activity-card" id="tecnicas" data-galeria="tecnicas" role="button" tabindex="0" aria-label="Ver galería de actividades técnicas">
           <span class="icon-box">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
           </span>
@@ -346,6 +456,17 @@
           media: [
             { type:'img',   src:'imagenes/acto_civico/gobierno_estudiantil/toma_mesa.jpg', caption:'Elecciones y Gobierno Estudiantil' },
             { type:'img',   src:'imagenes/otros/jovenes_e.jpg',        caption:'Participación estudiantil' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/escenario-eleccion-chico-chica-verano.jpg', caption:'Escenario de la elección del Chico y Chica Verano' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-04.jpg', caption:'Elección del Chico y Chica Verano — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-09.jpg', caption:'Elección del Chico y Chica Verano — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/verano_2026/verano-2026-15.jpg', caption:'Elección del Chico y Chica Verano — fotografía 3' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-02.jpg', caption:'Jornada de Elecciones Estudiantiles — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-05.jpg', caption:'Jornada de Elecciones Estudiantiles — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-09.jpg', caption:'Jornada de Elecciones Estudiantiles — fotografía 3' },
+            { type:'img', src:'imagenes/informatica/proyectos_clase/programacion/sistema_votaciones/sistema-votaciones-08.jpg', caption:'Mesa de votación (JRV) el día de elecciones estudiantiles' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-03.jpg', caption:'Toma de Posesión del Gobierno Estudiantil — fotografía 1' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/gobierno-estudiantil-foto-06.jpg', caption:'Toma de Posesión del Gobierno Estudiantil — fotografía 2' },
+            { type:'img', src:'imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg', caption:'Juramentación del nuevo Gobierno Estudiantil' },
             // { type:'video', src:'videos/chico_chica_verano.mp4',       caption:'Elección del Chico y Chica Verano' },
           ]
         },
@@ -934,11 +1055,15 @@
     <section class="section visual-band">
       <div class="container split align-center">
         <div class="image-frame">
-          <img src="imagenes/acto_civico/42_aniversario/42-aniversario-01.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.jpg" width="1280" height="960" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          </picture>
         </div>
         <div>
           <p class="eyebrow">Galería institucional</p>
-          <h2>21 eventos, un año escolar completo</h2>
+          <h2>Un año escolar completo, en fotos</h2>
           <p>Desde la inauguración de clases hasta la Graduación 2025, cada tarjeta de la agenda abre una galería con fotos reales del evento: actos cívicos, ferias académicas, jornadas culturales y procesos del Gobierno Estudiantil.</p>
           <div class="mini-list">
             <span>Eventos</span>
@@ -959,7 +1084,11 @@
       <div class="container">
         <div class="agenda-grid">
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="inauguracion" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Inauguración de Clases">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/acto_inaugural/acto-inaugural-foto-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-480.avif 480w, imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-480.webp 480w, imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/acto_inaugural/acto-inaugural-foto-01-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Inauguración de Clases</h3>
@@ -968,7 +1097,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="reunionpadres" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Reunión de Padres de Familia">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/reunion_padres/reunion-padres-foto-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-480.avif 480w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-960.avif 960w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-480.webp 480w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-960.webp 960w, imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/reunion_padres/reunion-padres-foto-01-1600.jpg" width="2048" height="1536" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Reunión de Padres de Familia</h3>
@@ -977,7 +1110,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="idiomacompleto" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Idioma Español">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_idioma/decoracion-dia-idioma-espanol.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-480.avif 480w, imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-480.webp 480w, imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_idioma/dia-idioma-foto-07-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Día del Idioma Español</h3>
@@ -986,7 +1123,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="madrepadre" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día de la Madre y del Padre">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_madre_padre/dia-madre-padre-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-480.avif 480w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-960.avif 960w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-480.webp 480w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-960.webp 960w, imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_madre_padre/dia-madre-padre-02-1600.jpg" width="2048" height="1153" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Día de la Madre y del Padre</h3>
@@ -995,7 +1136,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="decision" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — El Valor de la Decisión">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/acto_decision_metas/decision.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/acto_decision_metas/decision-480.avif 480w, imagenes-optim/acto_civico/acto_decision_metas/decision-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/acto_decision_metas/decision-480.webp 480w, imagenes-optim/acto_civico/acto_decision_metas/decision-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/acto_decision_metas/decision-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — El Valor de la Decisión</h3>
@@ -1004,7 +1149,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="tierra" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día de la Tierra">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_de_latierra/dia-de-la-tierra-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_de_latierra/dia-de-la-tierra-02-480.avif 480w, imagenes-optim/acto_civico/dia_de_latierra/dia-de-la-tierra-02-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_de_latierra/dia-de-la-tierra-02-480.webp 480w, imagenes-optim/acto_civico/dia_de_latierra/dia-de-la-tierra-02-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_de_latierra/dia-de-la-tierra-02-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Día de la Tierra</h3>
@@ -1013,7 +1162,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="arbol" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Árbol">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_del_arbol/dia-del-arbol-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-480.avif 480w, imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-480.webp 480w, imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Día del Árbol</h3>
@@ -1022,7 +1175,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="ambiente" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Día del Medio Ambiente">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_del_medioambiente/dia-del-medioambiente-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02-480.avif 480w, imagenes-optim/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02-480.webp 480w, imagenes-optim/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_del_medioambiente/dia-del-medioambiente-02-960.jpg" width="1182" height="565" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Día del Medio Ambiente</h3>
@@ -1031,7 +1188,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="identidadnacional" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Identidad Nacional">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/identidad_nacional/identidad-nacional-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-480.avif 480w, imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-960.avif 960w, imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-480.webp 480w, imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-960.webp 960w, imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/identidad_nacional/identidad-nacional-01-1600.jpg" width="2048" height="1536" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Identidad Nacional</h3>
@@ -1040,7 +1201,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="humildadhogar" role="button" tabindex="0" aria-label="Ver fotos de Acto Cívico — Humildad en el Hogar">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/humildad_hogar/humildad-hogar-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/humildad_hogar/humildad-hogar-01-480.avif 480w, imagenes-optim/acto_civico/humildad_hogar/humildad-hogar-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/humildad_hogar/humildad-hogar-01-480.webp 480w, imagenes-optim/acto_civico/humildad_hogar/humildad-hogar-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/humildad_hogar/humildad-hogar-01-960.jpg" width="1390" height="634" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>Acto Cívico — Humildad en el Hogar</h3>
@@ -1049,7 +1214,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="civico" data-galeria="aniversario42" role="button" tabindex="0" aria-label="Ver fotos de 42° Aniversario del Instituto">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/42_aniversario/42-aniversario-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-01-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CÍVICO</span>
               <h3>42° Aniversario del Instituto</h3>
@@ -1058,7 +1227,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="verano" role="button" tabindex="0" aria-label="Ver fotos de Elección del Chico y Chica Verano">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/verano_2026/verano-2026-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/verano_2026/verano-2026-01-480.avif 480w, imagenes-optim/acto_civico/verano_2026/verano-2026-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/verano_2026/verano-2026-01-480.webp 480w, imagenes-optim/acto_civico/verano_2026/verano-2026-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/verano_2026/verano-2026-01-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CULTURAL</span>
               <h3>Elección del Chico y Chica Verano</h3>
@@ -1067,7 +1240,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="diaestudiante" role="button" tabindex="0" aria-label="Ver fotos de Día del Estudiante">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/dia_estudiante/dia-estudiante-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_estudiante/dia-estudiante-01-480.avif 480w, imagenes-optim/acto_civico/dia_estudiante/dia-estudiante-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_estudiante/dia-estudiante-01-480.webp 480w, imagenes-optim/acto_civico/dia_estudiante/dia-estudiante-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/dia_estudiante/dia-estudiante-01-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CULTURAL</span>
               <h3>Día del Estudiante</h3>
@@ -1076,7 +1253,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="feria" role="button" tabindex="0" aria-label="Ver fotos de Feria de Inteligencia Artificial">
-            <img class="agenda-card-thumb" src="imagenes/informatica/feria_ia/feria-ia-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-23-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-23-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-23-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-23-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/informatica/feria_ia/feria-ia-23-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">ACADÉMICO</span>
               <h3>Feria de Inteligencia Artificial</h3>
@@ -1085,7 +1266,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="capacitacion" role="button" tabindex="0" aria-label="Ver fotos de Capacitaciones al Alumnado">
-            <img class="agenda-card-thumb" src="imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01-480.avif 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01-480.webp 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitacion-alumnado-01-960.jpg" width="1440" height="1078" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">ACADÉMICO</span>
               <h3>Capacitaciones al Alumnado</h3>
@@ -1094,7 +1279,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="honorexcelencia" role="button" tabindex="0" aria-label="Ver fotos de Honor y Excelencia Académica">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-480.avif 480w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-960.avif 960w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-480.webp 480w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-960.webp 960w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.jpg" width="1600" height="1200" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">ACADÉMICO</span>
               <h3>Honor y Excelencia Académica</h3>
@@ -1103,7 +1292,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="academico" data-galeria="oratoria" role="button" tabindex="0" aria-label="Ver fotos de Concurso de Oratoria">
-            <img class="agenda-card-thumb" src="imagenes/otros/concurso_oratoria/concurso-oratoria-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/concurso_oratoria/concurso-oratoria-01-480.avif 480w, imagenes-optim/otros/concurso_oratoria/concurso-oratoria-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/concurso_oratoria/concurso-oratoria-01-480.webp 480w, imagenes-optim/otros/concurso_oratoria/concurso-oratoria-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/otros/concurso_oratoria/concurso-oratoria-01-960.jpg" width="1280" height="671" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">ACADÉMICO</span>
               <h3>Concurso de Oratoria</h3>
@@ -1112,7 +1305,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="cultural" data-galeria="homenajejosue" role="button" tabindex="0" aria-label="Ver fotos de Homenaje al Profesor Josué">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-480.avif 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-960.avif 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-480.webp 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-960.webp 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-25-1600.jpg" width="2048" height="1153" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">CULTURAL</span>
               <h3>Homenaje al Profesor Josué</h3>
@@ -1121,7 +1318,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="gobierno" data-galeria="eleccionpobierno" role="button" tabindex="0" aria-label="Ver fotos de Elección de Gobierno Estudiantil">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/eleccion_gobierno/eleccion-gobierno-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-480.avif 480w, imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-480.webp 480w, imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/eleccion_gobierno/eleccion-gobierno-04-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">GOBIERNO ESTUDIANTIL</span>
               <h3>Elección de Gobierno Estudiantil</h3>
@@ -1130,7 +1331,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="gobierno" data-galeria="tomaposesion" role="button" tabindex="0" aria-label="Ver fotos de Toma de Posesión del Nuevo Gobierno Estudiantil">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil-480.avif 480w, imagenes-optim/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil-480.webp 480w, imagenes-optim/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/gobierno_estudiantil/toma-posesion-gobierno-estudiantil-960.jpg" width="960" height="720" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">GOBIERNO ESTUDIANTIL</span>
               <h3>Toma de Posesión del Nuevo Gobierno Estudiantil</h3>
@@ -1139,7 +1344,11 @@
             </div>
           </article>
           <article class="agenda-card tiene-fotos" data-categoria="graduacion" data-galeria="graduacion2025" role="button" tabindex="0" aria-label="Ver fotos de Graduación 2025">
-            <img class="agenda-card-thumb" src="imagenes/acto_civico/graduacion_2025/graduacion-2025-01.jpg" alt="" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-480.avif 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-480.webp 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img class="agenda-card-thumb" src="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-16-960.jpg" width="1280" height="960" alt="" loading="lazy">
+          </picture>
             <div class="agenda-card-body">
               <span class="agenda-card-badge">GRADUACIÓN</span>
               <h3>Graduación 2025</h3>
@@ -1168,14 +1377,46 @@
         </div>
 
         <div class="photo-grid">
-          <img src="imagenes/acto_civico/dia_del_arbol/dia-del-arbol-04.jpg" alt="Siembra de árboles durante el Día del Árbol" loading="lazy">
-          <img src="imagenes/acto_civico/dia_del_medioambiente/alfombra.jpg" alt="Elaboración de alfombra ecológica en el Día del Medio Ambiente" loading="lazy">
-          <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Proyectos estudiantiles en la Feria de Inteligencia Artificial" loading="lazy">
-          <img src="imagenes/acto_civico/graduacion_2025/graduacion-2025-05.jpg" alt="Ceremonia de la Graduación 2025" loading="lazy">
-          <img src="imagenes/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio.jpg" alt="Capacitación impartida por la Cámara de Comercio" loading="lazy">
-          <img src="imagenes/acto_civico/42_aniversario/42-aniversario-05.jpg" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
-          <img src="imagenes/acto_civico/dia_idioma/escenario-dia-idioma-espanol.jpg" alt="Acto Cívico del Día del Idioma Español" loading="lazy">
-          <img src="imagenes/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-03.jpg" alt="Homenaje al Profesor Josué" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-480.avif 480w, imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-480.webp 480w, imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/dia_del_arbol/dia-del-arbol-01-960.jpg" width="1280" height="960" alt="Siembra de árboles durante el Día del Árbol" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_del_medioambiente/alfombra-480.avif 480w, imagenes-optim/acto_civico/dia_del_medioambiente/alfombra-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_del_medioambiente/alfombra-480.webp 480w, imagenes-optim/acto_civico/dia_del_medioambiente/alfombra-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/dia_del_medioambiente/alfombra-960.jpg" width="1182" height="565" alt="Elaboración de alfombra ecológica en el Día del Medio Ambiente" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-02-1600.jpg" width="4032" height="3024" alt="Proyectos estudiantiles en la Feria de Inteligencia Artificial" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-05-480.avif 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-05-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-05-480.webp 480w, imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-05-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/graduacion_2025/graduacion-2025-05-960.jpg" width="1152" height="648" alt="Ceremonia de la Graduación 2025" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio-480.avif 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio-480.webp 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/camara_de_comercio-960.jpg" width="1280" height="960" alt="Capacitación impartida por la Cámara de Comercio" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-05-480.avif 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-05-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/42_aniversario/42-aniversario-05-480.webp 480w, imagenes-optim/acto_civico/42_aniversario/42-aniversario-05-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/42_aniversario/42-aniversario-05-960.jpg" width="960" height="1280" alt="Celebración del 42° Aniversario del instituto" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/dia_idioma/escenario-dia-idioma-espanol-480.avif 480w, imagenes-optim/acto_civico/dia_idioma/escenario-dia-idioma-espanol-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/dia_idioma/escenario-dia-idioma-espanol-480.webp 480w, imagenes-optim/acto_civico/dia_idioma/escenario-dia-idioma-espanol-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/dia_idioma/escenario-dia-idioma-espanol-960.jpg" width="1280" height="960" alt="Acto Cívico del Día del Idioma Español" loading="lazy">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-480.avif 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-960.avif 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-480.webp 480w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-960.webp 960w, imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/homenaje_prof_josue/homenaje-profesor-josue-20-1600.jpg" width="2016" height="908" alt="Homenaje al Profesor Josué" loading="lazy">
+          </picture>
         </div>
       </div>
     </section>
@@ -1184,22 +1425,37 @@
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -1209,6 +1465,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
 </body>

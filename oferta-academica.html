@@ -7,11 +7,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Oferta académica del Instituto Roberto Micheletti Baín: III Ciclo, orientación técnica y bachilleratos.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/oferta-academica.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Oferta Académica">
+  <meta property="og:description" content="Oferta académica del Instituto Roberto Micheletti Baín: III Ciclo, orientación técnica y bachilleratos.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/oferta-academica.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Oferta Académica">
+  <meta name="twitter:description" content="Oferta académica del Instituto Roberto Micheletti Baín: III Ciclo, orientación técnica y bachilleratos.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/acto_civico/honor_excelencia/honor-excelencia-01.jpg">
   <title>Oferta Académica | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
   <style>
@@ -22,10 +38,13 @@
       cursor: pointer;
       position: relative;
     }
-    .program-card-link:hover {
+    .program-card-link:hover,
+    .program-card-link:focus-visible {
       transform: translateY(-8px);
       box-shadow: var(--sombra-md);
+      outline: none;
     }
+    .program-card-link:focus-visible { box-shadow: var(--sombra-md), 0 0 0 2px var(--azul); }
     .program-card-cta {
       display: inline-flex;
       align-items: center;
@@ -44,28 +63,19 @@
       opacity: .85;
       transform: translateX(3px);
     }
-    /* Color por carrera */
-    .card-rojo .program-card-cta {
-      background: linear-gradient(135deg, #b01010, #e03030);
-    }
-    .card-verde .program-card-cta {
-      background: linear-gradient(135deg, #0a6622, #1a9940);
-    }
-    .card-rojo:hover { border-color: rgba(200,30,30,.25) !important; }
-    .card-verde:hover { border-color: rgba(20,140,60,.25) !important; }
+    /* Color por bachillerato */
+    .card-rojo .program-card-cta { background: linear-gradient(135deg, var(--naranja), var(--naranja-2)); }
+    .card-verde .program-card-cta { background: linear-gradient(135deg, var(--verde), var(--verde-2)); }
+    .card-rojo:hover { border-color: rgba(164,38,48,.25) !important; }
+    .card-verde:hover { border-color: rgba(27,98,55,.25) !important; }
 
-    /* ── Espacios para imágenes ── */
+    /* ── Fotografías de cada grado/orientación ── */
     .card-img-slot {
       width: 100%;
       aspect-ratio: 16 / 9;
-      border-radius: 10px;
+      border-radius: var(--r);
       overflow: hidden;
-      background: var(--gris-2, #f0f0f0);
       margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--gris-3, #d0d0d0);
       position: relative;
     }
     .card-img-slot img {
@@ -75,23 +85,6 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 8px;
-    }
-    .card-img-slot .img-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--gris-5, #aaa);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-align: center;
-      padding: 12px;
-      pointer-events: none;
-    }
-    .card-img-slot .img-placeholder svg {
-      opacity: .45;
     }
 
     /* Slot en info-card del III Ciclo Básico */
@@ -104,13 +97,9 @@
     .split-img-slot {
       width: 100%;
       aspect-ratio: 4 / 3;
-      border-radius: 14px;
+      border-radius: var(--r-lg);
       overflow: hidden;
-      background: var(--gris-2, #f0f0f0);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px dashed var(--gris-3, #d0d0d0);
+      box-shadow: var(--sombra);
     }
     .split-img-slot img {
       width: 100%;
@@ -118,42 +107,42 @@
       object-fit: cover;
       display: block;
     }
-    .split-img-slot .img-placeholder {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      color: var(--gris-5, #aaa);
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: .04em;
-      text-align: center;
-      padding: 12px;
-    }
-    .split-img-slot .img-placeholder svg {
-      opacity: .45;
-    }
   </style>
 </head>
 <body>
+
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
 
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a class="active" href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -162,7 +151,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
@@ -170,7 +159,11 @@
           <h1>Niveles y carreras disponibles</h1>
           <p>La oferta del instituto se organiza en III Ciclo de Educación Básica, III Ciclo con Orientación Técnica y tres bachilleratos.</p>
         </div>
-        <img src="imagenes/irmb/talleres-tecnicos.svg" alt="Ilustración de talleres técnicos" loading="eager">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-480.avif 480w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-960.avif 960w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-480.webp 480w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-960.webp 960w, imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/acto_civico/honor_excelencia/honor-excelencia-01-1600.jpg" width="1600" height="1200" alt="Reconocimiento a estudiantes destacados del instituto" loading="eager" fetchpriority="high">
+          </picture>
       </div>
     </section>
 
@@ -178,8 +171,16 @@
       <div class="container split">
         <div>
           <span class="icon-box nivel-logo nivel-logo-lg">
-            <img class="logo-dark"  src="imagenes/irmb/prim_white.png" alt="">
-            <img class="logo-light" src="imagenes/irmb/edu_p.png" alt="">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/prim_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/prim_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/prim_white-480.jpg" width="938" height="938" alt="">
+          </picture>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/edu_p-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/edu_p-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/edu_p-480.jpg" width="938" height="938" alt="">
+          </picture>
           </span>
           <p class="eyebrow">7mo a 9no grado</p>
           <h2>III Ciclo de Educación Básica</h2>
@@ -198,11 +199,11 @@
         <a href="grado-septimo.html" class="program-card program-card-link" aria-label="Ver la página de Séptimo Grado">
           <!-- Espacio para imagen de Septimo Grado -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_comun/septimo_grado.jpeg" alt="Séptimo Grado">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Séptimo Grado
-            </div>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_comun/septimo_grado-480.avif 480w, imagenes-optim/otros/iii_ciclo_comun/septimo_grado-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_comun/septimo_grado-480.webp 480w, imagenes-optim/otros/iii_ciclo_comun/septimo_grado-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_comun/septimo_grado-960.jpg" width="1280" height="960" alt="Séptimo Grado">
+          </picture>
           </div>
           <span class="program-tag">III Ciclo</span>
           <h3>Séptimo Grado</h3>
@@ -211,11 +212,11 @@
         <a href="grado-octavo.html" class="program-card program-card-link" aria-label="Ver la página de Octavo Grado">
           <!-- Espacio para imagen de Octavo Grado -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_comun/octavo_grado.jpeg" alt="Octavo Grado">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Octavo Grado
-            </div>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-480.avif 480w, imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-480.webp 480w, imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_comun/octavo_grado-960.jpg" width="1280" height="960" alt="Octavo Grado">
+          </picture>
           </div>
           <span class="program-tag">III Ciclo</span>
           <h3>Octavo Grado</h3>
@@ -224,7 +225,11 @@
         <a href="grado-noveno.html" class="program-card program-card-link" aria-label="Ver la página de Noveno Grado">
           <!-- Espacio para imagen de Noveno Grado -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_comun/noveno_grado.jpeg" alt="Noveno Grado">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_comun/noveno_grado-480.avif 480w, imagenes-optim/otros/iii_ciclo_comun/noveno_grado-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_comun/noveno_grado-480.webp 480w, imagenes-optim/otros/iii_ciclo_comun/noveno_grado-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_comun/noveno_grado-960.jpg" width="1280" height="790" alt="Noveno Grado">
+          </picture>
           </div>
           <span class="program-tag">III Ciclo</span>
           <h3>Noveno Grado</h3>
@@ -236,8 +241,16 @@
     <section class="section band" id="tecnica">
       <div class="container section-head">
         <span class="icon-box nivel-logo nivel-logo-lg">
-          <img class="logo-dark"  src="imagenes/irmb/a_tecwhite.png" alt="">
-          <img class="logo-light" src="imagenes/irmb/a_tecnicas.png" alt="">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/a_tecwhite-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/a_tecwhite-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/a_tecwhite-480.jpg" width="938" height="938" alt="">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/a_tecnicas-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/a_tecnicas-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/a_tecnicas-480.jpg" width="938" height="938" alt="">
+          </picture>
         </span>
         <p class="eyebrow">7mo a 9no grado</p>
         <h2>III Ciclo con Orientación Técnica</h2>
@@ -247,11 +260,11 @@
         <a href="orientacion-estructuras-metalicas.html" class="program-card program-card-link" aria-label="Ver la página de Estructuras Metálicas">
           <!-- Espacio para imagen de Estructuras Metalicas -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_polivalente/metalesns.jpg" alt="Estructuras Metálicas">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Estructuras Metálicas
-            </div>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesns-480.avif 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesns-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesns-480.webp 480w, imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesns-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/estructuras_metalicas/metalesns-960.jpg" width="1599" height="1200" alt="Estructuras Metálicas">
+          </picture>
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Estructuras Metálicas</h3>
@@ -266,11 +279,11 @@
         <a href="orientacion-electricidad.html" class="program-card program-card-link" aria-label="Ver la página de Electricidad">
           <!-- Espacio para imagen de Electricidad -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_polivalente/metales1.jpg" alt="Electricidad">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Electricidad
-            </div>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/electricidad-480.avif 480w, imagenes-optim/otros/electricidad-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/electricidad-480.webp 480w, imagenes-optim/otros/electricidad-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/electricidad-960.jpg" width="1599" height="1200" alt="Electricidad">
+          </picture>
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Electricidad</h3>
@@ -285,19 +298,19 @@
         <a href="orientacion-corte-confeccion.html" class="program-card program-card-link" aria-label="Ver la página de Corte y Confección">
           <!-- Espacio para imagen de Corte y Confeccion -->
           <div class="card-img-slot">
-            <img src="imagenes/otros/iii_ciclo_polivalente/costuraaa.jpg" alt="Corte y Confección">
-            <div class="img-placeholder">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-              Imagen de Corte y Confección
-            </div>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costuraaa-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costuraaa-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/iii_ciclo_polivalente/taller_hogar/costuraaa-480.jpg" width="921" height="701" alt="Corte y Confección">
+          </picture>
           </div>
           <span class="program-tag">Orientación técnica</span>
           <h3>Corte y Confección</h3>
-          <p>Práctica de técnicas básicas de diseño, corte, confección y elaboración de prendas.</p>
+          <p>Taller de Hogar: corte y confección, manualidades y preparación de alimentos.</p>
           <ul class="compact-list">
-            <li>Patronaje inicial</li>
-            <li>Uso de materiales</li>
-            <li>Acabados y presentación</li>
+            <li>Corte y Confección</li>
+            <li>Manualidades</li>
+            <li>Preparación de Alimentos</li>
           </ul>
           <span class="program-card-cta">Ver más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
         </a>
@@ -307,8 +320,16 @@
     <section class="section" id="bachilleratos">
       <div class="container section-head">
         <span class="icon-box nivel-logo nivel-logo-lg">
-          <img class="logo-dark"  src="imagenes/irmb/bach_white.png" alt="">
-          <img class="logo-light" src="imagenes/irmb/bach.png" alt="">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bach_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bach_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/bach_white-480.jpg" width="938" height="938" alt="">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bach-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bach-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/bach-480.jpg" width="938" height="938" alt="">
+          </picture>
         </span>
         <p class="eyebrow">Educación media</p>
         <h2>Bachilleratos del instituto</h2>
@@ -318,8 +339,16 @@
       <div class="container cards-3">
         <a href="carrera-informatica.html" class="program-card featured program-card-link card-rojo">
           <div class="carrera-logo-img-wrap">
-            <img class="carrera-logo-dark" src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informática" loading="lazy">
-            <img class="carrera-logo-light" src="imagenes/irmb/btpi_black.png" alt="Logo BTP Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/btpi_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/btpi_white-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-dark" src="imagenes-optim/irmb/btpi_white-480.jpg" width="938" height="938" alt="Logo BTP Informática" loading="lazy">
+          </picture>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/btpi_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/btpi_black-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-light" src="imagenes-optim/irmb/btpi_black-480.jpg" width="938" height="938" alt="Logo BTP Informática" loading="lazy">
+          </picture>
           </div>
           <span class="program-tag">BTP</span>
           <h3>Bachillerato Técnico Profesional en Informática</h3>
@@ -329,8 +358,16 @@
         </a>
         <a href="carrera-contaduria.html" class="program-card featured program-card-link">
           <div class="carrera-logo-img-wrap">
-            <img class="carrera-logo-dark" src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduría y Finanzas" loading="lazy">
-            <img class="carrera-logo-light" src="imagenes/irmb/contaduria_black.png" alt="Logo BTP Contaduría y Finanzas" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/contaduria_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/contaduria_white-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-dark" src="imagenes-optim/irmb/contaduria_white-480.jpg" width="938" height="938" alt="Logo BTP Contaduría y Finanzas" loading="lazy">
+          </picture>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/contaduria_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/contaduria_black-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-light" src="imagenes-optim/irmb/contaduria_black-480.jpg" width="938" height="938" alt="Logo BTP Contaduría y Finanzas" loading="lazy">
+          </picture>
           </div>
           <span class="program-tag">BTP</span>
           <h3>Bachillerato Técnico Profesional en Contaduría y Finanzas</h3>
@@ -340,8 +377,16 @@
         </a>
         <a href="carrera-ciencias-humanidades.html" class="program-card featured program-card-link card-verde">
           <div class="carrera-logo-img-wrap">
-            <img class="carrera-logo-dark" src="imagenes/irmb/bch_white.png" alt="Logo BCH Ciencias y Humanidades" loading="lazy">
-            <img class="carrera-logo-light" src="imagenes/irmb/bch_black.png" alt="Logo BCH Ciencias y Humanidades" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bch_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bch_white-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-dark" src="imagenes-optim/irmb/bch_white-480.jpg" width="938" height="938" alt="Logo BCH Ciencias y Humanidades" loading="lazy">
+          </picture>
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/bch_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/bch_black-480.webp 480w" sizes="96px">
+            <img class="carrera-logo-light" src="imagenes-optim/irmb/bch_black-480.jpg" width="938" height="938" alt="Logo BCH Ciencias y Humanidades" loading="lazy">
+          </picture>
           </div>
           <span class="program-tag">BCH</span>
           <h3>Bachillerato en Ciencias y Humanidades</h3>
@@ -374,22 +419,37 @@
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
       </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
+      </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>
         <a href="historia.html">Historia</a>
         <a href="oferta-academica.html">Oferta académica</a>
-        <a href="matricula.html">Matrícula 2026</a>
+        <a href="matricula.html">Matrícula 2027</a>
         <a href="actividades.html">Actividades</a>
         <a href="extracurriculares.html">Extracurriculares</a>
+        <a href="galeria.html">Galería</a>
         <a href="contacto.html">Contacto</a>
         <a href="ubicacion.html">Ubicación</a>
         <a href="infraestructura.html">Infraestructura</a>
@@ -399,6 +459,7 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/easter-egg.js"></script>
   <!-- Navegacion inmersiva: debe ir despues de main.js -->
   <script src="js/inmersivo.js"></script>
 </body>
