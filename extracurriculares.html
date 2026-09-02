@@ -7,26 +7,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Actividades extracurriculares del Instituto Roberto Micheletti Baín: danza, banda de guerra, futbol, voleibol y baloncesto.">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/extracurriculares.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="Extracurriculares">
+  <meta property="og:description" content="Actividades extracurriculares del Instituto Roberto Micheletti Baín: danza, banda de guerra, futbol, voleibol y baloncesto.">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/extracurriculares.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Extracurriculares">
+  <meta name="twitter:description" content="Actividades extracurriculares del Instituto Roberto Micheletti Baín: danza, banda de guerra, futbol, voleibol y baloncesto.">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones.jpg">
   <title>Extracurriculares | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
-      <a class="brand" href="index.html"><span class="brand-mark"><img class="logo-dark" src="imagenes/irmb/irmb_black.png" alt="Logo RMB"><img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB"></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark"><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark" src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture><picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture></span><span class="brand-divider"></span><span class="brand-text"><span class="brand-name">Instituto Roberto Micheletti Baín</span><span class="brand-sub">Agua Blanca Sur · El Progreso, Yoro</span></span></a>
       <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="fs-menu" data-menu-toggle><span class="mt-label">Menú</span><span class="mt-bars"><span></span><span></span><span></span></span></button>
       <div class="nav-links" data-menu>
         <a href="index.html">Inicio</a>
@@ -44,7 +73,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <section class="page-hero">
       <div class="container page-hero-grid">
         <div>
@@ -52,7 +81,11 @@
           <h1>Actividades extracurriculares</h1>
           <p>Danza, banda de guerra y deportes que forman el caracter, el trabajo en equipo y el orgullo institucional de cada estudiante.</p>
         </div>
-        <img src="imagenes/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones.jpg" alt="Estudiantes en capacitación extracurricular con INFOP y Visión Mundial" loading="eager" fetchpriority="high">
+        <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones-480.avif 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones-480.webp 480w, imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/capacitaciones/infop_visionmundial_alumnos/capacitaciones-960.jpg" width="1282" height="960" alt="Estudiantes en capacitación extracurricular con INFOP y Visión Mundial" loading="eager" fetchpriority="high">
+          </picture>
       </div>
     </section>
 
@@ -259,18 +292,66 @@
           <p>Momentos del grupo de danza en presentaciones, ensayos y eventos institucionales.</p>
         </div>
         <div class="galeria-grid" data-galeria="danza">
-          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo.jpg" data-caption="XXII Festival Folclórico Nacional — Bahía de Tela"><img src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo.jpg" alt="Cuadro de danza bailando en círculo en el Festival Folclórico de Bahía de Tela" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento.jpg" data-caption="Festival de Bahía de Tela — Entrega de reconocimiento"><img src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento.jpg" alt="Entrega de reconocimiento al grupo de danza en el Festival de Bahía de Tela" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando.jpg" data-caption="Festival de Bahía de Tela — Pareja bailando"><img src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando.jpg" alt="Pareja de baile folclórico con vestido azul en el Festival de Bahía de Tela" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca.jpg" data-caption="Feria de la Casia — Vestidos de época"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca.jpg" alt="Grupo de danza con vestidos de época en la Feria de la Casia" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe.jpg" data-caption="Feria de la Casia — Pareja bailando"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe.jpg" alt="Pareja de baile con vestido café en la Feria de la Casia" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca.jpg" data-caption="Feria de la Casia — Pareja bailando"><img src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca.jpg" alt="Pareja de baile folclórico en la Feria de la Casia" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo.jpg" data-caption="Festival de Ticamaya — Baile en círculo"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo.jpg" alt="Cuadro de danza bailando en círculo en el Festival de Ticamaya" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo.jpg" data-caption="Festival de Ticamaya — Pareja bailando"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo.jpg" alt="Pareja de baile con vestido rojo en el Festival de Ticamaya" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-grupo-bailando.jpg" data-caption="Festival de Ticamaya — Grupo bailando"><img src="imagenes/otros/danza/ticamaya/festival-ticamaya-grupo-bailando.jpg" alt="Grupo de danza folclórica en el Festival de Ticamaya" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo.jpg" data-caption="Festival Cristo Rey — Baile en círculo"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo.jpg" alt="Cuadro de danza bailando en círculo en el Festival Cristo Rey" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia.jpg" data-caption="Festival Cristo Rey — Pareja bailando"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia.jpg" alt="Pareja de baile con vestido fucsia en el Festival Cristo Rey" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando.jpg" data-caption="Festival Cristo Rey — Grupo bailando"><img src="imagenes/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando.jpg" alt="Grupo de danza folclórica en el Festival Cristo Rey" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo.jpg" data-caption="XXII Festival Folclórico Nacional — Bahía de Tela"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-480.avif 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-960.avif 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-480.webp 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-960.webp 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-baile-en-circulo-1600.jpg" width="2048" height="1152" alt="Cuadro de danza bailando en círculo en el Festival Folclórico de Bahía de Tela" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento.jpg" data-caption="Festival de Bahía de Tela — Entrega de reconocimiento"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento-480.avif 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento-480.webp 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-entrega-reconocimiento-960.jpg" width="1152" height="2048" alt="Entrega de reconocimiento al grupo de danza en el Festival de Bahía de Tela" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando.jpg" data-caption="Festival de Bahía de Tela — Pareja bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-480.avif 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-960.avif 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-480.webp 480w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-960.webp 960w, imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/bahia_tela/festival-bahia-de-tela-vestido-azul-bailando-1600.jpg" width="2048" height="1152" alt="Pareja de baile folclórico con vestido azul en el Festival de Bahía de Tela" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca.jpg" data-caption="Feria de la Casia — Vestidos de época"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-480.avif 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-960.avif 960w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-480.webp 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-960.webp 960w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-vestidos-de-epoca-1600.jpg" width="2048" height="1152" alt="Grupo de danza con vestidos de época en la Feria de la Casia" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe.jpg" data-caption="Feria de la Casia — Pareja bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-480.avif 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-960.avif 960w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-480.webp 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-960.webp 960w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-vestido-cafe-1600.jpg" width="2048" height="1152" alt="Pareja de baile con vestido café en la Feria de la Casia" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca.jpg" data-caption="Feria de la Casia — Pareja bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca-480.avif 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca-480.webp 480w, imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/fericasia/feria-de-la-casia-pareja-bailando-cerca-960.jpg" width="1152" height="2048" alt="Pareja de baile folclórico en la Feria de la Casia" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo.jpg" data-caption="Festival de Ticamaya — Baile en círculo"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo-480.avif 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo-480.webp 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-baile-en-circulo-960.jpg" width="1152" height="2048" alt="Cuadro de danza bailando en círculo en el Festival de Ticamaya" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo.jpg" data-caption="Festival de Ticamaya — Pareja bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-480.avif 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-960.avif 960w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-480.webp 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-960.webp 960w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-pareja-vestido-rojo-1600.jpg" width="2048" height="1152" alt="Pareja de baile con vestido rojo en el Festival de Ticamaya" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/ticamaya/festival-ticamaya-grupo-bailando.jpg" data-caption="Festival de Ticamaya — Grupo bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-grupo-bailando-480.avif 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-grupo-bailando-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-grupo-bailando-480.webp 480w, imagenes-optim/otros/danza/ticamaya/festival-ticamaya-grupo-bailando-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/ticamaya/festival-ticamaya-grupo-bailando-960.jpg" width="1152" height="2048" alt="Grupo de danza folclórica en el Festival de Ticamaya" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo.jpg" data-caption="Festival Cristo Rey — Baile en círculo"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-480.avif 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-960.avif 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-480.webp 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-960.webp 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-baile-en-circulo-1600.jpg" width="2048" height="1152" alt="Cuadro de danza bailando en círculo en el Festival Cristo Rey" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia.jpg" data-caption="Festival Cristo Rey — Pareja bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-480.avif 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-960.avif 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-480.webp 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-960.webp 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-pareja-vestido-fucsia-1600.jpg" width="2048" height="1152" alt="Pareja de baile con vestido fucsia en el Festival Cristo Rey" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando.jpg" data-caption="Festival Cristo Rey — Grupo bailando"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-480.avif 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-960.avif 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-480.webp 480w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-960.webp 960w, imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/danza/zope_rey/festival-cristo-rey-grupo-bailando-1600.jpg" width="2048" height="1152" alt="Grupo de danza folclórica en el Festival Cristo Rey" loading="lazy">
+          </picture></div>
         </div>
       </div>
     </section>
@@ -284,19 +365,71 @@
           <p>Actividades físicas, deportivas y recreativas que forman parte de la vida estudiantil del instituto.</p>
         </div>
         <div class="galeria-grid" data-galeria="edfisica">
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto1.jpg"  data-caption="Educacion Fisica — Foto 1"><img  src="imagenes/otros/educacion_fisica/foto1.jpg"  alt="Educación física foto 1"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto2.jpg"  data-caption="Educacion Fisica — Foto 2"><img  src="imagenes/otros/educacion_fisica/foto2.jpg"  alt="Educación física foto 2"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto3.jpg"  data-caption="Educacion Fisica — Foto 3"><img  src="imagenes/otros/educacion_fisica/foto3.jpg"  alt="Educación física foto 3"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto4.jpg"  data-caption="Educacion Fisica — Foto 4"><img  src="imagenes/otros/educacion_fisica/foto4.jpg"  alt="Educación física foto 4"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto5.jpg"  data-caption="Educacion Fisica — Foto 5"><img  src="imagenes/otros/educacion_fisica/foto5.jpg"  alt="Educación física foto 5"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto6.jpg"  data-caption="Educacion Fisica — Foto 6"><img  src="imagenes/otros/educacion_fisica/foto6.jpg"  alt="Educación física foto 6"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto7.jpg"  data-caption="Educacion Fisica — Foto 7"><img  src="imagenes/otros/educacion_fisica/foto7.jpg"  alt="Educación física foto 7"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto8.jpg"  data-caption="Educacion Fisica — Foto 8"><img  src="imagenes/otros/educacion_fisica/foto8.jpg"  alt="Educación física foto 8"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto9.jpg"  data-caption="Educacion Fisica — Foto 9"><img  src="imagenes/otros/educacion_fisica/foto9.jpg"  alt="Educación física foto 9"  loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto10.jpg" data-caption="Educacion Fisica — Foto 10"><img src="imagenes/otros/educacion_fisica/foto10.jpg" alt="Educación física foto 10" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto11.jpg" data-caption="Educacion Fisica — Foto 11"><img src="imagenes/otros/educacion_fisica/foto11.jpg" alt="Educación física foto 11" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto12.jpg" data-caption="Educacion Fisica — Foto 12"><img src="imagenes/otros/educacion_fisica/foto12.jpg" alt="Educación física foto 12" loading="lazy"></div>
-          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto13.jpg" data-caption="Educacion Fisica — Foto 13"><img src="imagenes/otros/educacion_fisica/foto13.jpg" alt="Educación física foto 13" loading="lazy"></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto1.jpg"  data-caption="Educacion Fisica — Foto 1"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto1-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto1-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto1-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto1-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto1-960.jpg" width="960" height="1200"  alt="Educación física foto 1"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto2.jpg"  data-caption="Educacion Fisica — Foto 2"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto2-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto2-960.avif 960w, imagenes-optim/otros/educacion_fisica/foto2-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto2-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto2-960.webp 960w, imagenes-optim/otros/educacion_fisica/foto2-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto2-1600.jpg" width="3024" height="4032"  alt="Educación física foto 2"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto3.jpg"  data-caption="Educacion Fisica — Foto 3"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto3-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto3-960.avif 960w, imagenes-optim/otros/educacion_fisica/foto3-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto3-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto3-960.webp 960w, imagenes-optim/otros/educacion_fisica/foto3-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto3-1600.jpg" width="3024" height="4032"  alt="Educación física foto 3"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto4.jpg"  data-caption="Educacion Fisica — Foto 4"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto4-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto4-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto4-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto4-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto4-960.jpg" width="960" height="1200"  alt="Educación física foto 4"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto5.jpg"  data-caption="Educacion Fisica — Foto 5"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto5-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto5-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto5-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto5-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto5-960.jpg" width="1280" height="960"  alt="Educación física foto 5"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto6.jpg"  data-caption="Educacion Fisica — Foto 6"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto6-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto6-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto6-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto6-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto6-960.jpg" width="960" height="1200"  alt="Educación física foto 6"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto7.jpg"  data-caption="Educacion Fisica — Foto 7"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto7-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto7-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto7-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto7-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto7-960.jpg" width="1280" height="960"  alt="Educación física foto 7"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto8.jpg"  data-caption="Educacion Fisica — Foto 8"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto8-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto8-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto8-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto8-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto8-960.jpg" width="1210" height="565"  alt="Educación física foto 8"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto9.jpg"  data-caption="Educacion Fisica — Foto 9"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto9-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto9-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto9-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto9-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img  src="imagenes-optim/otros/educacion_fisica/foto9-960.jpg" width="1210" height="565"  alt="Educación física foto 9"  loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto10.jpg" data-caption="Educacion Fisica — Foto 10"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto10-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto10-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto10-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto10-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/educacion_fisica/foto10-960.jpg" width="1210" height="565" alt="Educación física foto 10" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto11.jpg" data-caption="Educacion Fisica — Foto 11"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto11-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto11-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto11-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto11-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/educacion_fisica/foto11-960.jpg" width="1210" height="565" alt="Educación física foto 11" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto12.jpg" data-caption="Educacion Fisica — Foto 12"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto12-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto12-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto12-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto12-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/educacion_fisica/foto12-960.jpg" width="1210" height="565" alt="Educación física foto 12" loading="lazy">
+          </picture></div>
+          <div class="galeria-item" data-src="imagenes/otros/educacion_fisica/foto13.jpg" data-caption="Educacion Fisica — Foto 13"><picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/educacion_fisica/foto13-480.avif 480w, imagenes-optim/otros/educacion_fisica/foto13-960.avif 960w, imagenes-optim/otros/educacion_fisica/foto13-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/educacion_fisica/foto13-480.webp 480w, imagenes-optim/otros/educacion_fisica/foto13-960.webp 960w, imagenes-optim/otros/educacion_fisica/foto13-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/educacion_fisica/foto13-1600.jpg" width="3024" height="4032" alt="Educación física foto 13" loading="lazy">
+          </picture></div>
         </div>
       </div>
     </section>
@@ -464,14 +597,28 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>

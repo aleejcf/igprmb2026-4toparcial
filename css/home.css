@@ -62,23 +62,35 @@
   height: 100%;
   object-fit: cover;
   object-position: center 30%;
+  /* FASE 2 (auditoría, Concepto A): asentamiento casi imperceptible en la
+     carga — no es parallax, es un respiro de vida en la foto. */
+  animation: heroSettle 1.3s var(--ease-soft, ease-out) both;
+}
+
+@keyframes heroSettle {
+  from { transform: scale(1.045); }
+  to   { transform: scale(1); }
 }
 
 .hero-editorial-media::after {
   content: "";
   position: absolute;
   inset: 0;
+  /* Degradado en cuatro paradas: sube el contraste del header (arriba) sin
+     apagar la foto, y sigue oscureciendo hacia el copy (abajo). Antes el
+     header quedaba casi ilegible sobre techos claros. */
   background: linear-gradient(180deg,
-    rgba(15, 14, 46, .35) 0%,
-    rgba(15, 14, 46, .25) 35%,
-    rgba(15, 14, 46, .88) 100%);
+    rgba(15, 14, 46, .55) 0%,
+    rgba(15, 14, 46, .18) 30%,
+    rgba(15, 14, 46, .55) 62%,
+    rgba(15, 14, 46, .92) 100%);
 }
 
 .hero-editorial-inner {
   position: relative;
   z-index: 1;
   padding: var(--space-8) 0 var(--space-7);
-  max-width: 760px;
+  max-width: 640px;
 }
 
 .hero-editorial .eyebrow {
@@ -88,26 +100,81 @@
 
 .hero-editorial h1 {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(2.2rem, 5.4vw, 3.8rem);
-  line-height: 1.08;
-  letter-spacing: -.01em;
+  font-weight: 700;
+  font-optical-sizing: auto;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: .98;
+  letter-spacing: -.03em;
+  max-width: 18ch;
   margin: var(--space-2) 0 var(--space-3);
+  text-wrap: balance;
 }
 
 .hero-editorial .lead {
   font-size: 1.1rem;
   line-height: 1.6;
   color: rgba(255, 255, 255, .88);
-  max-width: 58ch;
-  margin-bottom: var(--space-5);
+  max-width: 52ch;
+  margin-bottom: var(--space-4);
 }
 
 .hero-editorial-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3);
+  align-items: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+}
+
+/* CTA secundario como enlace de texto, no como segundo botón — un CTA
+   primario gana siempre a dos compitiendo por la misma atención. */
+.hero-editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: .92rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, .4);
+  padding-bottom: 2px;
+  transition: border-color var(--transition-fast), gap var(--transition-fast);
+}
+
+.hero-editorial-link:hover,
+.hero-editorial-link:focus-visible {
+  border-color: #fff;
+  gap: 10px;
+}
+
+.hero-editorial-note {
+  font-size: .82rem;
+  color: rgba(255, 255, 255, .68);
   margin-bottom: var(--space-6);
+}
+
+/* ── Secuencia de entrada ─────────────────────────────────────
+   No es un fade simultáneo: el ojo se guía en cuatro tiempos hacia
+   el CTA — eyebrow, titular, texto de apoyo, acciones. */
+.hero-in {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: heroIn .6s var(--ease-soft, ease-out) both;
+}
+
+.hero-in-1 { animation-delay: 0ms; }
+.hero-in-2 { animation-delay: 90ms; }
+.hero-in-3 { animation-delay: 180ms; }
+.hero-in-4 { animation-delay: 260ms; }
+.hero-in-5 { animation-delay: 340ms; }
+
+@keyframes heroIn {
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-editorial-media img { animation: none; }
+  .hero-in { animation: none; opacity: 1; transform: none; }
 }
 
 /* Franja de hechos reales, en su propia sección solida justo debajo
@@ -169,6 +236,25 @@
   white-space: normal;
   text-align: center;
   line-height: 1.3;
+}
+
+/* ── Foto sincronizada con la fila señalada (FASE 4, auditoría §08) */
+.offer-explorer-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface-muted);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  transition: opacity var(--transition-slow), background-image var(--transition-slow);
+}
+
+.offer-explorer-photo.show { opacity: 1; }
+
+@media (max-width: 900px) {
+  .offer-explorer-photo { display: none; }
 }
 
 .offer-list { display: flex; flex-direction: column; }
@@ -391,6 +477,158 @@
   font-weight: 600;
 }
 
+/* ── TALLERES — scroll horizontal nativo con snap ─────────────
+   FASE 4 (auditoría §08): reemplaza el carrusel de cartas apiladas.
+   Sangra por el borde derecho del viewport a propósito — el corte es
+   la señal de que hay más, sin necesitar dots ni "haz clic para ver". */
+.talleres-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+.talleres-scroll-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: min(60vw, 260px);
+  aspect-ratio: 4 / 5;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  scroll-snap-align: start;
+  box-shadow: var(--shadow-md);
+  margin: 0;
+}
+
+.talleres-scroll-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.talleres-scroll-item:hover img,
+.talleres-scroll-item:focus-within img { transform: scale(var(--mo-zoom)); }
+
+.talleres-scroll-item figcaption {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: var(--space-3) var(--space-4);
+  background: linear-gradient(0deg, rgba(0, 0, 0, .68), transparent);
+  color: #fff;
+  font-size: .85rem;
+  font-weight: 700;
+}
+
+.talleres-scroll:focus-visible {
+  outline: 2px solid var(--color-navy-light);
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .talleres-scroll-item { width: min(70vw, 280px); }
+}
+
+/* ── MATRÍCULA — el clímax del scroll ─────────────────────────
+   FASE 2 (auditoría §10): única sección a sangre en burdeos de
+   todo el sitio. Es la sección que hoy convierte y antes era la
+   visualmente más débil del home — ahora es imposible de saltar. */
+.matricula-climax {
+  background: var(--color-burgundy-dark);
+  color: #fff;
+  padding: var(--space-8) 0;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path .8s var(--ease, ease-out);
+}
+
+.matricula-climax.is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .matricula-climax { transition: none; clip-path: inset(0 0 0 0); }
+}
+
+.matricula-climax-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+}
+
+.matricula-climax-head .eyebrow { color: rgba(255, 255, 255, .75); }
+.matricula-climax-head h2 { color: #fff; }
+.matricula-climax-head p { color: rgba(255, 255, 255, .82); }
+
+.matricula-climax-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.matricula-climax-card {
+  background: rgba(255, 255, 255, .07);
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.matricula-climax-card h3 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.matricula-climax-card .check-list li {
+  color: rgba(255, 255, 255, .85);
+}
+
+.matricula-climax-dates p:not(.matricula-climax-big) {
+  color: rgba(255, 255, 255, .75);
+  font-size: .88rem;
+  margin: 0 0 var(--space-4);
+}
+
+.matricula-climax-big {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: var(--space-3) 0 2px;
+}
+
+.matricula-climax-dates .matricula-climax-big:first-of-type { margin-top: 0; }
+
+.matricula-climax-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.matricula-climax .btn.secondary {
+  border-color: rgba(255, 255, 255, .4);
+  color: #fff;
+}
+
+.matricula-climax .btn.secondary:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+@media (max-width: 900px) {
+  .matricula-climax-grid { grid-template-columns: 1fr 1fr; }
+  .matricula-climax-dates { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .matricula-climax-grid { grid-template-columns: 1fr; }
+  .matricula-climax-actions { flex-direction: column; }
+  .matricula-climax .btn { width: 100%; text-align: center; }
+}
+
 /* ── FRANJA DE CONTACTO/UBICACIÓN COMPACTA ───────────────────*/
 .contact-strip {
   display: grid;
@@ -420,7 +658,10 @@
 }
 
 @media (max-width: 560px) {
-  .hero-editorial { min-height: 100vh; }
+  /* FASE 2 (auditoría): 100vh no dejaba asomar la franja de datos como
+     señal de que hay más página — svh también evita el salto por la
+     barra de direcciones de Chrome al hacer scroll. */
+  .hero-editorial { min-height: 88svh; }
   .facts-strip { grid-template-columns: repeat(2, 1fr); }
   .facts-strip-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.18); }
   .offer-row { grid-template-columns: auto 1fr; }

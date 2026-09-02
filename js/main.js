@@ -1,8 +1,17 @@
 /* ============================================================
-   INSTITUTO RMB — main.js v4
-   Features: splash intro, nav scroll, mobile menu, scroll progress,
-             reveal animations, count-up, card tilt, cursor glow,
-             dropdown nav, back-to-top, auto dark/light theme
+   INSTITUTO RMB — main.js v5
+   Features: nav scroll, mobile menu, scroll progress,
+             reveal animations, back-to-top, auto dark/light theme
+
+   FASE 1 (auditoría): se retiró el splash de 2.6s con canvas de
+   partículas — su barra de progreso no medía nada real y bloqueaba
+   el LCP en cada primera visita —, y cinco rutinas que ya no se
+   ejecutaban en ninguna página (el home usa .hero-editorial, no
+   .hero; .hero-copy no existe en ningún archivo; el nav-links
+   dropdown solo corría sin la clase nav-immersive, que hoy llevan
+   las 22 páginas). El tilt 3D de tarjetas también se retiró: las
+   tarjetas afectadas (.program-card, .activity-card) conservan su
+   elevación al hover porque esa parte vive en CSS, no aquí.
    ============================================================ */
 
 (function () {
@@ -11,7 +20,7 @@
   /* ── MODO DE NAVEGACIÓN ───────────────────────────────────
      Las páginas cuyo <html> lleva la clase .nav-immersive usan
      el menú a pantalla completa de js/inmersivo.js. Las demás
-     siguen con la barra de dropdowns de siempre.
+     seguirían con la barra de dropdowns clásica (hoy ninguna).
   ─────────────────────────────────────────────────────────── */
   const IMMERSIVE = document.documentElement.classList.contains("nav-immersive");
 
@@ -57,233 +66,7 @@
 
   insertThemeButton();
 
-  /* ══════════════════════════════════════════════════════
-     SPLASH SCREEN — solo en index.html
-  ══════════════════════════════════════════════════════ */
-  const isHomePage =
-    window.location.pathname === "/" ||
-    window.location.pathname.endsWith("index.html") ||
-    window.location.pathname.endsWith("/");
-
-  const SPLASH_KEY = "rmb-splash-shown";
-  // Mostrar splash cada vez que se entra a la página de inicio
-  // (quitar la condición de !sessionStorage para que siempre aparezca)
-  const splashShown = sessionStorage.getItem(SPLASH_KEY);
-
-  if (isHomePage && !splashShown) {
-    sessionStorage.setItem(SPLASH_KEY, "1");
-    document.body.style.overflow = "hidden";
-
-    // El splash ya hace de intro: anulamos la apertura de la cortina para no
-    // encadenar dos animaciones. La cortina sigue viva para las transiciones.
-    const curtainAtStart = document.getElementById("pt-curtain");
-    if (curtainAtStart) curtainAtStart.classList.add("pt-noreveal");
-
-    // Crear el splash
-    const splash = document.createElement("div");
-    splash.id = "rmb-splash";
-    splash.innerHTML = `
-      <canvas id="splash-canvas"></canvas>
-      <div class="splash-rings">
-        <div class="splash-ring"></div>
-        <div class="splash-ring"></div>
-        <div class="splash-ring"></div>
-        <div class="splash-ring"></div>
-      </div>
-      <div class="splash-content">
-        <div class="splash-logo"><img src="imagenes/irmb/logo_intro.png" alt="Logo Instituto RMB" style="width:100%;height:100%;object-fit:contain;border-radius:28px;"></div>
-        <div class="splash-divider"></div>
-        <h1 class="splash-title">Instituto <span>Roberto Micheletti Baín</span></h1>
-        <p class="splash-sub">Agua Blanca Sur · El Progreso, Yoro</p>
-      </div>
-      <div class="splash-bar-wrap">
-        <div class="splash-bar-track">
-          <div class="splash-bar-fill" id="splash-bar-fill"></div>
-        </div>
-        <div class="splash-bar-label">Cargando...</div>
-      </div>
-    `;
-    document.body.insertBefore(splash, document.body.firstChild);
-
-    // Partículas en el canvas del splash
-    const canvas = document.getElementById("splash-canvas");
-    const ctx = canvas.getContext("2d");
-    let W, H, particles = [], rafSplash;
-
-    function resizeSplash() {
-      W = canvas.width = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-
-    class SplashParticle {
-      constructor() { this.reset(true); }
-      reset(initial) {
-        this.x = Math.random() * W;
-        this.y = initial ? Math.random() * H : H + 5;
-        this.r = Math.random() * 2.2 + 0.5;
-        this.vx = (Math.random() - 0.5) * 0.6;
-        this.vy = -(Math.random() * 1.2 + 0.3);
-        this.alpha = Math.random() * 0.6 + 0.1;
-        const orange = Math.random() > 0.5;
-        this.color = orange
-          ? `rgba(244,123,32,${this.alpha})`
-          : `rgba(80,150,255,${this.alpha})`;
-      }
-      update() {
-        this.x += this.vx;
-        this.y += this.vy;
-        if (this.y < -5) this.reset(false);
-      }
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
-    }
-
-    resizeSplash();
-    particles = Array.from({ length: 120 }, () => new SplashParticle());
-
-    function loopSplash() {
-      ctx.clearRect(0, 0, W, H);
-      particles.forEach(p => { p.update(); p.draw(); });
-      rafSplash = requestAnimationFrame(loopSplash);
-    }
-    loopSplash();
-    window.addEventListener("resize", resizeSplash);
-
-    // Barra de progreso
-    const bar = document.getElementById("splash-bar-fill");
-    const DURATION = 2600; // ms
-    const startTime = performance.now();
-
-    function animateBar(now) {
-      const elapsed = now - startTime;
-      const pct = Math.min((elapsed / DURATION) * 100, 100);
-      bar.style.width = pct + "%";
-      if (pct < 100) {
-        requestAnimationFrame(animateBar);
-      } else {
-        exitSplash();
-      }
-    }
-    requestAnimationFrame(animateBar);
-
-    function exitSplash() {
-      cancelAnimationFrame(rafSplash);
-      splash.classList.add("splash-exit");
-      document.body.style.overflow = "";
-      setTimeout(() => {
-        splash.remove();
-      }, 850);
-    }
-
-    // Permitir saltarlo con click
-    splash.addEventListener("click", () => {
-      if (!splash.classList.contains("splash-exit")) exitSplash();
-    });
-  }
-
-  /* ── DROPDOWN NAV ─────────────────────────────────────── */
-  function buildDropdownNav() {
-    const navLinks = document.querySelector(".nav-links");
-    if (!navLinks) return;
-
-    const currentPage = window.location.pathname.split("/").pop() || "index.html";
-
-    const groups = [
-      {
-        label: "El Instituto",
-        links: [
-          { href: "index.html",    icon: "🏫", text: "Inicio" },
-          { href: "historia.html", icon: "📜", text: "Historia" },
-        ]
-      },
-      {
-        label: "Académico",
-        links: [
-          { href: "oferta-academica.html", icon: "📚", text: "Oferta académica" },
-          { href: "matricula.html",        icon: "📝", text: "Matrícula 2026" },
-        ]
-      },
-      {
-        label: "Vida escolar",
-        links: [
-          { href: "actividades.html",      icon: "🎉", text: "Actividades" },
-          { href: "extracurriculares.html",icon: "⚽", text: "Extracurriculares" },
-        ]
-      },
-    ];
-
-    const simpleLinks = [
-      { href: "contacto.html",  text: "Contacto" },
-      { href: "ubicacion.html", text: "Ubicación" },
-    ];
-
-    navLinks.innerHTML = "";
-
-    groups.forEach(group => {
-      const item = document.createElement("div");
-      item.className = "nav-item";
-
-      const trigger = document.createElement("button");
-      trigger.className = "nav-links nav-trigger";
-      trigger.style.cssText = "background:none;border:none;padding:8px 14px;border-radius:10px;display:flex;align-items:center;gap:5px;cursor:pointer;";
-      trigger.innerHTML = `<span>${group.label}</span><span class="caret"></span>`;
-      trigger.style.color = "rgba(255,255,255,.75)";
-      trigger.style.fontFamily = "inherit";
-      trigger.style.fontSize = ".875rem";
-      trigger.style.fontWeight = "700";
-      trigger.style.transition = "color .2s, background .2s";
-
-      const isGroupActive = group.links.some(l => l.href === currentPage);
-      if (isGroupActive) {
-        trigger.style.background = "linear-gradient(135deg, rgba(45,109,228,.45), rgba(244,123,32,.25))";
-        trigger.style.border = "1px solid rgba(255,255,255,.15)";
-        trigger.style.color = "#fff";
-      }
-
-      const dropdown = document.createElement("div");
-      dropdown.className = "nav-dropdown";
-
-      group.links.forEach(link => {
-        const a = document.createElement("a");
-        a.href = link.href;
-        a.innerHTML = `<span class="dd-icon">${link.icon}</span>${link.text}`;
-        if (link.href === currentPage) a.classList.add("active");
-        dropdown.appendChild(a);
-      });
-
-      item.appendChild(trigger);
-      item.appendChild(dropdown);
-      navLinks.appendChild(item);
-
-      trigger.addEventListener("click", (e) => {
-        e.stopPropagation();
-        item.classList.toggle("open");
-        navLinks.querySelectorAll(".nav-item.open").forEach(other => {
-          if (other !== item) other.classList.remove("open");
-        });
-      });
-    });
-
-    simpleLinks.forEach(link => {
-      const a = document.createElement("a");
-      a.href = link.href;
-      a.textContent = link.text;
-      if (link.href === currentPage) a.classList.add("active");
-      navLinks.appendChild(a);
-    });
-
-    document.addEventListener("click", () => {
-      navLinks.querySelectorAll(".nav-item.open").forEach(el => el.classList.remove("open"));
-    });
-  }
-
-  if (!IMMERSIVE) buildDropdownNav();
-
-  /* ── MOBILE MENU ──────────────────────────────────────── */
+  /* ── MOBILE MENU (clásico, sin nav-immersive) ─────────── */
   const menuButton = document.querySelector("[data-menu-toggle]");
   const menu = document.querySelector("[data-menu]");
 
@@ -313,42 +96,73 @@
     });
   }
 
-  /* ── HEADER SCROLL STATE ──────────────────────────────── */
+  /* ── ELEMENTOS FIJOS QUE REACCIONAN AL SCROLL ─────────────
+     FASE 5 (auditoría §08): header, barra de progreso (fallback),
+     botón "volver arriba" y barra de acción móvil vivían cada uno
+     con su propio addEventListener("scroll", ...) — cuatro listeners
+     leyendo window.scrollY por separado en cada evento. Se crean
+     todos los elementos primero y un solo listener con rAF los
+     actualiza juntos. */
   const header = document.querySelector(".site-header");
-  if (header) {
-    const onScroll = () => header.classList.toggle("scrolled", window.scrollY > 30);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
 
-  /* ── SCROLL PROGRESS BAR ──────────────────────────────── */
   const progress = document.createElement("div");
   progress.className = "scroll-progress";
   document.body.appendChild(progress);
 
-  const updateProgress = () => {
-    const scrollTop = window.scrollY;
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const pct = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0;
-    progress.style.width = pct + "%";
-  };
+  // En navegadores con animation-timeline: scroll() (ver css/tokens.css
+  // y estilos.css) el compositor mueve la barra solo — sin JS. Este
+  // fallback solo hace algo donde ese soporte no existe.
+  const supportsScrollTimeline =
+    typeof CSS !== "undefined" && CSS.supports && CSS.supports("animation-timeline: scroll()");
+  if (!supportsScrollTimeline) progress.classList.add("js-driven");
 
-  window.addEventListener("scroll", updateProgress, { passive: true });
-  window.addEventListener("resize", updateProgress);
-  updateProgress();
-
-  /* ── BOTÓN VOLVER ARRIBA ──────────────────────────────── */
   const btt = document.createElement("button");
   btt.className = "back-to-top";
   btt.setAttribute("aria-label", "Volver al inicio");
   btt.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>`;
   document.body.appendChild(btt);
-
-  window.addEventListener("scroll", () => {
-    btt.classList.toggle("visible", window.scrollY > 380);
-  }, { passive: true });
-
   btt.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  /* Barra de acción fija (móvil). FASE 2 (auditoría): antes no había
+     ninguna forma de contactar al instituto desde el sitio. En móvil,
+     que es como la mayoría de familias de Agua Blanca Sur va a entrar,
+     WhatsApp y Matrícula quedan siempre a un toque, sin tener que
+     bajar hasta el pie de página. Aparece después del hero, no
+     compite con sus CTA. */
+  const ctaBar = document.createElement("div");
+  ctaBar.className = "mobile-cta-bar";
+  ctaBar.innerHTML = `
+    <a class="mobile-cta-link mobile-cta-whatsapp" href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+      WhatsApp
+    </a>
+    <a class="mobile-cta-link mobile-cta-primary" href="matricula.html">Matrícula 2027</a>
+  `;
+  document.body.appendChild(ctaBar);
+
+  function updateScrollState() {
+    const y = window.scrollY;
+
+    if (header) header.classList.toggle("scrolled", y > 30);
+    btt.classList.toggle("visible", y > 380);
+    ctaBar.classList.toggle("visible", y > 320);
+
+    if (!supportsScrollTimeline) {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollHeight > 0 ? y / scrollHeight : 0;
+      progress.style.transform = "scaleX(" + pct + ")";
+    }
+  }
+
+  let scrollTicking = false;
+  window.addEventListener("scroll", () => {
+    if (!scrollTicking) {
+      scrollTicking = true;
+      requestAnimationFrame(() => { updateScrollState(); scrollTicking = false; });
+    }
+  }, { passive: true });
+  window.addEventListener("resize", updateScrollState);
+  updateScrollState();
 
   /* ── SCROLL REVEAL ────────────────────────────────────── */
   const revealTargets = document.querySelectorAll(
@@ -356,14 +170,19 @@
     ".info-card, .callout, .event-item, .pathway article, " +
     ".identity-grid article, .decision-grid article, .image-frame, " +
     ".timeline-item, .timeline, .hero-stats-row .stat, " +
-    ".offer-row, .facts-strip-item, .life-mosaic-item, .contact-strip-item"
+    ".offer-row, .facts-strip-item, .life-mosaic-item, .contact-strip-item, " +
+    ".matricula-climax"
   );
 
   if ("IntersectionObserver" in window) {
     revealTargets.forEach((el) => {
       el.classList.add("reveal");
+      // FASE 3 (auditoría §06): 0.08s -> 0.05s (var(--mo-stagger) en
+      // tokens.css) y tope de 6 — en una fila de muchos elementos, el
+      // último ya no tardaba casi medio segundo extra en aparecer.
       const siblings = Array.from(el.parentElement.children);
-      el.style.transitionDelay = (siblings.indexOf(el) * 0.08) + "s";
+      const index = Math.min(siblings.indexOf(el), 6);
+      el.style.transitionDelay = (index * 0.05) + "s";
     });
 
     const revealObs = new IntersectionObserver(
@@ -383,76 +202,6 @@
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* ── COUNT-UP ANIMATION ───────────────────────────────── */
-  const countEls = document.querySelectorAll(".stat strong");
-
-  function animateCount(el) {
-    const text = el.textContent.trim();
-    const num = parseFloat(text.replace(/[^\d.]/g, ""));
-    const suffix = text.replace(/[\d.]/g, "");
-    if (isNaN(num)) return;
-    const duration = 1800;
-    const start = performance.now();
-    const ease = (t) => 1 - Math.pow(1 - t, 3);
-    const step = (now) => {
-      const p = Math.min((now - start) / duration, 1);
-      el.textContent = Math.round(ease(p) * num) + suffix;
-      if (p < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  }
-
-  if ("IntersectionObserver" in window) {
-    const countObs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) { animateCount(entry.target); countObs.unobserve(entry.target); }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    countEls.forEach((el) => countObs.observe(el));
-  }
-
-  /* ── CARD TILT EFFECT ─────────────────────────────────── */
-  const tiltCards = document.querySelectorAll(
-    ".feature-card, .program-card, .activity-card, .pathway article"
-  );
-
-  tiltCards.forEach((card) => {
-    card.addEventListener("mousemove", (e) => {
-      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      const rect = card.getBoundingClientRect();
-      const rotY = (((e.clientX - rect.left) / rect.width) - 0.5) * 16;
-      const rotX = -(((e.clientY - rect.top) / rect.height) - 0.5) * 16;
-      card.style.transform = `translateY(-8px) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
-      card.style.transformStyle = "preserve-3d";
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "";
-      card.style.transformStyle = "";
-    });
-  });
-
-  /* ── CURSOR GLOW (desktop only) ───────────────────────── */
-  if (window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
-      !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const glow = document.createElement("div");
-    glow.style.cssText = `position:fixed;width:440px;height:440px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(45,109,228,.08) 0%,transparent 70%);transform:translate(-50%,-50%);transition:opacity .4s;top:0;left:0;`;
-    document.body.appendChild(glow);
-    let glowX = 0, glowY = 0, raf;
-    document.addEventListener("mousemove", (e) => {
-      glowX = e.clientX; glowY = e.clientY;
-      if (!raf) raf = requestAnimationFrame(() => {
-        glow.style.left = glowX + "px";
-        glow.style.top = glowY + "px";
-        raf = null;
-      });
-    });
-    document.addEventListener("mouseleave", () => glow.style.opacity = "0");
-    document.addEventListener("mouseenter", () => glow.style.opacity = "1");
-  }
-
   /* ── SMOOTH ANCHOR SCROLL ─────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener("click", (e) => {
@@ -463,46 +212,5 @@
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: "smooth" });
     });
   });
-
-  /* ── HERO PARTICLE CANVAS ─────────────────────────────── */
-  const hero = document.querySelector(".hero");
-  if (hero && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    const canvas = document.createElement("canvas");
-    canvas.style.cssText = "position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;opacity:.55;";
-    hero.style.position = "relative";
-    hero.insertBefore(canvas, hero.firstChild);
-    const ctx = canvas.getContext("2d");
-    let W, H, particles = [];
-
-    function resize() { W = canvas.width = hero.offsetWidth; H = canvas.height = hero.offsetHeight; }
-
-    class Particle {
-      constructor() { this.reset(); }
-      reset() {
-        this.x = Math.random() * W; this.y = Math.random() * H;
-        this.r = Math.random() * 1.8 + .4;
-        this.vx = (Math.random() - .5) * .3; this.vy = -Math.random() * .5 - .1;
-        this.alpha = Math.random() * .5 + .1;
-        this.color = Math.random() > .6 ? `rgba(244,123,32,${this.alpha})` : `rgba(100,160,255,${this.alpha})`;
-      }
-      update() { this.x += this.vx; this.y += this.vy; if (this.y < -5) this.reset(); }
-      draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.fill(); }
-    }
-
-    function initParticles() { particles = Array.from({ length: 80 }, () => new Particle()); }
-    function loop() { ctx.clearRect(0, 0, W, H); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(loop); }
-
-    resize(); initParticles(); loop();
-    window.addEventListener("resize", () => { resize(); initParticles(); });
-  }
-
-  /* ── PULSE BADGE ──────────────────────────────────────── */
-  const heroCopy = document.querySelector(".hero-copy");
-  if (heroCopy && !document.querySelector(".pulse-badge")) {
-    const badge = document.createElement("div");
-    badge.className = "pulse-badge";
-    badge.innerHTML = '<span class="pulse-dot"></span> Matrícula 2026 abierta';
-    heroCopy.insertBefore(badge, heroCopy.firstChild);
-  }
 
 })();

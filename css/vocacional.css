@@ -242,6 +242,13 @@
   justify-content: center;
 }
 
+/* FASE 2 (auditoría): el resultado ya no termina en un dato — sigue con
+   una salida real (WhatsApp) y un gancho de difusión (compartir), el
+   público exacto para el que el test fue diseñado: estudiantes de 9no. */
+.voc-result-actions-secondary {
+  margin-top: 4px;
+}
+
 /* ── RESPONSIVE ───────────────────────────────────────────── */
 @media (max-width: 640px) {
   .voc-card { padding: 30px 22px; }

@@ -7,11 +7,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bachillerato Técnico Profesional en Informática — Instituto Roberto Micheletti Baín">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/carrera-informatica.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="BTP Informática">
+  <meta property="og:description" content="Bachillerato Técnico Profesional en Informática — Instituto Roberto Micheletti Baín">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/carrera-informatica.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/instalaciones/area_info.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BTP Informática">
+  <meta name="twitter:description" content="Bachillerato Técnico Profesional en Informática — Instituto Roberto Micheletti Baín">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/otros/instalaciones/area_info.jpg">
   <title>BTP Informática | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
@@ -489,18 +504,32 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <header class="site-header">
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html">
         <span class="brand-mark">
-          <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
-          <img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture>
         </span>
         <span class="brand-divider"></span>
         <span class="brand-text">
@@ -525,7 +554,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- HERO -->
     <section class="carrera-hero">
       <div class="container carrera-hero-inner">
@@ -545,8 +574,16 @@
           </div>
         </div>
         <div class="carrera-hero-logo">
-          <img class="logo-dark"  src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informática">
-          <img class="logo-light" src="imagenes/irmb/btpi_white.png" alt="Logo BTP Informática">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/btpi_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/btpi_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/btpi_white-480.jpg" width="938" height="938" alt="Logo BTP Informática">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/btpi_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/btpi_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/btpi_white-480.jpg" width="938" height="938" alt="Logo BTP Informática">
+          </picture>
         </div>
       </div>
     </section>
@@ -640,8 +677,12 @@
 
     <!-- IMAGEN BANNER -->
     <div class="container" style="padding-bottom: 0; padding-top: 0;">
-      <img src="imagenes/otros/instalaciones/area_info.jpg" alt="Área de Informática"
+      <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/instalaciones/area_info-480.avif 480w, imagenes-optim/otros/instalaciones/area_info-960.avif 960w, imagenes-optim/otros/instalaciones/area_info-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/instalaciones/area_info-480.webp 480w, imagenes-optim/otros/instalaciones/area_info-960.webp 960w, imagenes-optim/otros/instalaciones/area_info-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/instalaciones/area_info-1600.jpg" width="4032" height="3024" alt="Área de Informática"
         style="width:100%; height:320px; object-fit:cover; border-radius:var(--r-lg); display:block;">
+          </picture>
     </div>
 
 
@@ -655,40 +696,88 @@
       <div class="container">
         <div class="gal-grid gal-destacada gal-grid-sin-bn">
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-01.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 1" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-01-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-01-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-01-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-01-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-01-1600.jpg" width="3024" height="4032" alt="Feria de Inteligencia Artificial — proyecto estudiantil 1" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-02.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 2" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-02-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-02-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-02-1600.jpg" width="4032" height="3024" alt="Feria de Inteligencia Artificial — proyecto estudiantil 2" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-03.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 3" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-03-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-03-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-03-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-03-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-03-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-03-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-03-1600.jpg" width="4032" height="3024" alt="Feria de Inteligencia Artificial — proyecto estudiantil 3" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-04.jpg" alt="Feria de Inteligencia Artificial — proyecto estudiantil 4" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-04-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-04-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-04-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-04-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-04-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-04-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-04-1600.jpg" width="4032" height="3024" alt="Feria de Inteligencia Artificial — proyecto estudiantil 4" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-01.jpg" alt="Feria de Inteligencia Artificial — área de Informática 1" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-01-1600.jpg" width="3024" height="4032" alt="Feria de Inteligencia Artificial — área de Informática 1" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-02.jpg" alt="Feria de Inteligencia Artificial — área de Informática 2" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-02-1600.jpg" width="3024" height="4032" alt="Feria de Inteligencia Artificial — área de Informática 2" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-03.jpg" alt="Feria de Inteligencia Artificial — área de Informática 3" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-03-1600.jpg" width="3024" height="4032" alt="Feria de Inteligencia Artificial — área de Informática 3" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/desde-el-colegio-area-04.jpg" alt="Feria de Inteligencia Artificial — área de Informática 4" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/desde-el-colegio-area-04-1600.jpg" width="4032" height="3024" alt="Feria de Inteligencia Artificial — área de Informática 4" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-53.jpg" alt="Estudiantes presentando su proyecto de IA ante el público" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-53-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-53-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-53-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-53-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-53-960.jpg" width="960" height="1280" alt="Estudiantes presentando su proyecto de IA ante el público" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-58.jpg" alt="Estand de la Feria de Inteligencia Artificial con estudiantes explicando su proyecto" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-58-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-58-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-58-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-58-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-58-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-58-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-58-1600.jpg" width="2048" height="1536" alt="Estand de la Feria de Inteligencia Artificial con estudiantes explicando su proyecto" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-63.jpg" alt="Proyecto tecnológico presentado en la Feria de IA" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-63-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-63-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-63-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-63-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-63-960.jpg" width="1280" height="960" alt="Proyecto tecnológico presentado en la Feria de IA" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-ia-68.jpg" alt="Estudiantes de Informática en la Feria de Inteligencia Artificial" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-ia-68-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-ia-68-960.avif 960w, imagenes-optim/informatica/feria_ia/feria-ia-68-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-ia-68-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-ia-68-960.webp 960w, imagenes-optim/informatica/feria_ia/feria-ia-68-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-ia-68-1600.jpg" width="2048" height="1536" alt="Estudiantes de Informática en la Feria de Inteligencia Artificial" loading="lazy">
+          </picture>
           </figure>
         </div>
         <p style="text-align:center;margin-top:22px;">
@@ -707,16 +796,32 @@
       <div class="container">
         <div class="gal-grid gal-grid-sin-bn">
           <figure class="gal-item">
-            <img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01.jpg" alt="Entrega del Diploma de Honor al Mérito a estudiantes de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01-480.avif 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01-480.webp 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-01-960.jpg" width="1536" height="2048" alt="Entrega del Diploma de Honor al Mérito a estudiantes de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14.jpg" alt="Estudiantes de Informática en tarima con sus diplomas de Honor al Mérito" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-480.avif 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-960.avif 960w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-480.webp 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-960.webp 960w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-14-1600.jpg" width="2048" height="1536" alt="Estudiantes de Informática en tarima con sus diplomas de Honor al Mérito" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20.jpg" alt="Estudiante recibiendo su Diploma de Honor al Mérito de manos de una docente" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20-480.avif 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20-480.webp 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-20-960.jpg" width="1536" height="2048" alt="Estudiante recibiendo su Diploma de Honor al Mérito de manos de una docente" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06.jpg" alt="Reconocimiento de Honor al Mérito a estudiantes destacados de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06-480.avif 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06-480.webp 480w, imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/honormerito_excelenciaacademica/honor-merito-excelencia-informatica-06-960.jpg" width="1536" height="2048" alt="Reconocimiento de Honor al Mérito a estudiantes destacados de Informática" loading="lazy">
+          </picture>
           </figure>
         </div>
       </div>
@@ -731,49 +836,109 @@
       <div class="container">
         <div class="gal-grid gal-grid-sin-bn">
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio.jpg" alt="Transmisión en vivo del programa Desde el Colegio" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/transmision-en-vivo-desde-el-colegio-960.jpg" width="1200" height="540" alt="Transmisión en vivo del programa Desde el Colegio" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/actividad-desde-el-colegio-2.jpg" alt="Actividad del programa Desde el Colegio" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-2-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-2-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-2-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-2-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-2-960.jpg" width="1200" height="1600" alt="Actividad del programa Desde el Colegio" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/actividad-desde-el-colegio-3.jpg" alt="Actividad del programa Desde el Colegio" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-3-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-3-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-3-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-3-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-3-960.jpg" width="1200" height="1600" alt="Actividad del programa Desde el Colegio" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/redes/proyecto-red-pan-feria-informatica.jpg" alt="Proyecto de redes PAN presentado en la feria de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-red-pan-feria-informatica-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-red-pan-feria-informatica-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/redes/proyecto-red-pan-feria-informatica-480.jpg" width="720" height="960" alt="Proyecto de redes PAN presentado en la feria de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2.jpg" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2-480.avif 480w, imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2-480.webp 480w, imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-2-960.jpg" width="960" height="720" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-3.jpg" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-3-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-3-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-3-480.jpg" width="720" height="960" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-4.jpg" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-4-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-4-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-4-480.jpg" width="720" height="960" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/desde_el_colegio/actividad-desde-el-colegio-4.jpg" alt="Actividad del programa Desde el Colegio" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-4-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-4-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-4-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-4-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/actividad-desde-el-colegio-4-960.jpg" width="1471" height="1005" alt="Actividad del programa Desde el Colegio" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5.jpg" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5-480.avif 480w, imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5-480.webp 480w, imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/redes/proyecto-redes-feria-informatica-5-960.jpg" width="960" height="720" alt="Proyecto de redes presentado en la feria de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio.jpg" alt="Estudiante realizando mantenimiento de computadoras en el laboratorio" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-480.avif 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-480.webp 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-960.jpg" width="1200" height="1600" alt="Estudiante realizando mantenimiento de computadoras en el laboratorio" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2.jpg" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2-480.avif 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2-480.webp 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-2-960.jpg" width="1200" height="1600" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3.jpg" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3-480.avif 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3-480.webp 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-3-960.jpg" width="1200" height="1600" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4.jpg" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4-480.avif 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4-480.webp 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-4-960.jpg" width="1200" height="1600" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5.jpg" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5-480.avif 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5-480.webp 480w, imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/proyectos_clase/mantenimiento/mantenimiento-computadoras-laboratorio-5-960.jpg" width="1200" height="1600" alt="Mantenimiento de computadoras en el laboratorio de Informática" loading="lazy">
+          </picture>
           </figure>
           <figure class="gal-item">
-            <img src="imagenes/informatica/feria_ia/feria-networking-grupo-premiacion.jpg" alt="Grupo de estudiantes premiados en la feria de redes e Informática" loading="lazy">
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/feria_ia/feria-networking-grupo-premiacion-480.avif 480w, imagenes-optim/informatica/feria_ia/feria-networking-grupo-premiacion-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/feria_ia/feria-networking-grupo-premiacion-480.webp 480w, imagenes-optim/informatica/feria_ia/feria-networking-grupo-premiacion-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/feria_ia/feria-networking-grupo-premiacion-960.jpg" width="960" height="1280" alt="Grupo de estudiantes premiados en la feria de redes e Informática" loading="lazy">
+          </picture>
           </figure>
         </div>
       </div>
@@ -788,12 +953,24 @@
           <p>Con este bachillerato puedes insertarte en el mercado laboral directamente o continuar estudios universitarios en el área de tecnología e informática.</p>
         </div>
         <div class="salidas-img-row" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;">
-          <img src="imagenes/otros/instalaciones/laboratorio_1.jpeg" alt="Estudiantes de Informática"
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/instalaciones/laboratorio_1-480.avif 480w, imagenes-optim/otros/instalaciones/laboratorio_1-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/instalaciones/laboratorio_1-480.webp 480w, imagenes-optim/otros/instalaciones/laboratorio_1-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/instalaciones/laboratorio_1-960.jpg" width="1280" height="779" alt="Estudiantes de Informática"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
-          <img src="imagenes/otros/instalaciones/laboratorio_2.jpeg" alt="Equipos del laboratorio"
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/otros/instalaciones/laboratorio_2-480.avif 480w, imagenes-optim/otros/instalaciones/laboratorio_2-960.avif 960w, imagenes-optim/otros/instalaciones/laboratorio_2-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/otros/instalaciones/laboratorio_2-480.webp 480w, imagenes-optim/otros/instalaciones/laboratorio_2-960.webp 960w, imagenes-optim/otros/instalaciones/laboratorio_2-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/otros/instalaciones/laboratorio_2-1600.jpg" width="4032" height="3024" alt="Equipos del laboratorio"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
-          <img src="imagenes/informatica/desde_el_colegio/taller.jpg" alt="Taller de Informática"
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/informatica/desde_el_colegio/taller-480.avif 480w, imagenes-optim/informatica/desde_el_colegio/taller-960.avif 960w, imagenes-optim/informatica/desde_el_colegio/taller-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/informatica/desde_el_colegio/taller-480.webp 480w, imagenes-optim/informatica/desde_el_colegio/taller-960.webp 960w, imagenes-optim/informatica/desde_el_colegio/taller-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/informatica/desde_el_colegio/taller-1600.jpg" width="2040" height="918" alt="Taller de Informática"
             style="width:100%; height:160px; object-fit:cover; border-radius:var(--r); display:block;">
+          </picture>
         </div>
         <div class="salidas-grid">
           <div class="salida-card">
@@ -861,14 +1038,28 @@
 
  <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>

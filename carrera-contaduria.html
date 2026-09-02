@@ -7,11 +7,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Bachillerato Técnico Profesional en Contaduría y Finanzas — Instituto Roberto Micheletti Baín">
+  <link rel="canonical" href="https://aleejcf.github.io/igprmb2026-4toparcial/carrera-contaduria.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Instituto Roberto Micheletti Baín">
+  <meta property="og:locale" content="es_HN">
+  <meta property="og:title" content="BTP Contaduría y Finanzas">
+  <meta property="og:description" content="Bachillerato Técnico Profesional en Contaduría y Finanzas — Instituto Roberto Micheletti Baín">
+  <meta property="og:url" content="https://aleejcf.github.io/igprmb2026-4toparcial/carrera-contaduria.html">
+  <meta property="og:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/contaduria_finanzas/dia_contador/finanzas1.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BTP Contaduría y Finanzas">
+  <meta name="twitter:description" content="Bachillerato Técnico Profesional en Contaduría y Finanzas — Instituto Roberto Micheletti Baín">
+  <meta name="twitter:image" content="https://aleejcf.github.io/igprmb2026-4toparcial/imagenes/contaduria_finanzas/dia_contador/finanzas1.jpg">
   <title>BTP Contaduría y Finanzas | Instituto Roberto Micheletti Baín</title>
   <link rel="icon" type="image/png" href="imagenes/irmb/irmb.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:wght@600;700&display=swap" rel="stylesheet">
+  <!-- FASE 5 (auditoria): fuentes autoalojadas -- ver css/fonts.css.
+       Preload solo de los pesos criticos (h1 + texto en negrita del
+       primer pantallazo); el resto los pide fonts.css sin bloquear. -->
+  <link rel="preload" href="fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jakarta-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/fonts.css">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/estilos.css">
   <link rel="stylesheet" href="css/inmersivo.css">
@@ -588,11 +603,17 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
   <!-- Cortina de transicion entre paginas.
        Arranca cubriendo la pantalla y se retira sola con CSS, asi que
        aunque el JavaScript falle la pagina nunca queda tapada. -->
   <div class="pt-curtain" id="pt-curtain" aria-hidden="true">
-    <img src="imagenes/irmb/irmb_black.png" alt="">
+    <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="">
+          </picture>
   </div>
   <!-- Lightbox para galerías masonry -->
   <div id="cf-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;align-items:center;justify-content:center;cursor:zoom-out;" onclick="this.style.display='none';document.body.style.overflow=''">
@@ -605,8 +626,16 @@
     <nav class="nav container" aria-label="Navegación principal">
       <a class="brand" href="index.html">
         <span class="brand-mark">
-          <img class="logo-dark"  src="imagenes/irmb/irmb_black.png" alt="Logo RMB">
-          <img class="logo-light" src="imagenes/irmb/irmb_white.png" alt="Logo RMB">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_black-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_black-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/irmb_black-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/irmb_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/irmb_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/irmb_white-480.jpg" width="938" height="938" alt="Logo RMB">
+          </picture>
         </span>
         <span class="brand-divider"></span>
         <span class="brand-text">
@@ -631,7 +660,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1">
     <!-- HERO -->
     <section class="carrera-hero">
       <div class="container carrera-hero-inner">
@@ -651,8 +680,16 @@
           </div>
         </div>
         <div class="carrera-hero-logo">
-          <img class="logo-dark"  src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduría">
-          <img class="logo-light" src="imagenes/irmb/contaduria_white.png" alt="Logo BTP Contaduría">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/contaduria_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/contaduria_white-480.webp 480w" sizes="96px">
+            <img class="logo-dark"  src="imagenes-optim/irmb/contaduria_white-480.jpg" width="938" height="938" alt="Logo BTP Contaduría">
+          </picture>
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/contaduria_white-480.avif 480w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/contaduria_white-480.webp 480w" sizes="96px">
+            <img class="logo-light" src="imagenes-optim/irmb/contaduria_white-480.jpg" width="938" height="938" alt="Logo BTP Contaduría">
+          </picture>
         </div>
       </div>
     </section>
@@ -753,43 +790,67 @@
         <div class="masonry-grid">
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/dia_contador/finanzas1.jpg" alt="Estudiantes de la clase de contabilidad"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas1-480.avif 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas1-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas1-480.webp 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas1-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/dia_contador/finanzas1-960.jpg" width="1440" height="1440" alt="Estudiantes de la clase de contabilidad"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h13a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M4 4v13a3 3 0 0 0 3 3M9 9h7M9 13h7"/></svg></span>Agrega: imagenes/contaduría/aula1.jpg</div>
             <div class="m-overlay"><span class="m-caption">Clase de Contabilidad General</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/dia_contador/finanzas2.jpg" alt="Trabajo en grupo"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas2-480.avif 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas2-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas2-480.webp 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas2-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/dia_contador/finanzas2-960.jpg" width="1440" height="1440" alt="Trabajo en grupo"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg></span>Agrega: imagenes/contaduría/aula2.jpg</div>
             <div class="m-overlay"><span class="m-caption">Maestros del área</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/dia_contador/finanzas3.jpg" alt="Práctica de documentos"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas3-480.avif 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas3-480.webp 480w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/dia_contador/finanzas3-480.jpg" width="720" height="1279" alt="Práctica de documentos"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h9l3 3v17H6z"/><path d="M9 8h6M9 12h6M9 16h4"/></svg></span>Agrega: imagenes/contaduría/aula3.jpg</div>
             <div class="m-overlay"><span class="m-caption">Lic. Javier Alberto López</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/dia_contador/finanzas4.jpg" alt="Clase de informática aplicada"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas4-480.avif 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas4-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/dia_contador/finanzas4-480.webp 480w, imagenes-optim/contaduria_finanzas/dia_contador/finanzas4-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/dia_contador/finanzas4-960.jpg" width="1440" height="1440" alt="Clase de informática aplicada"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:4/3"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>Agrega: imagenes/contaduría/aula4.jpg</div>
             <div class="m-overlay"><span class="m-caption">Lic. Celia Villatoro</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/finanzas5.jpg" alt="Estudiante revisando registros"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/finanzas5-480.avif 480w, imagenes-optim/contaduria_finanzas/finanzas5-960.avif 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/finanzas5-480.webp 480w, imagenes-optim/contaduria_finanzas/finanzas5-960.webp 960w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/finanzas5-960.jpg" width="960" height="1280" alt="Estudiante revisando registros"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:3/4"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg></span>Agrega: imagenes/contaduría/aula5.jpg</div>
             <div class="m-overlay"><span class="m-caption">Estudiantes de último año de CF</span></div>
           </div>
 
           <div class="m-item">
-            <img src="imagenes/contaduria_finanzas/dia_contador/talento_cf.jpg" alt="Exposición de estudiantes"
+            <picture>
+            <source type="image/avif" srcset="imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-480.avif 480w, imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-960.avif 960w, imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-1600.avif 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <source type="image/webp" srcset="imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-480.webp 480w, imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-960.webp 960w, imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-1600.webp 1600w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 800px">
+            <img src="imagenes-optim/contaduria_finanzas/dia_contador/talento_cf-1600.jpg" width="2048" height="2048" alt="Exposición de estudiantes"
                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+          </picture>
             <div class="m-placeholder" style="display:none;aspect-ratio:1/1"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span>Agrega: imagenes/contaduría/aula6.jpg</div>
             <div class="m-overlay"><span class="m-caption">Talento estudiantil para el canto</span></div>
           </div>
@@ -845,14 +906,28 @@
 
   <footer class="footer">
     <div class="container footer-grid">
-      <div style="display:flex; align-items:center; gap:1rem;">
+      <div class="footer-brand">
         <a href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer" aria-label="Visítanos en Facebook" class="footer-social">
-          <img src="imagenes/irmb/facebook.png" alt="Facebook del instituto">
+          <picture>
+            <source type="image/avif" srcset="imagenes-optim/irmb/facebook-480.avif 480w, imagenes-optim/irmb/facebook-960.avif 960w, imagenes-optim/irmb/facebook-1600.avif 1600w" sizes="96px">
+            <source type="image/webp" srcset="imagenes-optim/irmb/facebook-480.webp 480w, imagenes-optim/irmb/facebook-960.webp 960w, imagenes-optim/irmb/facebook-1600.webp 1600w" sizes="96px">
+            <img src="imagenes-optim/irmb/facebook-480.jpg" width="2143" height="2143" alt="Facebook del instituto">
+          </picture>
         </a>
         <div>
           <h2>Instituto Roberto Micheletti Baín</h2>
           <p>Agua Blanca Sur, El Progreso, Yoro.</p>
         </div>
+      </div>
+      <div class="footer-contact">
+        <a href="https://wa.me/50488162265" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" width="18" height="18"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.48 1.32 4.99L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm5.8 14.16c-.24.68-1.4 1.33-1.93 1.4-.5.08-1.11.11-1.79-.11a16.6 16.6 0 0 1-1.62-.6c-2.86-1.24-4.72-4.13-4.87-4.32-.14-.2-1.16-1.55-1.16-2.96 0-1.4.73-2.09.99-2.38.26-.28.57-.35.76-.35l.55.01c.18.01.41-.07.64.49.24.57.81 1.98.88 2.12.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.28.29-.12.57.16.28.71 1.17 1.52 1.9 1.05.94 1.93 1.23 2.21 1.37.28.14.44.12.61-.07.16-.19.7-.82.89-1.1.19-.28.38-.23.63-.14.26.1 1.65.78 1.94.92.28.14.47.21.54.33.07.12.07.68-.17 1.36z"/></svg>
+          8816-2265
+        </a>
+        <a href="mailto:subdireccionmichelettibain@gmail.com" class="footer-contact-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="18" height="18"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          subdireccionmichelettibain@gmail.com
+        </a>
       </div>
       <div class="footer-links">
         <a href="index.html">Inicio</a>

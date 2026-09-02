@@ -1,0 +1,66 @@
+/* ============================================================
+   INSTITUTO RMB — fonts.css
+   FASE 5 (auditoría): fuentes autoalojadas en WOFF2, en vez de la
+   hoja de Google Fonts. Elimina dos round-trips a fonts.googleapis.com
+   / fonts.gstatic.com antes de poder mostrar cualquier texto, y deja
+   el preload apuntando a un archivo que el sitio sirve directamente.
+   Solo el subconjunto "latin" — cubre español (á é í ó ú ñ ü) sin
+   cargar los subconjuntos vietnamese/latin-ext/cyrillic que Google
+   sirve por defecto y este sitio no necesita.
+   ============================================================ */
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/jakarta-400.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/jakarta-500.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/jakarta-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/jakarta-700.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/jakarta-800.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/fraunces-600.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-700.woff2") format("woff2");
+}

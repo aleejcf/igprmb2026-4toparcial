@@ -139,8 +139,6 @@
   padding: 6px 12px;
   border-radius: 999px;
   background: rgba(3,9,26,.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,.14);
   color: #fff;
   font-size: .68rem;
@@ -554,8 +552,6 @@
   padding: 7px 13px;
   border-radius: 999px;
   background: rgba(3,9,26,.92);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255,255,255,.14);
   color: #fff;
   font-size: .72rem;
@@ -608,7 +604,9 @@
 
 .pt-curtain.pt-cover {
   pointer-events: auto;
-  animation: ptCover .55s cubic-bezier(.76,0,.24,1) forwards;
+  /* FASE 1 (auditoría): .55s -> .22s, sincronizado con el setTimeout
+     de inmersivo.js antes de navegar. */
+  animation: ptCover .22s cubic-bezier(.76,0,.24,1) forwards;
 }
 
 /* Cortina aparcada fuera de pantalla, sin animacion de apertura.
@@ -620,7 +618,9 @@
 
 /* Aunque este aparcada, debe poder cubrir al salir de la pagina */
 .pt-curtain.pt-noreveal.pt-cover {
-  animation: ptCover .55s cubic-bezier(.76,0,.24,1) forwards;
+  /* FASE 1 (auditoría): .55s -> .22s, sincronizado con el setTimeout
+     de inmersivo.js antes de navegar. */
+  animation: ptCover .22s cubic-bezier(.76,0,.24,1) forwards;
 }
 
 /* ── F. RESPONSIVE ───────────────────────────────────────── */
@@ -649,6 +649,38 @@
   .nav-immersive .mt-label { font-size: .64rem; letter-spacing: .12em; }
   .fs-link { gap: 12px; }
   .fs-num { width: 20px; font-size: .62rem; }
+}
+
+/* ── FASE 1 (auditoría) · HEADER MÓVIL COMPACTO ─────────────
+   Sin reglas responsive, "Instituto Roberto Micheletti Baín" se
+   partía en 4 líneas y el subtítulo en otras 4: el header ocupaba
+   un cuarto de la pantalla en un celular. Se recorta a una marca
+   de dos líneas como máximo y se quita el subtítulo y el divisor,
+   que a este ancho ya no aportan nada que el escudo no diga. */
+@media (max-width: 640px) {
+  .nav { min-height: 64px; }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+  }
+
+  .brand-divider,
+  .brand-sub {
+    display: none;
+  }
+
+  .brand-name {
+    font-size: .84rem;
+    line-height: 1.22;
+    max-width: 46vw;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════

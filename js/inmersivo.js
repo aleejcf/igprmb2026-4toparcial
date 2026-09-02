@@ -31,7 +31,7 @@
     { href: "extracurriculares.html", text: "Extracurriculares", desc: "Danza, banda y deportes",           photo: "imagenes/otros/grupo_danza.jpg", group: "Vida estudiantil" },
     { href: "galeria.html",           text: "Galería",           desc: "Graduaciones, aniversarios y más",  photo: "imagenes/acto_civico/42_aniversario/42-aniversario-51.jpg", group: "Recursos" },
     { href: "docentes.html",          text: "Cuerpo Docente",    desc: "Quiénes forman a los estudiantes",  photo: "imagenes/acto_civico/acto_inaugural/docentes-presentacion-tarima.jpg", group: "Recursos" },
-    { href: "matricula.html",         text: "Matrícula 2026",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg", group: "Matrícula", highlight: true },
+    { href: "matricula.html",         text: "Matrícula 2027",    desc: "Requisitos, fechas y horarios",     photo: "imagenes/otros/matricula.jpg", group: "Matrícula", highlight: true },
     { href: "contacto.html",          text: "Contacto",          desc: "Escríbenos o visítanos",            photo: "imagenes/acto_civico/acto_inaugural/reunion-personal-administrativo.jpg", group: "Matrícula" },
     { href: "ubicacion.html",         text: "Ubicación",         desc: "Agua Blanca Sur, El Progreso",      photo: "imagenes/otros/ubicacion.jpg", group: "Matrícula" }
   ];
@@ -54,13 +54,27 @@
   const bg = document.createElement("div");
   bg.className = "fs-menu-bg";
 
+  // FASE 1 (auditoría): las 11 fotos NO se asignan aquí. Con el menú
+  // en visibility:hidden el navegador las descargaba igual (background-image
+  // ignora visibility), así que cada página del sitio pagaba ~12.7MB por
+  // un menú cerrado. Ahora solo se guarda la URL en un data-attribute y
+  // activatePhoto() la asigna la primera vez que esa foto se muestra de
+  // verdad — típicamente solo una, la de la página actual.
   const photos = MENU.map(item => {
     const ph = document.createElement("div");
     ph.className = "fs-menu-photo";
-    ph.style.backgroundImage = 'url("' + item.photo + '")';
+    ph.dataset.photo = item.photo;
     bg.appendChild(ph);
     return ph;
   });
+
+  function activatePhoto(i) {
+    const target = photos[i];
+    if (target && !target.style.backgroundImage) {
+      target.style.backgroundImage = 'url("' + target.dataset.photo + '")';
+    }
+    photos.forEach((p, pi) => p.classList.toggle("show", pi === i));
+  }
 
   const scrim = document.createElement("div");
   scrim.className = "fs-menu-scrim";
@@ -109,9 +123,7 @@
     a.append(num, text, desc);
 
     // La foto de fondo sigue al enlace señalado (mouse o teclado)
-    const showPhoto = () => {
-      photos.forEach((p, pi) => p.classList.toggle("show", pi === i));
-    };
+    const showPhoto = () => activatePhoto(i);
     a.addEventListener("mouseenter", showPhoto);
     a.addEventListener("focus", showPhoto);
 
@@ -131,7 +143,7 @@
       '<strong>Horario de atención</strong>' +
       '<p>Lunes a viernes, 8:00 AM &ndash; 12:00 PM</p>' +
     '</div>' +
-    '<a class="fs-aside-cta" href="matricula.html">Matrícula 2026 &rarr;</a>' +
+    '<a class="fs-aside-cta" href="matricula.html">Matrícula 2027 &rarr;</a>' +
     '<a class="fs-aside-social" href="https://www.facebook.com/profile.php?id=100063787262594" target="_blank" rel="noopener noreferrer">' +
       '<img src="imagenes/irmb/facebook.png" alt="">Síguenos en Facebook' +
     '</a>';
@@ -164,7 +176,7 @@
 
     // Foto inicial: la de la página actual, o la primera
     const startIdx = Math.max(0, MENU.findIndex(m => m.href === currentPage));
-    photos.forEach((p, pi) => p.classList.toggle("show", pi === startIdx));
+    activatePhoto(startIdx);
 
     // El foco entra al menú para que se pueda navegar con el teclado
     window.setTimeout(() => { links[0].focus(); }, reduceMotion ? 0 : 420);
@@ -306,7 +318,7 @@
   })();
 
   /* ══════════════════════════════════════════════════════
-     3. CORTINA DE TRANSICIÓN ENTRE PÁGINAS
+     3. CORTINA DE ENTRADA (solo al cargar la página)
   ══════════════════════════════════════════════════════ */
 
   (function initPageTransitions() {
@@ -315,37 +327,25 @@
 
     if (reduceMotion) { curtain.remove(); return; }
 
-    // Al volver con el botón "atrás" el navegador puede restaurar la página
-    // desde caché con la cortina todavía cubriendo: hay que descubrirla.
+    // FASE 4 (auditoría §08): se retiró la interceptación de clics que
+    // cubría la pantalla y esperaba 220ms antes de navegar de verdad —
+    // css/estilos.css activa la View Transitions API nativa del
+    // navegador (@view-transition { navigation: auto }), que hace un
+    // cross-fade entre páginas sin ningún JS y sin latencia añadida,
+    // en los navegadores que la soportan; en el resto, simplemente
+    // navega al instante, como cualquier enlace normal — nunca peor
+    // que antes. La cortina se queda solo como animación de entrada
+    // (ptReveal) al cargar cada página.
+
+    // Al volver con el botón "atrás" el navegador puede restaurar la
+    // página desde caché con la cortina todavía cubriendo (de una
+    // versión anterior de esta lógica, o de bfcache): hay que
+    // descubrirla para no dejar la página tapada.
     window.addEventListener("pageshow", (e) => {
       if (e.persisted) {
         curtain.classList.remove("pt-cover");
         curtain.classList.add("pt-noreveal");
       }
-    });
-
-    document.addEventListener("click", (e) => {
-      if (e.defaultPrevented || e.button !== 0) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-      if (!e.target || !e.target.closest) return;
-
-      const a = e.target.closest("a[href]");
-      if (!a || a.hasAttribute("download")) return;
-      if (a.target && a.target !== "_self") return;
-
-      let url;
-      try { url = new URL(a.href, window.location.href); }
-      catch (err) { return; }
-
-      // Solo enlaces internos a otra página .html del sitio
-      if (url.origin !== window.location.origin) return;
-      if (!/\.html$/i.test(url.pathname)) return;
-      if (url.pathname === window.location.pathname && url.hash) return;
-
-      e.preventDefault();
-      curtain.classList.remove("pt-noreveal");
-      curtain.classList.add("pt-cover");
-      window.setTimeout(() => { window.location.href = url.href; }, 520);
     });
   })();
 

@@ -98,10 +98,13 @@
   const resultTitle = document.getElementById("voc-result-title");
   const resultDesc  = document.getElementById("voc-result-desc");
   const resultCta   = document.getElementById("voc-result-cta");
+  const resultWa    = document.getElementById("voc-result-whatsapp");
+  const shareBtn    = document.getElementById("voc-share-btn");
   const tieList     = document.getElementById("voc-tie-list");
   const retakeBtn   = document.getElementById("voc-retake-btn");
 
   let current = 0;
+  let lastResult = null;
   const answers = new Array(QUESTIONS.length).fill(null);
 
   function renderQuestion() {
@@ -272,6 +275,15 @@
     resultDesc.textContent = winner.desc;
     resultCta.href = winner.href;
 
+    // FASE 2 (auditoría): el resultado sigue con una salida real —
+    // WhatsApp ya con el mensaje armado, y compartir para difundirlo
+    // entre compañeros de 9no grado, que es el público exacto del test.
+    if (resultWa) {
+      resultWa.href = "https://wa.me/50488162265?text=" +
+        encodeURIComponent("Hola, hice el test vocacional y me salió " + winner.tag + ". Quisiera más información.");
+    }
+    lastResult = winner;
+
     if (winners.length > 1) {
       tieList.style.display = "flex";
       tieList.innerHTML = "";
@@ -287,6 +299,25 @@
       tieList.style.display = "none";
       tieList.innerHTML = "";
     }
+  }
+
+  if (shareBtn) {
+    shareBtn.addEventListener("click", async () => {
+      const texto = lastResult
+        ? "Hice el test vocacional del Instituto Roberto Micheletti Baín y me salió " + lastResult.tag + ". Descubre el tuyo:"
+        : "Descubre qué bachillerato del Instituto Roberto Micheletti Baín se ajusta más a ti:";
+      const url = window.location.href;
+
+      if (navigator.share) {
+        try { await navigator.share({ title: "Test vocacional — Instituto RMB", text: texto, url: url }); }
+        catch (err) { /* el usuario cerró el panel de compartir; no hacer nada */ }
+        return;
+      }
+
+      // Sin Web Share API (la mayoría de navegadores de escritorio):
+      // abre WhatsApp Web con el mensaje ya armado.
+      window.open("https://wa.me/?text=" + encodeURIComponent(texto + " " + url), "_blank", "noopener,noreferrer");
+    });
   }
 
   retakeBtn.addEventListener("click", () => {
